@@ -1,6 +1,6 @@
-# EDTF literals
+# EDTF literals in RDF
 
-This repository is for developing a set of test cases for implementing “rich literals” containing [Extended Date/Time Format (EDTF)](https://www.loc.gov/standards/datetime/) values, i.e. literals having one of the [EDTF datatypes](https://id.loc.gov/datatypes/edtf.html).
+This repository is for discussion and development of a set of test cases for implementing “rich literals” containing [Extended Date/Time Format (EDTF)](https://www.loc.gov/standards/datetime/) values, i.e. literals having one of the [EDTF datatypes](https://id.loc.gov/datatypes/edtf.html).
 
 The term “rich literal” comes from [a comment by David Booth](https://lists.w3.org/Archives/Public/semantic-web/2020Jul/0200.html):
 
@@ -13,3 +13,5 @@ from RDF to literal.
 itself, so that data can always be self-describing, and all standard 
 tools would automatically support it, without depending on additional 
 software installation for each new rich literal type.
+
+More broadly, this is a place for discussing the using of EDTF in RDF and with both EDTF-aware and non-EDTF-aware RDF tools.
