@@ -142,11 +142,11 @@
 
 :yearSubdivision
   a owl:ObjectProperty ;
-  rdfs:comment "The subdivision of the year, whose value is a member of the class :YearSubdivision"@en ;
+  rdfs:comment "The subdivision of the year, whose value is a member of the class edtfo:YearSubdivision"@en ;
   rdfs:domain :SubYearDateDescription ;
   rdfs:label "year subdivision"@en ;
   rdfs:range :YearSubdivision ;
-  skos:definition "The subdivision of the year, whose value is a member of the class :YearSubdivision"@en ;
+  skos:definition "The subdivision of the year, whose value is a member of the class edtfo:YearSubdivision"@en ;
   .
 
 :SubYearDateDescription
