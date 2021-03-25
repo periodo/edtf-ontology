@@ -1,0 +1,16 @@
+@prefix lode: <http://linkedevents.org/ontology/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix edtfo: <https://periodo.github.io/edtf-literals/draft/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+_:something lode:atTime [
+    a time:Instant ;
+    edtfo:uncertainApproximateTemporalPosition [
+      a time:DateTimeDescription ;
+      time:unitType time:unitDay ;
+      time:day "---11"^^xsd:gDay ;
+      time:month "--06"^^xsd:gMonth ;
+      time:year "2004"^^xsd:gYear
+      ]
+    ]
+  .

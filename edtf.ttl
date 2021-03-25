@@ -140,6 +140,37 @@
   skos:definition "A semestral of the year"@en
   .
 
+:uncertainTemporalPosition
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Uncertain position of a time instant"@en ;
+  rdfs:domain time:Instant ;
+  rdfs:label "Uncertain temporal position"@en ;
+  rdfs:range time:TemporalPosition ;
+  rdfs:subPropertyOf time:inTemporalPosition ;
+  skos:definition "Uncertain position of a time instant"@en ;
+  .
+
+:approximateTemporalPosition
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Approximate position of a time instant"@en ;
+  rdfs:domain time:Instant ;
+  rdfs:label "Approximate temporal position"@en ;
+  rdfs:range time:TemporalPosition ;
+  rdfs:subPropertyOf time:inTemporalPosition ;
+  skos:definition "Approximate position of a time instant"@en ;
+  .
+
+:uncertainApproximateTemporalPosition
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Uncertain and approximate position of a time instant"@en ;
+  rdfs:domain time:Instant ;
+  rdfs:label "Uncertain and approximate temporal position"@en ;
+  rdfs:range time:TemporalPosition ;
+  rdfs:subPropertyOf :uncertainTemporalPosition ;
+  rdfs:subPropertyOf :approximateTemporalPosition ;
+  skos:definition "Uncertain and approximate position of a time instant"@en ;
+  .
+
 :yearSubdivision
   a owl:ObjectProperty ;
   rdfs:comment "The subdivision of the year, whose value is a member of the class edtfo:YearSubdivision"@en ;
