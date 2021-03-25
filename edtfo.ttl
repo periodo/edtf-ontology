@@ -213,6 +213,55 @@
   skos:definition "Description of date structured with separate values for year and a sub-year grouping such as a season or quarter. The temporal reference system is fixed to Gregorian Calendar and the range of the year property is restricted to xsd:gYear."@en
   .
 
+:decade
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Decade position in the Gregorian calendar; e.g. 197 is the decade starting with 1970"@en ;
+  rdfs:domain :SuperYearDateTimeDescription ;
+  rdfs:label "decade"@en ;
+  rdfs:range xsd:integer ;
+  skos:definition "Decade position in the Gregorian calendar; e.g. 197 is the decade starting with 1970"@en ;
+.
+
+:century
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Century position in the Gregorian calendar; e.g. 19 is the century starting with 1900"@en ;
+  rdfs:domain :SuperYearDateTimeDescription ;
+  rdfs:label "century"@en ;
+  rdfs:range xsd:integer ;
+  skos:definition "Century position in the Gregorian calendar; e.g. 19 is the century starting with 1900"@en ;
+.
+
+# decade implies century so descriptions should not use both
+:decade owl:propertyDisjointWith :century .
+
+:SuperYearDateTimeDescription
+  a owl:Class ;
+  rdfs:comment "Description of date and time structured with separate values for decade and century for when the date has year precision but a year value is not specified. The temporal reference system is fixed to Gregorian Calendar."@en ;
+  rdf:label "Super-year date description"@en ;
+  rdfs:subClassOf time:DateTimeDescription ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty time:year ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue :unitYear ;
+      owl:onProperty :unitType ;
+    ] ;
+  rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onProperty :decade
+    ] ;
+  rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onProperty :century
+    ] ;
+  skos:definition "Description of date and time structured with separate values for decade and century for when a year value is not specified. The temporal reference system is fixed to Gregorian Calendar."@en
+  .
+
 :Spring
   a :Season ;
   rdfs:label "Spring"@en ;

@@ -1,0 +1,13 @@
+@prefix lode: <http://linkedevents.org/ontology/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix edtfo: <https://periodo.github.io/edtf-literals/draft/> .
+
+_:something lode:atTime [
+    a time:Instant ;
+    time:inDateTime [
+      a edtfo:SuperYearDateTimeDescription ;
+      time:unitType time:unitYear ;
+      edtfo:century 20
+      ]
+    ]
+  .
