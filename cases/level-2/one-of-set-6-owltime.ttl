@@ -1,0 +1,27 @@
+@prefix lode: <http://linkedevents.org/ontology/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+_:when a time:Instant ;
+  time:inDateTime [
+    a time:DateTimeDescription ;
+    time:unitType time:unitYear ;
+    time:year "1984"^^xsd:gYear
+    ]
+  .
+
+_:something lode:atTime [
+    a rdf:Alt;
+    rdfs:member _:when ;
+    rdfs:member [
+      a time:Instant ;
+      time:before _:when ;
+      time:inDateTime [
+        a time:DateTimeDescription ;
+        time:unitType time:unitYear
+        ]
+      ]
+    ]
+  .
