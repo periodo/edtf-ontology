@@ -1,0 +1,17 @@
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix lode: <http://linkedevents.org/ontology/> .
+
+_:something lode:atTime [
+    a time:Instant ;
+    time:inDateTime [
+      a time:DateTimeDescription ;
+      time:unitType [
+        a time:TemporalUnit ;
+        time:years "1000"^^xsd:decimal
+        ] ;
+      # some XSD datatype processors may not support gYear values >= 10,000
+      time:year "338800"^^xsd:gYear
+      ]
+    ]
+  .
