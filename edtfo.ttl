@@ -246,8 +246,8 @@
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:hasValue :unitYear ;
-      owl:onProperty :unitType ;
+      owl:hasValue time:unitYear ;
+      owl:onProperty time:unitType ;
     ] ;
   rdfs:subClassOf [
     rdf:type owl:Restriction ;
@@ -365,7 +365,7 @@
   rdfs:label "Quarter 1"@en ;
   skos:prefLabel "Quarter 1"@en ;
   time:month "--01"^^xsd:gMonth ;
-  time:unitType time:unitQuarter
+  time:unitType :unitQuarter
   .
 
 :Quarter2
@@ -373,7 +373,7 @@
   rdfs:label "Quarter 2"@en ;
   skos:prefLabel "Quarter 2"@en ;
   time:month "--04"^^xsd:gMonth ;
-  time:unitType time:unitQuarter
+  time:unitType :unitQuarter
   .
 
 :Quarter3
@@ -381,7 +381,7 @@
   rdfs:label "Quarter 3"@en ;
   skos:prefLabel "Quarter 3"@en ;
   time:month "--07"^^xsd:gMonth ;
-  time:unitType time:unitQuarter
+  time:unitType :unitQuarter
   .
 
 :Quarter4
@@ -389,7 +389,7 @@
   rdfs:label "Quarter 4"@en ;
   skos:prefLabel "Quarter 4"@en ;
   time:month "--10"^^xsd:gMonth ;
-  time:unitType time:unitQuarter
+  time:unitType :unitQuarter
   .
 
 :Quadrimester1
@@ -397,7 +397,7 @@
   rdfs:label "Quadrimester 1"@en ;
   skos:prefLabel "Quadrimester 1"@en ;
   time:month "--01"^^xsd:gMonth ;
-  time:unitType time:unitQuadrimester
+  time:unitType :unitQuadrimester
   .
 
 :Quadrimester2
@@ -405,7 +405,7 @@
   rdfs:label "Quadrimester 2"@en ;
   skos:prefLabel "Quadrimester 2"@en ;
   time:month "--05"^^xsd:gMonth ;
-  time:unitType time:unitQuadrimester
+  time:unitType :unitQuadrimester
   .
 
 :Quadrimester3
@@ -413,7 +413,7 @@
   rdfs:label "Quadrimester 3"@en ;
   skos:prefLabel "Quadrimester 3"@en ;
   time:month "--09"^^xsd:gMonth ;
-  time:unitType time:unitQuadrimester
+  time:unitType :unitQuadrimester
   .
 
 :Semestral1
@@ -421,7 +421,7 @@
   rdfs:label "Semestral 1"@en ;
   skos:prefLabel "Semestral 1"@en ;
   time:month "--01"^^xsd:gMonth ;
-  time:unitType time:unitSemestral
+  time:unitType :unitSemestral
   .
 
 :Semestral2
@@ -429,5 +429,5 @@
   rdfs:label "Semestral 2"@en ;
   skos:prefLabel "Semestral 2"@en ;
   time:month "--07"^^xsd:gMonth ;
-  time:unitType time:unitSemestral
+  time:unitType :unitSemestral
   .
