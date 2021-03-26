@@ -1,0 +1,4 @@
+@prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
+@prefix lode: <http://linkedevents.org/ontology/> .
+
+_:something lode:atTime "2004-02-01/2005-02-08%"^^edtf:EDTF-level1 .

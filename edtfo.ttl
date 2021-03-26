@@ -262,6 +262,32 @@
   skos:definition "Description of date and time structured with separate values for decade and century for when a year value is not specified. The temporal reference system is fixed to Gregorian Calendar."@en
   .
 
+:OpenEndInterval
+  rdf:type owl:Class ;
+  rdfs:comment "A temporal entity with non-zero extent or duration and for which the value of the end is unspecified (perhaps because it does not exist but not because it is unknown)"@en ;
+  rdfs:label "Open end interval"@en ;
+  rdfs:subClassOf time:ProperInterval ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:cardinality "0"^^xsd:nonNegativeInteger ;
+    owl:onProperty time:hasEnd ;
+    ] ;
+  skos:definition "A temporal entity with non-zero extent or duration and for which the value of the end is unspecified (perhaps because it does not exist but not because it is unknown)"@en
+  .
+
+:OpenBeginningInterval
+  rdf:type owl:Class ;
+  rdfs:comment "A temporal entity with non-zero extent or duration and for which the value of the beginning is unspecified (perhaps because it does not exist but not because it is unknown)"@en ;
+  rdfs:label "Open beginning interval"@en ;
+  rdfs:subClassOf time:ProperInterval ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:cardinality "0"^^xsd:nonNegativeInteger ;
+    owl:onProperty time:hasBeginning ;
+    ] ;
+  skos:definition "A temporal entity with non-zero extent or duration and for which the value of the beginning is unspecified (perhaps because it does not exist but not because it is unknown)"@en
+  .
+
 :Spring
   a :Season ;
   rdfs:label "Spring"@en ;
