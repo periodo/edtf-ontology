@@ -1,0 +1,155 @@
+@base <https://periodo.github.io/edtf-literals/> .
+
+@prefix : <cases/level-2/one-of-set-1.ttl#> .
+@prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+<> a owl:Ontology ;
+  owl:imports <edtfo.ttl>
+  .
+
+:when a time:Instant ;
+  # One of the years 1667, 1668, 1670, 1671, 1672.
+  # Elements immediately preceeding and/or following as well as the elements
+  # represented by a double-dot, all have the same precision.
+  edtfo:inEDTFDateTime "[1667,1668,1670..1672]"^^edtf:EDTF-level2 ;
+  a :PossibleTime
+  .
+
+:PossibleTime a owl:Class ;
+  rdfs:subClassOf time:Instant ;
+  owl:disjointUnionOf (
+    :TimeIn1667
+    :TimeIn1668
+    :TimeIn1670
+    :TimeIn1671
+    :TimeIn1672
+    )
+  .
+
+# # If the set of possible times is closed, include the following axiom
+# [
+#     a owl:Restriction ;
+#     owl:onProperty [ owl:inverseOf time:inDateTime ] ;
+#     owl:hasValue :when
+# ]
+# owl:equivalentClass
+# [
+#     a owl:Class ;
+#     owl:unionOf (
+#       :1667
+#       :1668
+#       :1670
+#       :1671
+#       :1672
+#       )
+# ]
+# .
+
+:TimeIn1667 a owl:Class ;
+  rdfs:subClassOf time:Instant ;
+  owl:equivalentClass [
+    a owl:Restriction ;
+    owl:onProperty time:inDateTime ;
+    owl:someValuesFrom :1667
+    ]
+  .
+
+:TimeIn1668 a owl:Class ;
+  rdfs:subClassOf time:Instant ;
+  owl:equivalentClass [
+    a owl:Restriction ;
+    owl:onProperty time:inDateTime ;
+    owl:someValuesFrom :1668
+    ]
+  .
+
+:TimeIn1670 a owl:Class ;
+  rdfs:subClassOf time:Instant ;
+  owl:equivalentClass [
+    a owl:Restriction ;
+    owl:onProperty time:inDateTime ;
+    owl:someValuesFrom :1670
+    ]
+  .
+
+:TimeIn1671 a owl:Class ;
+  rdfs:subClassOf time:Instant ;
+  owl:equivalentClass [
+    a owl:Restriction ;
+    owl:onProperty time:inDateTime ;
+    owl:someValuesFrom :1671
+    ]
+  .
+
+:TimeIn1672 a owl:Class ;
+  rdfs:subClassOf time:Instant ;
+  owl:equivalentClass [
+    a owl:Restriction ;
+    owl:onProperty time:inDateTime ;
+    owl:someValuesFrom :1672
+    ]
+  .
+
+:YearPrecisionDescription a owl:Class ;
+  owl:intersectionOf (
+    time:DateTimeDescription
+    [ a owl:Restriction ;
+      owl:onProperty time:unitType ;
+      owl:hasValue time:unitYear
+      ]
+    )
+  .
+
+:1667 a owl:Class ;
+  owl:intersectionOf (
+    :YearPrecisionDescription
+    [ a owl:Restriction ;
+      owl:onProperty time:year ;
+      owl:hasValue 1667
+      ]
+    )
+  .
+
+:1668 a owl:Class ;
+  owl:intersectionOf (
+    :YearPrecisionDescription
+    [ a owl:Restriction ;
+      owl:onProperty time:year ;
+      owl:hasValue 1668
+      ]
+    )
+  .
+
+:1670 a owl:Class ;
+  owl:intersectionOf (
+    :YearPrecisionDescription
+    [ a owl:Restriction ;
+      owl:onProperty time:year ;
+      owl:hasValue 1670
+      ]
+    )
+  .
+
+:1671 a owl:Class ;
+  owl:intersectionOf (
+    :YearPrecisionDescription
+    [ a owl:Restriction ;
+      owl:onProperty time:year ;
+      owl:hasValue 1671
+      ]
+    )
+  .
+
+:1672 a owl:Class ;
+  owl:intersectionOf (
+    :YearPrecisionDescription
+    [ a owl:Restriction ;
+      owl:onProperty time:year ;
+      owl:hasValue 1672
+      ]
+    )
+  .
