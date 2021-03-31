@@ -1,7 +1,8 @@
-# baseURI: https://periodo.github.io/edtf-literals/draft
+@base <https://periodo.github.io/edtf-literals/edtfo.ttl> .
 
-@prefix : <https://periodo.github.io/edtf-literals/draft/> .
+@prefix : <#> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
 @prefix greg: <http://www.w3.org/ns/time/gregorian/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -10,7 +11,7 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://periodo.github.io/edtf-literals/draft>
+<>
   a owl:Ontology ;
   dct:creator <https://orcid.org/0000-0002-5486-159X> ;
   rdfs:comment "Draft ontology for EDTF concepts."@en ;
@@ -18,49 +19,43 @@
   owl:imports <http://www.w3.org/2006/time>
   .
 
-:unitSeason
-  a time:TemporalUnit ;
-  rdfs:label "Season (unit of temporal duration)"@en ;
-  skos:prefLabel "season"@en
-  .
-
-:unitQuarter
-  a time:TemporalUnit ;
-  rdfs:label "Quarter (unit of temporal duration equivalent to 3 months)"@en ;
-  skos:prefLabel "quarter"@en ;
-  time:days "0"^^xsd:decimal ;
-  time:hours "0"^^xsd:decimal ;
-  time:minutes "0"^^xsd:decimal ;
-  time:months "3"^^xsd:decimal ;
-  time:seconds "0"^^xsd:decimal ;
-  time:weeks "0"^^xsd:decimal ;
-  time:years "0"^^xsd:decimal
-  .
-
-:unitQuadrimester
-  a time:TemporalUnit ;
-  rdfs:label "Quadrimester (unit of temporal duration equivalent to 4 months)"@en ;
-  skos:prefLabel "quadrimester"@en ;
-  time:days "0"^^xsd:decimal ;
-  time:hours "0"^^xsd:decimal ;
-  time:minutes "0"^^xsd:decimal ;
-  time:months "4"^^xsd:decimal ;
-  time:seconds "0"^^xsd:decimal ;
-  time:weeks "0"^^xsd:decimal ;
-  time:years "0"^^xsd:decimal
-  .
-
-:unitSemestral
-  a time:TemporalUnit ;
-  rdfs:label "Semestral (unit of temporal duration equivalent to 6 months)"@en ;
-  skos:prefLabel "semestral"@en ;
-  time:days "0"^^xsd:decimal ;
-  time:hours "0"^^xsd:decimal ;
-  time:minutes "0"^^xsd:decimal ;
-  time:months "6"^^xsd:decimal ;
-  time:seconds "0"^^xsd:decimal ;
-  time:weeks "0"^^xsd:decimal ;
-  time:years "0"^^xsd:decimal
+:SubYearDateDescription
+  a owl:Class ;
+  rdfs:comment """Description of date structured with separate values
+for year and a sub-year grouping such as a season or quarter. The
+temporal reference system is fixed to Gregorian Calendar and the range
+of the year property is restricted to xsd:gYear."""@en ;
+  rdf:label "Sub-year date description"@en ;
+  rdfs:subClassOf time:TemporalPosition ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty time:unitType ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty :yearSubdivision ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty time:year ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:gYear ;
+      owl:onProperty time:year ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:hasValue <http://www.opengis.net/def/uom/ISO-8601/0/Gregorian> ;
+      owl:onProperty time:hasTRS ;
+    ] ;
+  skos:definition """Description of date structured with separate values
+for year and a sub-year grouping such as a season or quarter. The
+temporal reference system is fixed to Gregorian Calendar and the range
+of the year property is restricted to xsd:gYear."""@en
   .
 
 :YearSubdivision
@@ -69,7 +64,8 @@
   rdfs:label "Subdivision of year"@en ;
   rdfs:subClassOf owl:Thing ;
   skos:definition "A subdivision of the year"@en ;
-  skos:note "Membership of the class :YearSubdivision is open, to allow for alternative subdivisions."@en
+  skos:note """Membership of the class :YearSubdivision is open,
+to allow for alternative subdivisions."""@en
   .
 
 :Season
@@ -83,7 +79,8 @@
       owl:onProperty time:unitType ;
     ] ;
   skos:definition "A season of the year"@en ;
-  skos:note "Membership of the class :Season is open, to allow for alternative seasons."@en
+  skos:note """Membership of the class :Season is open,
+to allow for alternative seasons."""@en
   .
 
 :Quarter
@@ -140,131 +137,76 @@
   skos:definition "A semestral of the year"@en
   .
 
-:uncertainTemporalPosition
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "Uncertain position of a time instant"@en ;
-  rdfs:domain time:Instant ;
-  rdfs:label "Uncertain temporal position"@en ;
-  rdfs:range time:TemporalPosition ;
-  rdfs:subPropertyOf time:inTemporalPosition ;
-  skos:definition "Uncertain position of a time instant"@en ;
-  .
-
-:approximateTemporalPosition
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "Approximate position of a time instant"@en ;
-  rdfs:domain time:Instant ;
-  rdfs:label "Approximate temporal position"@en ;
-  rdfs:range time:TemporalPosition ;
-  rdfs:subPropertyOf time:inTemporalPosition ;
-  skos:definition "Approximate position of a time instant"@en ;
-  .
-
-:uncertainApproximateTemporalPosition
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "Uncertain and approximate position of a time instant"@en ;
-  rdfs:domain time:Instant ;
-  rdfs:label "Uncertain and approximate temporal position"@en ;
-  rdfs:range time:TemporalPosition ;
-  rdfs:subPropertyOf :uncertainTemporalPosition ;
-  rdfs:subPropertyOf :approximateTemporalPosition ;
-  skos:definition "Uncertain and approximate position of a time instant"@en ;
-  .
-
-:yearSubdivision
-  a owl:ObjectProperty ;
-  rdfs:comment "The subdivision of the year, whose value is a member of the class edtfo:YearSubdivision"@en ;
-  rdfs:domain :SubYearDateDescription ;
-  rdfs:label "year subdivision"@en ;
-  rdfs:range :YearSubdivision ;
-  skos:definition "The subdivision of the year, whose value is a member of the class edtfo:YearSubdivision"@en ;
-  .
-
-:SubYearDateDescription
-  a owl:Class ;
-  rdfs:comment "Description of date structured with separate values for year and a sub-year grouping such as a season or quarter. The temporal reference system is fixed to Gregorian Calendar and the range of the year property is restricted to xsd:gYear."@en ;
-  rdf:label "Sub-year date description"@en ;
-  rdfs:subClassOf time:TemporalPosition ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty time:unitType ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty :yearSubdivision ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty time:year ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom xsd:gYear ;
-      owl:onProperty time:year ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:hasValue <http://www.opengis.net/def/uom/ISO-8601/0/Gregorian> ;
-      owl:onProperty time:hasTRS ;
-    ] ;
-  skos:definition "Description of date structured with separate values for year and a sub-year grouping such as a season or quarter. The temporal reference system is fixed to Gregorian Calendar and the range of the year property is restricted to xsd:gYear."@en
-  .
-
-:decade
-  rdf:type owl:DatatypeProperty ;
-  rdfs:comment "Decade position in the Gregorian calendar; e.g. 197 is the decade starting with 1970"@en ;
-  rdfs:domain :SuperYearDateTimeDescription ;
-  rdfs:label "decade"@en ;
-  rdfs:range xsd:integer ;
-  skos:definition "Decade position in the Gregorian calendar; e.g. 197 is the decade starting with 1970"@en ;
-.
-
-:century
-  rdf:type owl:DatatypeProperty ;
-  rdfs:comment "Century position in the Gregorian calendar; e.g. 19 is the century starting with 1900"@en ;
-  rdfs:domain :SuperYearDateTimeDescription ;
-  rdfs:label "century"@en ;
-  rdfs:range xsd:integer ;
-  skos:definition "Century position in the Gregorian calendar; e.g. 19 is the century starting with 1900"@en ;
-.
-
-# decade implies century so descriptions should not use both
-:decade owl:propertyDisjointWith :century .
-
 :SuperYearDateTimeDescription
   a owl:Class ;
-  rdfs:comment "Description of date and time structured with separate values for decade and century for when the date has year precision but a year value is not specified. The temporal reference system is fixed to Gregorian Calendar."@en ;
+  rdfs:comment """Description of date and time structured with
+  separate values for decade or century or millennium, for when the
+  date has year precision but a year value is not specified. The
+  temporal reference system is fixed to Gregorian Calendar."""@en ;
   rdf:label "Super-year date description"@en ;
   rdfs:subClassOf time:DateTimeDescription ;
   rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "0"^^xsd:nonNegativeInteger ;
-      owl:onProperty time:year ;
+    a owl:Restriction ;
+    owl:cardinality "0"^^xsd:nonNegativeInteger ;
+    owl:onProperty time:year ;
     ] ;
   rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:hasValue time:unitYear ;
-      owl:onProperty time:unitType ;
+    a owl:Restriction ;
+    owl:hasValue time:unitYear ;
+    owl:onProperty time:unitType ;
     ] ;
+  skos:definition """Description of date and time structured with
+  separate values for decade or century or millennium, for when the
+  date has year precision but a year value is not specified. The
+  temporal reference system is fixed to Gregorian Calendar."""@en
+  .
+
+:DecadeDescription
+  a owl:Class ;
+  rdf:label "Decade description"@en ;
+  rdfs:subClassOf :SuperYearDateTimeDescription ;
   rdfs:subClassOf [
-    rdf:type owl:Restriction ;
+    a owl:Restriction ;
     owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onProperty :decade
-    ] ;
+    ]
+  .
+
+:CenturyDescription
+  a owl:Class ;
+  rdf:label "Century description"@en ;
+  rdfs:subClassOf :SuperYearDateTimeDescription ;
   rdfs:subClassOf [
-    rdf:type owl:Restriction ;
+    a owl:Restriction ;
     owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onProperty :century
-    ] ;
-  skos:definition "Description of date and time structured with separate values for decade and century for when a year value is not specified. The temporal reference system is fixed to Gregorian Calendar."@en
+    ]
+  .
+
+:MillenniumDescription
+  a owl:Class ;
+  rdf:label "Millennium description"@en ;
+  rdfs:subClassOf :SuperYearDateTimeDescription ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onProperty :millennium
+    ]
+  .
+
+[] a owl:AllDisjointClasses ;
+  owl:members (
+  :DecadeDescription
+  :CenturyDescription
+  :MillenniumDescription
+    )
   .
 
 :OpenEndInterval
-  rdf:type owl:Class ;
-  rdfs:comment "A temporal entity with non-zero extent or duration and for which the value of the end is unspecified (perhaps because it does not exist but not because it is unknown)"@en ;
+  a owl:Class ;
+  rdfs:comment """A temporal entity with non-zero extent or duration
+  and for which the value of the end is unspecified (perhaps because
+  it does not exist but not because it is unknown)"""@en ;
   rdfs:label "Open end interval"@en ;
   rdfs:subClassOf time:ProperInterval ;
   rdfs:subClassOf [
@@ -272,12 +214,16 @@
     owl:cardinality "0"^^xsd:nonNegativeInteger ;
     owl:onProperty time:hasEnd ;
     ] ;
-  skos:definition "A temporal entity with non-zero extent or duration and for which the value of the end is unspecified (perhaps because it does not exist but not because it is unknown)"@en
+  skos:definition """A temporal entity with non-zero extent or duration
+  and for which the value of the end is unspecified (perhaps because
+  it does not exist but not because it is unknown)"""@en ;
   .
 
 :OpenBeginningInterval
-  rdf:type owl:Class ;
-  rdfs:comment "A temporal entity with non-zero extent or duration and for which the value of the beginning is unspecified (perhaps because it does not exist but not because it is unknown)"@en ;
+  a owl:Class ;
+  rdfs:comment """A temporal entity with non-zero extent or duration
+  and for which the value of the beginning is unspecified (perhaps
+  because it does not exist but not because it is unknown)"""@en ;
   rdfs:label "Open beginning interval"@en ;
   rdfs:subClassOf time:ProperInterval ;
   rdfs:subClassOf [
@@ -285,7 +231,297 @@
     owl:cardinality "0"^^xsd:nonNegativeInteger ;
     owl:onProperty time:hasBeginning ;
     ] ;
-  skos:definition "A temporal entity with non-zero extent or duration and for which the value of the beginning is unspecified (perhaps because it does not exist but not because it is unknown)"@en
+  skos:definition """A temporal entity with non-zero extent or duration
+  and for which the value of the beginning is unspecified (perhaps
+  because it does not exist but not because it is unknown)"""@en
+  .
+
+:uncertainTemporalPosition
+  a owl:ObjectProperty ;
+  rdfs:comment "Uncertain position of a time instant"@en ;
+  rdfs:domain time:Instant ;
+  rdfs:label "uncertain temporal position"@en ;
+  rdfs:range time:TemporalPosition ;
+  rdfs:subPropertyOf time:inTemporalPosition ;
+  skos:definition "Uncertain position of a time instant"@en
+  .
+
+:approximateTemporalPosition
+  a owl:ObjectProperty ;
+  rdfs:comment "Approximate position of a time instant"@en ;
+  rdfs:domain time:Instant ;
+  rdfs:label "approximate temporal position"@en ;
+  rdfs:range time:TemporalPosition ;
+  rdfs:subPropertyOf time:inTemporalPosition ;
+  skos:definition "Approximate position of a time instant"@en
+  .
+
+:uncertainApproximateTemporalPosition
+  a owl:ObjectProperty ;
+  rdfs:comment "Uncertain and approximate position of a time instant"@en ;
+  rdfs:domain time:Instant ;
+  rdfs:label "uncertain and approximate temporal position"@en ;
+  rdfs:range time:TemporalPosition ;
+  rdfs:subPropertyOf :uncertainTemporalPosition ;
+  rdfs:subPropertyOf :approximateTemporalPosition ;
+  skos:definition "Uncertain and approximate position of a time instant"@en
+  .
+
+:yearSubdivision
+  a owl:ObjectProperty ;
+  rdfs:comment """The subdivision of the year,
+whose value is a member of the class edtfo:YearSubdivision"""@en ;
+  rdfs:domain :SubYearDateDescription ;
+  rdfs:label "year subdivision"@en ;
+  rdfs:range :YearSubdivision ;
+  skos:definition """The subdivision of the year,
+whose value is a member of the class edtfo:YearSubdivision"""@en
+  .
+
+:hasEDTFDateTimeDescription
+  a owl:DatatypeProperty ;
+  rdfs:comment "Value of an interval, expressed using EDTF"@en ;
+  rdfs:domain time:Interval ;
+  rdfs:label "has EDTF datetime description"@en ;
+  rdfs:range edtf:EDTF ;
+  skos:definition "Value of an interval, expressed using EDTF"@en
+  .
+
+:inEDTFDateTime
+  a owl:DatatypeProperty ;
+  rdfs:comment "Position of an instant, expressed using EDTF"@en ;
+  rdfs:domain time:Instant ;
+  rdfs:label "in EDTF datetime"@en ;
+  rdfs:range edtf:EDTF ;
+  skos:definition "Position of an instant, expressed using EDTF"@en
+  .
+
+:uncertainDay
+  a owl:DatatypeProperty ;
+  rdfs:comment "Uncertain day position in a calendar-clock system."@en ;
+  rdfs:domain time:GeneralDateTimeDescription ;
+  rdfs:label "uncertain day"@en ;
+  rdfs:subPropertyOf time:day ;
+  skos:definition "Uncertain day position in a calendar-clock system."@en
+  .
+
+:approximateDay
+  a owl:DatatypeProperty ;
+  rdfs:comment "Approximate day position in a calendar-clock system."@en ;
+  rdfs:domain time:GeneralDateTimeDescription ;
+  rdfs:label "approximate day"@en ;
+  rdfs:subPropertyOf time:day ;
+  skos:definition "Approximate day position in a calendar-clock system."@en
+  .
+
+:uncertainApproximateDay
+  a owl:DatatypeProperty ;
+  rdfs:comment """Uncertain and approximate day position
+in a calendar-clock system."""@en ;
+  rdfs:domain time:GeneralDateTimeDescription ;
+  rdfs:label "uncertain and approximate day"@en ;
+  rdfs:subPropertyOf :uncertainDay ;
+  rdfs:subPropertyOf :approximateDay ;
+  skos:definition """Uncertain and approximate day position
+in a calendar-clock system."""@en
+  .
+
+:uncertainMonth
+  a owl:DatatypeProperty ;
+  rdfs:comment "Uncertain month position in a calendar-clock system."@en ;
+  rdfs:domain time:GeneralDateTimeDescription ;
+  rdfs:label "uncertain month"@en ;
+  rdfs:subPropertyOf time:month ;
+  skos:definition "Uncertain month position in a calendar-clock system."@en
+  .
+
+:approximateMonth
+  a owl:DatatypeProperty ;
+  rdfs:comment "Approximate month position in a calendar-clock system."@en ;
+  rdfs:domain time:GeneralDateTimeDescription ;
+  rdfs:label "approximate month"@en ;
+  rdfs:subPropertyOf time:month ;
+  skos:definition "Approximate month position in a calendar-clock system."@en
+  .
+
+:uncertainApproximateMonth
+  a owl:DatatypeProperty ;
+  rdfs:comment """Uncertain and approximate month position
+in a calendar-clock system."""@en ;
+  rdfs:domain time:GeneralDateTimeDescription ;
+  rdfs:label "uncertain and approximate month"@en ;
+  rdfs:subPropertyOf :uncertainMonth ;
+  rdfs:subPropertyOf :approximateMonth ;
+  skos:definition """Uncertain and approximate month position
+in a calendar-clock system."""@en
+  .
+
+:uncertainYear
+  a owl:DatatypeProperty ;
+  rdfs:comment "Uncertain year position in a calendar-clock system."@en ;
+  rdfs:domain time:GeneralDateTimeDescription ;
+  rdfs:label "uncertain year"@en ;
+  rdfs:subPropertyOf time:year ;
+  skos:definition "Uncertain year position in a calendar-clock system."@en
+  .
+
+:approximateYear
+  a owl:DatatypeProperty ;
+  rdfs:comment "Approximate year position in a calendar-clock system."@en ;
+  rdfs:domain time:GeneralDateTimeDescription ;
+  rdfs:label "approximate year"@en ;
+  rdfs:subPropertyOf time:year ;
+  skos:definition "Approximate year position in a calendar-clock system."@en
+  .
+
+:uncertainApproximateYear
+  a owl:DatatypeProperty ;
+  rdfs:comment """Uncertain and approximate year position
+in a calendar-clock system."""@en ;
+  rdfs:domain time:GeneralDateTimeDescription ;
+  rdfs:label "uncertain and approximate year"@en ;
+  rdfs:subPropertyOf :uncertainYear ;
+  rdfs:subPropertyOf :approximateYear ;
+  skos:definition """Uncertain and approximate year position
+in a calendar-clock system."""@en
+  .
+
+:decade
+  a owl:DatatypeProperty ;
+  rdfs:comment """Decade position in the Gregorian calendar;
+e.g. 197 is the decade starting with 1970"""@en ;
+  rdfs:domain :DecadeDescription ;
+  rdfs:label "decade"@en ;
+  rdfs:range xsd:integer ;
+  skos:definition """Decade position in the Gregorian calendar;
+e.g. 197 is the decade starting with 1970"""@en
+  .
+
+:century
+  a owl:DatatypeProperty ;
+  rdfs:comment """Century position in the Gregorian calendar;
+e.g. 19 is the century starting with 1900"""@en ;
+  rdfs:domain :CenturyDescription ;
+  rdfs:label "century"@en ;
+  rdfs:range xsd:integer ;
+  skos:definition """Century position in the Gregorian calendar;
+e.g. 19 is the century starting with 1900"""@en
+  .
+
+:millennium
+  a owl:DatatypeProperty ;
+  rdfs:comment """Millennium position in the Gregorian calendar;
+e.g. 1 is the millennium starting with 1000"""@en ;
+  rdfs:domain :MillenniumDescription ;
+  rdfs:label "millennium"@en ;
+  rdfs:range xsd:integer ;
+  skos:definition """Millennium position in the Gregorian calendar;
+e.g. 1 is the century starting with 1000"""@en
+  .
+
+edtf:EDTF
+  a owl:Datatype ;
+  rdfs:comment """This datatype describes a date and time
+that adheres to features of EDTF Levels 0, 1, and 2."""@en ;
+  rdfs:label "Extended Date/Time Format"@en ;
+  skos:definition """This datatype describes a date and time
+that adheres to features of EDTF Levels 0, 1, and 2."""@en
+  .
+
+edtf:EDTF-level0
+  a owl:Datatype ;
+  rdfs:subClassOf edtf:EDTF;
+  rdfs:comment """Level 0 features describe dates, dates and times,
+and intervals. The latter are represented by start and end
+dates. Level 0 supports ISO 8601 features and could be considered a
+profile of ISO 8601."""@en ;
+  rdfs:label "Extended Date/Time Format - Level 0"@en ;
+  owl:onDatatype xsd:string ;
+  owl:withRestrictions ([
+      xsd:pattern ".*" # TODO
+      ]) ;
+  skos:definition """Level 0 features describe dates, dates and times,
+and intervals. The latter are represented by start and end
+dates. Level 0 supports ISO 8601 features and could be considered a
+profile of ISO 8601."""@en
+  .
+
+edtf:EDTF-level1
+  a owl:Datatype ;
+  rdfs:subClassOf edtf:EDTF;
+  rdfs:comment """Level 1 features describe uncertain, approximate, or
+unspecified dates, including provisions for intervals."""@en ;
+  rdfs:label "Extended Date/Time Format - Level 1"@en ;
+  owl:onDatatype xsd:string ;
+  owl:withRestrictions ([
+      xsd:pattern ".*" # TODO
+      ]) ;
+  skos:definition """Level 1 features describe uncertain, approximate, or
+unspecified dates, including provisions for intervals."""@en
+  .
+
+edtf:EDTF-level2
+  a owl:Datatype ;
+  rdfs:subClassOf edtf:EDTF;
+  rdfs:comment """Level 2 features provide a way to describe dates that
+have elements, such as days or months, that are known but which also
+have elements that are uncertain, approximate, or unspecified. Level
+2 also describes dates that are part of a set."""@en ;
+  rdfs:label "Extended Date/Time Format - Level 2"@en ;
+  owl:onDatatype xsd:string ;
+  owl:withRestrictions ([
+      xsd:pattern ".*" # TODO
+      ]) ;
+  skos:definition """Level 2 features provide a way to describe dates that
+have elements, such as days or months, that are known but which also
+have elements that are uncertain, approximate, or unspecified. Level
+2 also describes dates that are part of a set."""@en
+  .
+
+:unitSeason
+  a time:TemporalUnit ;
+  rdfs:label "Season (unit of temporal duration)"@en ;
+  skos:prefLabel "season"@en
+  .
+
+:unitQuarter
+  a time:TemporalUnit ;
+  rdfs:label "Quarter (unit of temporal duration equivalent to 3 months)"@en ;
+  skos:prefLabel "quarter"@en ;
+  time:days "0"^^xsd:decimal ;
+  time:hours "0"^^xsd:decimal ;
+  time:minutes "0"^^xsd:decimal ;
+  time:months "3"^^xsd:decimal ;
+  time:seconds "0"^^xsd:decimal ;
+  time:weeks "0"^^xsd:decimal ;
+  time:years "0"^^xsd:decimal
+  .
+
+:unitQuadrimester
+  a time:TemporalUnit ;
+  rdfs:label """Quadrimester (unit of temporal duration
+equivalent to 4 months)"""@en ;
+  skos:prefLabel "quadrimester"@en ;
+  time:days "0"^^xsd:decimal ;
+  time:hours "0"^^xsd:decimal ;
+  time:minutes "0"^^xsd:decimal ;
+  time:months "4"^^xsd:decimal ;
+  time:seconds "0"^^xsd:decimal ;
+  time:weeks "0"^^xsd:decimal ;
+  time:years "0"^^xsd:decimal
+  .
+
+:unitSemestral
+  a time:TemporalUnit ;
+  rdfs:label "Semestral (unit of temporal duration equivalent to 6 months)"@en ;
+  skos:prefLabel "semestral"@en ;
+  time:days "0"^^xsd:decimal ;
+  time:hours "0"^^xsd:decimal ;
+  time:minutes "0"^^xsd:decimal ;
+  time:months "6"^^xsd:decimal ;
+  time:seconds "0"^^xsd:decimal ;
+  time:weeks "0"^^xsd:decimal ;
+  time:years "0"^^xsd:decimal
   .
 
 :Spring
