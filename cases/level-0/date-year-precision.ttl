@@ -1,0 +1,20 @@
+@base <https://periodo.github.io/edtf-literals/> .
+
+@prefix : <cases/level-2/date-year-precision.ttl#> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+<> a owl:Ontology ;
+  owl:imports <edtfo.ttl>
+  .
+
+:when a time:Instant ;
+  # The calendar year 1985 with year precision.
+  edtfo:inDateTime "1985" ;
+  time:inDateTime [
+    a time:DateTimeDescription ;
+    time:unitType time:unitYear ;
+    time:year 1985
+    ]
+  .

@@ -1,0 +1,38 @@
+@base <https://periodo.github.io/edtf-literals/> .
+
+@prefix : <cases/level-2/interval-day-year-precision.ttl#> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+<> a owl:Ontology ;
+  owl:imports <edtfo.ttl>
+  .
+
+:when a time:ProperInterval ;
+  # A time interval beginning sometime on February 1, 2004
+  # and ending sometime in 2005.
+  # Since the start endpoint precision (day) is different than that of
+  # the end endpoint (year) the precision of the time interval at
+  # large is undefined.
+  edtfo:hasEDTFDateTimeDescription "2004-02-01/2005"
+  time:hasBeginning [
+    a time:Instant ;
+    time:inDateTime [
+      a time:DateTimeDescription ;
+      time:unitType time:unitDay ;
+      time:year 2004 ;
+      time:month 2 ;
+      time:day 1
+      ]
+    ]
+  ;
+  time:hasEnd [
+    a time:Instant ;
+    time:inDateTime [
+      a time:DateTimeDescription ;
+      time:unitType time:unitYear ;
+      time:year 2005
+      ]
+    ]
+  .

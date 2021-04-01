@@ -1,0 +1,21 @@
+@base <https://periodo.github.io/edtf-literals/> .
+
+@prefix : <cases/level-2/date-month-precision.ttl#> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+<> a owl:Ontology ;
+  owl:imports <edtfo.ttl>
+  .
+
+:when a time:Instant ;
+  # The calendar month 1985 April with month precision.
+  edtfo:inDateTime "1985-04" ;
+  time:inDateTime [
+    a time:DateTimeDescription ;
+    time:unitType time:unitMonth ;
+    time:month 4 ;
+    time:year 1985
+    ]
+  .

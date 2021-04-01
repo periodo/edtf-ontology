@@ -1,0 +1,45 @@
+@base <https://periodo.github.io/edtf-literals/> .
+
+@prefix : <cases/level-2/datetime-shifthour.ttl#> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+
+
+<> a owl:Ontology ;
+  owl:imports <edtfo.ttl>
+  .
+
+:when a time:Instant ;
+  # The date 1985 April 12th time of day 23:20:30
+  # with time shift of 4 hours behind UTC.
+  edtfo:inDateTime "1985-04-12T23:20:30-04"
+  .
+
+:timeShift
+  a time:ProperInterval ;
+  time:hasDuration [
+    time:numericDuration 4 ;
+    time:unitType time:unitHour
+    ]
+  ;
+  time:hasBeginning [
+    a time:Instant ;
+    time:inDateTime [
+      a time:DateTimeDescription ;
+      time:unitType time:unitSecond ;
+      time:timeZone wd:Q1536 ;
+      time:second 30 ;
+      time:minute 20 ;
+      time:hour 23 ;
+      time:day 12 ;
+      time:month 4 ;
+      time:year 1985
+      ]
+    ]
+  ;
+  time:hasEnd :when
+  .
+
+wd:Q1536 rdfs:label "Coordinated Universal Time"@en .

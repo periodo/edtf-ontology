@@ -1,0 +1,33 @@
+@base <https://periodo.github.io/edtf-literals/> .
+
+@prefix : <cases/level-2/interval-year-precision.ttl#> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+<> a owl:Ontology ;
+  owl:imports <edtfo.ttl>
+  .
+
+:when a time:ProperInterval ;
+  # a time interval with calendar year precision,
+  # beginning sometime in 1964 and ending sometime in 2008.
+  edtfo:hasEDTFDateTimeDescription "1964/2008"
+  time:hasBeginning [
+    a time:Instant ;
+    time:inDateTime [
+      a time:DateTimeDescription ;
+      time:unitType time:unitYear ;
+      time:year 1964
+      ]
+    ]
+  ;
+  time:hasEnd [
+    a time:Instant ;
+    time:inDateTime [
+      a time:DateTimeDescription ;
+      time:unitType time:unitYear ;
+      time:year 2008
+      ]
+    ]
+  .
