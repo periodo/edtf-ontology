@@ -287,6 +287,25 @@ whose value is a member of the class edtfo:YearSubdivision"""@en
   skos:definition "Value of an interval, expressed using EDTF"@en
   .
 
+:hasEDTFDateTimeSetDescription
+  a owl:DatatypeProperty ;
+  rdfs:comment """Value of a set of instants, expressed using EDTF
+
+This property is intended for use with EDTF level 2 “all members of set”
+(curly brackets) notation. For “one of a set” expressions use
+edtfo:inEDTFDateTime.
+"""@en ;
+  rdfs:domain owl:Class ;
+  rdfs:label "has EDTF datetime set description"@en ;
+  rdfs:range edtf:EDTF-level2 ;
+  skos:definition """Value of a set of instants, expressed using EDTF
+
+This property is intended for use with EDTF level 2 “all members of set”
+(curly brackets) notation. For “one of a set” expressions use
+edtfo:inEDTFDateTime.
+"""@en
+  .
+
 :inEDTFDateTime
   a owl:DatatypeProperty ;
   rdfs:comment "Position of an instant, expressed using EDTF"@en ;

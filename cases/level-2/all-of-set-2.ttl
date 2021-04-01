@@ -1,0 +1,82 @@
+@base <https://periodo.github.io/edtf-literals/> .
+
+@prefix : <cases/level-2/all-of-set-2.ttl#> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+<> a owl:Ontology ;
+  owl:imports <edtfo.ttl>
+  .
+
+:When a owl:Class ;
+  # The year 1960 and the month December of 1961.
+  edtfo:hasEDTFDateTimeSetDescription "{1960,1961-12}" ;
+  owl:disjointUnionOf (
+    :TimeIn1960
+    :TimeIn1961_12
+    )
+  .
+
+:TimeIn1960 a owl:Class ;
+  rdfs:subClassOf time:Instant ;
+  owl:equivalentClass [
+    a owl:Restriction ;
+    owl:onProperty time:inDateTime ;
+    owl:someValuesFrom :1960
+    ]
+  .
+
+:TimeIn1961_12 a owl:Class ;
+  rdfs:subClassOf time:Instant ;
+  owl:equivalentClass [
+    a owl:Restriction ;
+    owl:onProperty time:inDateTime ;
+    owl:someValuesFrom :1961_12
+    ]
+  .
+
+:YearPrecisionDescription a owl:Class ;
+  owl:intersectionOf (
+    time:DateTimeDescription
+    [ a owl:Restriction ;
+      owl:onProperty time:unitType ;
+      owl:hasValue time:unitYear
+      ]
+    )
+  .
+
+:MonthPrecisionDescription a owl:Class ;
+  owl:intersectionOf (
+    time:DateTimeDescription
+    [ a owl:Restriction ;
+      owl:onProperty time:unitType ;
+      owl:hasValue time:unitMonth
+      ]
+    )
+  .
+
+:1960 a owl:Class ;
+  owl:intersectionOf (
+    :YearPrecisionDescription
+    [ a owl:Restriction ;
+      owl:onProperty time:year ;
+      owl:hasValue 1960
+      ]
+    )
+  .
+
+:1961_12 a owl:Class ;
+  owl:intersectionOf (
+    :MonthPrecisionDescription
+    [ a owl:Restriction ;
+      owl:onProperty time:year ;
+      owl:hasValue 1961
+      ]
+    [ a owl:Restriction ;
+      owl:onProperty time:month ;
+      owl:hasValue 12
+      ]
+    )
+  .
