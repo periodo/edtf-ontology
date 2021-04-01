@@ -1,7 +1,7 @@
 @base <https://periodo.github.io/edtf-literals/> .
 
 @prefix : <cases/level-2/one-of-set-3.ttl#> .
-@prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
+@prefix : <cases/level-2/one-of-set-4.ttl#> .
 @prefix edtfo: <edtfo.ttl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -16,7 +16,7 @@
   # January or February of 1760, or December 1760, or some later month.
   # Elements immediately preceeding and/or following as well as the elements
   # represented by a double-dot, all have the same precision.
-  edtfo:atEDTFTime "[1760-01,1760-02,1760-12..]"^^edtf:EDTF-level2 ;
+  edtfo:atEDTFTime "[1760-01,1760-02,1760-12..]" ;
   a :PossibleTime
   .
 

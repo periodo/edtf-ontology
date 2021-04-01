@@ -1,7 +1,7 @@
 @base <https://periodo.github.io/edtf-literals/> .
 
 @prefix : <cases/level-2/one-of-set-3.ttl#> .
-@prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
+@prefix : <cases/level-2/one-of-set-5.ttl#> .
 @prefix edtfo: <edtfo.ttl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
