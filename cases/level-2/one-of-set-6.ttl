@@ -1,6 +1,5 @@
 @base <https://periodo.github.io/edtf-literals/> .
 
-@prefix : <cases/level-2/one-of-set-2.ttl#> .
 @prefix : <cases/level-2/one-of-set-6.ttl#> .
 @prefix edtfo: <edtfo.ttl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
