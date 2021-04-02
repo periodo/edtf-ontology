@@ -1,0 +1,29 @@
+@base <https://periodo.github.io/edtf-literals/> .
+
+@prefix : <cases/level-2/exponential-year-significant-digits.ttl#> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+<> a owl:Ontology ;
+  owl:imports <edtfo.ttl>
+  .
+
+:when a time:Instant ;
+  # Some year between 338000 and 338999, estimated to be 338800.
+  # 'Y' at the beginning of the string may be followed by an integer,
+  # followed by 'E' followed by a positive integer. This signifies
+  # "times 10 to the power of". Thus 17E8 means "17 times 10 to the
+  # eighth power".
+  # A year may be followed by 'S', followed by a positive integer
+  # indicating the number of significant digits.
+  edtfo:inEDTFDateTime "Y3388E2S3" ;
+  time:inDateTime [
+    a time:DateTimeDescription ;
+    time:unitType [
+      a time:TemporalUnit ;
+      time:years 1000
+      ] ;
+    time:year 338800
+    ]
+  .

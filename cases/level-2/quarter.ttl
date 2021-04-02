@@ -1,0 +1,21 @@
+@base <https://periodo.github.io/edtf-literals/> .
+
+@prefix : <cases/level-2/quarter.ttl#> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+<> a owl:Ontology ;
+  owl:imports <edtfo.ttl>
+  .
+
+:when a time:Instant ;
+  # Second quarter of 2001.
+  edtfo:inEDTFDateTime "2001-34" ;
+  time:inDateTime [
+    a edtfo:SubYearDateDescription ;
+    time:unitType edtfo:unitQuarter ;
+    edtfo:yearSubdivision edtfo:Quarter2 ;
+    time:year 2001
+    ]
+  .
