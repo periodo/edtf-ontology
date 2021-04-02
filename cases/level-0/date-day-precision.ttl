@@ -1,6 +1,6 @@
 @base <https://periodo.github.io/edtf-literals/> .
 
-@prefix : <cases/level-2/date-day-precision.ttl#> .
+@prefix : <cases/level-0/date-day-precision.ttl#> .
 @prefix edtfo: <edtfo.ttl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix time: <http://www.w3.org/2006/time#> .
