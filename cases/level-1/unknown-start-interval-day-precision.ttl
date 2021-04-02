@@ -1,0 +1,26 @@
+@base <https://periodo.github.io/edtf-literals/> .
+
+@prefix : <cases/level-1/unknown-start-interval-day-precision.ttl#> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+<> a owl:Ontology ;
+  owl:imports <edtfo.ttl>
+  .
+
+:when a time:ProperInterval ;
+  # Interval with unknown start; ending 1985 April 12th with day precision.
+  # A null string may be used for the start or end date when it is unknown.
+  edtfo:hasEDTFDateTimeDescription "/1985-04-12" ;
+  time:hasEnd [
+    a time:Instant ;
+    time:inDateTime [
+      a time:DateTimeDescription ;
+      time:unitType time:unitDay ;
+      time:year 1985 ;
+      time:month 4 ;
+      time:day 12
+      ]
+    ]
+  .

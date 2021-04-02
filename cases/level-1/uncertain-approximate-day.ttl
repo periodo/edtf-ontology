@@ -1,0 +1,22 @@
+@base <https://periodo.github.io/edtf-literals/> .
+
+@prefix : <cases/level-1/uncertain-approximate-day.ttl#> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+<> a owl:Ontology ;
+  owl:imports <edtfo.ttl>
+  .
+
+:when a time:Instant ;
+  # Entire date (year-month-day) uncertain and approximate.
+  edtfo:inEDTFDateTime "2004-06-11%" ;
+  edtfo:uncertainApproximateTemporalPosition  [
+    a time:DateTimeDescription ;
+    time:unitType time:unitDay ;
+    time:year 2004
+    time:month 6
+    time:day 11
+    ]
+  .

@@ -1,0 +1,21 @@
+@base <https://periodo.github.io/edtf-literals/> .
+
+@prefix : <cases/level-1/month-unspecified.ttl#> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+<> a owl:Ontology ;
+  owl:imports <edtfo.ttl>
+  .
+
+:when a time:Instant ;
+  # Year specified, month unspecified
+  # in a year-month expression (month precision).
+  edtfo:inEDTFDateTime "2004-XX" ;
+  time:inDateTime  [
+    a time:DateTimeDescription ;
+    time:unitType time:unitMonth ;
+    time:year 2004
+    ]
+  .

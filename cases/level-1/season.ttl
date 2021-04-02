@@ -1,0 +1,21 @@
+@base <https://periodo.github.io/edtf-literals/> .
+
+@prefix : <cases/level-1/season.ttl#> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+<> a owl:Ontology ;
+  owl:imports <edtfo.ttl>
+  .
+
+:when a time:Instant ;
+  # Spring, 2001.
+  edtfo:inEDTFDateTime "2001-21" ;
+  time:inDateTime [
+    a edtfo:SubYearDateDescription ;
+    time:unitType edtfo:unitSeason ;
+    edtfo:yearSubdivision edtfo:Spring ;
+    time:year 2001
+    ]
+  .

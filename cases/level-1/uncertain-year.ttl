@@ -1,0 +1,20 @@
+@base <https://periodo.github.io/edtf-literals/> .
+
+@prefix : <cases/level-1/uncertain-year.ttl#> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+<> a owl:Ontology ;
+  owl:imports <edtfo.ttl>
+  .
+
+:when a time:Instant ;
+  # Year uncertain (possibly the year 1984, but not definitely).
+  edtfo:inEDTFDateTime "1984?" ;
+  edtfo:uncertainTemporalPosition  [
+    a time:DateTimeDescription ;
+    time:unitType time:unitYear ;
+    time:year 1984
+    ]
+  .

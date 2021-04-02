@@ -1,0 +1,21 @@
+@base <https://periodo.github.io/edtf-literals/> .
+
+@prefix : <cases/level-1/approximate-month.ttl#> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+<> a owl:Ontology ;
+  owl:imports <edtfo.ttl>
+  .
+
+:when a time:Instant ;
+  # Year-month approximate.
+  edtfo:inEDTFDateTime "2004-06~" ;
+  edtfo:approximateTemporalPosition  [
+    a time:DateTimeDescription ;
+    time:unitType time:unitMonth ;
+    time:year 2004
+    time:month 6
+    ]
+  .

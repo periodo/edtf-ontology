@@ -1,0 +1,20 @@
+@base <https://periodo.github.io/edtf-literals/> .
+
+@prefix : <cases/level-1/letter-prefixed-negative-year.ttl#> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+<> a owl:Ontology ;
+  owl:imports <edtfo.ttl>
+  .
+
+:when a time:Instant ;
+  # The year -170000002.
+  edtfo:inEDTFDateTime "Y-170000002" ;
+  time:inDateTime [
+    a time:DateTimeDescription ;
+    time:unitType time:unitYear ;
+    time:year -170000002
+    ]
+  .
