@@ -26,11 +26,61 @@ for year and a sub-year grouping such as a season or quarter. The
 temporal reference system is fixed to Gregorian Calendar and the range
 of the year property is restricted to xsd:gYear."""@en ;
   rdf:label "Sub-year date description"@en ;
-  rdfs:subClassOf time:TemporalPosition ;
+  rdfs:subClassOf time:DateTimeDescription ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty time:unitType ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty time:day ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty time:dayOfWeek ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty time:dayOfYear ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty time:hour ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty time:minute ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty time:month ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty time:monthOfYear ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty time:second ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty time:timeZone ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty time:week ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -41,16 +91,6 @@ of the year property is restricted to xsd:gYear."""@en ;
       a owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty time:year ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom xsd:gYear ;
-      owl:onProperty time:year ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:hasValue <http://www.opengis.net/def/uom/ISO-8601/0/Gregorian> ;
-      owl:onProperty time:hasTRS ;
     ] ;
   skos:definition """Description of date structured with separate values
 for year and a sub-year grouping such as a season or quarter. The
