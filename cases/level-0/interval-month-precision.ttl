@@ -10,7 +10,7 @@
   .
 
 :when a time:ProperInterval ;
-  # a time interval with calendar month precision,
+  # A time interval with calendar month precision,
   # beginning sometime in June 2004 and ending sometime in August of 2006.
   edtfo:hasEDTFDateTimeDescription "2004-06/2006-08"
   time:hasBeginning [
