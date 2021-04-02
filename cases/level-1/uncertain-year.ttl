@@ -12,9 +12,16 @@
 :when a time:Instant ;
   # Year uncertain (possibly the year 1984, but not definitely).
   edtfo:inEDTFDateTime "1984?" ;
-  edtfo:uncertainTemporalPosition  [
-    a time:DateTimeDescription ;
-    time:unitType time:unitYear ;
-    time:year 1984
-    ]
+  time:inDateTime :1984
+  .
+
+:1984 a time:DateTimeDescription ;
+  time:unitType time:unitYear ;
+  time:year 1984
+  .
+
+:temporalPositionStatement a edtfo:UncertainStatement ;
+  rdf:subject :when ;
+  rdf:predicate time:inDateTime ;
+  rdf:object :1984
   .

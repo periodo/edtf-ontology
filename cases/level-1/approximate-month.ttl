@@ -12,10 +12,17 @@
 :when a time:Instant ;
   # Year-month approximate.
   edtfo:inEDTFDateTime "2004-06~" ;
-  edtfo:approximateTemporalPosition  [
-    a time:DateTimeDescription ;
-    time:unitType time:unitMonth ;
-    time:year 2004
-    time:month 6
-    ]
+  time:inDateTime :2004_06
+  .
+
+:2004_06 a time:DateTimeDescription ;
+  time:unitType time:unitMonth ;
+  time:year 2004
+  time:month 6
+  .
+
+:temporalPositionStatement a edtfo:ApproximateStatement ;
+  rdf:subject :when ;
+  rdf:predicate time:inDateTime ;
+  rdf:object :2004_06
   .

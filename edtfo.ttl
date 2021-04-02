@@ -276,35 +276,28 @@ to allow for alternative seasons."""@en
   because it does not exist but not because it is unknown)"""@en
   .
 
-:uncertainTemporalPosition
-  a owl:ObjectProperty ;
-  rdfs:comment "Uncertain position of a time instant"@en ;
-  rdfs:domain time:Instant ;
-  rdfs:label "uncertain temporal position"@en ;
-  rdfs:range time:TemporalPosition ;
-  rdfs:subPropertyOf time:inTemporalPosition ;
-  skos:definition "Uncertain position of a time instant"@en
+:QualifiedStatement
+  a owl:Class ;
+  rdfs:comment "A qualified (e.g. uncertain or approximate) statement"@en ;
+  rdfs:label "Qualified statement"@en ;
+  rdfs:subClassOf rdf:Statement ;
+  skos:definition "A qualified (e.g. uncertain or approximate) statement"@en
   .
 
-:approximateTemporalPosition
-  a owl:ObjectProperty ;
-  rdfs:comment "Approximate position of a time instant"@en ;
-  rdfs:domain time:Instant ;
-  rdfs:label "approximate temporal position"@en ;
-  rdfs:range time:TemporalPosition ;
-  rdfs:subPropertyOf time:inTemporalPosition ;
-  skos:definition "Approximate position of a time instant"@en
+:UncertainStatement
+  a owl:Class ;
+  rdfs:comment "An uncertain statement"@en ;
+  rdfs:label "Uncertain statement"@en ;
+  rdfs:subClassOf rdf:QualifiedStatement ;
+  skos:definition "An uncertain statement"@en
   .
 
-:uncertainApproximateTemporalPosition
-  a owl:ObjectProperty ;
-  rdfs:comment "Uncertain and approximate position of a time instant"@en ;
-  rdfs:domain time:Instant ;
-  rdfs:label "uncertain and approximate temporal position"@en ;
-  rdfs:range time:TemporalPosition ;
-  rdfs:subPropertyOf :uncertainTemporalPosition ;
-  rdfs:subPropertyOf :approximateTemporalPosition ;
-  skos:definition "Uncertain and approximate position of a time instant"@en
+:ApproximateStatement
+  a owl:Class ;
+  rdfs:comment "An approximate statement"@en ;
+  rdfs:label "Approximate statement"@en ;
+  rdfs:subClassOf rdf:QualifiedStatement ;
+  skos:definition "An approximate statement"@en
   .
 
 :yearSubdivision
@@ -353,96 +346,6 @@ edtfo:inEDTFDateTime.
   rdfs:label "in EDTF datetime"@en ;
   rdfs:range edtf:EDTF ;
   skos:definition "Position of an instant, expressed using EDTF"@en
-  .
-
-:uncertainDay
-  a owl:DatatypeProperty ;
-  rdfs:comment "Uncertain day position in a calendar-clock system."@en ;
-  rdfs:domain time:GeneralDateTimeDescription ;
-  rdfs:label "uncertain day"@en ;
-  rdfs:subPropertyOf time:day ;
-  skos:definition "Uncertain day position in a calendar-clock system."@en
-  .
-
-:approximateDay
-  a owl:DatatypeProperty ;
-  rdfs:comment "Approximate day position in a calendar-clock system."@en ;
-  rdfs:domain time:GeneralDateTimeDescription ;
-  rdfs:label "approximate day"@en ;
-  rdfs:subPropertyOf time:day ;
-  skos:definition "Approximate day position in a calendar-clock system."@en
-  .
-
-:uncertainApproximateDay
-  a owl:DatatypeProperty ;
-  rdfs:comment """Uncertain and approximate day position
-in a calendar-clock system."""@en ;
-  rdfs:domain time:GeneralDateTimeDescription ;
-  rdfs:label "uncertain and approximate day"@en ;
-  rdfs:subPropertyOf :uncertainDay ;
-  rdfs:subPropertyOf :approximateDay ;
-  skos:definition """Uncertain and approximate day position
-in a calendar-clock system."""@en
-  .
-
-:uncertainMonth
-  a owl:DatatypeProperty ;
-  rdfs:comment "Uncertain month position in a calendar-clock system."@en ;
-  rdfs:domain time:GeneralDateTimeDescription ;
-  rdfs:label "uncertain month"@en ;
-  rdfs:subPropertyOf time:month ;
-  skos:definition "Uncertain month position in a calendar-clock system."@en
-  .
-
-:approximateMonth
-  a owl:DatatypeProperty ;
-  rdfs:comment "Approximate month position in a calendar-clock system."@en ;
-  rdfs:domain time:GeneralDateTimeDescription ;
-  rdfs:label "approximate month"@en ;
-  rdfs:subPropertyOf time:month ;
-  skos:definition "Approximate month position in a calendar-clock system."@en
-  .
-
-:uncertainApproximateMonth
-  a owl:DatatypeProperty ;
-  rdfs:comment """Uncertain and approximate month position
-in a calendar-clock system."""@en ;
-  rdfs:domain time:GeneralDateTimeDescription ;
-  rdfs:label "uncertain and approximate month"@en ;
-  rdfs:subPropertyOf :uncertainMonth ;
-  rdfs:subPropertyOf :approximateMonth ;
-  skos:definition """Uncertain and approximate month position
-in a calendar-clock system."""@en
-  .
-
-:uncertainYear
-  a owl:DatatypeProperty ;
-  rdfs:comment "Uncertain year position in a calendar-clock system."@en ;
-  rdfs:domain time:GeneralDateTimeDescription ;
-  rdfs:label "uncertain year"@en ;
-  rdfs:subPropertyOf time:year ;
-  skos:definition "Uncertain year position in a calendar-clock system."@en
-  .
-
-:approximateYear
-  a owl:DatatypeProperty ;
-  rdfs:comment "Approximate year position in a calendar-clock system."@en ;
-  rdfs:domain time:GeneralDateTimeDescription ;
-  rdfs:label "approximate year"@en ;
-  rdfs:subPropertyOf time:year ;
-  skos:definition "Approximate year position in a calendar-clock system."@en
-  .
-
-:uncertainApproximateYear
-  a owl:DatatypeProperty ;
-  rdfs:comment """Uncertain and approximate year position
-in a calendar-clock system."""@en ;
-  rdfs:domain time:GeneralDateTimeDescription ;
-  rdfs:label "uncertain and approximate year"@en ;
-  rdfs:subPropertyOf :uncertainYear ;
-  rdfs:subPropertyOf :approximateYear ;
-  skos:definition """Uncertain and approximate year position
-in a calendar-clock system."""@en
   .
 
 :decade

@@ -12,11 +12,20 @@
 :when a time:Instant ;
   # Entire date (year-month-day) uncertain and approximate.
   edtfo:inEDTFDateTime "2004-06-11%" ;
-  edtfo:uncertainApproximateTemporalPosition  [
-    a time:DateTimeDescription ;
-    time:unitType time:unitDay ;
-    time:year 2004
-    time:month 6
-    time:day 11
-    ]
+  time:inDateTime :2004_06_11
+  .
+
+:2004_06_11 a time:DateTimeDescription ;
+  time:unitType time:unitDay ;
+  time:year 2004 ;
+  time:month 6 ;
+  time:day 11
+  .
+
+:temporalPositionStatement
+  a edtfo:UncertainStatement ;
+  a edtfo:ApproximateStatement ;
+  rdf:subject :when ;
+  rdf:predicate time:inDateTime ;
+  rdf:object :2004_06
   .
