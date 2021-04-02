@@ -14,7 +14,7 @@
 :when a time:Instant ;
   # The date 1985 April 12th time of day 23:20:30
   # with time shift of 4 hours and 30 minutes ahead of UTC.
-  edtfo:inDateTime "1985-04-12T23:20:30+04:30"
+  edtfo:inEDTFDateTime "1985-04-12T23:20:30+04:30"
   .
 
 :timeShift

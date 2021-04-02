@@ -11,7 +11,7 @@
 
 :when a time:Instant ;
   # The calendar month 1985 April with month precision.
-  edtfo:inDateTime "1985-04" ;
+  edtfo:inEDTFDateTime "1985-04" ;
   time:inDateTime [
     a time:DateTimeDescription ;
     time:unitType time:unitMonth ;

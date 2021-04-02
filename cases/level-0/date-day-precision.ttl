@@ -11,7 +11,7 @@
 
 :when a time:Instant ;
   # The calendar date 1985 April 12th with day precision.
-  edtfo:inDateTime "1985-04-12" ;
+  edtfo:inEDTFDateTime "1985-04-12" ;
   time:inDateTime [
     a time:DateTimeDescription ;
     time:unitType time:unitDay ;

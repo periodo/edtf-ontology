@@ -11,7 +11,7 @@
 
 :when a time:Instant ;
   # The date 1985 April 12th at 23:20:30 local time.
-  edtfo:inDateTime "1985-04-12T23:20:30" ;
+  edtfo:inEDTFDateTime "1985-04-12T23:20:30" ;
   time:inDateTime [
       a time:DateTimeDescription ;
       time:unitType time:unitSecond ;

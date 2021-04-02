@@ -11,7 +11,7 @@
 
 :when a time:Instant ;
   # The calendar year 1985 with year precision.
-  edtfo:inDateTime "1985" ;
+  edtfo:inEDTFDateTime "1985" ;
   time:inDateTime [
     a time:DateTimeDescription ;
     time:unitType time:unitYear ;
