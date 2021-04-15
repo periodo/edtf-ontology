@@ -17,18 +17,17 @@
   # left.
   edtfo:inEDTFDateTime "2004?-06-11" ;
   time:inDateTime :2004 ;
-  time:inDateTime :XXXX_06_11
+  time:inDateTime [
+    a time:DateTimeDescription ;
+    time:unitType time:unitDay ;
+    time:month 6 ;
+    time:day 11
+    ]
   .
 
 :2004 a time:DateTimeDescription ;
   time:unitType time:unitYear ;
   time:year 2004
-  .
-
-:XXXX_06_11 a time:DateTimeDescription ;
-  time:unitType time:unitDay ;
-  time:month 6 ;
-  time:day 11
   .
 
 :temporalPositionStatement a edtfo:UncertainStatement ;
