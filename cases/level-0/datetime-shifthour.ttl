@@ -3,6 +3,7 @@
 @prefix : <cases/level-0/datetime-shifthour.ttl#> .
 @prefix edtfo: <edtfo.ttl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix wd: <http://www.wikidata.org/entity/> .
 
