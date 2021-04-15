@@ -1,6 +1,6 @@
 @base <https://periodo.github.io/edtf-literals/> .
 
-@prefix : <cases/level-1/uncertain-approximate-day.ttl#> .
+@prefix : <cases/level-2/group-qualification-1.ttl#> .
 @prefix edtfo: <edtfo.ttl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
