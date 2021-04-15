@@ -22,7 +22,7 @@
 
 :2004_06 a time:DateTimeDescription ;
   time:unitType time:unitMonth ;
-  time:year 2004
+  time:year 2004 ;
   time:month 6
   .
 

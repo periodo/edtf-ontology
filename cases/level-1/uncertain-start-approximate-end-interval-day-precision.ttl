@@ -14,7 +14,7 @@
   # A time interval with calendar day precision,
   # beginning sometime on February 1, 2004 (uncertain)
   # and ending sometime on February 8, 2005 (approximate).
-  edtfo:hasEDTFDateTimeDescription "2004-02-01?/2005-02-08~"
+  edtfo:hasEDTFDateTimeDescription "2004-02-01?/2005-02-08~" ;
   time:hasBeginning :2004_02_01 ;
   time:hasEnd :2005_02_08
   .

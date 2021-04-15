@@ -13,7 +13,7 @@
   # A time interval with calendar day precision,
   # beginning sometime on February 1, 2004
   # and ending sometime on February 8, 2005.
-  edtfo:hasEDTFDateTimeDescription "2004-02-01/2005-02-08"
+  edtfo:hasEDTFDateTimeDescription "2004-02-01/2005-02-08" ;
   time:hasBeginning [
     a time:Instant ;
     time:inDateTime [

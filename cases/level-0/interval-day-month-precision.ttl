@@ -15,7 +15,7 @@
   # Since the start endpoint precision (day) is different than that of
   # the end endpoint (month) the precision of the time interval at
   # large is undefined.
-  edtfo:hasEDTFDateTimeDescription "2004-02-01/2005-02"
+  edtfo:hasEDTFDateTimeDescription "2004-02-01/2005-02" ;
   time:hasBeginning [
     a time:Instant ;
     time:inDateTime [

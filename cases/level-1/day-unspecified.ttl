@@ -16,7 +16,7 @@
   time:inDateTime  [
     a time:DateTimeDescription ;
     time:unitType time:unitDay ;
-    time:year 1985
+    time:year 1985 ;
     time:month 4
     ]
   .

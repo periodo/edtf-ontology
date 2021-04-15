@@ -12,7 +12,7 @@
 :when a time:ProperInterval ;
   # A time interval with calendar year precision,
   # beginning sometime in 1964 and ending sometime in 2008.
-  edtfo:hasEDTFDateTimeDescription "1964/2008"
+  edtfo:hasEDTFDateTimeDescription "1964/2008" ;
   time:hasBeginning [
     a time:Instant ;
     time:inDateTime [
