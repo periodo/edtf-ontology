@@ -1,0 +1,38 @@
+@base <https://periodo.github.io/edtf-literals/> .
+
+@prefix : <cases/level-2/group-qualification-3.ttl#> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+<> a owl:Ontology ;
+  owl:imports <edtfo.ttl>
+  .
+
+:when a time:Instant ;
+  # Year uncertain.
+  # A qualification character to the immediate right of a component
+  # applies to that component as well as to all components to the
+  # left.
+  edtfo:inEDTFDateTime "2004?-06-11" ;
+  time:inDateTime :2004 ;
+  time:inDateTime :XXXX_06_11
+  .
+
+:2004 a time:DateTimeDescription ;
+  time:unitType time:unitYear ;
+  time:year 2004
+  .
+
+:XXXX_06_11 a time:DateTimeDescription ;
+  time:unitType time:unitDay ;
+  time:month 6 ;
+  time:day 11
+  .
+
+:temporalPositionStatement a edtfo:UncertainStatement ;
+  rdf:subject :when ;
+  rdf:predicate time:inDateTime ;
+  rdf:object :2004
+  .
