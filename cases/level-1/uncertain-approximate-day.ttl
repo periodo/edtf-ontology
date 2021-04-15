@@ -28,5 +28,5 @@
   a edtfo:ApproximateStatement ;
   rdf:subject :when ;
   rdf:predicate time:inDateTime ;
-  rdf:object :2004_06
+  rdf:object :2004_06_11
   .
