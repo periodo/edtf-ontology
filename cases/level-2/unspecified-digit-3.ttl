@@ -1,0 +1,20 @@
+@base <https://periodo.github.io/edtf-literals/> .
+
+@prefix : <cases/level-2/unspecified-digit-3.ttl#> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+<> a owl:Ontology ;
+  owl:imports <edtfo.ttl>
+  .
+
+:when a time:Instant ;
+  # Some day in December in some year.
+  edtfo:inEDTFDateTime "XXXX-12-XX" ;
+  time:inDateTime  [
+    a time:DateTimeDescription ;
+    time:unitType time:unitDay ;
+    time:month 12
+    ]
+  .

@@ -1,0 +1,49 @@
+@base <https://periodo.github.io/edtf-literals/> .
+
+@prefix : <cases/level-2/unspecified-digit-6.ttl#> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<> a owl:Ontology ;
+  owl:imports <edtfo.ttl>
+  .
+
+:when a time:Instant ;
+  # October, November, or December 1984.
+  edtfo:atEDTFTime "1984-1X" ;
+  a :TimeIn1984_1X
+  .
+
+:TimeIn1984_1X a owl:Class ;
+  rdfs:subClassOf time:Instant ;
+  owl:equivalentClass [
+    a owl:Restriction ;
+    owl:onProperty time:inDateTime ;
+    owl:someValuesFrom :1984_1X
+    ]
+  .
+
+:1984_1X a owl:Class ;
+  owl:intersectionOf (
+    time:DateTimeDescription
+    [ a owl:Restriction ;
+      owl:onProperty time:unitType ;
+      owl:hasValue time:unitMonth
+      ]
+    [ a owl:Restriction ;
+      owl:onProperty time:year ;
+      owl:hasValue 1984
+      ]
+    [ a owl:Restriction ;
+      owl:onProperty time:month ;
+      owl:someValuesFrom [
+        a rdfs:Datatype ;
+        owl:onDatatype xsd:integer ;
+        owl:withRestrictions ([ xsd:minInclusive 10 ])
+        ]
+      ]
+    )
+  .

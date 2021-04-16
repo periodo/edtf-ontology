@@ -181,7 +181,7 @@ to allow for alternative seasons."""@en
   a owl:Class ;
   rdfs:comment """Description of date and time structured with
   separate values for decade or century or millennium, for when the
-  date has year precision but a year value is not specified. The
+  date has <= year precision but a year value is not specified. The
   temporal reference system is fixed to Gregorian Calendar."""@en ;
   rdf:label "Super-year date description"@en ;
   rdfs:subClassOf time:DateTimeDescription ;
@@ -190,14 +190,9 @@ to allow for alternative seasons."""@en
     owl:cardinality "0"^^xsd:nonNegativeInteger ;
     owl:onProperty time:year ;
     ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:hasValue time:unitYear ;
-    owl:onProperty time:unitType ;
-    ] ;
   skos:definition """Description of date and time structured with
   separate values for decade or century or millennium, for when the
-  date has year precision but a year value is not specified. The
+  date has <= year precision but a year value is not specified. The
   temporal reference system is fixed to Gregorian Calendar."""@en
   .
 
