@@ -1,0 +1,35 @@
+@base <https://periodo.github.io/edtf-literals/> .
+
+@prefix : <cases/level-2/qualified-interval-2.ttl#> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+<> a owl:Ontology ;
+  owl:imports <edtfo.ttl>
+  .
+
+:when a time:ProperInterval ;
+  # An interval beginning on an unspecified day in June 2004 and
+  # ending July 3 [2004].
+  edtfo:hasEDTFDateTimeDescription "2004-06-XX/2004-07-03" ;
+  time:hasBeginning [
+    a time:Instant ;
+    time:inDateTime  [
+      a time:DateTimeDescription ;
+      time:unitType time:unitDay ;
+      time:year 2004 ;
+      time:month 6
+      ]
+    ] ;
+  time:hasEnd [
+    a time:Instant ;
+    time:inDateTime [
+      a time:DateTimeDescription ;
+      time:unitType time:unitDay ;
+      time:year 2004 ;
+      time:month 7 ;
+      time:day 3
+      ]
+    ]
+  .

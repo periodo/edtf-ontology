@@ -1,0 +1,57 @@
+@base <https://periodo.github.io/edtf-literals/> .
+
+@prefix : <cases/level-2/qualified-interval-1.ttl#> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+<> a owl:Ontology ;
+  owl:imports <edtfo.ttl>
+  .
+
+:when a time:ProperInterval ;
+  # An interval in June 2004 beginning approximately the first and
+  # ending approximately the 20th.
+  edtfo:hasEDTFDateTimeDescription "2004-06-~01/2004-06-~20" ;
+  time:hasBeginning :beginning ;
+  time:hasEnd :end
+  .
+
+:beginning a time:Instant ;
+  time:inDateTime :2004_06 ;
+  time:inDateTime :01
+  .
+
+:end a time:Instant ;
+  time:inDateTime :2004_06 ;
+  time:inDateTime :20
+  .
+
+:2004_06 a time:DateTimeDescription ;
+  time:unitType time:unitMonth ;
+  time:year 2004 ;
+  time:month 6
+  .
+
+:01 a time:DateTimeDescription ;
+  time:unitType time:unitDay ;
+  time:day 1
+  .
+
+:20 a time:DateTimeDescription ;
+  time:unitType time:unitDay ;
+  time:day 20
+  .
+
+:temporalPositionStatement a edtfo:ApproximateStatement ;
+  rdf:subject :beginning ;
+  rdf:predicate time:inDateTime ;
+  rdf:object :01
+  .
+
+:temporalPositionStatement a edtfo:ApproximateStatement ;
+  rdf:subject :end ;
+  rdf:predicate time:inDateTime ;
+  rdf:object :20
+  .
