@@ -14,7 +14,7 @@
   # in a year-only expression (year precision).
   edtfo:inEDTFDateTime "201X" ;
   time:inDateTime  [
-    a edtfo:SuperYearDateTimeDescription ;
+    a edtfo:DecadeDescription ;
     time:unitType time:unitYear ;
     edtfo:decade 201
     ]
