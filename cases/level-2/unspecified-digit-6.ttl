@@ -13,7 +13,7 @@
 
 :when a time:Instant ;
   # October, November, or December 1984.
-  edtfo:atEDTFTime "1984-1X" ;
+  edtfo:inEDTFTime "1984-1X" ;
   a :TimeIn1984_1X
   .
 

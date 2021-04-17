@@ -13,7 +13,7 @@
 
 :when a time:Instant ;
   # Either the year 1667 or the month December of 1760.
-  edtfo:atEDTFTime "[1667,1760-12]" ;
+  edtfo:inEDTFTime "[1667,1760-12]" ;
   a :PossibleTime
   .
 
