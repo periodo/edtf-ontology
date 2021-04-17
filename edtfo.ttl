@@ -283,7 +283,7 @@ to allow for alternative seasons."""@en
   a owl:Class ;
   rdfs:comment "An uncertain statement"@en ;
   rdfs:label "Uncertain statement"@en ;
-  rdfs:subClassOf rdf:QualifiedStatement ;
+  rdfs:subClassOf :QualifiedStatement ;
   skos:definition "An uncertain statement"@en
   .
 
@@ -291,7 +291,7 @@ to allow for alternative seasons."""@en
   a owl:Class ;
   rdfs:comment "An approximate statement"@en ;
   rdfs:label "Approximate statement"@en ;
-  rdfs:subClassOf rdf:QualifiedStatement ;
+  rdfs:subClassOf :QualifiedStatement ;
   skos:definition "An approximate statement"@en
   .
 
