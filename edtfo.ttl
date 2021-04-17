@@ -436,13 +436,13 @@ have elements that are uncertain, approximate, or unspecified. Level
   .
 
 :unitSeason
-  a time:TemporalUnit ;
+  a time:TemporalUnit , owl:NamedIndividual ;
   rdfs:label "Season (unit of temporal duration)"@en ;
   skos:prefLabel "season"@en
   .
 
 :unitQuarter
-  a time:TemporalUnit ;
+  a time:TemporalUnit , owl:NamedIndividual ;
   rdfs:label "Quarter (unit of temporal duration equivalent to 3 months)"@en ;
   skos:prefLabel "quarter"@en ;
   time:days "0"^^xsd:decimal ;
@@ -455,7 +455,7 @@ have elements that are uncertain, approximate, or unspecified. Level
   .
 
 :unitQuadrimester
-  a time:TemporalUnit ;
+  a time:TemporalUnit , owl:NamedIndividual ;
   rdfs:label """Quadrimester (unit of temporal duration
 equivalent to 4 months)"""@en ;
   skos:prefLabel "quadrimester"@en ;
@@ -469,7 +469,7 @@ equivalent to 4 months)"""@en ;
   .
 
 :unitSemestral
-  a time:TemporalUnit ;
+  a time:TemporalUnit , owl:NamedIndividual ;
   rdfs:label "Semestral (unit of temporal duration equivalent to 6 months)"@en ;
   skos:prefLabel "semestral"@en ;
   time:days "0"^^xsd:decimal ;
@@ -482,79 +482,79 @@ equivalent to 4 months)"""@en ;
   .
 
 :Spring
-  a :Season ;
+  a :Season , owl:NamedIndividual ;
   rdfs:label "Spring"@en ;
   skos:prefLabel "Spring"@en
   .
 
 :SpringNorthernHemisphere
-  a :Season ;
+  a :Season , owl:NamedIndividual ;
   rdfs:label "Spring - Northern Hemisphere"@en ;
   skos:prefLabel "Spring - Northern Hemisphere"@en
   .
 
 :SpringSouthernHemisphere
-  a :Season ;
+  a :Season , owl:NamedIndividual ;
   rdfs:label "Spring - Southern Hemisphere"@en ;
   skos:prefLabel "Spring - Southern Hemisphere"@en
   .
 
 :Summer
-  a :Season ;
+  a :Season , owl:NamedIndividual ;
   rdfs:label "Summer"@en ;
   skos:prefLabel "Summer"@en
   .
 
 :SummerNorthernHemisphere
-  a :Season ;
+  a :Season , owl:NamedIndividual ;
   rdfs:label "Summer - Northern Hemisphere"@en ;
   skos:prefLabel "Summer - Northern Hemisphere"@en
   .
 
 :SummerSouthernHemisphere
-  a :Season ;
+  a :Season , owl:NamedIndividual ;
   rdfs:label "Summer - Southern Hemisphere"@en ;
   skos:prefLabel "Summer - Southern Hemisphere"@en
   .
 
 :Fall
-  a :Season ;
+  a :Season , owl:NamedIndividual ;
   rdfs:label "Fall"@en ;
   skos:prefLabel "Fall"@en
   .
 
 :FallNorthernHemisphere
-  a :Season ;
+  a :Season , owl:NamedIndividual ;
   rdfs:label "Fall - Northern Hemisphere"@en ;
   skos:prefLabel "Fall - Northern Hemisphere"@en
   .
 
 :FallSouthernHemisphere
-  a :Season ;
+  a :Season , owl:NamedIndividual ;
   rdfs:label "Fall - Southern Hemisphere"@en ;
   skos:prefLabel "Fall - Southern Hemisphere"@en
   .
 
 :Winter
-  a :Season ;
+  a :Season , owl:NamedIndividual ;
   rdfs:label "Winter"@en ;
   skos:prefLabel "Winter"@en
   .
 
 :WinterNorthernHemisphere
-  a :Season ;
+  a :Season , owl:NamedIndividual ;
   rdfs:label "Winter - Northern Hemisphere"@en ;
   skos:prefLabel "Winter - Northern Hemisphere"@en
   .
 
 :WinterSouthernHemisphere
-  a :Season ;
+  a :Season , owl:NamedIndividual ;
   rdfs:label "Winter - Southern Hemisphere"@en ;
   skos:prefLabel "Winter - Southern Hemisphere"@en
   .
 
 :Quarter1
-  a :Quarter ;
+  a :Quarter , owl:NamedIndividual ;
   rdfs:label "Quarter 1"@en ;
   skos:prefLabel "Quarter 1"@en ;
   time:month "--01"^^xsd:gMonth ;
@@ -562,7 +562,7 @@ equivalent to 4 months)"""@en ;
   .
 
 :Quarter2
-  a :Quarter ;
+  a :Quarter , owl:NamedIndividual ;
   rdfs:label "Quarter 2"@en ;
   skos:prefLabel "Quarter 2"@en ;
   time:month "--04"^^xsd:gMonth ;
@@ -570,7 +570,7 @@ equivalent to 4 months)"""@en ;
   .
 
 :Quarter3
-  a :Quarter ;
+  a :Quarter , owl:NamedIndividual ;
   rdfs:label "Quarter 3"@en ;
   skos:prefLabel "Quarter 3"@en ;
   time:month "--07"^^xsd:gMonth ;
@@ -578,7 +578,7 @@ equivalent to 4 months)"""@en ;
   .
 
 :Quarter4
-  a :Quarter ;
+  a :Quarter , owl:NamedIndividual ;
   rdfs:label "Quarter 4"@en ;
   skos:prefLabel "Quarter 4"@en ;
   time:month "--10"^^xsd:gMonth ;
@@ -586,7 +586,7 @@ equivalent to 4 months)"""@en ;
   .
 
 :Quadrimester1
-  a :Quadrimester ;
+  a :Quadrimester , owl:NamedIndividual ;
   rdfs:label "Quadrimester 1"@en ;
   skos:prefLabel "Quadrimester 1"@en ;
   time:month "--01"^^xsd:gMonth ;
@@ -594,7 +594,7 @@ equivalent to 4 months)"""@en ;
   .
 
 :Quadrimester2
-  a :Quadrimester ;
+  a :Quadrimester , owl:NamedIndividual ;
   rdfs:label "Quadrimester 2"@en ;
   skos:prefLabel "Quadrimester 2"@en ;
   time:month "--05"^^xsd:gMonth ;
@@ -602,7 +602,7 @@ equivalent to 4 months)"""@en ;
   .
 
 :Quadrimester3
-  a :Quadrimester ;
+  a :Quadrimester , owl:NamedIndividual ;
   rdfs:label "Quadrimester 3"@en ;
   skos:prefLabel "Quadrimester 3"@en ;
   time:month "--09"^^xsd:gMonth ;
@@ -610,7 +610,7 @@ equivalent to 4 months)"""@en ;
   .
 
 :Semestral1
-  a :Semestral ;
+  a :Semestral , owl:NamedIndividual ;
   rdfs:label "Semestral 1"@en ;
   skos:prefLabel "Semestral 1"@en ;
   time:month "--01"^^xsd:gMonth ;
@@ -618,7 +618,7 @@ equivalent to 4 months)"""@en ;
   .
 
 :Semestral2
-  a :Semestral ;
+  a :Semestral , owl:NamedIndividual ;
   rdfs:label "Semestral 2"@en ;
   skos:prefLabel "Semestral 2"@en ;
   time:month "--07"^^xsd:gMonth ;
