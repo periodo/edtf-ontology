@@ -1,4 +1,4 @@
-@base <https://periodo.github.io/edtf-literals/> .
+@base <https://periodo.github.io/edtf-ontology/> .
 
 @prefix : <cases/level-2/one-of-set-6.ttl#> .
 @prefix edtfo: <edtfo.ttl#> .
