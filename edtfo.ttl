@@ -21,10 +21,6 @@
 
 :SubYearDateTimeDescription
   a owl:Class ;
-  rdfs:comment """Description of date structured with separate values
-for year and a sub-year grouping such as a season or quarter. The
-temporal reference system is fixed to Gregorian Calendar and the range
-of the year property is restricted to xsd:gYear."""@en ;
   rdf:label "Sub-year date description"@en ;
   rdfs:subClassOf time:DateTimeDescription ;
   rdfs:subClassOf [
@@ -40,7 +36,6 @@ Calendar."""@en ;
 
 :YearSubdivision
   a owl:Class ;
-  rdfs:comment "A subdivision of the year"@en ;
   rdfs:label "Subdivision of year"@en ;
   rdfs:subClassOf owl:Thing ;
   skos:definition "A subdivision of the year"@en ;
@@ -50,7 +45,6 @@ to allow for alternative subdivisions."""@en
 
 :Season
   a owl:Class ;
-  rdfs:comment "A season of the year"@en ;
   rdfs:label "Season of year"@en ;
   rdfs:subClassOf :YearSubdivision ;
   rdfs:subClassOf [
@@ -65,7 +59,6 @@ to allow for alternative seasons."""@en
 
 :Quarter
   a owl:Class ;
-  rdfs:comment "A quarter of the year"@en ;
   rdfs:label "Quarter of year"@en ;
   rdfs:subClassOf :YearSubdivision ;
   rdfs:subClassOf [
@@ -84,7 +77,6 @@ to allow for alternative seasons."""@en
 
 :Quadrimester
   a owl:Class ;
-  rdfs:comment "A quadrimester of the year"@en ;
   rdfs:label "Quadrimester of year"@en ;
   rdfs:subClassOf :YearSubdivision ;
   rdfs:subClassOf [
@@ -102,7 +94,6 @@ to allow for alternative seasons."""@en
 
 :Semestral
   a owl:Class ;
-  rdfs:comment "A semestral of the year"@en ;
   rdfs:label "Semestral of year"@en ;
   rdfs:subClassOf :YearSubdivision ;
   rdfs:subClassOf [
@@ -119,10 +110,6 @@ to allow for alternative seasons."""@en
 
 :SuperYearDateTimeDescription
   a owl:Class ;
-  rdfs:comment """Description of date and time structured with
-  separate values for decade or century or millennium, for when the
-  date has <= year precision but a year value is not specified. The
-  temporal reference system is fixed to Gregorian Calendar."""@en ;
   rdf:label "Super-year date description"@en ;
   rdfs:subClassOf time:DateTimeDescription ;
   rdfs:subClassOf [
@@ -179,9 +166,6 @@ to allow for alternative seasons."""@en
 
 :OpenEndInterval
   a owl:Class ;
-  rdfs:comment """A temporal entity with non-zero extent or duration
-  and for which the value of the end is unspecified (perhaps because
-  it does not exist but not because it is unknown)"""@en ;
   rdfs:label "Open end interval"@en ;
   rdfs:subClassOf time:ProperInterval ;
   rdfs:subClassOf [
@@ -196,9 +180,6 @@ to allow for alternative seasons."""@en
 
 :OpenBeginningInterval
   a owl:Class ;
-  rdfs:comment """A temporal entity with non-zero extent or duration
-  and for which the value of the beginning is unspecified (perhaps
-  because it does not exist but not because it is unknown)"""@en ;
   rdfs:label "Open beginning interval"@en ;
   rdfs:subClassOf time:ProperInterval ;
   rdfs:subClassOf [
@@ -213,7 +194,6 @@ to allow for alternative seasons."""@en
 
 :QualifiedStatement
   a owl:Class ;
-  rdfs:comment "A qualified (e.g. uncertain or approximate) statement"@en ;
   rdfs:label "Qualified statement"@en ;
   rdfs:subClassOf rdf:Statement ;
   skos:definition "A qualified (e.g. uncertain or approximate) statement"@en
@@ -221,7 +201,6 @@ to allow for alternative seasons."""@en
 
 :UncertainStatement
   a owl:Class ;
-  rdfs:comment "An uncertain statement"@en ;
   rdfs:label "Uncertain statement"@en ;
   rdfs:subClassOf :QualifiedStatement ;
   skos:definition "An uncertain statement"@en
@@ -229,7 +208,6 @@ to allow for alternative seasons."""@en
 
 :ApproximateStatement
   a owl:Class ;
-  rdfs:comment "An approximate statement"@en ;
   rdfs:label "Approximate statement"@en ;
   rdfs:subClassOf :QualifiedStatement ;
   skos:definition "An approximate statement"@en
@@ -237,8 +215,6 @@ to allow for alternative seasons."""@en
 
 :yearSubdivision
   a owl:ObjectProperty ;
-  rdfs:comment """The subdivision of the year,
-whose value is a member of the class edtfo:YearSubdivision"""@en ;
   rdfs:domain :SubYearDateDescription ;
   rdfs:label "year subdivision"@en ;
   rdfs:range :YearSubdivision ;
@@ -248,7 +224,6 @@ whose value is a member of the class edtfo:YearSubdivision"""@en
 
 :hasEDTFDateTimeDescription
   a owl:DatatypeProperty ;
-  rdfs:comment "Value of an interval, expressed using EDTF"@en ;
   rdfs:domain time:Interval ;
   rdfs:label "has EDTF datetime description"@en ;
   rdfs:range edtf:EDTF ;
@@ -257,12 +232,6 @@ whose value is a member of the class edtfo:YearSubdivision"""@en
 
 :hasEDTFDateTimeSetDescription
   a owl:DatatypeProperty ;
-  rdfs:comment """Value of a set of instants, expressed using EDTF
-
-This property is intended for use with EDTF level 2 “all members of set”
-(curly brackets) notation. For “one of a set” expressions use
-edtfo:inEDTFDateTime.
-"""@en ;
   rdfs:domain owl:Class ;
   rdfs:label "has EDTF datetime set description"@en ;
   rdfs:range edtf:EDTF-level2 ;
@@ -276,7 +245,6 @@ edtfo:inEDTFDateTime.
 
 :inEDTFDateTime
   a owl:DatatypeProperty ;
-  rdfs:comment "Position of an instant, expressed using EDTF"@en ;
   rdfs:domain time:Instant ;
   rdfs:label "in EDTF datetime"@en ;
   rdfs:range edtf:EDTF ;
@@ -285,8 +253,6 @@ edtfo:inEDTFDateTime.
 
 :decade
   a owl:DatatypeProperty ;
-  rdfs:comment """Decade position in the Gregorian calendar;
-e.g. 197 is the decade starting with 1970"""@en ;
   rdfs:domain :DecadeDescription ;
   rdfs:label "decade"@en ;
   rdfs:range xsd:integer ;
@@ -296,8 +262,6 @@ e.g. 197 is the decade starting with 1970"""@en
 
 :century
   a owl:DatatypeProperty ;
-  rdfs:comment """Century position in the Gregorian calendar;
-e.g. 19 is the century starting with 1900"""@en ;
   rdfs:domain :CenturyDescription ;
   rdfs:label "century"@en ;
   rdfs:range xsd:integer ;
@@ -307,8 +271,6 @@ e.g. 19 is the century starting with 1900"""@en
 
 :millennium
   a owl:DatatypeProperty ;
-  rdfs:comment """Millennium position in the Gregorian calendar;
-e.g. 1 is the millennium starting with 1000"""@en ;
   rdfs:domain :MillenniumDescription ;
   rdfs:label "millennium"@en ;
   rdfs:range xsd:integer ;
@@ -318,8 +280,6 @@ e.g. 1 is the century starting with 1000"""@en
 
 edtf:EDTF
   a owl:Datatype ;
-  rdfs:comment """This datatype describes a date and time
-that adheres to features of EDTF Levels 0, 1, and 2."""@en ;
   rdfs:label "Extended Date/Time Format"@en ;
   skos:definition """This datatype describes a date and time
 that adheres to features of EDTF Levels 0, 1, and 2."""@en
@@ -328,10 +288,6 @@ that adheres to features of EDTF Levels 0, 1, and 2."""@en
 edtf:EDTF-level0
   a owl:Datatype ;
   rdfs:subClassOf edtf:EDTF;
-  rdfs:comment """Level 0 features describe dates, dates and times,
-and intervals. The latter are represented by start and end
-dates. Level 0 supports ISO 8601 features and could be considered a
-profile of ISO 8601."""@en ;
   rdfs:label "Extended Date/Time Format - Level 0"@en ;
   owl:onDatatype xsd:string ;
   owl:withRestrictions ([
@@ -346,8 +302,6 @@ profile of ISO 8601."""@en
 edtf:EDTF-level1
   a owl:Datatype ;
   rdfs:subClassOf edtf:EDTF;
-  rdfs:comment """Level 1 features describe uncertain, approximate, or
-unspecified dates, including provisions for intervals."""@en ;
   rdfs:label "Extended Date/Time Format - Level 1"@en ;
   owl:onDatatype xsd:string ;
   owl:withRestrictions ([
@@ -360,10 +314,6 @@ unspecified dates, including provisions for intervals."""@en
 edtf:EDTF-level2
   a owl:Datatype ;
   rdfs:subClassOf edtf:EDTF;
-  rdfs:comment """Level 2 features provide a way to describe dates that
-have elements, such as days or months, that are known but which also
-have elements that are uncertain, approximate, or unspecified. Level
-2 also describes dates that are part of a set."""@en ;
   rdfs:label "Extended Date/Time Format - Level 2"@en ;
   owl:onDatatype xsd:string ;
   owl:withRestrictions ([
@@ -423,56 +373,47 @@ equivalent to 4 months)"""@en ;
 
 :Spring
   a :Season , owl:NamedIndividual ;
-  rdfs:label "Spring"@en ;
-  skos:prefLabel "Spring"@en
+  rdfs:label "Spring"@en
   .
 
 :SpringNorthernHemisphere
   a :Season , owl:NamedIndividual ;
-  rdfs:label "Spring - Northern Hemisphere"@en ;
-  skos:prefLabel "Spring - Northern Hemisphere"@en
+  rdfs:label "Spring - Northern Hemisphere"@en
   .
 
 :SpringSouthernHemisphere
   a :Season , owl:NamedIndividual ;
-  rdfs:label "Spring - Southern Hemisphere"@en ;
-  skos:prefLabel "Spring - Southern Hemisphere"@en
+  rdfs:label "Spring - Southern Hemisphere"@en
   .
 
 :Summer
   a :Season , owl:NamedIndividual ;
-  rdfs:label "Summer"@en ;
-  skos:prefLabel "Summer"@en
+  rdfs:label "Summer"@en
   .
 
 :SummerNorthernHemisphere
   a :Season , owl:NamedIndividual ;
-  rdfs:label "Summer - Northern Hemisphere"@en ;
-  skos:prefLabel "Summer - Northern Hemisphere"@en
+  rdfs:label "Summer - Northern Hemisphere"@en
   .
 
 :SummerSouthernHemisphere
   a :Season , owl:NamedIndividual ;
-  rdfs:label "Summer - Southern Hemisphere"@en ;
-  skos:prefLabel "Summer - Southern Hemisphere"@en
+  rdfs:label "Summer - Southern Hemisphere"@en
   .
 
 :Fall
   a :Season , owl:NamedIndividual ;
-  rdfs:label "Fall"@en ;
-  skos:prefLabel "Fall"@en
+  rdfs:label "Fall"@en
   .
 
 :FallNorthernHemisphere
   a :Season , owl:NamedIndividual ;
-  rdfs:label "Fall - Northern Hemisphere"@en ;
-  skos:prefLabel "Fall - Northern Hemisphere"@en
+  rdfs:label "Fall - Northern Hemisphere"@en
   .
 
 :FallSouthernHemisphere
   a :Season , owl:NamedIndividual ;
-  rdfs:label "Fall - Southern Hemisphere"@en ;
-  skos:prefLabel "Fall - Southern Hemisphere"@en
+  rdfs:label "Fall - Southern Hemisphere"@en
   .
 
 :Winter
@@ -483,20 +424,17 @@ equivalent to 4 months)"""@en ;
 
 :WinterNorthernHemisphere
   a :Season , owl:NamedIndividual ;
-  rdfs:label "Winter - Northern Hemisphere"@en ;
-  skos:prefLabel "Winter - Northern Hemisphere"@en
+  rdfs:label "Winter - Northern Hemisphere"@en
   .
 
 :WinterSouthernHemisphere
   a :Season , owl:NamedIndividual ;
-  rdfs:label "Winter - Southern Hemisphere"@en ;
-  skos:prefLabel "Winter - Southern Hemisphere"@en
+  rdfs:label "Winter - Southern Hemisphere"@en
   .
 
 :Quarter1
   a :Quarter , owl:NamedIndividual ;
   rdfs:label "Quarter 1"@en ;
-  skos:prefLabel "Quarter 1"@en ;
   time:month "--01"^^xsd:gMonth ;
   time:unitType :unitQuarter
   .
@@ -504,7 +442,6 @@ equivalent to 4 months)"""@en ;
 :Quarter2
   a :Quarter , owl:NamedIndividual ;
   rdfs:label "Quarter 2"@en ;
-  skos:prefLabel "Quarter 2"@en ;
   time:month "--04"^^xsd:gMonth ;
   time:unitType :unitQuarter
   .
@@ -512,7 +449,6 @@ equivalent to 4 months)"""@en ;
 :Quarter3
   a :Quarter , owl:NamedIndividual ;
   rdfs:label "Quarter 3"@en ;
-  skos:prefLabel "Quarter 3"@en ;
   time:month "--07"^^xsd:gMonth ;
   time:unitType :unitQuarter
   .
@@ -520,7 +456,6 @@ equivalent to 4 months)"""@en ;
 :Quarter4
   a :Quarter , owl:NamedIndividual ;
   rdfs:label "Quarter 4"@en ;
-  skos:prefLabel "Quarter 4"@en ;
   time:month "--10"^^xsd:gMonth ;
   time:unitType :unitQuarter
   .
@@ -528,7 +463,6 @@ equivalent to 4 months)"""@en ;
 :Quadrimester1
   a :Quadrimester , owl:NamedIndividual ;
   rdfs:label "Quadrimester 1"@en ;
-  skos:prefLabel "Quadrimester 1"@en ;
   time:month "--01"^^xsd:gMonth ;
   time:unitType :unitQuadrimester
   .
@@ -536,7 +470,6 @@ equivalent to 4 months)"""@en ;
 :Quadrimester2
   a :Quadrimester , owl:NamedIndividual ;
   rdfs:label "Quadrimester 2"@en ;
-  skos:prefLabel "Quadrimester 2"@en ;
   time:month "--05"^^xsd:gMonth ;
   time:unitType :unitQuadrimester
   .
@@ -544,7 +477,6 @@ equivalent to 4 months)"""@en ;
 :Quadrimester3
   a :Quadrimester , owl:NamedIndividual ;
   rdfs:label "Quadrimester 3"@en ;
-  skos:prefLabel "Quadrimester 3"@en ;
   time:month "--09"^^xsd:gMonth ;
   time:unitType :unitQuadrimester
   .
@@ -552,7 +484,6 @@ equivalent to 4 months)"""@en ;
 :Semestral1
   a :Semestral , owl:NamedIndividual ;
   rdfs:label "Semestral 1"@en ;
-  skos:prefLabel "Semestral 1"@en ;
   time:month "--01"^^xsd:gMonth ;
   time:unitType :unitSemestral
   .
@@ -560,7 +491,6 @@ equivalent to 4 months)"""@en ;
 :Semestral2
   a :Semestral , owl:NamedIndividual ;
   rdfs:label "Semestral 2"@en ;
-  skos:prefLabel "Semestral 2"@en ;
   time:month "--07"^^xsd:gMonth ;
   time:unitType :unitSemestral
   .
