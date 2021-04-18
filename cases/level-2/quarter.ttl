@@ -13,7 +13,7 @@
   # Second quarter of 2001.
   edtfo:inEDTFDateTime "2001-34" ;
   time:inDateTime [
-    a edtfo:SubYearDateDescription ;
+    a edtfo:SubYearDateTimeDescription ;
     time:unitType edtfo:unitQuarter ;
     edtfo:yearSubdivision edtfo:Quarter2 ;
     time:year 2001

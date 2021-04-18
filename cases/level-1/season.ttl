@@ -13,7 +13,7 @@
   # Spring, 2001.
   edtfo:inEDTFDateTime "2001-21" ;
   time:inDateTime [
-    a edtfo:SubYearDateDescription ;
+    a edtfo:SubYearDateTimeDescription ;
     time:unitType edtfo:unitSeason ;
     edtfo:yearSubdivision edtfo:Spring ;
     time:year 2001
