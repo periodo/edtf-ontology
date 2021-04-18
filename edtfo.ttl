@@ -15,6 +15,7 @@
 
 <>
   a owl:Ontology ;
+  dct:title "Extended Date/Time Format (EDTF) concepts"@en ;
   dct:creator [
     sdo:name "Ryan Shaw" ;
     sdo:identifier <https://orcid.org/0000-0002-5486-159X> ;
@@ -31,9 +32,9 @@ can be reasoned about using standard OWL tools.
   dct:modified "2021-04-16"^^xsd:date ;
   owl:imports <http://www.w3.org/2006/time> ;
   owl:versionInfo "draft" ;
-  rdfs:label "Extended Date/Time Format (EDTF) concepts"@en ;
   sdo:codeRepository <https://github.com/periodo/edtf-ontology> ;
-  vann:preferredNamespacePrefix "edtfo"
+  vann:preferredNamespacePrefix "edtfo" ;
+  vann:preferredNamespaceUri "https://periodo.github.io/edtf-ontology/edtfo.ttl#"
   .
 
 <https://perio.do/>
