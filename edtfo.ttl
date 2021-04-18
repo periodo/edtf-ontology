@@ -7,16 +7,39 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <>
   a owl:Ontology ;
-  dct:creator <https://orcid.org/0000-0002-5486-159X> ;
-  rdfs:comment "Draft ontology for EDTF concepts."@en ;
+  dct:creator [
+    sdo:name "Ryan Shaw" ;
+    sdo:identifier <https://orcid.org/0000-0002-5486-159X> ;
+    sdo:email <mailto:ryanshaw@unc.edu> ;
+    sdo:affiliation <https://perio.do/>
+    ] ;
+  dct:description """
+This is a draft ontology of concepts for expressing [Extended Date/Time
+Format (EDTF)](https://www.loc.gov/standards/datetime/) constructs using
+the [Time Ontology in OWL](https://www.w3.org/TR/owl-time/). The goal is
+to support translation of EDTF strings into structured descriptions that
+can be reasoned about using standard OWL tools.
+"""@en ;
+  dct:modified "2021-04-16"^^xsd:date ;
+  owl:imports <http://www.w3.org/2006/time> ;
+  owl:versionInfo "draft" ;
   rdfs:label "Extended Date/Time Format (EDTF) concepts"@en ;
-  owl:imports <http://www.w3.org/2006/time>
+  sdo:codeRepository <https://github.com/periodo/edtf-ontology> ;
+  vann:preferredNamespacePrefix "edtfo"
+  .
+
+<https://perio.do/>
+  a sdo:Organization ;
+  sdo:name "PeriodO" ;
+  sdo:url <https://perio.do/>
   .
 
 :SubYearDateTimeDescription
@@ -32,6 +55,18 @@
 separate value for a sub-year grouping such as a season or
 quarter. The temporal reference system is fixed to Gregorian
 Calendar."""@en ;
+  skos:example """
+# spring of 2001
+
+ex:when a time:Instant ;
+  time:inDateTime [
+    a edtfo:SubYearDateTimeDescription ;
+    time:unitType edtfo:unitSeason ;
+    edtfo:yearSubdivision edtfo:Spring ;
+    time:year 2001
+    ]
+  .
+"""
   .
 
 :YearSubdivision
@@ -39,7 +74,7 @@ Calendar."""@en ;
   rdfs:label "Subdivision of year"@en ;
   rdfs:subClassOf owl:Thing ;
   skos:definition "A subdivision of the year"@en ;
-  skos:note """Membership of the class :YearSubdivision is open,
+  skos:note """Membership of the class `YearSubdivision` is open,
 to allow for alternative subdivisions."""@en
   .
 
@@ -53,7 +88,7 @@ to allow for alternative subdivisions."""@en
       owl:onProperty time:unitType ;
     ] ;
   skos:definition "A season of the year"@en ;
-  skos:note """Membership of the class :Season is open,
+  skos:note """Membership of the class `Season` is open,
 to allow for alternative seasons."""@en
   .
 
@@ -89,7 +124,7 @@ to allow for alternative seasons."""@en
     :Quadrimester2
     :Quadrimester3
     ) ;
-  skos:definition "A quadrimester of the year"@en
+  skos:definition "A quadrimester (four-month subdivision) of the year"@en
   .
 
 :Semestral
@@ -105,7 +140,7 @@ to allow for alternative seasons."""@en
     :Semestral1
     :Semestral2
     ) ;
-  skos:definition "A semestral of the year"@en
+  skos:definition "A semestral (six-month subdivision) of the year"@en
   .
 
 :SuperYearDateTimeDescription
@@ -117,10 +152,14 @@ to allow for alternative seasons."""@en
     owl:cardinality "0"^^xsd:nonNegativeInteger ;
     owl:onProperty time:year ;
     ] ;
-  skos:definition """Description of date and time structured with
-  separate values for decade or century or millennium, for when the
-  date has <= year precision but a year value is not specified. The
-  temporal reference system is fixed to Gregorian Calendar."""@en
+  skos:definition """Description of date and time structured with a
+  separate value for specifying a temporal position at a precision
+  coarser than a year (e.g. decade or century or millennium). The
+  temporal reference system is fixed to Gregorian Calendar."""@en ;
+  skos:scopeNote """Since it only makes sense to specify a temporal
+  position at a precision coarser than a year if the exact year is
+  *not* specified, super-year datetime descriptions must not have any
+  `time:year` properties."""
   .
 
 :DecadeDescription
@@ -131,7 +170,22 @@ to allow for alternative seasons."""@en
     a owl:Restriction ;
     owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onProperty :decade
+    ] ;
+  skos:definition """Description of date and time structured with
+  a separate values for specifying temporal position at precisions
+  greater than a year (e.g. decade or century or millennium). The
+  temporal reference system is fixed to Gregorian Calendar."""@en ;
+  skos:example """
+# some year in the 2010s
+
+ex:when a time:Instant ;
+  time:inDateTime  [
+    a edtfo:DecadeDescription ;
+    time:unitType time:unitYear ;
+    edtfo:decade 201
     ]
+  .
+"""
   .
 
 :CenturyDescription
@@ -142,7 +196,18 @@ to allow for alternative seasons."""@en
     a owl:Restriction ;
     owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onProperty :century
+    ] ;
+    skos:example """
+# some year in the 20th century
+
+ex:when a time:Instant ;
+  time:inDateTime  [
+    a edtfo:CenturyDescription ;
+    time:unitType time:unitYear ;
+    edtfo:century 20
     ]
+  .
+"""
   .
 
 :MillenniumDescription
@@ -153,7 +218,18 @@ to allow for alternative seasons."""@en
     a owl:Restriction ;
     owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onProperty :millennium
+    ] ;
+    skos:example """
+# some month in the 1st millennium
+
+ex:when a time:Instant ;
+  time:inDateTime  [
+    a edtfo:MillenniumDescription ;
+    time:unitType time:unitMonth ;
+    edtfo:millennium 1
     ]
+  .
+"""
   .
 
 [] a owl:AllDisjointClasses ;
@@ -175,7 +251,23 @@ to allow for alternative seasons."""@en
     ] ;
   skos:definition """A temporal entity with non-zero extent or duration
   and for which the value of the end is unspecified (perhaps because
-  it does not exist but not because it is unknown)"""@en ;
+  it does not exist, but not because it is unknown)"""@en ;
+  skos:example """
+# interval starting April 12th 1985; end unspecified
+
+ex:when a edtfo:OpenEndInterval ;
+  time:hasBeginning [
+    a time:Instant ;
+    time:inDateTime [
+      a time:DateTimeDescription ;
+      time:unitType time:unitDay ;
+      time:year 1985 ;
+      time:month 4 ;
+      time:day 12
+      ]
+    ]
+  .
+"""
   .
 
 :OpenBeginningInterval
@@ -189,7 +281,23 @@ to allow for alternative seasons."""@en
     ] ;
   skos:definition """A temporal entity with non-zero extent or duration
   and for which the value of the beginning is unspecified (perhaps
-  because it does not exist but not because it is unknown)"""@en
+  because it does not exist, but not because it is unknown)"""@en ;
+  skos:example """
+# interval ending April 12th 1985; beginning unspecified
+
+ex:when a edtfo:OpenBeginningInterval ;
+  time:hasEnd [
+    a time:Instant ;
+    time:inDateTime [
+      a time:DateTimeDescription ;
+      time:unitType time:unitDay ;
+      time:year 1985 ;
+      time:month 4 ;
+      time:day 12
+      ]
+    ]
+  .
+"""
   .
 
 :QualifiedStatement
@@ -203,23 +311,60 @@ to allow for alternative seasons."""@en
   a owl:Class ;
   rdfs:label "Uncertain statement"@en ;
   rdfs:subClassOf :QualifiedStatement ;
-  skos:definition "An uncertain statement"@en
+  skos:definition "An uncertain statement"@en ;
+  skos:example """
+# possibly but not certainly 1984
+
+ex:when a time:Instant ;
+  time:inDateTime ex:1984
+  .
+
+ex:1984 a time:DateTimeDescription ;
+  time:unitType time:unitYear ;
+  time:year 1984
+  .
+
+ex:temporalPositionStatement a edtfo:UncertainStatement ;
+  rdf:subject ex:when ;
+  rdf:predicate time:inDateTime ;
+  rdf:object ex:1984
+  .
+"""
   .
 
 :ApproximateStatement
   a owl:Class ;
   rdfs:label "Approximate statement"@en ;
   rdfs:subClassOf :QualifiedStatement ;
-  skos:definition "An approximate statement"@en
+  skos:definition "An approximate statement"@en ;
+  skos:example """
+# approximately June 2004
+
+ex:when a time:Instant ;
+  time:inDateTime ex:2004_06
+  .
+
+ex:2004_06 a time:DateTimeDescription ;
+  time:unitType time:unitMonth ;
+  time:year 2004 ;
+  time:month 6
+  .
+
+ex:temporalPositionStatement a edtfo:ApproximateStatement ;
+  rdf:subject ex:when ;
+  rdf:predicate time:inDateTime ;
+  rdf:object ex:2004_06
+  .
+"""
   .
 
 :yearSubdivision
   a owl:ObjectProperty ;
-  rdfs:domain :SubYearDateDescription ;
+  rdfs:domain :SubYearDateTimeDescription ;
   rdfs:label "year subdivision"@en ;
   rdfs:range :YearSubdivision ;
   skos:definition """The subdivision of the year,
-whose value is a member of the class edtfo:YearSubdivision"""@en
+whose value is a member of the class `edtfo:YearSubdivision`"""@en
   .
 
 :hasEDTFDateTimeDescription
@@ -239,7 +384,7 @@ whose value is a member of the class edtfo:YearSubdivision"""@en
 
 This property is intended for use with EDTF level 2 “all members of set”
 (curly brackets) notation. For “one of a set” expressions use
-edtfo:inEDTFDateTime.
+`edtfo:inEDTFDateTime`.
 """@en
   .
 
@@ -257,7 +402,7 @@ edtfo:inEDTFDateTime.
   rdfs:label "decade"@en ;
   rdfs:range xsd:integer ;
   skos:definition """Decade position in the Gregorian calendar;
-e.g. 197 is the decade starting with 1970"""@en
+e.g. `197` is the decade starting with 1970"""@en
   .
 
 :century
@@ -266,7 +411,7 @@ e.g. 197 is the decade starting with 1970"""@en
   rdfs:label "century"@en ;
   rdfs:range xsd:integer ;
   skos:definition """Century position in the Gregorian calendar;
-e.g. 19 is the century starting with 1900"""@en
+e.g. `19` is the century starting with 1900"""@en
   .
 
 :millennium
@@ -275,7 +420,7 @@ e.g. 19 is the century starting with 1900"""@en
   rdfs:label "millennium"@en ;
   rdfs:range xsd:integer ;
   skos:definition """Millennium position in the Gregorian calendar;
-e.g. 1 is the century starting with 1000"""@en
+e.g. `1` is the century starting with 1000"""@en
   .
 
 edtf:EDTF
