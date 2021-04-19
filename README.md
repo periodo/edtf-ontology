@@ -1,17 +1,33 @@
-# EDTF literals in RDF
+# EDTF in RDF/OWL
 
-This repository is for discussion and development of a set of test cases for implementing “rich literals” containing [Extended Date/Time Format (EDTF)](https://www.loc.gov/standards/datetime/) values, i.e. literals having one of the [EDTF datatypes](https://id.loc.gov/datatypes/edtf.html).
+This repository is for discussion and development of standards, best
+practices, and tools for using [Extended Date/Time Format
+(EDTF)](https://www.loc.gov/standards/datetime/) in RDF and OWL.
 
-The term “rich literal” comes from [a comment by David Booth](https://lists.w3.org/Archives/Public/semantic-web/2020Jul/0200.html):
+Currently it contains:
 
-> I could see rich literals being quite helpful in making RDF easier to 
-use, provided that the literal<->RDF mapping is available.  This mapping 
-requires two functions: one from a given literal to RDF, and the other 
-from RDF to literal.
+* A [draft ontology](https://periodo.github.io/edtf-ontology/)
+  extending the [Time Ontology](https://www.w3.org/TR/owl-time/) to
+  model EDTF concepts
 
-> Ideally, these mapping functions should be defined "in-band" in the RDF 
-itself, so that data can always be self-describing, and all standard 
-tools would automatically support it, without depending on additional 
-software installation for each new rich literal type.
+* A set of Turtle files using this ontology to model the different
+  examples from the EDTF specification for EDTF [level
+  0](cases/level-0#readme), [level 1](cases/level-1#readme), and
+  [level 2](cases/level-2#readme).
 
-More broadly, this is a place for discussing the using of EDTF in RDF and with both EDTF-aware and non-EDTF-aware RDF tools.
+Initially we just hope to reach consensus on how EDTF maps onto the
+Time Ontology.
+
+Future work may include:
+
+* Rules for automatically inferring Time Ontology constructs from EDTF
+  strings
+
+* Standards for linking datatypes to such rules so that non-EDTF aware
+  tools can process EDTF (see [David Booth's speculation about “rich
+  literals”](https://lists.w3.org/Archives/Public/semantic-web/2020Jul/0200.html))
+
+* Mapping to other temporal ontologies such as
+  [CIDOC-CRM](http://www.cidoc-crm.org/)
+
+See the [discussions](discussions) for more.
