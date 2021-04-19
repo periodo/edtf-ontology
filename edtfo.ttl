@@ -15,6 +15,7 @@
 
 dct:creator a owl:AnnotationProperty .
 dct:description a owl:AnnotationProperty .
+dct:license a owl:AnnotationProperty .
 dct:modified a owl:AnnotationProperty .
 dct:title a owl:AnnotationProperty .
 sdo:codeRepository a owl:AnnotationProperty .
@@ -37,6 +38,7 @@ the [Time Ontology in OWL](https://www.w3.org/TR/owl-time/). The goal is
 to support translation of EDTF strings into structured descriptions that
 can be reasoned about using standard OWL tools.
 """@en ;
+  dct:license <http://creativecommons.org/publicdomain/mark/1.0/> ;
   dct:modified "2021-04-19"^^xsd:date ;
   owl:imports <http://www.w3.org/2006/time> ;
   owl:versionInfo "draft" ;
