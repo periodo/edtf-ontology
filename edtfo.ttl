@@ -13,6 +13,14 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+dct:creator a owl:AnnotationProperty .
+dct:description a owl:AnnotationProperty .
+dct:modified a owl:AnnotationProperty .
+dct:title a owl:AnnotationProperty .
+sdo:codeRepository a owl:AnnotationProperty .
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+
 <>
   a owl:Ontology ;
   dct:title "Extended Date/Time Format (EDTF) concepts"@en ;
@@ -29,23 +37,25 @@ the [Time Ontology in OWL](https://www.w3.org/TR/owl-time/). The goal is
 to support translation of EDTF strings into structured descriptions that
 can be reasoned about using standard OWL tools.
 """@en ;
-  dct:modified "2021-04-16"^^xsd:date ;
+  dct:modified "2021-04-19"^^xsd:date ;
   owl:imports <http://www.w3.org/2006/time> ;
   owl:versionInfo "draft" ;
   sdo:codeRepository <https://github.com/periodo/edtf-ontology> ;
   vann:preferredNamespacePrefix "edtfo" ;
-  vann:preferredNamespaceUri "https://periodo.github.io/edtf-ontology/edtfo.ttl#"
+  vann:preferredNamespaceUri
+  "https://periodo.github.io/edtf-ontology/edtfo.ttl#"
   .
 
 <https://perio.do/>
   a sdo:Organization ;
+  rdfs:label "PeriodO" ;
   sdo:name "PeriodO" ;
   sdo:url <https://perio.do/>
   .
 
 :SubYearDateTimeDescription
   a owl:Class ;
-  rdf:label "Sub-year date description"@en ;
+  rdfs:label "Sub-year date description"@en ;
   rdfs:subClassOf time:DateTimeDescription ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -56,8 +66,7 @@ can be reasoned about using standard OWL tools.
 separate value for a sub-year grouping such as a season or
 quarter. The temporal reference system is fixed to Gregorian
 Calendar."""@en ;
-  skos:example """
-# spring of 2001
+  skos:example """# spring of 2001
 
 ex:when a time:Instant ;
   time:inDateTime [
@@ -66,8 +75,7 @@ ex:when a time:Instant ;
     edtfo:yearSubdivision edtfo:Spring ;
     time:year 2001
     ]
-  .
-"""
+  ."""
   .
 
 :YearSubdivision
@@ -146,7 +154,7 @@ to allow for alternative seasons."""@en
 
 :SuperYearDateTimeDescription
   a owl:Class ;
-  rdf:label "Super-year date description"@en ;
+  rdfs:label "Super-year date description"@en ;
   rdfs:subClassOf time:DateTimeDescription ;
   rdfs:subClassOf [
     a owl:Restriction ;
@@ -165,19 +173,16 @@ to allow for alternative seasons."""@en
 
 :DecadeDescription
   a owl:Class ;
-  rdf:label "Decade description"@en ;
+  rdfs:label "Decade description"@en ;
   rdfs:subClassOf :SuperYearDateTimeDescription ;
   rdfs:subClassOf [
     a owl:Restriction ;
     owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onProperty :decade
     ] ;
-  skos:definition """Description of date and time structured with
-  a separate values for specifying temporal position at precisions
-  greater than a year (e.g. decade or century or millennium). The
-  temporal reference system is fixed to Gregorian Calendar."""@en ;
-  skos:example """
-# some year in the 2010s
+  skos:definition """Description of date and time structured with a
+  separate value for specifying the decade."""@en ;
+  skos:example """# some year in the 2010s
 
 ex:when a time:Instant ;
   time:inDateTime  [
@@ -185,21 +190,24 @@ ex:when a time:Instant ;
     time:unitType time:unitYear ;
     edtfo:decade 201
     ]
-  .
-"""
+  .""" ;
+  skos:scopeNote """Since specifying the decade also indirectly
+  specifies the century and millennium, this class is disjoint with
+  `edtfo:CenturyDescription` and `edtfo:MillenniumDescription`."""
   .
 
 :CenturyDescription
   a owl:Class ;
-  rdf:label "Century description"@en ;
+  rdfs:label "Century description"@en ;
   rdfs:subClassOf :SuperYearDateTimeDescription ;
   rdfs:subClassOf [
     a owl:Restriction ;
     owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onProperty :century
     ] ;
-    skos:example """
-# some year in the 20th century
+  skos:definition """Description of date and time structured with a
+  separate value for specifying the century."""@en ;
+  skos:example """# some year in the 20th century
 
 ex:when a time:Instant ;
   time:inDateTime  [
@@ -207,21 +215,25 @@ ex:when a time:Instant ;
     time:unitType time:unitYear ;
     edtfo:century 20
     ]
-  .
-"""
+  .""" ;
+  skos:scopeNote """Since specifying the decade also indirectly
+  specifies the century, and specifying the century also indirectly
+  specifies the millennium, this class is disjoint with
+  `edtfo:DecadeDescription` and `edtfo:MillenniumDescription`."""
   .
 
 :MillenniumDescription
   a owl:Class ;
-  rdf:label "Millennium description"@en ;
+  rdfs:label "Millennium description"@en ;
   rdfs:subClassOf :SuperYearDateTimeDescription ;
   rdfs:subClassOf [
     a owl:Restriction ;
     owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
     owl:onProperty :millennium
     ] ;
-    skos:example """
-# some month in the 1st millennium
+  skos:definition """Description of date and time structured with a
+  separate value for specifying the millennium."""@en ;
+  skos:example """# some month in the 1st millennium
 
 ex:when a time:Instant ;
   time:inDateTime  [
@@ -229,8 +241,10 @@ ex:when a time:Instant ;
     time:unitType time:unitMonth ;
     edtfo:millennium 1
     ]
-  .
-"""
+  .""" ;
+  skos:scopeNote """Since specifying the decade or the century also
+  indirectly specifies the millennium, this class is disjoint with
+  `edtfo:DecadeDescription` and `edtfo:CenturyDescription`."""
   .
 
 [] a owl:AllDisjointClasses ;
@@ -253,8 +267,7 @@ ex:when a time:Instant ;
   skos:definition """A temporal entity with non-zero extent or duration
   and for which the value of the end is unspecified (perhaps because
   it does not exist, but not because it is unknown)"""@en ;
-  skos:example """
-# interval starting April 12th 1985; end unspecified
+  skos:example """# interval starting April 12th 1985; end unspecified
 
 ex:when a edtfo:OpenEndInterval ;
   time:hasBeginning [
@@ -267,8 +280,7 @@ ex:when a edtfo:OpenEndInterval ;
       time:day 12
       ]
     ]
-  .
-"""
+  ."""
   .
 
 :OpenBeginningInterval
@@ -283,8 +295,7 @@ ex:when a edtfo:OpenEndInterval ;
   skos:definition """A temporal entity with non-zero extent or duration
   and for which the value of the beginning is unspecified (perhaps
   because it does not exist, but not because it is unknown)"""@en ;
-  skos:example """
-# interval ending April 12th 1985; beginning unspecified
+  skos:example """# interval ending April 12th 1985; beginning unspecified
 
 ex:when a edtfo:OpenBeginningInterval ;
   time:hasEnd [
@@ -297,8 +308,7 @@ ex:when a edtfo:OpenBeginningInterval ;
       time:day 12
       ]
     ]
-  .
-"""
+  ."""
   .
 
 :QualifiedStatement
@@ -313,8 +323,7 @@ ex:when a edtfo:OpenBeginningInterval ;
   rdfs:label "Uncertain statement"@en ;
   rdfs:subClassOf :QualifiedStatement ;
   skos:definition "An uncertain statement"@en ;
-  skos:example """
-# possibly but not certainly 1984
+  skos:example """# possibly but not certainly 1984
 
 ex:when a time:Instant ;
   time:inDateTime ex:1984
@@ -329,8 +338,7 @@ ex:temporalPositionStatement a edtfo:UncertainStatement ;
   rdf:subject ex:when ;
   rdf:predicate time:inDateTime ;
   rdf:object ex:1984
-  .
-"""
+  ."""
   .
 
 :ApproximateStatement
@@ -338,8 +346,7 @@ ex:temporalPositionStatement a edtfo:UncertainStatement ;
   rdfs:label "Approximate statement"@en ;
   rdfs:subClassOf :QualifiedStatement ;
   skos:definition "An approximate statement"@en ;
-  skos:example """
-# approximately June 2004
+  skos:example """# approximately June 2004
 
 ex:when a time:Instant ;
   time:inDateTime ex:2004_06
@@ -355,8 +362,7 @@ ex:temporalPositionStatement a edtfo:ApproximateStatement ;
   rdf:subject ex:when ;
   rdf:predicate time:inDateTime ;
   rdf:object ex:2004_06
-  .
-"""
+  ."""
   .
 
 :yearSubdivision
@@ -425,20 +431,27 @@ e.g. `1` is the century starting with 1000"""@en
   .
 
 edtf:EDTF
-  a owl:Datatype ;
+  owl:equivalentClass [
+    a rdfs:Datatype ;
+    owl:onDatatype xsd:string ;
+    owl:withRestrictions ([
+        xsd:pattern ".*" # TODO
+        ])
+    ] ;
   rdfs:label "Extended Date/Time Format"@en ;
   skos:definition """This datatype describes a date and time
-that adheres to features of EDTF Levels 0, 1, and 2."""@en
+that adheres to features of any of EDTF Levels 0, 1, and 2."""@en
   .
 
 edtf:EDTF-level0
-  a owl:Datatype ;
-  rdfs:subClassOf edtf:EDTF;
+  owl:equivalentClass [
+    a rdfs:Datatype ;
+    owl:onDatatype xsd:string ;
+    owl:withRestrictions ([
+        xsd:pattern ".*" # TODO
+        ])
+    ] ;
   rdfs:label "Extended Date/Time Format - Level 0"@en ;
-  owl:onDatatype xsd:string ;
-  owl:withRestrictions ([
-      xsd:pattern ".*" # TODO
-      ]) ;
   skos:definition """Level 0 features describe dates, dates and times,
 and intervals. The latter are represented by start and end
 dates. Level 0 supports ISO 8601 features and could be considered a
@@ -446,25 +459,27 @@ profile of ISO 8601."""@en
   .
 
 edtf:EDTF-level1
-  a owl:Datatype ;
-  rdfs:subClassOf edtf:EDTF;
+  owl:equivalentClass [
+    a rdfs:Datatype ;
+    owl:onDatatype xsd:string ;
+    owl:withRestrictions ([
+        xsd:pattern ".*" # TODO
+        ])
+    ] ;
   rdfs:label "Extended Date/Time Format - Level 1"@en ;
-  owl:onDatatype xsd:string ;
-  owl:withRestrictions ([
-      xsd:pattern ".*" # TODO
-      ]) ;
   skos:definition """Level 1 features describe uncertain, approximate, or
 unspecified dates, including provisions for intervals."""@en
   .
 
 edtf:EDTF-level2
-  a owl:Datatype ;
-  rdfs:subClassOf edtf:EDTF;
+  owl:equivalentClass [
+    a rdfs:Datatype ;
+    owl:onDatatype xsd:string ;
+    owl:withRestrictions ([
+        xsd:pattern ".*" # TODO
+        ])
+    ] ;
   rdfs:label "Extended Date/Time Format - Level 2"@en ;
-  owl:onDatatype xsd:string ;
-  owl:withRestrictions ([
-      xsd:pattern ".*" # TODO
-      ]) ;
   skos:definition """Level 2 features provide a way to describe dates that
 have elements, such as days or months, that are known but which also
 have elements that are uncertain, approximate, or unspecified. Level
@@ -492,8 +507,8 @@ have elements that are uncertain, approximate, or unspecified. Level
 
 :unitQuadrimester
   a time:TemporalUnit , owl:NamedIndividual ;
-  rdfs:label """Quadrimester (unit of temporal duration
-equivalent to 4 months)"""@en ;
+  rdfs:label
+  "Quadrimester (unit of temporal duration equivalent to 4 months)"@en ;
   skos:prefLabel "quadrimester"@en ;
   time:days "0"^^xsd:decimal ;
   time:hours "0"^^xsd:decimal ;
