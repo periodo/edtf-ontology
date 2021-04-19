@@ -12,7 +12,8 @@ $(PIP):
 $(PYLODE): | $(PIP)
 	$(PIP) install pylode
 
-doc/html/index.html: edtfo.ttl check tools/diagram.sed | $(PYLODE)
+doc/html/index.html: edtfo.ttl tools/diagram.sed | $(PYLODE)
+	riot -q --validate $<
 	$(PYLODE) -c false -i $< | sed -f tools/diagram.sed > $@
 
 # check that : prefix matches filename
@@ -26,7 +27,7 @@ check_prefixes:
 check_turtle_syntax:
 	riot -q --validate cases/*/*.ttl
 
-check: check_prefixes check_turtle_syntax
+check_cases: check_prefixes check_turtle_syntax
 
 watch:
 	ls edtfo.ttl | entr make -s
@@ -37,4 +38,4 @@ serve: | $(PYTHON)
 clean:
 	rm -rf $(VENV_DIR) doc/html/index.html
 
-.PHONY: check check_prefixes check_turtle_syntax watch serve clean
+.PHONY: check_prefixes check_turtle_syntax watch serve clean
