@@ -372,7 +372,17 @@ ex:temporalPositionStatement a edtfo:ApproximateStatement ;
   rdfs:label "year subdivision"@en ;
   rdfs:range :YearSubdivision ;
   skos:definition """The subdivision of the year,
-whose value is a member of the class `edtfo:YearSubdivision`"""@en
+whose value is a member of the class `edtfo:YearSubdivision`"""@en ;
+  skos:example """# spring  of 2021
+
+:when a time:Instant ;
+  time:inDateTime [
+    a edtfo:SubYearDateTimeDescription ;
+    time:unitType edtfo:unitSeason ;
+    edtfo:yearSubdivision edtfo:Spring ;
+    time:year 2001
+    ]
+  ."""
   .
 
 :hasEDTFDateTimeDescription
@@ -380,7 +390,12 @@ whose value is a member of the class `edtfo:YearSubdivision`"""@en
   rdfs:domain time:Interval ;
   rdfs:label "has EDTF datetime description"@en ;
   rdfs:range edtf:EDTF ;
-  skos:definition "Value of an interval, expressed using EDTF"@en
+  skos:definition "Value of an interval, expressed using EDTF"@en ;
+  skos:example"""# June 2004 to August 2006
+
+:when a time:ProperInterval ;
+  edtfo:hasEDTFDateTimeDescription "2004-06/2006-08"
+  ."""
   .
 
 :hasEDTFDateTimeSetDescription
@@ -393,7 +408,12 @@ whose value is a member of the class `edtfo:YearSubdivision`"""@en
 This property is intended for use with EDTF level 2 “all members of set”
 (curly brackets) notation. For “one of a set” expressions use
 `edtfo:inEDTFDateTime`.
-"""@en
+"""@en ;
+  skos:example """# all of the years 1667, 1668, 1670, 1671, 1672
+
+:When a owl:Class ;
+  edtfo:hasEDTFDateTimeSetDescription "{1667,1668,1670..1672}"
+  ."""
   .
 
 :inEDTFDateTime
@@ -401,7 +421,12 @@ This property is intended for use with EDTF level 2 “all members of set”
   rdfs:domain time:Instant ;
   rdfs:label "in EDTF datetime"@en ;
   rdfs:range edtf:EDTF ;
-  skos:definition "Position of an instant, expressed using EDTF"@en
+  skos:definition "Position of an instant, expressed using EDTF"@en ;
+  skos:example """# the calendar year 1985
+
+:when a time:Instant ;
+  edtfo:inEDTFDateTime "1985"
+  ."""
   .
 
 :decade
@@ -410,7 +435,16 @@ This property is intended for use with EDTF level 2 “all members of set”
   rdfs:label "decade"@en ;
   rdfs:range xsd:integer ;
   skos:definition """Decade position in the Gregorian calendar;
-e.g. `197` is the decade starting with 1970"""@en
+e.g. `197` is the decade starting with 1970"""@en ;
+  skos:example """# some year in the 2010s
+
+ex:when a time:Instant ;
+  time:inDateTime  [
+    a edtfo:DecadeDescription ;
+    time:unitType time:unitYear ;
+    edtfo:decade 201
+    ]
+  ."""
   .
 
 :century
@@ -419,7 +453,16 @@ e.g. `197` is the decade starting with 1970"""@en
   rdfs:label "century"@en ;
   rdfs:range xsd:integer ;
   skos:definition """Century position in the Gregorian calendar;
-e.g. `19` is the century starting with 1900"""@en
+e.g. `19` is the century starting with 1900"""@en ;
+  skos:example """# some year in the 20th century
+
+ex:when a time:Instant ;
+  time:inDateTime  [
+    a edtfo:CenturyDescription ;
+    time:unitType time:unitYear ;
+    edtfo:century 20
+    ]
+  ."""
   .
 
 :millennium
@@ -428,7 +471,16 @@ e.g. `19` is the century starting with 1900"""@en
   rdfs:label "millennium"@en ;
   rdfs:range xsd:integer ;
   skos:definition """Millennium position in the Gregorian calendar;
-e.g. `1` is the century starting with 1000"""@en
+e.g. `1` is the century starting with 1000"""@en ;
+  skos:example """# some month in the 1st millennium
+
+ex:when a time:Instant ;
+  time:inDateTime  [
+    a edtfo:MillenniumDescription ;
+    time:unitType time:unitMonth ;
+    edtfo:millennium 1
+    ]
+  ."""
   .
 
 edtf:EDTF
