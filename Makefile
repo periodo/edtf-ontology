@@ -41,11 +41,7 @@ doc/html/validation.txt: merged.ttl | $(ROBOT)
 
 # check that : prefix matches filename
 check_prefixes:
-	for f in cases/*/*.ttl ; do \
-	a=$$(ls "$$f") ; \
-	b=$$(grep '@prefix :' "$$f" | cut -c 12- | rev | cut -c 5- | rev) ; \
-	[ "$$a" == "$$b" ] || \
-	{ echo "$$a has an incorrect : prefix" ; exit 1 ; } ; done
+	./tools/check-prefixes
 
 check_turtle_syntax:
 	riot -q --validate cases/*/*.ttl
