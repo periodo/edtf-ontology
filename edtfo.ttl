@@ -492,8 +492,9 @@ edtf:EDTF
         ])
     ] ;
   rdfs:label "Extended Date/Time Format"@en ;
-  skos:definition """This datatype describes a date and time
-that adheres to features of any of EDTF Levels 0, 1, and 2."""@en
+  skos:definition """This datatype describes dates, dates and times,
+and intervals that adhere to features of any of EDTF Levels 0, 1, or
+2."""@en
   .
 
 edtf:EDTF-level0
@@ -505,10 +506,10 @@ edtf:EDTF-level0
         ])
     ] ;
   rdfs:label "Extended Date/Time Format - Level 0"@en ;
-  skos:definition """Level 0 features describe dates, dates and times,
-and intervals. The latter are represented by start and end
-dates. Level 0 supports ISO 8601 features and could be considered a
-profile of ISO 8601."""@en
+  skos:definition """This datatype describes dates, dates and times,
+and intervals that adhere to features of EDTF Level 0. Level 0
+features describe dates, dates and times, and intervals. The latter
+are represented by start and end dates."""@en
   .
 
 edtf:EDTF-level1
@@ -520,8 +521,10 @@ edtf:EDTF-level1
         ])
     ] ;
   rdfs:label "Extended Date/Time Format - Level 1"@en ;
-  skos:definition """Level 1 features describe uncertain, approximate, or
-unspecified dates, including provisions for intervals."""@en
+  skos:definition """This datatype describes dates, dates and times,
+and intervals that adhere to features of EDTF Levels 0 or 1. Level 1
+features describe uncertain, approximate, or unspecified dates,
+including provisions for intervals."""@en
   .
 
 edtf:EDTF-level2
@@ -533,10 +536,12 @@ edtf:EDTF-level2
         ])
     ] ;
   rdfs:label "Extended Date/Time Format - Level 2"@en ;
-  skos:definition """Level 2 features provide a way to describe dates that
-have elements, such as days or months, that are known but which also
-have elements that are uncertain, approximate, or unspecified. Level
-2 also describes dates that are part of a set."""@en
+  skos:definition """This datatype describes dates, dates and times,
+and intervals that adhere to features of EDTF Levels 0, 1, or 2. Level
+2 features provide a way to describe dates that have elements, such as
+days or months, that are known but which also have elements that are
+uncertain, approximate, or unspecified. Level 2 also describes dates
+that are part of a set."""@en
   .
 
 :unitSeason
