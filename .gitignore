@@ -1,2 +1,6 @@
 doc/html/index.html
+doc/html/report.html
+doc/html/validation.txt
+merged.ttl
+tools/robot
 tools/venv
