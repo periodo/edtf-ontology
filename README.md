@@ -30,4 +30,4 @@ Future work may include:
 * Mapping to other temporal ontologies such as
   [CIDOC-CRM](http://www.cidoc-crm.org/)
 
-See the [discussions](discussions) for more.
+See the [discussions](https://github.com/periodo/edtf-ontology/discussions) for more.
