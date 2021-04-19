@@ -60,8 +60,19 @@ watch:
 serve: | $(PYTHON)
 	$(PYTHON) -m http.server -b 127.0.0.1 -d doc/html
 
+publish: all
+	./tools/publish
+
 clean:
 	rm -rf $(VENV_DIR) $(ROBOT_DIR) \
 	doc/html/index.html doc/html/report.html doc/html/validation.txt
 
-.PHONY: check_prefixes check_turtle_syntax check_cases all watch serve clean
+.PHONY: \
+check_prefixes \
+check_turtle_syntax \
+check_cases \
+all \
+watch \
+serve \
+publish \
+clean

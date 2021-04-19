@@ -1,0 +1,10 @@
+#! /bin/bash
+
+rm -rf site
+mkdir site
+cp edtfo.ttl doc/html/index.html doc/html/style.css doc/img/edtfo.svg site
+git -C site init
+git -C site add .
+git -C site commit -m "Generated on $(date)"
+git -C site remote add origin "git@github.com:periodo/edtf-ontology.git"
+git -C site push -f origin main:site
