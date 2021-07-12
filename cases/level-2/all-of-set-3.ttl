@@ -12,7 +12,7 @@
   .
 
 :When a owl:Class ;
-  # The year 1984 or an earlier year.
+  # The year 1984 and all earlier years.
   # Elements immediately preceeding and/or following as well as the elements
   # represented by a double-dot, all have the same precision.
   edtfo:hasEDTFDateTimeSetDescription "{..1984}" ;
