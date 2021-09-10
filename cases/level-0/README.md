@@ -5,20 +5,20 @@ time intervals given at https://www.loc.gov/standards/datetime/.
 
 Level 0 requires support for the following features.
 
-## Date and time
+## Date and time (see [rules](../../rules/common.n3))
 
 * [complete representation of calendar date](datetime/day-precision/)
 * [complete representation of calendar date and (local) time of day](datetime/second-precision-local/)
 * [complete representation of calendar date and UTC time of day](datetime/second-precision-utc/)
 * [reduced precision representation of year and month](datetime/month-precision/)
-* [reduced precision representatiom of year](datetime/year-precision/)
+* [reduced precision representation of year](datetime/year-precision/)
 
-## Date and time relative to (shifted from) UTC
+## Date and time relative to (shifted from) UTC (see [rules](../../rules/level-0/shift/rules.n3))
 
 * [date and time with time shift in hours (only)](shift/hours/)
 * [date and time with time shift in hours and minutes](shift/hours-minutes/)
 
-## Time interval
+## Time interval (see [rules](../../rules/level-0/interval/rules.n3))
 
 * [time interval with year precision](interval/year-precision/)
 * [time interval with month precision](interval/month-precision/)
