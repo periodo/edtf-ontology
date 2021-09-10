@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+
+sed -E "s|^@base[[:space:]]+<|@base <|" \
+| sed -E 's|^@prefix ([a-z0-9]*):[[:space:]]+<|@prefix \1: <|' \
+| sed -E "s|^@prefix ([a-z0-9]*): <$1/|@prefix \1: <|" \
+| grep -v 'http://www.w3.org/2000/10/swap/' \
+| grep -v '@prefix re: <rules/regexes/> .'

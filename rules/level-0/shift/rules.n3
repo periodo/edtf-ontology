@@ -1,0 +1,105 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix bipm: <http://www.opengis.net/def/trs/BIPM/0/> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix re: <rules/regexes/> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+time:hasBeginning rdfs:range time:Instant .
+time:hasEnd rdfs:range time:Instant .
+time:hasDurationDescription rdfs:range time:DurationDescription .
+
+# positive shift
+
+{
+    re:DATETIME = ?dt . re:SHIFT = ?s . re:SHIFT_H = ?s_h
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ("^" ?dt "\\+" ?s "$") string:concatenation ?re
+    . ?e string:matches ?re
+
+    . ("^(" ?dt ")") string:concatenation ?dt_scraper
+    . (?e ?dt_scraper) string:scrape ?datetime
+    . (?datetime "Z") string:concatenation ?datetime_utc
+
+    . ("^" ?dt "\\+(" ?s_h ")") string:concatenation ?s_h_scraper
+    . (?e ?s_h_scraper) string:scrape ?s_h_string
+    . (?s_h_string xsd:nonNegativeInteger) log:dtlit ?shift_hours
+} => {
+    ?i a time:ProperInterval ;
+      time:hasDurationDescription [
+        time:hours ?shift_hours
+      ] ;
+      time:hasBeginning ?w ;
+      time:hasEnd [
+        edtfo:inEDTFDateTime ?datetime_utc
+      ]
+    .
+} .
+
+{
+    re:DATETIME = ?dt . re:SHIFT = ?s . re:SHIFT_H = ?s_h . re:SHIFT_M = ?s_m
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ("^" ?dt "\\+" ?s "$") string:concatenation ?re
+    . ?e string:matches ?re
+
+    . ?i time:hasBeginning ?w
+    . ?i time:hasDurationDescription ?dd
+
+    . ("^" ?dt "\\+" ?s_h ":(" ?s_m ")$") string:concatenation ?s_m_scraper
+    . (?e ?s_m_scraper) string:scrape ?s_m_string
+    . (?s_m_string xsd:nonNegativeInteger) log:dtlit ?shift_minutes
+} => {
+    ?dd time:minutes ?shift_minutes
+} .
+
+# negative shift
+
+{
+    re:DATETIME = ?dt . re:SHIFT = ?s . re:SHIFT_H = ?s_h
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ("^" ?dt "-" ?s "$") string:concatenation ?re
+    . ?e string:matches ?re
+
+    . ("^(" ?dt ")") string:concatenation ?dt_scraper
+    . (?e ?dt_scraper) string:scrape ?datetime
+    . (?datetime "Z") string:concatenation ?datetime_utc
+
+    . ("^" ?dt "-(" ?s_h ")") string:concatenation ?s_h_scraper
+    . (?e ?s_h_scraper) string:scrape ?s_h_string
+    . (?s_h_string xsd:nonNegativeInteger) log:dtlit ?shift_hours
+} => {
+    ?i a time:ProperInterval ;
+      time:hasDurationDescription [
+        time:hours ?shift_hours
+      ] ;
+      time:hasBeginning [
+        edtfo:inEDTFDateTime ?datetime_utc
+      ] ;
+      time:hasEnd ?w
+    .
+} .
+
+{
+    re:DATETIME = ?dt . re:SHIFT = ?s . re:SHIFT_H = ?s_h . re:SHIFT_M = ?s_m
+
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ("^" ?dt "-" ?s "$") string:concatenation ?re
+    . ?e string:matches ?re
+
+    . ?i time:hasEnd ?w
+    . ?i time:hasDurationDescription ?dd
+
+    . ("^" ?dt "-" ?s_h ":(" ?s_m ")$") string:concatenation ?s_m_scraper
+    . (?e ?s_m_scraper) string:scrape ?s_m_string
+    . (?s_m_string xsd:nonNegativeInteger) log:dtlit ?shift_minutes
+} => {
+    ?dd time:minutes ?shift_minutes
+} .

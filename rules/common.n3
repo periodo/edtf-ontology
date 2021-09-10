@@ -1,0 +1,154 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix bipm: <http://www.opengis.net/def/trs/BIPM/0/> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix re: <rules/regexes/> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+time:inDateTime rdfs:domain time:Instant .
+
+{
+    re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d . re:TIME = ?t
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ("^" ?y "(-" ?m "(-" ?d "(T" ?t "Z?" ")?" ")?" ")?" "$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?w time:inDateTime [
+      a time:DateTimeDescription ;
+      time:hasTRS iso8601:Gregorian
+    ]
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd time:unitType time:unitYear
+} .
+
+{
+    re:YEAR = ?y . re:MONTH = ?m
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-" ?m "$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd time:unitType time:unitMonth
+} .
+
+{
+    re:DATE = ?d
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?d "$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd time:unitType time:unitDay
+} .
+
+{
+    re:DATETIME = ?dt
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?dt "Z?$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd time:unitType time:unitSecond
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^(" ?y ")") string:concatenation ?re
+    . (?e ?re) string:scrape ?y_string
+    . (?y_string xsd:gYear) log:dtlit ?gyear
+} => {
+    ?dtd time:year ?gyear
+} .
+
+{
+    re:YEAR = ?y . re:MONTH = ?m
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-(" ?m ")") string:concatenation ?re
+    . (?e ?re) string:scrape ?m_string
+    . ("--" ?m_string) string:concatenation ?m_value
+    . (?m_value xsd:gMonth) log:dtlit ?gmonth
+} => {
+    ?dtd time:month ?gmonth
+} .
+
+{
+    re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-" ?m "-(" ?d ")") string:concatenation ?re
+    . (?e ?re) string:scrape ?d_string
+    . ("---" ?d_string) string:concatenation ?d_value
+    . (?d_value xsd:gDay) log:dtlit ?gday
+} => {
+    ?dtd time:day ?gday
+} .
+
+{
+    re:DATE = ?d . re:HOUR = ?h
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?d "T(" ?h ")") string:concatenation ?re
+    . (?e ?re) string:scrape ?h_string
+    . (?h_string xsd:nonNegativeInteger) log:dtlit ?hour
+} => {
+    ?dtd time:hour ?hour
+} .
+
+{
+    re:DATE = ?d . re:HOUR = ?h . re:MINUTE = ?m
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?d "T" ?h ":(" ?m ")") string:concatenation ?re
+    . (?e ?re) string:scrape ?m_string
+    . (?m_string xsd:nonNegativeInteger) log:dtlit ?minute
+} => {
+    ?dtd time:minute ?minute
+} .
+
+{
+    re:DATE = ?d . re:HOUR = ?h . re:MINUTE = ?m . re:SECOND = ?s
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?d "T" ?h ":" ?m ":(" ?s ")") string:concatenation ?re
+    . (?e ?re) string:scrape ?s_string
+    . (?s_string xsd:decimal) log:dtlit ?second
+} => {
+    ?dtd time:second ?second
+} .
+
+{
+    re:DATETIME = ?d
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?d "Z$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd time:timeZone bipm:UTC
+} .

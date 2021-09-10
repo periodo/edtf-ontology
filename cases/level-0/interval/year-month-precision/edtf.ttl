@@ -1,0 +1,7 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix : <cases/level-0/interval/year-month-precision/> .
+@prefix edtfo: <edtfo.ttl#> .
+
+# A time interval beginning sometime in 2005
+# and ending sometime in February 2006.
+:when edtfo:hasEDTFDateTimeDescription "2005/2006-02" .

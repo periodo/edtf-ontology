@@ -1,0 +1,11 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix : <cases/level-0/shift/hours-minutes/> .
+@prefix edtfo: <edtfo.ttl#> .
+
+# The date 1985 April 12th time of day 23:20:30
+# with time shift of 4 hours and 30 minutes ahead of UTC.
+:when1 edtfo:inEDTFDateTime "1985-04-12T23:20:30+04:30" .
+
+# The date 1985 April 12th time of day 23:20:30
+# with time shift of 4 hours and 30 minutes behind UTC.
+:when2 edtfo:inEDTFDateTime "1985-04-12T23:20:30-04:30" .

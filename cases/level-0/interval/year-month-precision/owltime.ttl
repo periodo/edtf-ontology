@@ -1,0 +1,26 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix : <cases/level-0/interval/year-month-precision/> .
+@prefix bipm: <http://www.opengis.net/def/trs/BIPM/0/> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:when   a                  time:ProperInterval ;
+        time:hasBeginning  [ a                time:Instant ;
+                             time:inDateTime  [ a              time:DateTimeDescription ;
+                                                time:hasTRS    iso8601:Gregorian ;
+                                                time:unitType  time:unitYear ;
+                                                time:year      "2005"^^xsd:gYear
+                                              ]
+                           ] ;
+        time:hasEnd        [ a                time:Instant ;
+                             time:inDateTime  [ a              time:DateTimeDescription ;
+                                                time:hasTRS    iso8601:Gregorian ;
+                                                time:month     "--02"^^xsd:gMonth ;
+                                                time:unitType  time:unitMonth ;
+                                                time:year      "2006"^^xsd:gYear
+                                              ]
+                           ] .

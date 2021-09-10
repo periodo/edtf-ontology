@@ -1,10 +1,12 @@
-#! /bin/bash
+#! /usr/bin/env bash
 
-for f in cases/*/*.ttl ; do
-    a=$(ls "$f")
+shopt -s extglob
+
+for f in cases/level-?/*/*/!(*-raw).ttl ; do
+    a=$(dirname "$f")
     b=$(grep '@prefix :' "$f" | cut -c 12- | rev | cut -c 5- | rev)
     [ "$a" == "$b" ] || {
-        echo "$a has an incorrect : prefix"
+        echo "$f has an incorrect : prefix"
         exit 1
     }
 done

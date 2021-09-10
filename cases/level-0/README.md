@@ -5,24 +5,24 @@ time intervals given at https://www.loc.gov/standards/datetime/.
 
 Level 0 requires support for the following features.
 
-## Date
-
-* [complete representation](date-day-precision.ttl)
-* [reduced precision for year and month](date-month-precision.ttl)
-* [reduced precision for year](date-year-precision.ttl)
-
 ## Date and time
 
-* [complete representations for calendar date and (local) time of day](datetime-local.ttl)
-* [complete representations for calendar date and UTC time of day](datetime-utc.ttl)
-* [date and time with timeshift in hours (only)](datetime-shifthour.ttl)
-* [date and time with timeshift in hours and minutes](datetime-shifthourminute.ttl)
+* [complete representation of calendar date](datetime/day-precision/)
+* [complete representation of calendar date and (local) time of day](datetime/second-precision-local/)
+* [complete representation of calendar date and UTC time of day](datetime/second-precision-utc/)
+* [reduced precision representation of year and month](datetime/month-precision/)
+* [reduced precision representatiom of year](datetime/year-precision/)
+
+## Date and time relative to (shifted from) UTC
+
+* [date and time with time shift in hours (only)](shift/hours/)
+* [date and time with time shift in hours and minutes](shift/hours-minutes/)
 
 ## Time interval
 
-* [time interval with calendar year precision](interval-year-precision.ttl)
-* [time interval with calendar month precision](interval-month-precision.ttl)
-* [time interval with calendar day precision](interval-day-precision.ttl)
-* [time interval starting with day precision and ending with month precision](interval-day-month-precision.ttl)
-* [time interval starting with day precision and ending with year precision](interval-day-year-precision.ttl)
-* [time interval starting with year precision and ending with month precision](interval-year-month-precision.ttl)
+* [time interval with year precision](interval/year-precision/)
+* [time interval with month precision](interval/month-precision/)
+* [time interval with day precision](interval/day-precision/)
+* [time interval starting with day precision and ending with month precision](interval/day-month-precision/)
+* [time interval starting with day precision and ending with year precision](interval/day-year-precision/)
+* [time interval starting with year precision and ending with month precision](interval/year-month-precision/)

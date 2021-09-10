@@ -1,0 +1,18 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix : <cases/level-0/datetime/year-precision/> .
+@prefix edtfo: <edtfo.ttl#> .
+
+# The Gregorian calendar year 1985.
+:when1 edtfo:inEDTFDateTime "1985" .
+
+# The proleptic Gregorian calendar year 85 CE.
+:when2 edtfo:inEDTFDateTime "0085" .
+
+# The proleptic Gregorian calendar year 1 BCE.
+#:when3 edtfo:inEDTFDateTime "0000" .
+
+# The proleptic Gregorian calendar year 2 BCE.
+:when4 edtfo:inEDTFDateTime "-0001" .
+
+# The proleptic Gregorian calendar year 10001 BCE.
+:when5 edtfo:inEDTFDateTime "-10000" .
