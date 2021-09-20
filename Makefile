@@ -146,7 +146,7 @@ clean_cases:
 	rm -f $(subst owltime,owltime-raw,$(cases_owltime))
 
 clean: clean_cases
-	rm -rf $(VENV_DIR) $(ROBOT_DIR) cache \
+	rm -rf $(VENV_DIR) $(ROBOT_DIR) rules/derived cache \
 	doc/html/index.html doc/html/report.html doc/html/validation.txt \
 
 .PRECIOUS: cache/%.n3
