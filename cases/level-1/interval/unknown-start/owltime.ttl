@@ -1,0 +1,39 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix : <cases/level-1/interval/unknown-start/> .
+@prefix bipm: <http://www.opengis.net/def/trs/BIPM/0/> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:when3  a            time:Interval ;
+        time:hasEnd  [ a                time:Instant ;
+                       time:inDateTime  [ a              time:DateTimeDescription ;
+                                          time:hasTRS    iso8601:Gregorian ;
+                                          time:unitType  time:unitYear ;
+                                          time:year      "1985"^^xsd:gYear
+                                        ]
+                     ] .
+
+:when1  a            time:Interval ;
+        time:hasEnd  [ a                time:Instant ;
+                       time:inDateTime  [ a              time:DateTimeDescription ;
+                                          time:day       "---12"^^xsd:gDay ;
+                                          time:hasTRS    iso8601:Gregorian ;
+                                          time:month     "--04"^^xsd:gMonth ;
+                                          time:unitType  time:unitDay ;
+                                          time:year      "1985"^^xsd:gYear
+                                        ]
+                     ] .
+
+:when2  a            time:Interval ;
+        time:hasEnd  [ a                time:Instant ;
+                       time:inDateTime  [ a              time:DateTimeDescription ;
+                                          time:hasTRS    iso8601:Gregorian ;
+                                          time:month     "--04"^^xsd:gMonth ;
+                                          time:unitType  time:unitMonth ;
+                                          time:year      "1985"^^xsd:gYear
+                                        ]
+                     ] .

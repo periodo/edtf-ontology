@@ -1,0 +1,32 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix re: <rules/regexes/> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# These rules may result in xsd:gYear values that are larger than the
+# maximum possible integer value for a platform. Such values are
+# within the lexical space defined by W3C XML Schema Definition
+# Language (XSD) 1.1 Part 2: Datatypes, but nevertheless they may not
+# validate if they exceed the maximum possible integer value.
+
+{
+    re:LETTER_PREFIXED_YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ("^Y" ?y "$") string:concatenation ?re
+    . ?e string:matches ?re
+    . ("^Y(" ?y ")$") string:concatenation ?y_scraper
+    . (?e ?y_scraper) string:scrape ?y_string
+    . (?y_string xsd:gYear) log:dtlit ?gyear
+} => {
+    ?w time:inDateTime [
+      a time:DateTimeDescription ;
+      time:unitType time:unitYear ;
+      time:year ?gyear
+    ]
+} .

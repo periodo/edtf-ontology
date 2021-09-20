@@ -1,0 +1,127 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix bipm: <http://www.opengis.net/def/trs/BIPM/0/> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix re: <rules/regexes/> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+time:hasBeginning rdfs:domain time:Interval .
+time:hasBeginning rdfs:range time:Instant .
+time:hasEnd rdfs:domain time:Interval .
+time:hasEnd rdfs:range time:Instant .
+
+# unknown endpoint intervals
+
+{
+    re:REDUCED_PRECISION_DATE = ?date . re:QUALIFIER = ?q
+
+    . ?w edtfo:hasEDTFDateTimeDescription ?edtf
+    . ("^/(" ?date ?q "?)$") string:concatenation ?e_scraper
+    . (?edtf ?e_scraper) string:scrape ?e
+} => {
+    ?w time:hasEnd [
+        edtfo:inEDTFDateTime ?e
+      ]
+    .
+} .
+
+{
+    re:REDUCED_PRECISION_DATE = ?date . re:QUALIFIER = ?q
+
+    . ?w edtfo:hasEDTFDateTimeDescription ?edtf
+    . ("^(" ?date ?q "?)/$") string:concatenation ?b_scraper
+    . (?edtf ?b_scraper) string:scrape ?b
+} => {
+    ?w time:hasBeginning [
+        edtfo:inEDTFDateTime ?b
+      ]
+    .
+} .
+
+# open intervals
+
+{
+    re:REDUCED_PRECISION_DATE = ?date . re:QUALIFIER = ?q
+
+    . ?w edtfo:hasEDTFDateTimeDescription ?edtf
+    . ("^../(" ?date ?q "?)$") string:concatenation ?e_scraper
+    . (?edtf ?e_scraper) string:scrape ?e
+} => {
+    ?w a edtfo:OpenBeginningInterval ;
+      time:hasEnd [
+        edtfo:inEDTFDateTime ?e
+      ]
+    .
+} .
+
+{
+    re:REDUCED_PRECISION_DATE = ?date . re:QUALIFIER = ?q
+
+    . ?w edtfo:hasEDTFDateTimeDescription ?edtf
+    . ("^(" ?date ?q "?)/..$") string:concatenation ?b_scraper
+    . (?edtf ?b_scraper) string:scrape ?b
+} => {
+    ?w a edtfo:OpenEndInterval ;
+      time:hasBeginning [
+        edtfo:inEDTFDateTime ?b
+      ]
+    .
+} .
+
+# qualified intervals
+
+# TODO: disallow intervals where beginning > end
+# TODO: if beginning < end, make it a ProperInterval
+
+{
+    re:REDUCED_PRECISION_DATE = ?date . re:QUALIFIER = ?q
+
+    . ?w edtfo:hasEDTFDateTimeDescription ?edtf
+    . ("^(" ?date ?q "?)/" ?date ?q "?$") string:concatenation ?b_scraper
+    . (?edtf ?b_scraper) string:scrape ?b
+    . ("^" ?date ?q "?/(" ?date ?q "?)$") string:concatenation ?e_scraper
+    . (?edtf ?e_scraper) string:scrape ?e
+} => {
+    ?w
+      time:hasBeginning [
+        edtfo:inEDTFDateTime ?b
+      ] ;
+      time:hasEnd [
+        edtfo:inEDTFDateTime ?e
+      ]
+    .
+} .
+
+# mysterious intervals
+
+{
+    ?w edtfo:hasEDTFDateTimeDescription ?edtf
+    . ?edtf log:equalTo "/"
+} => {
+    ?w a time:Interval
+} .
+
+{
+    ?w edtfo:hasEDTFDateTimeDescription ?edtf
+    . ?edtf log:equalTo "../"
+} => {
+    ?w a edtfo:OpenBeginningInterval .
+} .
+
+{
+    ?w edtfo:hasEDTFDateTimeDescription ?edtf
+    . ?edtf log:equalTo "/.."
+} => {
+    ?w a edtfo:OpenEndInterval .
+} .
+
+{
+    ?w edtfo:hasEDTFDateTimeDescription ?edtf
+    . ?edtf log:equalTo "../.."
+} => {
+    ?w a edtfo:OpenBeginningInterval , edtfo:OpenEndInterval .
+} .

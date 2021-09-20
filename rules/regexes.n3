@@ -13,6 +13,11 @@ re:SHIFT_H = "(?:0[0-9]|1[0-4])" .
 re:SHIFT_M = "[0-5][0-9]" .
 re:SHIFT = "(?:(?:0[0-9]|1[0-3])(?::[0-5][0-9])?|14(?::00)?)" .
 
+# level 1
+re:LETTER_PREFIXED_YEAR = "-?[1-9][0-9]{4,}" .
+re:SEASON = "2[1-4]" .
+re:QUALIFIER = "[\\?~%]" .
+
 {
     re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d
     . (?y "-" ?m "-" ?d) string:concatenation ?r

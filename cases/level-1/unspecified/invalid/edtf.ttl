@@ -1,0 +1,30 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix : <cases/level-1/unspecified/invalid/> .
+@prefix edtfo: <edtfo.ttl#> .
+
+# Three unspecified digits in year.
+:invalid1 edtfo:inEDTFDateTime "2XXX" .
+
+# One unspecified digit in month.
+:invalid2 edtfo:inEDTFDateTime "2001-1X" .
+
+# One unspecified digit in day.
+:invalid3 edtfo:inEDTFDateTime "2001-04-1X" .
+
+# Non-rightmost digits unspecified.
+:invalid4 edtfo:inEDTFDateTime "2XX1" .
+
+# Non-rightmost digits unspecified.
+:invalid5 edtfo:inEDTFDateTime "20XX-04" .
+
+# Non-rightmost digits unspecified.
+:invalid6 edtfo:inEDTFDateTime "2001-X1" .
+
+# Non-rightmost digits unspecified.
+:invalid7 edtfo:inEDTFDateTime "20XX-04-12" .
+
+# Non-rightmost digits unspecified.
+:invalid8 edtfo:inEDTFDateTime "2001-XX-12" .
+
+# Non-rightmost digits unspecified.
+:invalid9 edtfo:inEDTFDateTime "2001-04-X2" .

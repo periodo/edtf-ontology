@@ -1,0 +1,15 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix : <cases/level-1/qualification/month-precision/> .
+@prefix edtfo: <edtfo.ttl#> .
+
+# Year-month uncertain
+# (possibly June 2004, but not definitely).
+:when1 edtfo:inEDTFDateTime "2004-06?" .
+
+# Year-month approximate
+# (approximately June 2004).
+:when2 edtfo:inEDTFDateTime "2004-06~" .
+
+# Year-month uncertain and approximate
+# (possibly approximately June 2004, but not definitely).
+:when3 edtfo:inEDTFDateTime "2004-06%" .

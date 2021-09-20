@@ -1,0 +1,12 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix : <cases/level-1/interval/unknown-end/> .
+@prefix edtfo: <edtfo.ttl#> .
+
+# Interval starting 1985 April 12th with day precision; end unknown.
+:when1 edtfo:hasEDTFDateTimeDescription "1985-04-12/" .
+
+# Interval starting 1985 April with month precision; end unknown.
+:when2 edtfo:hasEDTFDateTimeDescription "1985-04/" .
+
+# Interval starting 1985 with year precision; end unknown.
+:when3 edtfo:hasEDTFDateTimeDescription "1985/" .

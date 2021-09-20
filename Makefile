@@ -1,4 +1,6 @@
 .DEFAULT_GOAL := all
+SHELL := /usr/bin/env bash
+.SHELLFLAGS := -o pipefail -O globstar -c
 VENV_DIR := tools/venv
 ROBOT_REPO := https://github.com/ontodev/robot
 ROBOT_DIR := tools/robot
@@ -8,10 +10,14 @@ PYLODE := $(VENV_DIR)/bin/pylode
 ROBOT := $(ROBOT_DIR)/bin/robot
 EDTFO := https://periodo.github.io/edtf-ontology
 RPO := http://josd.github.io/eye/reasoning/rpo
-CASES := $(shell find cases -maxdepth 3 -mindepth 3 -type d)
+CASES := $(dir $(shell find cases -name edtf.ttl))
+LEVEL_0 := $(dir $(shell find cases/level-0 -name edtf.ttl))
+LEVEL_1 := $(dir $(shell find cases/level-1 -name edtf.ttl))
 RULESETS := \
 	rdfs-domain \
-	rdfs-range
+	rdfs-range \
+	rdfs-subClassOf \
+	owl-hasValue
 
 $(PYTHON):
 	python3 -m venv $(VENV_DIR)
@@ -54,22 +60,44 @@ cached_rulesets := $(foreach ruleset,$(RULESETS),cache/$(ruleset).n3)
 
 rules/derived/regexes.n3: rules/regexes.n3
 	mkdir -p rules/derived
-	eye --quiet $^ --pass-only-new 2> /dev/null > $@
+	eye --quiet $^ --pass-only-new > $@
+
+joinwith = $(subst $(eval) ,$1,$2)
+
+rulepath = $(call joinwith,/,$(wordlist 1,2,$(subst /, , $1)))
+
+cases/level-1/interval/qualified-%/owltime-raw.ttl: \
+rules/regexes.n3 \
+rules/derived/regexes.n3 \
+rules/common.n3 \
+rules/level-1/qualification/rules.n3 \
+rules/level-1/interval/rules.n3 \
+cases/level-1/interval/qualified-%/edtf.ttl \
+| $(cached_rulesets)
+	eye \
+	--quiet \
+	--nope \
+	--wcache $(RPO) cache \
+	$(ruleset_urls) \
+	$^ \
+	--pass \
+	> $@
 
 .SECONDEXPANSION:
 cases/%/owltime-raw.ttl: \
 rules/regexes.n3 \
 rules/derived/regexes.n3 \
 rules/common.n3 \
-rules/$$(dir $$*)rules.n3 \
+rules/$$(call rulepath,$$*)/rules.n3 \
 cases/%/edtf.ttl \
 | $(cached_rulesets)
 	eye \
+	--quiet \
+	--nope \
 	--wcache $(RPO) cache \
 	$(ruleset_urls) \
 	$^ \
-	--pass-only-new \
-	2> /dev/null \
+	--pass \
 	> $@
 
 cases/%/owltime.ttl: cases/%/owltime-raw.ttl tools/cleanup-inferences.rq
@@ -79,14 +107,16 @@ cases/%/owltime.ttl: cases/%/owltime-raw.ttl tools/cleanup-inferences.rq
 	> $@
 	./tools/check-triple-count $@
 
-cases_owltime := $(foreach case,$(CASES),$(case)/owltime.ttl)
+cases_owltime := $(foreach case,$(CASES),$(case)owltime.ttl)
+level0_owltime := $(foreach case,$(LEVEL_0),$(case)owltime.ttl)
+level1_owltime := $(foreach case,$(LEVEL_1),$(case)owltime.ttl)
 
 # check that : prefix matches filename
 check_prefixes: $(cases_owltime)
 	./tools/check-prefixes
 
 check_turtle_syntax: $(cases_owltime)
-	riot -q --validate cases/level-?/*/*/*.ttl
+	riot -q --validate cases/level-?/**/*.ttl
 
 check_invalid_cases:
 	./tools/check-invalid-cases
@@ -98,6 +128,9 @@ doc/html/report.html \
 doc/html/validation.txt \
 doc/html/index.html \
 check_cases
+
+level0: $(level0_owltime)
+level1: $(level1_owltime)
 
 watch:
 	ls edtfo.ttl | entr make -s doc/html/report.html
@@ -123,6 +156,8 @@ check_prefixes \
 check_turtle_syntax \
 check_cases \
 all \
+level0 \
+level1 \
 watch \
 serve \
 publish \

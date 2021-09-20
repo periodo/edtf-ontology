@@ -1,0 +1,69 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix bipm: <http://www.opengis.net/def/trs/BIPM/0/> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix re: <rules/regexes/> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+edtfo:SubYearDateTimeDescription rdfs:subClassOf time:DateTimeDescription .
+
+{
+    re:YEAR = ?y . re:SEASON = ?s
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ("^" ?y "-" ?s "$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?w time:inDateTime [
+      a edtfo:SubYearDateTimeDescription ;
+      time:unitType edtfo:unitSeason
+    ]
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-21$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd edtfo:yearSubdivision edtfo:Spring
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-22$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd edtfo:yearSubdivision edtfo:Summer
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-23$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd edtfo:yearSubdivision edtfo:Autumn
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-24$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd edtfo:yearSubdivision edtfo:Winter
+} .

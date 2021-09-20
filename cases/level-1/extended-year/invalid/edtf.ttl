@@ -1,0 +1,9 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix : <cases/level-1/extended-year/invalid/> .
+@prefix edtfo: <edtfo.ttl#> .
+
+# Letter-prefixed years must have > 4 digits.
+:when1 edtfo:inEDTFDateTime "Y1700" .
+
+# Letter-prefixed years must have > 4 digits.
+:when1 edtfo:inEDTFDateTime "Y-1700" .

@@ -1,8 +1,9 @@
 #! /usr/bin/env bash
 
+shopt -s globstar
 shopt -s extglob
 
-for f in cases/level-?/*/*/!(*-raw).ttl ; do
+for f in cases/level-?/**/!(*-raw).ttl ; do
     a=$(dirname "$f")
     b=$(grep '@prefix :' "$f" | cut -c 12- | rev | cut -c 5- | rev)
     [ "$a" == "$b" ] || {

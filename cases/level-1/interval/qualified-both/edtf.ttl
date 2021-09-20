@@ -1,0 +1,23 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix : <cases/level-1/interval/qualified-both/> .
+@prefix edtfo: <edtfo.ttl#> .
+
+# A time interval with day precision,
+# uncertainly beginning February 1, 2004
+# and ending approximately February 8, 2005.
+:when1 edtfo:hasEDTFDateTimeDescription "2004-02-01?/2005-02-08~" .
+
+# A time interval with month precision,
+# uncertainly beginning February 2004
+# and ending approximately February 2005.
+:when2 edtfo:hasEDTFDateTimeDescription "2004-02?/2005-02~" .
+
+# A time interval with month precision,
+# beginning approximately 2004
+# and uncertainly ending 2005.
+:when3 edtfo:hasEDTFDateTimeDescription "2004~/2005?" .
+
+# A time interval
+# beginning approximately 2004 with year precision
+# and uncertainly ending February 2005 with month precision.
+:when4 edtfo:hasEDTFDateTimeDescription "2004~/2005-02?" .

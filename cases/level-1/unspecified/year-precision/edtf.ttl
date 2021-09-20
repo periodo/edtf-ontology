@@ -1,0 +1,15 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix : <cases/level-1/unspecified/year-precision/> .
+@prefix edtfo: <edtfo.ttl#> .
+
+# A year with one rightmost unspecified digit
+# in a year-only expression (year precision).
+:when1 edtfo:inEDTFDateTime "201X" .
+
+# A year with two rightmost unspecified digits
+# in a year-only expression (year precision).
+:when2 edtfo:inEDTFDateTime "-05XX" .
+
+# Year completely unspecified
+# in a year-only expression (year precision).
+:when3 edtfo:inEDTFDateTime "XXXX" .

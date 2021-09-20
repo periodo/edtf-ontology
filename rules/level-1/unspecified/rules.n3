@@ -1,0 +1,74 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix bipm: <http://www.opengis.net/def/trs/BIPM/0/> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix re: <rules/regexes/> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+edtfo:DecadeDescription rdfs:subClassOf time:DateTimeDescription .
+edtfo:CenturyDescription rdfs:subClassOf time:DateTimeDescription .
+
+{
+    re:YEAR = ?y . re:MONTH = ?m
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ("^(" ?y "|XXXX)-(" ?m "|XX)-XX$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?w time:inDateTime [
+      a time:DateTimeDescription ;
+      time:unitType time:unitDay
+    ]
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ("^(" ?y "|XXXX)-XX$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?w time:inDateTime [
+      a time:DateTimeDescription ;
+      time:unitType time:unitMonth
+    ]
+} .
+
+{
+    ?w edtfo:inEDTFDateTime ?e
+    . (?e "^(-?[0-9]{3})X$") string:scrape ?d
+    . (?d xsd:integer) log:dtlit ?decade
+} => {
+    ?w time:inDateTime [
+      a edtfo:DecadeDescription ;
+      time:unitType time:unitYear ;
+      edtfo:decade ?decade
+    ]
+} .
+
+{
+    ?w edtfo:inEDTFDateTime ?e
+    . (?e "^(-?[0-9]{2})XX$") string:scrape ?c
+    . (?c xsd:integer) log:dtlit ?century
+} => {
+    ?w time:inDateTime [
+      a edtfo:CenturyDescription ;
+      time:unitType time:unitYear ;
+      edtfo:century ?century
+    ]
+} .
+
+{
+    ?w edtfo:inEDTFDateTime ?e
+    . ?e  string:matches "^XXXX$"
+} => {
+    ?w time:inDateTime [
+      a time:DateTimeDescription ;
+      time:unitType time:unitYear
+    ]
+} .

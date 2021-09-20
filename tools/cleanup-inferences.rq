@@ -1,8 +1,39 @@
 BASE <https://periodo.github.io/edtf-ontology/>
 PREFIX edtfo: <edtfo.ttl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX time: <http://www.w3.org/2006/time#>
 
 CONSTRUCT   { ?s ?p ?o }
 WHERE {
   ?s ?p ?o .
-  MINUS { ?s edtfo:inEDTFDateTime ?o }
+  FILTER NOT EXISTS {
+    ?s edtfo:inEDTFDateTime ?o
+  }
+  FILTER NOT EXISTS {
+    ?s edtfo:hasEDTFDateTimeDescription ?o
+  }
+  FILTER NOT EXISTS {
+    ?s rdfs:subClassOf time:DateTimeDescription
+  }
+  FILTER NOT EXISTS {
+    ?s rdfs:domain ?o
+  }
+  FILTER NOT EXISTS {
+    ?s rdfs:range ?o
+  }
+  FILTER NOT EXISTS {
+    ?s owl:sameAs ?o
+  }
+  FILTER NOT EXISTS {
+    ?s a owl:Restriction ; ?p ?o
+  }
+  FILTER NOT EXISTS {
+    ?s a ?o
+    FILTER(isBlank(?o))
+  }
+  FILTER NOT EXISTS {
+    ?s rdfs:subClassOf ?o
+    FILTER(isBlank(?o))
+  }
 }

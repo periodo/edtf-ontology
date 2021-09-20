@@ -6,32 +6,36 @@ time intervals given at https://www.loc.gov/standards/datetime/.
 Level 1 requires support for [Level 0](../level-0#readme) as well as
 the following features:
 
-## Letter-prefixed calendar year
+## Extended year (see [rules](../../rules/level-1/extended-year/rules.n3))
 
-* [letter-prefixed positive year](letter-prefixed-positive-year.ttl)
-* [letter-prefixed negative year](letter-prefixed-negative-year.ttl)
+* [letter-prefixed year](extended-year/)
  
-## [Seasons](season.ttl)
+## Season (see [rules](../../rules/level-1/season/rules.n3))
+
+* [season](season/)
  
-## Qualification of a date (complete)
+## Qualification of date (see [rules](../../level-1/qualification/rules.n3))
 
-* [year uncertain](uncertain-year.ttl)
-* [year-month approximate](approximate-month.ttl)
-* [entire date uncertain and approximate](uncertain-approximate-day.ttl)
+* [qualified calendar date](qualification/day-precision/)
+* [qualified reduced precision date (year and month only)](qualification/month-precision/)
+* [qualified reduced precision date (year only)](qualification/year-precision/)
  
-## Unspecified digit(s) from the right
+## Unspecified digit(s) (see [rules](../../level-1/unspecified/rules.n3))
 
-* [one rightmost unspecified year digit](one-rightmost-unspecified-digit.ttl)
-* [two rightmost unspecified year digits](two-rightmost-unspecified-digits.ttl)
-* [year specified, month unspecified](month-unspecified.ttl)
-* [year and month specified, day unspecified](day-unspecified.ttl)
-* [year specified, day and month unspecified](day-month-unspecified.ttl)
+* [calendar date with unspecified digits](unspecified/day-precision)
+* [reduced precision date (year and month only) with unspecified digits](unspecified/month-precision/)
+* [reduced precision date (year only) with unspecified digits](unspecified/year-precision/)
 
-## Extended interval
+## Time interval (see [rules](../../level-1/interval/rules.n3))
 
-* [open end time interval](open-end-interval-day-precision.ttl)
-* [open start time interval](open-start-interval-day-precision.ttl)
-* [unknown end time interval](unknown-end-interval-day-precision.ttl)
-* [unknown start time interval](unknown-start-interval-day-precision.ttl)
- 
-## [Negative calendar year](negative-year.ttl)
+* [with unknown start](interval/unknown-start/)
+* [with unknown end](interval/unknown-end/)
+* [with open start](interval/open-start/)
+* [with open end](interval/open-end/)
+* [mysterious time interval](interval/mysterious/)
+
+The following also use the [qualification rules](../../level-1/qualification/rules.n3):
+
+* [with qualified start](interval/qualified-start/)
+* [with qualified end](interval/qualified-end/)
+* [with qualified start and end](interval/qualified-both/)

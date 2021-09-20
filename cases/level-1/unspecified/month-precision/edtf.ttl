@@ -1,0 +1,11 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix : <cases/level-1/unspecified/month-precision/> .
+@prefix edtfo: <edtfo.ttl#> .
+
+# Year specified, month unspecified
+# in a year-month expression (month precision).
+:when1 edtfo:inEDTFDateTime "2004-XX" .
+
+# Year and month unspecified
+# in a year-month expression (month precision).
+:when2 edtfo:inEDTFDateTime "XXXX-XX" .
