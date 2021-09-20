@@ -18,6 +18,11 @@ re:LETTER_PREFIXED_YEAR = "-?[1-9][0-9]{4,}" .
 re:SEASON = "2[1-4]" .
 re:QUALIFIER = "[\\?~%]" .
 
+# level 2
+re:YEAR_SIGNIFICAND = "-?[1-9][0-9]*" .
+re:YEAR_EXPONENT = "[0-9]+" .
+re:SIGNIFICANT_DIGITS = "[1-9][0-9]*" .
+
 {
     re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d
     . (?y "-" ?m "-" ?d) string:concatenation ?r

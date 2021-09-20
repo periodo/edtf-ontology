@@ -1,0 +1,26 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix : <cases/level-2/extended-year/significant-digits/> .
+@prefix edtfo: <edtfo.ttl#> .
+
+# 338,800 with millennium precision (first 3 digits are significant), i.e.:
+# some year between 338,000 and 338,999 (inclusive), estimated to be 338,800.
+:when1 edtfo:inEDTFDateTime "Y3388E2S3" .
+
+# 171,010,000 with million-year precision (first 3 digits are significant), i.e.:
+# some year between 171,000,000 and 171,999,999 (inclusive), estimated to be 171,010,000.
+:when2 edtfo:inEDTFDateTime "Y171010000S3" .
+
+# 1950 with century precision (first 2 digits are significant), i.e.:
+# some year between 1900 and 1999 (inclusive), estimated to be 1950.
+:when3 edtfo:inEDTFDateTime "1950S2" .
+
+# -11,000 with 10,000-year precision (first 1 digit is significant), i.e.:
+# some year between -19,999 and -10,000 (inclusive), estimated to be -11,000.
+:when4 edtfo:inEDTFDateTime "Y-11000S1" .
+
+# 2,147,483,647 with year precision (first 10 digits are significant).
+:when5 edtfo:inEDTFDateTime "Y2147483647S10" .
+
+# 1950 with year precision (first 5 digits are significant, but there
+# are only 4 digits, so S5 is equivalent to S4 in this case).
+:when6 edtfo:inEDTFDateTime "1950S5" .

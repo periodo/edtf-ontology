@@ -1,0 +1,159 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix re: <rules/regexes/> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# non-standard eye extension
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+
+# These rules may result in xsd:gYear values that are larger than the
+# maximum possible integer value for a platform. Such values are
+# within the lexical space defined by W3C XML Schema Definition
+# Language (XSD) 1.1 Part 2: Datatypes, but nevertheless they may not
+# validate if they exceed the maximum possible integer value.
+
+# exponential year
+
+{
+    re:YEAR_SIGNIFICAND = ?ys . re:YEAR_EXPONENT = ?ye
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ("^Y" ?ys "E" ?ye "$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?w time:inDateTime [
+      a time:DateTimeDescription ;
+      time:unitType time:unitYear ;
+    ]
+} .
+
+{
+    re:YEAR_SIGNIFICAND = ?ys . re:YEAR_EXPONENT = ?ye
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^Y(" ?ys ")E" ?ye) string:concatenation ?ys_scraper
+    . (?e ?ys_scraper) string:scrape ?significand
+    . ("^Y" ?ys "E(" ?ye ")") string:concatenation ?ye_scraper
+    . (?e ?ye_scraper) string:scrape ?exponent
+    . (10 ?exponent) math:exponentiation ?power
+    . (?significand ?power) math:product ?year_v
+    . ("~|~`0t~d~4+" ?year_v) e:format ?year_string
+    . (?year_string xsd:gYear) log:dtlit ?gyear
+} => {
+    ?dtd time:year ?gyear
+} .
+
+# year with significant digits
+
+{
+    re:YEAR = ?y . re:SIGNIFICANT_DIGITS = ?s
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ("^" ?y "S" ?s "$") string:concatenation ?re
+    . ?e string:matches ?re
+
+    . ("^(" ?y ")S" ?s "$") string:concatenation ?y_scraper
+    . (?e ?y_scraper) string:scrape ?year
+    . (?year xsd:gYear) log:dtlit ?gyear
+} => {
+    ?w time:inDateTime [
+      a time:DateTimeDescription ;
+      time:year ?gyear
+    ]
+} .
+
+# letter-prefixed year with significant digits
+
+{
+    re:LETTER_PREFIXED_YEAR = ?y . re:SIGNIFICANT_DIGITS = ?s
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ("^Y" ?y "S" ?s "$") string:concatenation ?re
+    . ?e string:matches ?re
+
+    . ("^Y(" ?y ")S" ?s "$") string:concatenation ?y_scraper
+    . (?e ?y_scraper) string:scrape ?year
+    . (?year xsd:gYear) log:dtlit ?gyear
+} => {
+    ?w time:inDateTime [
+      a time:DateTimeDescription ;
+      time:year ?gyear
+    ]
+} .
+
+# exponential year with significant digits
+
+{
+    re:YEAR_SIGNIFICAND = ?ys . re:YEAR_EXPONENT = ?ye . re:SIGNIFICANT_DIGITS = ?s
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ("^Y" ?ys "E" ?ye "S" ?s "$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?w time:inDateTime [
+      a time:DateTimeDescription ;
+    ]
+} .
+
+# interpret significant digits
+
+{
+    re:SIGNIFICANT_DIGITS = ?s
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ?dtd time:year ?gyear
+    . ?gyear e:numeral ?year
+    . ("S(" ?s ")$") string:concatenation ?s_scraper
+    . (?e ?s_scraper) string:scrape ?digits
+    . ("max(0, (ceiling(log10(abs(_year))) - _digits))" ?year ?digits) e:calculate ?x
+    . (10.0 ?x) math:exponentiation ?duration
+
+    . ?SCOPE log:notIncludes { ?dtd time:unitType ?u }
+} => {
+    ?dtd time:unitType [
+      a time:TemporalUnit ;
+      time:years ?duration
+    ]
+} .
+
+# normalize temporal units
+
+{
+    { ?x time:unitType [ a time:TemporalUnit ; time:years 1000.0 ] }
+    e:becomes
+    { ?x time:unitType time:unitMillenium }
+} => {
+    ?x time:unitType ?u
+} .
+
+{
+    { ?x time:unitType [ a time:TemporalUnit ; time:years 100.0 ] }
+    e:becomes
+    { ?x time:unitType time:unitCentury }
+} => {
+    ?x time:unitType ?u
+} .
+
+{
+    { ?x time:unitType [ a time:TemporalUnit ; time:years 10.0 ] }
+    e:becomes
+    { ?x time:unitType time:unitDecade }
+} => {
+    ?x time:unitType ?u
+} .
+
+{
+    { ?x time:unitType [ a time:TemporalUnit ; time:years 1 ] }
+    e:becomes
+    { ?x time:unitType time:unitYear }
+} => {
+    ?x time:unitType ?u
+} .

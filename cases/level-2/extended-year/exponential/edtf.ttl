@@ -1,0 +1,12 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix : <cases/level-2/extended-year/exponential/> .
+@prefix edtfo: <edtfo.ttl#> .
+
+# The calendar year -17*10 to the seventh power = -170000000.
+:when1 edtfo:inEDTFDateTime "Y-17E7" .
+
+# The calendar year 17*10 to the third power = 17000.
+:when2 edtfo:inEDTFDateTime "Y17E3" .
+
+# The calendar year 8*10 to the zero power = 8.
+:when3 edtfo:inEDTFDateTime "Y8E0" .

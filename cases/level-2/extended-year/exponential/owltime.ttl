@@ -1,0 +1,31 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix : <cases/level-2/extended-year/exponential/> .
+@prefix bipm: <http://www.opengis.net/def/trs/BIPM/0/> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:when2  a                time:Instant ;
+        time:inDateTime  [ a              time:DateTimeDescription ;
+                           time:hasTRS    iso8601:Gregorian ;
+                           time:unitType  time:unitYear ;
+                           time:year      "17000"^^xsd:gYear
+                         ] .
+
+:when3  a                time:Instant ;
+        time:inDateTime  [ a              time:DateTimeDescription ;
+                           time:hasTRS    iso8601:Gregorian ;
+                           time:unitType  time:unitYear ;
+                           time:year      "0008"^^xsd:gYear
+                         ] .
+
+:when1  a                time:Instant ;
+        time:inDateTime  [ a              time:DateTimeDescription ;
+                           time:hasTRS    iso8601:Gregorian ;
+                           time:unitType  time:unitYear ;
+                           time:year      "-170000000"^^xsd:gYear
+                         ] .
