@@ -1,0 +1,12 @@
+#! /usr/bin/env bash
+
+if [[ "$1" == *"/invalid/"* ]]; then
+    exit 0
+fi
+
+result=$(riot --count "$1" 2>&1 >/dev/null)
+
+if [ "$result" == "$1" ]; then
+    echo "Error: $1 has no triples"
+    exit 1
+fi

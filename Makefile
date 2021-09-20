@@ -77,6 +77,7 @@ cases/%/owltime.ttl: cases/%/owltime-raw.ttl tools/cleanup-inferences.rq
 	| riot --syntax=ttl --formatted=ttl --base=$(EDTFO)/ - \
 	| ./tools/cleanup-prefixes $(EDTFO) \
 	> $@
+	./tools/check-triple-count $@
 
 cases_owltime := $(foreach case,$(CASES),$(case)/owltime.ttl)
 
