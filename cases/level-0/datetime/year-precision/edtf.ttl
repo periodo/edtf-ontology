@@ -14,5 +14,5 @@
 # The proleptic Gregorian calendar year 2 BCE.
 :when4 edtfo:inEDTFDateTime "-0001" .
 
-# The proleptic Gregorian calendar year 10001 BCE.
-:when5 edtfo:inEDTFDateTime "-10000" .
+# The proleptic Gregorian calendar year 10000 BCE.
+:when5 edtfo:inEDTFDateTime "-9999" .

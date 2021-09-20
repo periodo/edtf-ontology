@@ -19,7 +19,7 @@
         time:inDateTime  [ a              time:DateTimeDescription ;
                            time:hasTRS    iso8601:Gregorian ;
                            time:unitType  time:unitYear ;
-                           time:year      "-10000"^^xsd:gYear
+                           time:year      "-9999"^^xsd:gYear
                          ] .
 
 :when1  a                time:Instant ;
