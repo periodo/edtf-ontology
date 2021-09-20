@@ -327,7 +327,7 @@ ex:when a edtfo:OpenBeginningInterval ;
   a owl:Class ;
   rdfs:label "Uncertain statement"@en ;
   rdfs:subClassOf :QualifiedStatement ;
-  skos:definition "An uncertain statement"@en ;
+  skos:definition "A statement the source of which is considered dubious"@en ;
   skos:example """# possibly but not certainly 1984
 
 ex:when a time:Instant ;
@@ -350,7 +350,7 @@ ex:temporalPositionStatement a edtfo:UncertainStatement ;
   a owl:Class ;
   rdfs:label "Approximate statement"@en ;
   rdfs:subClassOf :QualifiedStatement ;
-  skos:definition "An approximate statement"@en ;
+  skos:definition "A statement that is possibly correct, and if not, close to correct"@en ;
   skos:example """# approximately June 2004
 
 ex:when a time:Instant ;
