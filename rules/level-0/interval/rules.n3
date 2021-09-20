@@ -9,10 +9,13 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+time:hasBeginning rdfs:domain time:Interval .
 time:hasBeginning rdfs:range time:Instant .
+time:hasEnd rdfs:domain time:Interval .
 time:hasEnd rdfs:range time:Instant .
 
-# TODO: disallow intervals where beginning >= end
+# TODO: disallow intervals where beginning > end
+# TODO: if beginning < end, make it a ProperInterval
 
 {
     re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d
@@ -24,7 +27,7 @@ time:hasEnd rdfs:range time:Instant .
     . ("^" ?ymd "/(" ?ymd ")$") string:concatenation ?e_scraper
     . (?edtf ?e_scraper) string:scrape ?e
 } => {
-    ?w a time:ProperInterval ;
+    ?w
       time:hasBeginning [
         edtfo:inEDTFDateTime ?b
       ] ;

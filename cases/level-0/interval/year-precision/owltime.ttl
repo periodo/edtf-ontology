@@ -8,7 +8,7 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-:when   a                  time:ProperInterval ;
+:when   a                  time:Interval ;
         time:hasBeginning  [ a                time:Instant ;
                              time:inDateTime  [ a              time:DateTimeDescription ;
                                                 time:hasTRS    iso8601:Gregorian ;
