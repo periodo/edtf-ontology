@@ -7,16 +7,16 @@ Level 0 requires support for the following features.
 
 ## Date and time (see [rules](../../rules/common.n3))
 
-* [complete representation of calendar date](datetime/day-precision/)
-* [complete representation of calendar date and (local) time of day](datetime/second-precision-local/)
-* [complete representation of calendar date and UTC time of day](datetime/second-precision-utc/)
-* [reduced precision representation of year and month](datetime/month-precision/)
-* [reduced precision representation of year](datetime/year-precision/)
+* [calendar date and (local) time of day](datetime/second-precision-local/)
+* [calendar date and UTC time of day](datetime/second-precision-utc/)
+* [calendar date](datetime/day-precision/)
+* [reduced precision date (year and month only)](datetime/month-precision/)
+* [reduced precision date (year only)](datetime/year-precision/)
 
 ## Date and time relative to (shifted from) UTC (see [rules](../../rules/level-0/shift/rules.n3))
 
-* [date and time with time shift in hours (only)](shift/hours/)
-* [date and time with time shift in hours and minutes](shift/hours-minutes/)
+* [date and time with time shift (hours only)](shift/hours/)
+* [date and time with time shift (hours and minutes)](shift/hours-minutes/)
 
 ## Time interval (see [rules](../../rules/level-0/interval/rules.n3))
 
