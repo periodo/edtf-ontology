@@ -8,6 +8,8 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+:when1  a       time:Instant .
+
 [ a                            time:ProperInterval ;
   time:hasBeginning            :when1 ;
   time:hasDurationDescription  [ a             time:DurationDescription ;
@@ -28,8 +30,6 @@
                                                   ]
                                ]
 ] .
-
-:when1  a       time:Instant .
 
 [ a                            time:ProperInterval ;
   time:hasBeginning            [ a                time:Instant ;
