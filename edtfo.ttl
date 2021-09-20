@@ -624,19 +624,19 @@ that are part of a set."""@en
   rdfs:label "Summer - Southern Hemisphere"@en
   .
 
-:Fall
+:Autumn
   a :Season , owl:NamedIndividual ;
-  rdfs:label "Fall"@en
+  rdfs:label "Autumn"@en
   .
 
-:FallNorthernHemisphere
+:AutumnNorthernHemisphere
   a :Season , owl:NamedIndividual ;
-  rdfs:label "Fall - Northern Hemisphere"@en
+  rdfs:label "Autumn - Northern Hemisphere"@en
   .
 
-:FallSouthernHemisphere
+:AutumnSouthernHemisphere
   a :Season , owl:NamedIndividual ;
-  rdfs:label "Fall - Southern Hemisphere"@en
+  rdfs:label "Autumn - Southern Hemisphere"@en
   .
 
 :Winter
