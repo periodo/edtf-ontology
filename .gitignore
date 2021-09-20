@@ -3,6 +3,7 @@ doc/html/index.html
 doc/html/report.html
 doc/html/validation.txt
 merged.ttl
+rules/derived
 site
 tools/robot
 tools/venv
