@@ -22,6 +22,13 @@
                            time:year      "-9999"^^xsd:gYear
                          ] .
 
+:when3  a                time:Instant ;
+        time:inDateTime  [ a              time:DateTimeDescription ;
+                           time:hasTRS    iso8601:Gregorian ;
+                           time:unitType  time:unitYear ;
+                           time:year      "0000"^^xsd:gYear
+                         ] .
+
 :when1  a                time:Instant ;
         time:inDateTime  [ a              time:DateTimeDescription ;
                            time:hasTRS    iso8601:Gregorian ;

@@ -9,7 +9,7 @@
 :when2 edtfo:inEDTFDateTime "0085" .
 
 # The proleptic Gregorian calendar year 1 BCE.
-#:when3 edtfo:inEDTFDateTime "0000" .
+:when3 edtfo:inEDTFDateTime "0000" .
 
 # The proleptic Gregorian calendar year 2 BCE.
 :when4 edtfo:inEDTFDateTime "-0001" .
