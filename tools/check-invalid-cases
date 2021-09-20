@@ -1,0 +1,11 @@
+#! /usr/bin/env bash
+
+shopt -s globstar
+
+result=$(riot --count cases/level-?/**/invalid/owltime.ttl 2>&1 >/dev/null | grep Total)
+
+if [ "$result" != "Total :  (No Output)" ]; then
+    echo "Error: invalid cases produced:"
+    echo "$result"
+    exit 1
+fi

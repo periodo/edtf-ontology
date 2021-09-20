@@ -87,7 +87,10 @@ check_prefixes: $(cases_owltime)
 check_turtle_syntax: $(cases_owltime)
 	riot -q --validate cases/level-?/*/*/*.ttl
 
-check_cases: check_prefixes check_turtle_syntax
+check_invalid_cases:
+	./tools/check-invalid-cases
+
+check_cases: check_prefixes check_turtle_syntax check_invalid_cases
 
 all: \
 doc/html/report.html \

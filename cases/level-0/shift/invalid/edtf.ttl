@@ -1,0 +1,3 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix : <cases/level-0/shift/invalid/> .
+@prefix edtfo: <edtfo.ttl#> .

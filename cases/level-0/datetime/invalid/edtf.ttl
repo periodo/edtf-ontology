@@ -1,0 +1,45 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix : <cases/level-0/datetime/invalid/> .
+@prefix edtfo: <edtfo.ttl#> .
+
+# Year less than four digits.
+:invalid1 edtfo:inEDTFDateTime "985" .
+
+# Year more than four digits.
+:invalid2 edtfo:inEDTFDateTime "10985" .
+
+# Month less than two digits.
+:invalid3 edtfo:inEDTFDateTime "1985-4" .
+
+# Month is 00.
+:invalid4 edtfo:inEDTFDateTime "1985-00" .
+
+# Month is 13.
+:invalid5 edtfo:inEDTFDateTime "1985-13" .
+
+# Day less than two digits.
+:invalid6 edtfo:inEDTFDateTime "1985-04-1" .
+
+# Day is 00.
+:invalid7 edtfo:inEDTFDateTime "1985-04-00" .
+
+# Day is 32.
+:invalid8 edtfo:inEDTFDateTime "1985-04-32" .
+
+# Basic date format is not supported.
+:invalid9 edtfo:inEDTFDateTime "19850412" .
+
+# Hour is less than two digits.
+:invalid10 edtfo:inEDTFDateTime "1985-04-32T2:02:30" .
+
+# Hour is 24.
+:invalid11 edtfo:inEDTFDateTime "1985-04-32T24:00:00" .
+
+# Minute is 60.
+:invalid12 edtfo:inEDTFDateTime "1985-04-32T02:60:00" .
+
+# Second is 60.
+:invalid13 edtfo:inEDTFDateTime "1985-04-32T02:30:60" .
+
+# Basic datetime format is not supported.
+:invalid14 edtfo:inEDTFDateTime "19850432T023001" .
