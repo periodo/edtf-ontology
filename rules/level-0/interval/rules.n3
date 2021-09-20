@@ -18,13 +18,12 @@ time:hasEnd rdfs:range time:Instant .
 # TODO: if beginning < end, make it a ProperInterval
 
 {
-    re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d
+    re:REDUCED_PRECISION_DATE = ?date
 
     . ?w edtfo:hasEDTFDateTimeDescription ?edtf
-    . (?y "(?:-" ?m "(?:-" ?d ")?" ")?") string:concatenation ?ymd
-    . ("^(" ?ymd ")/" ?ymd "$") string:concatenation ?b_scraper
+    . ("^(" ?date ")/" ?date "$") string:concatenation ?b_scraper
     . (?edtf ?b_scraper) string:scrape ?b
-    . ("^" ?ymd "/(" ?ymd ")$") string:concatenation ?e_scraper
+    . ("^" ?date "/(" ?date ")$") string:concatenation ?e_scraper
     . (?edtf ?e_scraper) string:scrape ?e
 } => {
     ?w

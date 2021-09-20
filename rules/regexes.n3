@@ -21,6 +21,13 @@ re:SHIFT = "(?:(?:0[0-9]|1[0-3])(?::[0-5][0-9])?|14(?::00)?)" .
 } .
 
 {
+    re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d
+    . (?y "(?:-" ?m "(?:-" ?d ")?" ")?") string:concatenation ?r
+} => {
+    re:REDUCED_PRECISION_DATE = ?r
+} .
+
+{
     re:HOUR = ?h . re:MINUTE = ?m . re:SECOND = ?s
     . (?h ":" ?m ":" ?s) string:concatenation ?r
 } => {
