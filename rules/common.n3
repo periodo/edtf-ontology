@@ -3,6 +3,7 @@
 @prefix edtfo: <edtfo.ttl#> .
 @prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix re: <rules/regexes/> .
 @prefix string: <http://www.w3.org/2000/10/swap/string#> .
@@ -10,6 +11,12 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 time:inDateTime rdfs:domain time:Instant .
+
+time:DateTimeDescription rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty time:hasTRS ;
+    owl:hasValue iso8601:Gregorian
+    ] .
 
 {
     re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d . re:TIME = ?t
@@ -19,8 +26,7 @@ time:inDateTime rdfs:domain time:Instant .
     . ?e string:matches ?re
 } => {
     ?w time:inDateTime [
-      a time:DateTimeDescription ;
-      time:hasTRS iso8601:Gregorian
+      a time:DateTimeDescription
     ]
 } .
 
