@@ -22,6 +22,10 @@ re:QUALIFIER = "[\\?~%]" .
 re:YEAR_SIGNIFICAND = "-?[1-9][0-9]*" .
 re:YEAR_EXPONENT = "[0-9]+" .
 re:SIGNIFICANT_DIGITS = "[1-9][0-9]*" .
+re:SEASON_HEMISPHERE = "(?:2[5-9]|3[0-2])" .
+re:QUARTER = "3[3-6]" .
+re:QUADRIMESTER = "3[7-9]" .
+re:SEMESTRAL = "4[0-1]" .
 
 {
     re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d

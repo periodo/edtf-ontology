@@ -1,0 +1,9 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix : <cases/level-2/year-subdivision/semestral/> .
+@prefix edtfo: <edtfo.ttl#> .
+
+# First semestral of 2001.
+:when1 edtfo:inEDTFDateTime "2001-40" .
+
+# Second semestral of 2001.
+:when2 edtfo:inEDTFDateTime "2001-41" .

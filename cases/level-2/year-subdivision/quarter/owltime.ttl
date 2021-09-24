@@ -1,0 +1,41 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix : <cases/level-2/year-subdivision/quarter/> .
+@prefix bipm: <http://www.opengis.net/def/trs/BIPM/0/> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:when1  a                time:Instant ;
+        time:inDateTime  [ a                      edtfo:SubYearDateTimeDescription , time:DateTimeDescription ;
+                           time:hasTRS            iso8601:Gregorian ;
+                           time:unitType          edtfo:unitQuarter ;
+                           time:year              "2001"^^xsd:gYear ;
+                           edtfo:yearSubdivision  edtfo:Quarter1
+                         ] .
+
+:when4  a                time:Instant ;
+        time:inDateTime  [ a                      edtfo:SubYearDateTimeDescription , time:DateTimeDescription ;
+                           time:hasTRS            iso8601:Gregorian ;
+                           time:unitType          edtfo:unitQuarter ;
+                           time:year              "2001"^^xsd:gYear ;
+                           edtfo:yearSubdivision  edtfo:Quarter4
+                         ] .
+
+:when2  a                time:Instant ;
+        time:inDateTime  [ a                      edtfo:SubYearDateTimeDescription , time:DateTimeDescription ;
+                           time:hasTRS            iso8601:Gregorian ;
+                           time:unitType          edtfo:unitQuarter ;
+                           time:year              "2001"^^xsd:gYear ;
+                           edtfo:yearSubdivision  edtfo:Quarter2
+                         ] .
+
+:when3  a                time:Instant ;
+        time:inDateTime  [ a                      edtfo:SubYearDateTimeDescription , time:DateTimeDescription ;
+                           time:hasTRS            iso8601:Gregorian ;
+                           time:unitType          edtfo:unitQuarter ;
+                           time:year              "2001"^^xsd:gYear ;
+                           edtfo:yearSubdivision  edtfo:Quarter3
+                         ] .

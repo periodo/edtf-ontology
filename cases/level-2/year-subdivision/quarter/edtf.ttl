@@ -1,0 +1,15 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix : <cases/level-2/year-subdivision/quarter/> .
+@prefix edtfo: <edtfo.ttl#> .
+
+# First quarter of 2001.
+:when1 edtfo:inEDTFDateTime "2001-33" .
+
+# Second quarter of 2001.
+:when2 edtfo:inEDTFDateTime "2001-34" .
+
+# Third quarter of 2001.
+:when3 edtfo:inEDTFDateTime "2001-35" .
+
+# Fourth quarter of 2001.
+:when4 edtfo:inEDTFDateTime "2001-36" .

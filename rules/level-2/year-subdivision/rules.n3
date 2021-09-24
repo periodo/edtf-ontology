@@ -1,0 +1,259 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix bipm: <http://www.opengis.net/def/trs/BIPM/0/> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix re: <rules/regexes/> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+edtfo:SubYearDateTimeDescription rdfs:subClassOf time:DateTimeDescription .
+
+# season
+
+{
+    re:YEAR = ?y . re:SEASON_HEMISPHERE = ?s
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ("^" ?y "-" ?s "$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?w time:inDateTime [
+      a edtfo:SubYearDateTimeDescription ;
+      time:unitType edtfo:unitSeason
+    ]
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-25$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd edtfo:yearSubdivision edtfo:SpringNorthernHemisphere
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-26$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd edtfo:yearSubdivision edtfo:SummerNorthernHemisphere
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-27$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd edtfo:yearSubdivision edtfo:AutumnNorthernHemisphere
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-28$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd edtfo:yearSubdivision edtfo:WinterNorthernHemisphere
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-29$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd edtfo:yearSubdivision edtfo:SpringSouthernHemisphere
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-30$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd edtfo:yearSubdivision edtfo:SummerSouthernHemisphere
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-31$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd edtfo:yearSubdivision edtfo:AutumnSouthernHemisphere
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-32$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd edtfo:yearSubdivision edtfo:WinterSouthernHemisphere
+} .
+
+# quarter
+
+{
+    re:YEAR = ?y . re:QUARTER = ?q
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ("^" ?y "-" ?q "$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?w time:inDateTime [
+      a edtfo:SubYearDateTimeDescription ;
+      time:unitType edtfo:unitQuarter
+    ]
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-33$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd edtfo:yearSubdivision edtfo:Quarter1
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-34$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd edtfo:yearSubdivision edtfo:Quarter2
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-35$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd edtfo:yearSubdivision edtfo:Quarter3
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-36$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd edtfo:yearSubdivision edtfo:Quarter4
+} .
+
+# quadrimester
+
+{
+    re:YEAR = ?y . re:QUADRIMESTER = ?q
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ("^" ?y "-" ?q "$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?w time:inDateTime [
+      a edtfo:SubYearDateTimeDescription ;
+      time:unitType edtfo:unitQuadrimester
+    ]
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-37$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd edtfo:yearSubdivision edtfo:Quadrimester1
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-38$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd edtfo:yearSubdivision edtfo:Quadrimester2
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-39$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd edtfo:yearSubdivision edtfo:Quadrimester3
+} .
+
+# semestral
+
+{
+    re:YEAR = ?y . re:SEMESTRAL = ?s
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ("^" ?y "-" ?s "$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?w time:inDateTime [
+      a edtfo:SubYearDateTimeDescription ;
+      time:unitType edtfo:unitSemestral
+    ]
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-40$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd edtfo:yearSubdivision edtfo:Semestral1
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-41$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd edtfo:yearSubdivision edtfo:Semestral2
+} .
