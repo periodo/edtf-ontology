@@ -11,11 +11,11 @@
 << :when1 time:inDateTime _:b0 >>
         a       edtfo:UncertainStatement .
 
-:when3  a                time:Instant ;
-        time:inDateTime  _:b1 .
-
 << :when3 time:inDateTime _:b1 >>
         a       edtfo:ApproximateStatement , edtfo:UncertainStatement .
+
+:when3  a                time:Instant ;
+        time:inDateTime  _:b1 .
 
 _:b0    a              time:DateTimeDescription ;
         time:hasTRS    iso8601:Gregorian ;
@@ -30,13 +30,13 @@ _:b2    a              time:DateTimeDescription ;
         time:unitType  time:unitYear ;
         time:year      "1984"^^xsd:gYear .
 
+_:b1    a              time:DateTimeDescription ;
+        time:hasTRS    iso8601:Gregorian ;
+        time:unitType  time:unitYear ;
+        time:year      "1984"^^xsd:gYear .
+
 << :when2 time:inDateTime _:b2 >>
         a       edtfo:ApproximateStatement .
 
 :when2  a                time:Instant ;
         time:inDateTime  _:b2 .
-
-_:b1    a              time:DateTimeDescription ;
-        time:hasTRS    iso8601:Gregorian ;
-        time:unitType  time:unitYear ;
-        time:year      "1984"^^xsd:gYear .

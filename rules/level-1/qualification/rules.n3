@@ -11,10 +11,10 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 {
-    re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d
+    re:REDUCED_PRECISION_DATE = ?d
 
     . ?w edtfo:inEDTFDateTime ?e
-    . ("^" ?y "(-" ?m "(-" ?d ")?" ")?" "\\?$") string:concatenation ?re
+    . ("^" ?d "\\?$") string:concatenation ?re
     . ?e string:matches ?re
 } => {
     ?w time:inDateTime [
@@ -23,10 +23,10 @@
 } .
 
 {
-    re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d
+    re:REDUCED_PRECISION_DATE = ?d
 
     . ?w edtfo:inEDTFDateTime ?e
-    . ("^" ?y "(-" ?m "(-" ?d ")?" ")?" "~$") string:concatenation ?re
+    . ("^" ?d "~$") string:concatenation ?re
     . ?e string:matches ?re
 } => {
     ?w time:inDateTime [
@@ -35,15 +35,15 @@
 } .
 
 {
-    re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d
+    re:REDUCED_PRECISION_DATE = ?d
 
     . ?w edtfo:inEDTFDateTime ?e
-    . ("^" ?y "(-" ?m "(-" ?d ")?" ")?" "%$") string:concatenation ?re
+    . ("^" ?d "%$") string:concatenation ?re
     . ?e string:matches ?re
 } => {
     ?w time:inDateTime [
       a time:DateTimeDescription
-    ] {| a edtfo:UncertainStatement ; a edtfo:ApproximateStatement |}
+    ] {| a edtfo:UncertainStatement , edtfo:ApproximateStatement |}
 } .
 
 {
