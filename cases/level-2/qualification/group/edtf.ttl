@@ -1,0 +1,30 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix : <cases/level-2/qualification/group/> .
+@prefix edtfo: <edtfo.ttl#> .
+
+# Day precision, year and month uncertain
+:when1 edtfo:inEDTFDateTime "2004-06?-11" .
+
+# Day precision, year and month approximate.
+:when2 edtfo:inEDTFDateTime "2004-06~-11" .
+
+# Day precision, year and month uncertain and approximate.
+:when3 edtfo:inEDTFDateTime "2004-06%-11" .
+
+# Day precision, year uncertain.
+:when4 edtfo:inEDTFDateTime "2004?-06-11" .
+
+# Day precision, year approximate.
+:when5 edtfo:inEDTFDateTime "2004~-06-11" .
+
+# Day precision, year uncertain and approximate.
+:when6 edtfo:inEDTFDateTime "2004%-06-11" .
+
+# Month precision, year uncertain.
+:when7 edtfo:inEDTFDateTime "2004?-06" .
+
+# Month precision, year approximate.
+:when8 edtfo:inEDTFDateTime "2004~-06" .
+
+# Month precision, year uncertain and approximate.
+:when9 edtfo:inEDTFDateTime "2004%-06" .
