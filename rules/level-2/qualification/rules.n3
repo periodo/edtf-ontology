@@ -10,22 +10,295 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-# year and month qualified
+# individual qualification
 
 {
     re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d . re:QUALIFIER = ?q
 
     . ?w edtfo:inEDTFDateTime ?e
-    . ("^" ?y "-" ?m ?q "-(" ?d ")$") string:concatenation ?d_scraper
-    . (?e ?d_scraper) string:scrape ?d_string
+    . ("^" ?q "?" ?y "(-" ?q "?" ?m "(-" ?q "?" ?d ")?" ")?" "$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?w time:inDateTime [
+      a time:DateTimeDescription
+    ]
+} .
+
+{
+    re:YEAR = ?y . re:QUALIFIER = ?q
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?q ?y "$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd time:unitType time:unitYear
+} .
+
+{
+    re:YEAR = ?y . re:MONTH = ?m . re:QUALIFIER = ?q
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?q "?" ?y "-" ?q "?" ?m "$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd time:unitType time:unitMonth
+} .
+
+{
+    re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d . re:QUALIFIER = ?q
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?q "?" ?y "-" ?q "?" ?m "-" ?q "?" ?d "$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd time:unitType time:unitDay
+} .
+
+{
+    re:YEAR = ?y . re:QUALIFIER = ?q
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?q "(" ?y ")") string:concatenation ?re
+    . (?e ?re) string:scrape ?y_string
+    . (?y_string xsd:gYear) log:dtlit ?gyear
+} => {
+    ?dtd time:year ?gyear
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^\\?" ?y) string:concatenation ?re
+    . ?e string:matches ?re
+    . ?dtd time:year ?gyear
+} => {
+    << ?dtd time:year ?gyear >> a edtfo:UncertainStatement
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^~" ?y) string:concatenation ?re
+    . ?e string:matches ?re
+    . ?dtd time:year ?gyear
+} => {
+    << ?dtd time:year ?gyear >> a edtfo:ApproximateStatement
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^%" ?y) string:concatenation ?re
+    . ?e string:matches ?re
+    . ?dtd time:year ?gyear
+} => {
+    << ?dtd time:year ?gyear >> a edtfo:UncertainStatement , edtfo:ApproximateStatement
+} .
+
+{
+    re:YEAR = ?y . re:MONTH = ?m . re:QUALIFIER = ?q
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?q "?" ?y "-" ?q "?(" ?m ")") string:concatenation ?re
+    . (?e ?re) string:scrape ?m_string
+    . ("--" ?m_string) string:concatenation ?m_value
+    . (?m_value xsd:gMonth) log:dtlit ?gmonth
+} => {
+    ?dtd time:month ?gmonth
+} .
+
+{
+    re:YEAR = ?y . re:MONTH = ?m . re:QUALIFIER = ?q
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?q "?" ?y "-\\?" ?m) string:concatenation ?re
+    . ?e string:matches ?re
+    . ?dtd time:month ?gmonth
+} => {
+    << ?dtd time:month ?gmonth >> a edtfo:UncertainStatement
+} .
+
+{
+    re:YEAR = ?y . re:MONTH = ?m . re:QUALIFIER = ?q
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?q "?" ?y "-~" ?m) string:concatenation ?re
+    . ?e string:matches ?re
+    . ?dtd time:month ?gmonth
+} => {
+    << ?dtd time:month ?gmonth >> a edtfo:ApproximateStatement
+} .
+
+{
+    re:YEAR = ?y . re:MONTH = ?m . re:QUALIFIER = ?q
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?q "?" ?y "-%" ?m) string:concatenation ?re
+    . ?e string:matches ?re
+    . ?dtd time:month ?gmonth
+} => {
+    << ?dtd time:month ?gmonth >> a edtfo:UncertainStatement , edtfo:ApproximateStatement
+} .
+
+{
+    re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d . re:QUALIFIER = ?q
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?q "?" ?y "-" ?q "?" ?m "-" ?q "?(" ?d ")") string:concatenation ?re
+    . (?e ?re) string:scrape ?d_string
     . ("---" ?d_string) string:concatenation ?d_value
     . (?d_value xsd:gDay) log:dtlit ?gday
 } => {
+    ?dtd time:day ?gday
+} .
+
+{
+    re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d . re:QUALIFIER = ?q
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?q "?" ?y "-" ?q "?" ?m "-\\?" ?d) string:concatenation ?re
+    . ?e string:matches ?re
+    . ?dtd time:day ?gday
+} => {
+    << ?dtd time:day ?gday >> a edtfo:UncertainStatement
+} .
+
+{
+    re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d . re:QUALIFIER = ?q
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?q "?" ?y "-" ?q "?" ?m "-~" ?d) string:concatenation ?re
+    . ?e string:matches ?re
+    . ?dtd time:day ?gday
+} => {
+    << ?dtd time:day ?gday >> a edtfo:ApproximateStatement
+} .
+
+{
+    re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d . re:QUALIFIER = ?q
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?q "?" ?y "-" ?q "?" ?m "-%" ?d) string:concatenation ?re
+    . ?e string:matches ?re
+    . ?dtd time:day ?gday
+} => {
+    << ?dtd time:day ?gday >> a edtfo:UncertainStatement , edtfo:ApproximateStatement
+} .
+
+# group qualification
+
+{
+    re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d . re:QUALIFIER = ?q
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ("^" ?y ?q "?(-" ?m ?q "?(-" ?d ")?" ")?" "$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
     ?w time:inDateTime [
-      a time:DateTimeDescription ;
-      time:unitType time:unitDay ;
-      time:day ?gday
+      a time:DateTimeDescription
     ]
+} .
+
+{
+    re:YEAR = ?y . re:MONTH = ?m . re:QUALIFIER = ?q
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y ?q "-" ?m "$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd time:unitType time:unitMonth
+} .
+
+{
+    re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d . re:QUALIFIER = ?q
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y ?q "?-" ?m ?q "?-" ?d "$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd time:unitType time:unitDay
+} .
+
+{
+    re:YEAR = ?y . re:MONTH = ?m . re:QUALIFIER = ?q
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y ?q "?-(" ?m ")") string:concatenation ?re
+    . (?e ?re) string:scrape ?m_string
+    . ("--" ?m_string) string:concatenation ?m_value
+    . (?m_value xsd:gMonth) log:dtlit ?gmonth
+} => {
+    ?dtd time:month ?gmonth
+} .
+
+{
+    re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d . re:QUALIFIER = ?q
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y ?q "?-" ?m ?q "?-(" ?d ")") string:concatenation ?re
+    . (?e ?re) string:scrape ?d_string
+    . ("---" ?d_string) string:concatenation ?d_value
+    . (?d_value xsd:gDay) log:dtlit ?gday
+} => {
+    ?dtd time:day ?gday
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^(" ?y ")\\?") string:concatenation ?re
+    . ?e string:matches ?re
+    . ?dtd time:year ?gyear
+} => {
+    << ?dtd time:year ?gyear >> a edtfo:UncertainStatement
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^(" ?y ")~") string:concatenation ?re
+    . ?e string:matches ?re
+    . ?dtd time:year ?gyear
+} => {
+    << ?dtd time:year ?gyear >> a edtfo:ApproximateStatement
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^(" ?y ")%") string:concatenation ?re
+    . ?e string:matches ?re
+    . ?dtd time:year ?gyear
+} => {
+    << ?dtd time:year ?gyear >> a edtfo:UncertainStatement , edtfo:ApproximateStatement
 } .
 
 {
@@ -68,84 +341,4 @@
 } => {
     << ?dtd time:year ?gyear >> a edtfo:UncertainStatement , edtfo:ApproximateStatement .
     << ?dtd time:month ?gmonth>> a edtfo:UncertainStatement , edtfo:ApproximateStatement
-} .
-
-# year qualified
-
-{
-    re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d . re:QUALIFIER = ?q
-
-    . ?w edtfo:inEDTFDateTime ?e
-    . ("^" ?y ?q "-" ?m "-(" ?d ")$") string:concatenation ?d_scraper
-    . (?e ?d_scraper) string:scrape ?d_string
-    . ("---" ?d_string) string:concatenation ?d_value
-    . (?d_value xsd:gDay) log:dtlit ?gday
-} => {
-    ?w time:inDateTime [
-      a time:DateTimeDescription ;
-      time:unitType time:unitDay ;
-      time:day ?gday
-    ]
-} .
-
-{
-    re:YEAR = ?y . re:MONTH = ?m . re:QUALIFIER = ?q
-
-    . ?w edtfo:inEDTFDateTime ?e
-    . ("^" ?y ?q "-" ?m "$") string:concatenation ?re
-    . ?e string:matches ?re
-} => {
-    ?w time:inDateTime [
-      a time:DateTimeDescription ;
-      time:unitType time:unitMonth ;
-    ]
-} .
-
-{
-    re:YEAR = ?y . re:MONTH = ?m . re:QUALIFIER = ?q
-
-    . ?w edtfo:inEDTFDateTime ?e
-    . ?w time:inDateTime ?dtd
-    . ("^" ?y ?q "-(" ?m ")") string:concatenation ?m_scraper
-    . (?e ?m_scraper) string:scrape ?m_string
-    . ("--" ?m_string) string:concatenation ?m_value
-    . (?m_value xsd:gMonth) log:dtlit ?gmonth
-} => {
-    ?dtd time:month ?gmonth
-} .
-
-{
-    re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d
-
-    . ?w edtfo:inEDTFDateTime ?e
-    . ("^" ?y "\\?-" ?m) string:concatenation ?re
-    . ?e string:matches ?re
-    . ?w time:inDateTime ?dtd
-    . ?dtd time:year ?gyear
-} => {
-    << ?dtd time:year ?gyear >> a edtfo:UncertainStatement
-} .
-
-{
-    re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d
-
-    . ?w edtfo:inEDTFDateTime ?e
-    . ("^" ?y "~-" ?m) string:concatenation ?re
-    . ?e string:matches ?re
-    . ?w time:inDateTime ?dtd
-    . ?dtd time:year ?gyear
-} => {
-    << ?dtd time:year ?gyear >> a edtfo:ApproximateStatement
-} .
-
-{
-    re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d
-
-    . ?w edtfo:inEDTFDateTime ?e
-    . ("^" ?y "%-" ?m) string:concatenation ?re
-    . ?e string:matches ?re
-    . ?w time:inDateTime ?dtd
-    . ?dtd time:year ?gyear
-} => {
-    << ?dtd time:year ?gyear >> a edtfo:UncertainStatement , edtfo:ApproximateStatement
 } .

@@ -1,0 +1,37 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix : <cases/level-2/qualification/individual/> .
+@prefix edtfo: <edtfo.ttl#> .
+
+
+# Year and month known, day uncertain.
+:when1 edtfo:inEDTFDateTime "2004-06-?11" .
+
+# Year known, month approximate, day known.
+:when2 edtfo:inEDTFDateTime "2004-~06-11" .
+
+# Year uncertain and approximate, month and day known.
+:when3 edtfo:inEDTFDateTime "%2004-06-11" .
+
+# Year known, month uncertain, day approximate.
+:when4 edtfo:inEDTFDateTime "2004-?06-~11" .
+
+# Year uncertain, month uncertain and approximate, day known.
+:when5 edtfo:inEDTFDateTime "?2004-%06-11" .
+
+# Year approximate, month known, day uncertain and approximate.
+:when6 edtfo:inEDTFDateTime "~2004-06-%11" .
+
+# Year uncertain, month and day uncertain and approximate.
+:when7 edtfo:inEDTFDateTime "?2004-%06-%11" .
+
+# Year known, month uncertain.
+:when8 edtfo:inEDTFDateTime "2004-?06" .
+
+# Year approximate, month known.
+:when9 edtfo:inEDTFDateTime "~2004-06" .
+
+# Year uncertain and approximate, month approximate.
+:when10 edtfo:inEDTFDateTime "%2004-~06" .
+
+# Year uncertain.
+:when11 edtfo:inEDTFDateTime "?2004" .
