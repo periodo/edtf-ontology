@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Shaw"
+  given-names: "Ryan"
+  orcid: "https://orcid.org/0000-0002-5486-159X"
+title: "EDTF in RDF/OWL"
+version: draft
+url: "https://github.com/periodo/edtf-ontology"
