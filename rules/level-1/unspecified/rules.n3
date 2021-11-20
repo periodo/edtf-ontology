@@ -17,7 +17,7 @@ edtfo:CenturyDescription rdfs:subClassOf time:DateTimeDescription .
     re:YEAR = ?y . re:MONTH = ?m
 
     . ?w edtfo:inEDTFDateTime ?e
-    . ("^(" ?y "|XXXX)-(" ?m "|XX)-XX$") string:concatenation ?re
+    . ("^(" ?y ")-(" ?m "|XX)-XX$") string:concatenation ?re
     . ?e string:matches ?re
 } => {
     ?w time:inDateTime [
@@ -30,7 +30,7 @@ edtfo:CenturyDescription rdfs:subClassOf time:DateTimeDescription .
     re:YEAR = ?y
 
     . ?w edtfo:inEDTFDateTime ?e
-    . ("^(" ?y "|XXXX)-XX$") string:concatenation ?re
+    . ("^(" ?y ")-XX$") string:concatenation ?re
     . ?e string:matches ?re
 } => {
     ?w time:inDateTime [
@@ -60,15 +60,5 @@ edtfo:CenturyDescription rdfs:subClassOf time:DateTimeDescription .
       a edtfo:CenturyDescription ;
       time:unitType time:unitYear ;
       edtfo:century ?century
-    ]
-} .
-
-{
-    ?w edtfo:inEDTFDateTime ?e
-    . ?e  string:matches "^XXXX$"
-} => {
-    ?w time:inDateTime [
-      a time:DateTimeDescription ;
-      time:unitType time:unitYear
     ]
 } .

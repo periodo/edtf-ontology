@@ -9,7 +9,3 @@
 # Year specified, month and day unspecified
 # in a year-month-day expression  (day precision).
 :when2 edtfo:inEDTFDateTime "1985-XX-XX" .
-
-# Year, month, and day unspecified
-# in a year-month-day expression  (day precision).
-:when3 edtfo:inEDTFDateTime "XXXX-XX-XX" .

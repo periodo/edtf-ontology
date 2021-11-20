@@ -9,7 +9,3 @@
 # A year with two rightmost unspecified digits
 # in a year-only expression (year precision).
 :when2 edtfo:inEDTFDateTime "-05XX" .
-
-# Year completely unspecified
-# in a year-only expression (year precision).
-:when3 edtfo:inEDTFDateTime "XXXX" .

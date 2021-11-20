@@ -28,3 +28,15 @@
 
 # Non-rightmost digits unspecified.
 :invalid9 edtfo:inEDTFDateTime "2001-04-X2" .
+
+# More than two digits unspecified in year.
+:invalid10 edtfo:inEDTFDateTime "2XXX" .
+
+# Unspecified year digits with month precision.
+:invalid11 edtfo:inEDTFDateTime "200X-XX" .
+
+# Unspecified year digits with day precision.
+:invalid12 edtfo:inEDTFDateTime "200X-XX-XX" .
+
+# More than two digits unspecified in year.
+:invalid13 edtfo:inEDTFDateTime "XXXX" .

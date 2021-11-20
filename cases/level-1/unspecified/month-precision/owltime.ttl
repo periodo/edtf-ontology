@@ -8,12 +8,6 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-:when2  a                time:Instant ;
-        time:inDateTime  [ a              time:DateTimeDescription ;
-                           time:hasTRS    iso8601:Gregorian ;
-                           time:unitType  time:unitMonth
-                         ] .
-
 :when1  a                time:Instant ;
         time:inDateTime  [ a              time:DateTimeDescription ;
                            time:hasTRS    iso8601:Gregorian ;

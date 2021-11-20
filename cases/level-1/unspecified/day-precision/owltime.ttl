@@ -8,14 +8,6 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-:when1  a                time:Instant ;
-        time:inDateTime  [ a              time:DateTimeDescription ;
-                           time:hasTRS    iso8601:Gregorian ;
-                           time:month     "--04"^^xsd:gMonth ;
-                           time:unitType  time:unitDay ;
-                           time:year      "1985"^^xsd:gYear
-                         ] .
-
 :when2  a                time:Instant ;
         time:inDateTime  [ a              time:DateTimeDescription ;
                            time:hasTRS    iso8601:Gregorian ;
@@ -23,8 +15,10 @@
                            time:year      "1985"^^xsd:gYear
                          ] .
 
-:when3  a                time:Instant ;
+:when1  a                time:Instant ;
         time:inDateTime  [ a              time:DateTimeDescription ;
                            time:hasTRS    iso8601:Gregorian ;
-                           time:unitType  time:unitDay
+                           time:month     "--04"^^xsd:gMonth ;
+                           time:unitType  time:unitDay ;
+                           time:year      "1985"^^xsd:gYear
                          ] .

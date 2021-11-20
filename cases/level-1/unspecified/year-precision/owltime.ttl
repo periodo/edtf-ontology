@@ -8,10 +8,11 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-:when3  a                time:Instant ;
-        time:inDateTime  [ a              time:DateTimeDescription ;
+:when2  a                time:Instant ;
+        time:inDateTime  [ a              edtfo:CenturyDescription , time:DateTimeDescription ;
                            time:hasTRS    iso8601:Gregorian ;
-                           time:unitType  time:unitYear
+                           time:unitType  time:unitYear ;
+                           edtfo:century  -05
                          ] .
 
 :when1  a                time:Instant ;
@@ -19,11 +20,4 @@
                            time:hasTRS    iso8601:Gregorian ;
                            time:unitType  time:unitYear ;
                            edtfo:decade   201
-                         ] .
-
-:when2  a                time:Instant ;
-        time:inDateTime  [ a              edtfo:CenturyDescription , time:DateTimeDescription ;
-                           time:hasTRS    iso8601:Gregorian ;
-                           time:unitType  time:unitYear ;
-                           edtfo:century  -05
                          ] .
