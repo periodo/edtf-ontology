@@ -25,27 +25,35 @@ the following features:
  
 ## Unspecified digit(s) (see [rules](../../level-2/unspecified/rules.n3))
 
-* [date with unspecified digits](unspecified/)
+* [calendar date with unspecified digits](unspecified/day-precision)
+* [reduced precision date (year and month only) with unspecified digits](unspecified/month-precision/)
+* [reduced precision date (year only) with unspecified digits](unspecified/year-precision/)
+
+## Range of possible dates (see [rules](../../level-2/range/rules.n3))
+
+* [on or before date](range/on-or-before/)
+* [on or after date](range/on-or-after/)
+* [no earlier than date A and no later than date B](range/from-to/)
 
 ## Time interval (see [rules](../../level-2/interval/rules.n3))
+
+The following intervals also use the [unspecified digit rules](../../level-1/unspecified/rules.n3):
 
 * [with unspecified digits in start](interval/unspecified-start/)
 * [with unspecified digits in end](interval/unspecified-end/)
 * [with unspecified digits in start and end](interval/unspecified-both/)
+
+The following intervals also use the [qualification rules](../../level-2/qualification/rules.n3):
+
 * [with qualified start](interval/qualified-start/)
 * [with qualified end](interval/qualified-end/)
 * [with qualified start and end](interval/qualified-both/)
-* [with start on or before date](interval/on-or-before/)
-* [with end on or after date](interval/on-or-after/)
+
+*Under construction:*
+
+* with start on or before date
+* with end on or after date
 
 ## Set of dates (see [rules](../../level-2/set/rules.n3))
- 
-* [one of fully enumerated set](set/one-of-full/)
-* [one of partially enumerated set](set/one-of-partial/)
-* [one of open set](set/one-of-open/)
-* [one of partially enumerated and open set](set/one-of-partial-and-open/)
-* [all of fully enumerated set](set/all-of-full/)
-* [all of partially enumerated set](set/all-of-partial/)
-* [all of open set](set/all-of-open/)
-* [all of partially enumerated and open set](set/all-of-partial-and-open/)
 
+*Under construction*

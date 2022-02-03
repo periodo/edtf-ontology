@@ -34,7 +34,7 @@ the following features:
 * [with open end](interval/open-end/)
 * [mysterious time interval](interval/mysterious/)
 
-The following also use the [qualification rules](../../level-1/qualification/rules.n3):
+The following intervals also use the [qualification rules](../../level-1/qualification/rules.n3):
 
 * [with qualified start](interval/qualified-start/)
 * [with qualified end](interval/qualified-end/)
