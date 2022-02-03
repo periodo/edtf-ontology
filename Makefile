@@ -56,7 +56,8 @@ $(HERMIT):
 
 doc/html/index.html: edtfo.ttl tools/diagram.sed | $(PYLODE)
 	riot -q --validate $<
-	$(PYLODE) -c false -i $< | sed -f tools/diagram.sed > $@
+	$(PYLODE) -c false -i $< -o $@
+	sed -f tools/diagram.sed -i "" $@
 
 doc/html/report.html: edtfo.ttl tools/report-profile.txt | $(ROBOT)
 	riot -q --validate $<
