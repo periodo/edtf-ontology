@@ -1,0 +1,64 @@
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/season/when1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/season/when1> <http://www.w3.org/2000/01/rdf-schema#label> "spring 2001 in the northern hemisphere" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/season/when1> <http://www.w3.org/2006/time#inDateTime> _:B434e69fba41fe258c487acf029a7ce00 .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/season/when2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/season/when2> <http://www.w3.org/2000/01/rdf-schema#label> "summer 2001 in the northern hemisphere" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/season/when2> <http://www.w3.org/2006/time#inDateTime> _:Ba0d9ca9e9eef1a9c0b90671f846aed43 .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/season/when3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/season/when3> <http://www.w3.org/2000/01/rdf-schema#label> "autumn 2001 in the northern hemisphere" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/season/when3> <http://www.w3.org/2006/time#inDateTime> _:B29b9a74ddfb275a03b1cbc15f8c37c91 .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/season/when4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/season/when4> <http://www.w3.org/2000/01/rdf-schema#label> "winter 2001 in the northern hemisphere" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/season/when4> <http://www.w3.org/2006/time#inDateTime> _:Bd52da975748e0775c3270855b0dbba03 .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/season/when5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/season/when5> <http://www.w3.org/2000/01/rdf-schema#label> "spring 2001 in the southern hemisphere" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/season/when5> <http://www.w3.org/2006/time#inDateTime> _:Bd987101156f6d7045bb150f1d3bc3a82 .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/season/when6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/season/when6> <http://www.w3.org/2000/01/rdf-schema#label> "summer 2001 in the southern hemisphere" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/season/when6> <http://www.w3.org/2006/time#inDateTime> _:B84539800c0d73b02df1be27f5d0dec18 .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/season/when7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/season/when7> <http://www.w3.org/2000/01/rdf-schema#label> "autumn 2001 in the southern hemisphere" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/season/when7> <http://www.w3.org/2006/time#inDateTime> _:Bb7c90a941a9f22eb576c88c6047cfe7a .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/season/when8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/season/when8> <http://www.w3.org/2000/01/rdf-schema#label> "winter 2001 in the southern hemisphere" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/season/when8> <http://www.w3.org/2006/time#inDateTime> _:Bca7e17b28d390af6b0065cb303cca8a1 .
+_:B29b9a74ddfb275a03b1cbc15f8c37c91 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:B29b9a74ddfb275a03b1cbc15f8c37c91 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#SubYearDateTimeDescription> .
+_:B29b9a74ddfb275a03b1cbc15f8c37c91 <http://www.w3.org/2006/time#unitType> <https://periodo.github.io/edtf-ontology/edtfo.ttl#unitSeason> .
+_:B29b9a74ddfb275a03b1cbc15f8c37c91 <http://www.w3.org/2006/time#year> "2001"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:B29b9a74ddfb275a03b1cbc15f8c37c91 <https://periodo.github.io/edtf-ontology/edtfo.ttl#yearSubdivision> <https://periodo.github.io/edtf-ontology/edtfo.ttl#AutumnNorthernHemisphere> .
+_:B434e69fba41fe258c487acf029a7ce00 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:B434e69fba41fe258c487acf029a7ce00 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#SubYearDateTimeDescription> .
+_:B434e69fba41fe258c487acf029a7ce00 <http://www.w3.org/2006/time#unitType> <https://periodo.github.io/edtf-ontology/edtfo.ttl#unitSeason> .
+_:B434e69fba41fe258c487acf029a7ce00 <http://www.w3.org/2006/time#year> "2001"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:B434e69fba41fe258c487acf029a7ce00 <https://periodo.github.io/edtf-ontology/edtfo.ttl#yearSubdivision> <https://periodo.github.io/edtf-ontology/edtfo.ttl#SpringNorthernHemisphere> .
+_:B84539800c0d73b02df1be27f5d0dec18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:B84539800c0d73b02df1be27f5d0dec18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#SubYearDateTimeDescription> .
+_:B84539800c0d73b02df1be27f5d0dec18 <http://www.w3.org/2006/time#unitType> <https://periodo.github.io/edtf-ontology/edtfo.ttl#unitSeason> .
+_:B84539800c0d73b02df1be27f5d0dec18 <http://www.w3.org/2006/time#year> "2001"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:B84539800c0d73b02df1be27f5d0dec18 <https://periodo.github.io/edtf-ontology/edtfo.ttl#yearSubdivision> <https://periodo.github.io/edtf-ontology/edtfo.ttl#SummerSouthernHemisphere> .
+_:Ba0d9ca9e9eef1a9c0b90671f846aed43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:Ba0d9ca9e9eef1a9c0b90671f846aed43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#SubYearDateTimeDescription> .
+_:Ba0d9ca9e9eef1a9c0b90671f846aed43 <http://www.w3.org/2006/time#unitType> <https://periodo.github.io/edtf-ontology/edtfo.ttl#unitSeason> .
+_:Ba0d9ca9e9eef1a9c0b90671f846aed43 <http://www.w3.org/2006/time#year> "2001"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:Ba0d9ca9e9eef1a9c0b90671f846aed43 <https://periodo.github.io/edtf-ontology/edtfo.ttl#yearSubdivision> <https://periodo.github.io/edtf-ontology/edtfo.ttl#SummerNorthernHemisphere> .
+_:Bb7c90a941a9f22eb576c88c6047cfe7a <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:Bb7c90a941a9f22eb576c88c6047cfe7a <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#SubYearDateTimeDescription> .
+_:Bb7c90a941a9f22eb576c88c6047cfe7a <http://www.w3.org/2006/time#unitType> <https://periodo.github.io/edtf-ontology/edtfo.ttl#unitSeason> .
+_:Bb7c90a941a9f22eb576c88c6047cfe7a <http://www.w3.org/2006/time#year> "2001"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:Bb7c90a941a9f22eb576c88c6047cfe7a <https://periodo.github.io/edtf-ontology/edtfo.ttl#yearSubdivision> <https://periodo.github.io/edtf-ontology/edtfo.ttl#AutumnSouthernHemisphere> .
+_:Bca7e17b28d390af6b0065cb303cca8a1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:Bca7e17b28d390af6b0065cb303cca8a1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#SubYearDateTimeDescription> .
+_:Bca7e17b28d390af6b0065cb303cca8a1 <http://www.w3.org/2006/time#unitType> <https://periodo.github.io/edtf-ontology/edtfo.ttl#unitSeason> .
+_:Bca7e17b28d390af6b0065cb303cca8a1 <http://www.w3.org/2006/time#year> "2001"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:Bca7e17b28d390af6b0065cb303cca8a1 <https://periodo.github.io/edtf-ontology/edtfo.ttl#yearSubdivision> <https://periodo.github.io/edtf-ontology/edtfo.ttl#WinterSouthernHemisphere> .
+_:Bd52da975748e0775c3270855b0dbba03 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:Bd52da975748e0775c3270855b0dbba03 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#SubYearDateTimeDescription> .
+_:Bd52da975748e0775c3270855b0dbba03 <http://www.w3.org/2006/time#unitType> <https://periodo.github.io/edtf-ontology/edtfo.ttl#unitSeason> .
+_:Bd52da975748e0775c3270855b0dbba03 <http://www.w3.org/2006/time#year> "2001"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:Bd52da975748e0775c3270855b0dbba03 <https://periodo.github.io/edtf-ontology/edtfo.ttl#yearSubdivision> <https://periodo.github.io/edtf-ontology/edtfo.ttl#WinterNorthernHemisphere> .
+_:Bd987101156f6d7045bb150f1d3bc3a82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:Bd987101156f6d7045bb150f1d3bc3a82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#SubYearDateTimeDescription> .
+_:Bd987101156f6d7045bb150f1d3bc3a82 <http://www.w3.org/2006/time#unitType> <https://periodo.github.io/edtf-ontology/edtfo.ttl#unitSeason> .
+_:Bd987101156f6d7045bb150f1d3bc3a82 <http://www.w3.org/2006/time#year> "2001"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:Bd987101156f6d7045bb150f1d3bc3a82 <https://periodo.github.io/edtf-ontology/edtfo.ttl#yearSubdivision> <https://periodo.github.io/edtf-ontology/edtfo.ttl#SpringSouthernHemisphere> .

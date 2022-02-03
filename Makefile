@@ -257,7 +257,13 @@ clean: clean_cases
 	rm -rf $(VENV_DIR) $(ROBOT_DIR) $(HERMIT_DIR) rules/derived cache \
 	doc/html/index.html doc/html/report.html doc/html/validation.txt \
 
-.PRECIOUS: cache/%.n3 cases/%/owltime.ttl
+.PRECIOUS: \
+cache/%.n3 \
+cases/%/owltime.ttl \
+cases/level-1/qualification/%/owltime.ttl \
+cases/level-1/interval/qualified-%/owltime.ttl \
+cases/level-2/qualification/%/owltime.ttl \
+cases/level-2/interval/qualified-%/owltime.ttl
 
 .PHONY: \
 check_prefixes \

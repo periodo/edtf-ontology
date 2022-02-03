@@ -1,73 +1,110 @@
-@base <https://periodo.github.io/edtf-ontology/> .
-@prefix : <cases/level-2/year-subdivision/season/> .
-@prefix bipm: <http://www.opengis.net/def/trs/BIPM/0/> .
-@prefix edtfo: <edtfo.ttl#> .
-@prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/season/>
+PREFIX edtfo: <https://periodo.github.io/edtf-ontology/edtfo.ttl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-:when4  a                time:Instant ;
-        time:inDateTime  [ a                      edtfo:SubYearDateTimeDescription , time:DateTimeDescription ;
-                           time:hasTRS            iso8601:Gregorian ;
-                           time:unitType          edtfo:unitSeason ;
-                           time:year              "2001"^^xsd:gYear ;
-                           edtfo:yearSubdivision  edtfo:WinterNorthernHemisphere
-                         ] .
+:when1
+  a time:Instant ;
+  rdfs:label "spring 2001 in the northern hemisphere" ;
+  time:inDateTime [
+      a
+        time:DateTimeDescription ,
+        edtfo:SubYearDateTimeDescription ;
+      time:unitType edtfo:unitSeason ;
+      time:year "2001"^^xsd:gYear ;
+      edtfo:yearSubdivision edtfo:SpringNorthernHemisphere
+    ] ;
+.
 
-:when2  a                time:Instant ;
-        time:inDateTime  [ a                      edtfo:SubYearDateTimeDescription , time:DateTimeDescription ;
-                           time:hasTRS            iso8601:Gregorian ;
-                           time:unitType          edtfo:unitSeason ;
-                           time:year              "2001"^^xsd:gYear ;
-                           edtfo:yearSubdivision  edtfo:SummerNorthernHemisphere
-                         ] .
+:when2
+  a time:Instant ;
+  rdfs:label "summer 2001 in the northern hemisphere" ;
+  time:inDateTime [
+      a
+        time:DateTimeDescription ,
+        edtfo:SubYearDateTimeDescription ;
+      time:unitType edtfo:unitSeason ;
+      time:year "2001"^^xsd:gYear ;
+      edtfo:yearSubdivision edtfo:SummerNorthernHemisphere
+    ] ;
+.
 
-:when7  a                time:Instant ;
-        time:inDateTime  [ a                      edtfo:SubYearDateTimeDescription , time:DateTimeDescription ;
-                           time:hasTRS            iso8601:Gregorian ;
-                           time:unitType          edtfo:unitSeason ;
-                           time:year              "2001"^^xsd:gYear ;
-                           edtfo:yearSubdivision  edtfo:AutumnSouthernHemisphere
-                         ] .
+:when3
+  a time:Instant ;
+  rdfs:label "autumn 2001 in the northern hemisphere" ;
+  time:inDateTime [
+      a
+        time:DateTimeDescription ,
+        edtfo:SubYearDateTimeDescription ;
+      time:unitType edtfo:unitSeason ;
+      time:year "2001"^^xsd:gYear ;
+      edtfo:yearSubdivision edtfo:AutumnNorthernHemisphere
+    ] ;
+.
 
-:when5  a                time:Instant ;
-        time:inDateTime  [ a                      edtfo:SubYearDateTimeDescription , time:DateTimeDescription ;
-                           time:hasTRS            iso8601:Gregorian ;
-                           time:unitType          edtfo:unitSeason ;
-                           time:year              "2001"^^xsd:gYear ;
-                           edtfo:yearSubdivision  edtfo:SpringSouthernHemisphere
-                         ] .
+:when4
+  a time:Instant ;
+  rdfs:label "winter 2001 in the northern hemisphere" ;
+  time:inDateTime [
+      a
+        time:DateTimeDescription ,
+        edtfo:SubYearDateTimeDescription ;
+      time:unitType edtfo:unitSeason ;
+      time:year "2001"^^xsd:gYear ;
+      edtfo:yearSubdivision edtfo:WinterNorthernHemisphere
+    ] ;
+.
 
-:when8  a                time:Instant ;
-        time:inDateTime  [ a                      edtfo:SubYearDateTimeDescription , time:DateTimeDescription ;
-                           time:hasTRS            iso8601:Gregorian ;
-                           time:unitType          edtfo:unitSeason ;
-                           time:year              "2001"^^xsd:gYear ;
-                           edtfo:yearSubdivision  edtfo:WinterSouthernHemisphere
-                         ] .
+:when5
+  a time:Instant ;
+  rdfs:label "spring 2001 in the southern hemisphere" ;
+  time:inDateTime [
+      a
+        time:DateTimeDescription ,
+        edtfo:SubYearDateTimeDescription ;
+      time:unitType edtfo:unitSeason ;
+      time:year "2001"^^xsd:gYear ;
+      edtfo:yearSubdivision edtfo:SpringSouthernHemisphere
+    ] ;
+.
 
-:when3  a                time:Instant ;
-        time:inDateTime  [ a                      edtfo:SubYearDateTimeDescription , time:DateTimeDescription ;
-                           time:hasTRS            iso8601:Gregorian ;
-                           time:unitType          edtfo:unitSeason ;
-                           time:year              "2001"^^xsd:gYear ;
-                           edtfo:yearSubdivision  edtfo:AutumnNorthernHemisphere
-                         ] .
+:when6
+  a time:Instant ;
+  rdfs:label "summer 2001 in the southern hemisphere" ;
+  time:inDateTime [
+      a
+        time:DateTimeDescription ,
+        edtfo:SubYearDateTimeDescription ;
+      time:unitType edtfo:unitSeason ;
+      time:year "2001"^^xsd:gYear ;
+      edtfo:yearSubdivision edtfo:SummerSouthernHemisphere
+    ] ;
+.
 
-:when6  a                time:Instant ;
-        time:inDateTime  [ a                      edtfo:SubYearDateTimeDescription , time:DateTimeDescription ;
-                           time:hasTRS            iso8601:Gregorian ;
-                           time:unitType          edtfo:unitSeason ;
-                           time:year              "2001"^^xsd:gYear ;
-                           edtfo:yearSubdivision  edtfo:SummerSouthernHemisphere
-                         ] .
+:when7
+  a time:Instant ;
+  rdfs:label "autumn 2001 in the southern hemisphere" ;
+  time:inDateTime [
+      a
+        time:DateTimeDescription ,
+        edtfo:SubYearDateTimeDescription ;
+      time:unitType edtfo:unitSeason ;
+      time:year "2001"^^xsd:gYear ;
+      edtfo:yearSubdivision edtfo:AutumnSouthernHemisphere
+    ] ;
+.
 
-:when1  a                time:Instant ;
-        time:inDateTime  [ a                      edtfo:SubYearDateTimeDescription , time:DateTimeDescription ;
-                           time:hasTRS            iso8601:Gregorian ;
-                           time:unitType          edtfo:unitSeason ;
-                           time:year              "2001"^^xsd:gYear ;
-                           edtfo:yearSubdivision  edtfo:SpringNorthernHemisphere
-                         ] .
+:when8
+  a time:Instant ;
+  rdfs:label "winter 2001 in the southern hemisphere" ;
+  time:inDateTime [
+      a
+        time:DateTimeDescription ,
+        edtfo:SubYearDateTimeDescription ;
+      time:unitType edtfo:unitSeason ;
+      time:year "2001"^^xsd:gYear ;
+      edtfo:yearSubdivision edtfo:WinterSouthernHemisphere
+    ] ;
+.
+

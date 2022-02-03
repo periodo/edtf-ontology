@@ -1,56 +1,71 @@
-@base <https://periodo.github.io/edtf-ontology/> .
-@prefix : <cases/level-2/extended-year/significant-digits/> .
-@prefix bipm: <http://www.opengis.net/def/trs/BIPM/0/> .
-@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
-@prefix edtfo: <edtfo.ttl#> .
-@prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-2/extended-year/significant-digits/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-:when4  a                time:Instant ;
-        time:inDateTime  [ a              time:DateTimeDescription ;
-                           time:hasTRS    iso8601:Gregorian ;
-                           time:unitType  [ a           time:TemporalUnit ;
-                                            time:years  10000.0
-                                          ] ;
-                           time:year      "-11000"^^xsd:gYear
-                         ] .
+:when1
+  a time:Instant ;
+  rdfs:label "some year between 338,000 and 338,999 (inclusive), estimated to be 338,800" ;
+  time:inDateTime [
+      a time:DateTimeDescription ;
+      time:unitType time:unitMillenium ;
+      time:year "3388"^^xsd:gYear
+    ] ;
+.
 
-:when2  a                time:Instant ;
-        time:inDateTime  [ a              time:DateTimeDescription ;
-                           time:hasTRS    iso8601:Gregorian ;
-                           time:unitType  [ a           time:TemporalUnit ;
-                                            time:years  1000000.0
-                                          ] ;
-                           time:year      "171010000"^^xsd:gYear
-                         ] .
+:when2
+  a time:Instant ;
+  rdfs:label "some year between 171,000,000 and 171,999,999 (inclusive), estimated to be 171,010,000" ;
+  time:inDateTime [
+      a time:DateTimeDescription ;
+      time:unitType [
+          a time:TemporalUnit ;
+          time:years 1000000.0
+        ] ;
+      time:year "171010000"^^xsd:gYear
+    ] ;
+.
 
-:when5  a                time:Instant ;
-        time:inDateTime  [ a              time:DateTimeDescription ;
-                           time:hasTRS    iso8601:Gregorian ;
-                           time:unitType  time:unitYear ;
-                           time:year      "2147483647"^^xsd:gYear
-                         ] .
+:when3
+  a time:Instant ;
+  rdfs:label "some year between 1900 and 1999 (inclusive), estimated to be 1950" ;
+  time:inDateTime [
+      a time:DateTimeDescription ;
+      time:unitType time:unitCentury ;
+      time:year "1950"^^xsd:gYear
+    ] ;
+.
 
-:when3  a                time:Instant ;
-        time:inDateTime  [ a              time:DateTimeDescription ;
-                           time:hasTRS    iso8601:Gregorian ;
-                           time:unitType  time:unitCentury ;
-                           time:year      "1950"^^xsd:gYear
-                         ] .
+:when4
+  a time:Instant ;
+  rdfs:label "some year between -19,999 and -10,000 (inclusive), estimated to be -11,000" ;
+  time:inDateTime [
+      a time:DateTimeDescription ;
+      time:unitType [
+          a time:TemporalUnit ;
+          time:years 10000.0
+        ] ;
+      time:year "-11000"^^xsd:gYear
+    ] ;
+.
 
-:when1  a                time:Instant ;
-        time:inDateTime  [ a              time:DateTimeDescription ;
-                           time:hasTRS    iso8601:Gregorian ;
-                           time:unitType  time:unitMillenium ;
-                           time:year      "338800"^^xsd:gYear
-                         ] .
+:when5
+  a time:Instant ;
+  rdfs:label "2,147,483,647 with year precision" ;
+  time:inDateTime [
+      a time:DateTimeDescription ;
+      time:unitType time:unitYear ;
+      time:year "2147483647"^^xsd:gYear
+    ] ;
+.
 
-:when6  a                time:Instant ;
-        time:inDateTime  [ a              time:DateTimeDescription ;
-                           time:hasTRS    iso8601:Gregorian ;
-                           time:unitType  time:unitYear ;
-                           time:year      "1950"^^xsd:gYear
-                         ] .
+:when6
+  a time:Instant ;
+  rdfs:label "1950 with year precision" ;
+  time:inDateTime [
+      a time:DateTimeDescription ;
+      time:unitType time:unitYear ;
+      time:year "1950"^^xsd:gYear
+    ] ;
+.
+

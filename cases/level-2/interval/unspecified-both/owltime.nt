@@ -1,0 +1,14 @@
+<https://periodo.github.io/edtf-ontology/cases/level-2/interval/unspecified-both/when> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Interval> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/interval/unspecified-both/when> <http://www.w3.org/2000/01/rdf-schema#label> "interval in 2004 beginning on an unspecified day in June ending on the third day of an unspecified month (which must be June or later)" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/interval/unspecified-both/when> <http://www.w3.org/2006/time#hasBeginning> _:Bd808993ea1cd2846537878bb08e38d11 .
+<https://periodo.github.io/edtf-ontology/cases/level-2/interval/unspecified-both/when> <http://www.w3.org/2006/time#hasEnd> _:B361006b1f9eb337799a8c3b2f27aeb58 .
+_:B298801ce3a0eaa6d7a704602f6b1cff6 <http://www.w3.org/2006/time#day> "---03"^^<http://www.w3.org/2001/XMLSchema#gDay> .
+_:B298801ce3a0eaa6d7a704602f6b1cff6 <http://www.w3.org/2006/time#unitType> <http://www.w3.org/2006/time#unitDay> .
+_:B298801ce3a0eaa6d7a704602f6b1cff6 <http://www.w3.org/2006/time#year> "2004"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:B361006b1f9eb337799a8c3b2f27aeb58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+_:B361006b1f9eb337799a8c3b2f27aeb58 <http://www.w3.org/2006/time#inDateTime> _:B298801ce3a0eaa6d7a704602f6b1cff6 .
+_:Bb7954d59c04d2190c476b8b42a29ec47 <http://www.w3.org/2006/time#month> "--06"^^<http://www.w3.org/2001/XMLSchema#gMonth> .
+_:Bb7954d59c04d2190c476b8b42a29ec47 <http://www.w3.org/2006/time#unitType> <http://www.w3.org/2006/time#unitDay> .
+_:Bb7954d59c04d2190c476b8b42a29ec47 <http://www.w3.org/2006/time#year> "2004"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:Bd808993ea1cd2846537878bb08e38d11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+_:Bd808993ea1cd2846537878bb08e38d11 <http://www.w3.org/2006/time#inDateTime> _:Bb7954d59c04d2190c476b8b42a29ec47 .

@@ -1,0 +1,24 @@
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/quadrimester/when1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/quadrimester/when1> <http://www.w3.org/2000/01/rdf-schema#label> "first quadrimester of 2001" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/quadrimester/when1> <http://www.w3.org/2006/time#inDateTime> _:B9b352d1ecfc443901f874efa5966b756 .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/quadrimester/when2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/quadrimester/when2> <http://www.w3.org/2000/01/rdf-schema#label> "second quadrimester of 2001" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/quadrimester/when2> <http://www.w3.org/2006/time#inDateTime> _:Ba08979cf9511a67b4db70702afe60791 .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/quadrimester/when3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/quadrimester/when3> <http://www.w3.org/2000/01/rdf-schema#label> "third quadrimester of 2001." .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/quadrimester/when3> <http://www.w3.org/2006/time#inDateTime> _:B53c5938d16cbd2bf52ab187e7b364d8c .
+_:B53c5938d16cbd2bf52ab187e7b364d8c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:B53c5938d16cbd2bf52ab187e7b364d8c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#SubYearDateTimeDescription> .
+_:B53c5938d16cbd2bf52ab187e7b364d8c <http://www.w3.org/2006/time#unitType> <https://periodo.github.io/edtf-ontology/edtfo.ttl#unitQuadrimester> .
+_:B53c5938d16cbd2bf52ab187e7b364d8c <http://www.w3.org/2006/time#year> "2001"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:B53c5938d16cbd2bf52ab187e7b364d8c <https://periodo.github.io/edtf-ontology/edtfo.ttl#yearSubdivision> <https://periodo.github.io/edtf-ontology/edtfo.ttl#Quadrimester3> .
+_:B9b352d1ecfc443901f874efa5966b756 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:B9b352d1ecfc443901f874efa5966b756 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#SubYearDateTimeDescription> .
+_:B9b352d1ecfc443901f874efa5966b756 <http://www.w3.org/2006/time#unitType> <https://periodo.github.io/edtf-ontology/edtfo.ttl#unitQuadrimester> .
+_:B9b352d1ecfc443901f874efa5966b756 <http://www.w3.org/2006/time#year> "2001"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:B9b352d1ecfc443901f874efa5966b756 <https://periodo.github.io/edtf-ontology/edtfo.ttl#yearSubdivision> <https://periodo.github.io/edtf-ontology/edtfo.ttl#Quadrimester1> .
+_:Ba08979cf9511a67b4db70702afe60791 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:Ba08979cf9511a67b4db70702afe60791 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#SubYearDateTimeDescription> .
+_:Ba08979cf9511a67b4db70702afe60791 <http://www.w3.org/2006/time#unitType> <https://periodo.github.io/edtf-ontology/edtfo.ttl#unitQuadrimester> .
+_:Ba08979cf9511a67b4db70702afe60791 <http://www.w3.org/2006/time#year> "2001"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:Ba08979cf9511a67b4db70702afe60791 <https://periodo.github.io/edtf-ontology/edtfo.ttl#yearSubdivision> <https://periodo.github.io/edtf-ontology/edtfo.ttl#Quadrimester2> .

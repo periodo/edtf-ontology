@@ -1,0 +1,40 @@
+<https://periodo.github.io/edtf-ontology/cases/level-2/extended-year/significant-digits/when1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/extended-year/significant-digits/when1> <http://www.w3.org/2000/01/rdf-schema#label> "some year between 338,000 and 338,999 (inclusive), estimated to be 338,800" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/extended-year/significant-digits/when1> <http://www.w3.org/2006/time#inDateTime> _:B6de86d5b141ab65cb0017651b5cbf336 .
+<https://periodo.github.io/edtf-ontology/cases/level-2/extended-year/significant-digits/when2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/extended-year/significant-digits/when2> <http://www.w3.org/2000/01/rdf-schema#label> "some year between 171,000,000 and 171,999,999 (inclusive), estimated to be 171,010,000" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/extended-year/significant-digits/when2> <http://www.w3.org/2006/time#inDateTime> _:Bbe890eef41f716e400c8a3ab69f6eb71 .
+<https://periodo.github.io/edtf-ontology/cases/level-2/extended-year/significant-digits/when3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/extended-year/significant-digits/when3> <http://www.w3.org/2000/01/rdf-schema#label> "some year between 1900 and 1999 (inclusive), estimated to be 1950" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/extended-year/significant-digits/when3> <http://www.w3.org/2006/time#inDateTime> _:B4b09df96310a4afc09acd85faae1ba49 .
+<https://periodo.github.io/edtf-ontology/cases/level-2/extended-year/significant-digits/when4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/extended-year/significant-digits/when4> <http://www.w3.org/2000/01/rdf-schema#label> "some year between -19,999 and -10,000 (inclusive), estimated to be -11,000" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/extended-year/significant-digits/when4> <http://www.w3.org/2006/time#inDateTime> _:Bbad255c0577a882eefbd859a744022b8 .
+<https://periodo.github.io/edtf-ontology/cases/level-2/extended-year/significant-digits/when5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/extended-year/significant-digits/when5> <http://www.w3.org/2000/01/rdf-schema#label> "2,147,483,647 with year precision" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/extended-year/significant-digits/when5> <http://www.w3.org/2006/time#inDateTime> _:Bca8d1473635f6851771e33d673ef27d0 .
+<https://periodo.github.io/edtf-ontology/cases/level-2/extended-year/significant-digits/when6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/extended-year/significant-digits/when6> <http://www.w3.org/2000/01/rdf-schema#label> "1950 with year precision" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/extended-year/significant-digits/when6> <http://www.w3.org/2006/time#inDateTime> _:B002109d934632f68f41f13ee8dc18c63 .
+_:B002109d934632f68f41f13ee8dc18c63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:B002109d934632f68f41f13ee8dc18c63 <http://www.w3.org/2006/time#unitType> <http://www.w3.org/2006/time#unitYear> .
+_:B002109d934632f68f41f13ee8dc18c63 <http://www.w3.org/2006/time#year> "1950"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:B1707164e203aa35d5502559c20effc4f <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#TemporalUnit> .
+_:B1707164e203aa35d5502559c20effc4f <http://www.w3.org/2006/time#years> "1000000.0"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+_:B4b09df96310a4afc09acd85faae1ba49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:B4b09df96310a4afc09acd85faae1ba49 <http://www.w3.org/2006/time#unitType> <http://www.w3.org/2006/time#unitCentury> .
+_:B4b09df96310a4afc09acd85faae1ba49 <http://www.w3.org/2006/time#year> "1950"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:B6de86d5b141ab65cb0017651b5cbf336 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:B6de86d5b141ab65cb0017651b5cbf336 <http://www.w3.org/2006/time#unitType> <http://www.w3.org/2006/time#unitMillenium> .
+_:B6de86d5b141ab65cb0017651b5cbf336 <http://www.w3.org/2006/time#year> "3388"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:B901596fa9aad3d3dadf446a88283a8c4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#TemporalUnit> .
+_:B901596fa9aad3d3dadf446a88283a8c4 <http://www.w3.org/2006/time#years> "10000.0"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+_:Bbad255c0577a882eefbd859a744022b8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:Bbad255c0577a882eefbd859a744022b8 <http://www.w3.org/2006/time#unitType> _:B901596fa9aad3d3dadf446a88283a8c4 .
+_:Bbad255c0577a882eefbd859a744022b8 <http://www.w3.org/2006/time#year> "-11000"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:Bbe890eef41f716e400c8a3ab69f6eb71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:Bbe890eef41f716e400c8a3ab69f6eb71 <http://www.w3.org/2006/time#unitType> _:B1707164e203aa35d5502559c20effc4f .
+_:Bbe890eef41f716e400c8a3ab69f6eb71 <http://www.w3.org/2006/time#year> "171010000"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:Bca8d1473635f6851771e33d673ef27d0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:Bca8d1473635f6851771e33d673ef27d0 <http://www.w3.org/2006/time#unitType> <http://www.w3.org/2006/time#unitYear> .
+_:Bca8d1473635f6851771e33d673ef27d0 <http://www.w3.org/2006/time#year> "2147483647"^^<http://www.w3.org/2001/XMLSchema#gYear> .

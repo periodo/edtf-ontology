@@ -1,9 +1,1 @@
-@base <https://periodo.github.io/edtf-ontology/> .
-@prefix : <cases/level-1/extended-year/invalid/> .
-@prefix bipm: <http://www.opengis.net/def/trs/BIPM/0/> .
-@prefix edtfo: <edtfo.ttl#> .
-@prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+

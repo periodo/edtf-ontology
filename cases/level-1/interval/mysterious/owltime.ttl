@@ -1,17 +1,22 @@
-@base <https://periodo.github.io/edtf-ontology/> .
-@prefix : <cases/level-1/interval/mysterious/> .
-@prefix bipm: <http://www.opengis.net/def/trs/BIPM/0/> .
-@prefix edtfo: <edtfo.ttl#> .
-@prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-1/interval/mysterious/>
+PREFIX edtfo: <https://periodo.github.io/edtf-ontology/edtfo.ttl#>
+PREFIX time: <http://www.w3.org/2006/time#>
 
-:when1  a       time:Interval .
+:when1
+  a time:Interval ;
+.
 
-:when4  a       edtfo:OpenBeginningInterval .
+:when2
+  a
+    edtfo:OpenBeginningInterval ,
+    edtfo:OpenEndInterval ;
+.
 
-:when3  a       edtfo:OpenEndInterval .
+:when3
+  a edtfo:OpenEndInterval ;
+.
 
-:when2  a       edtfo:OpenBeginningInterval , edtfo:OpenEndInterval .
+:when4
+  a edtfo:OpenBeginningInterval ;
+.
+

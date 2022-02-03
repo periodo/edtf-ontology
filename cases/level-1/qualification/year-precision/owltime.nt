@@ -1,0 +1,19 @@
+<< <https://periodo.github.io/edtf-ontology/cases/level-1/qualification/year-precision/when1> <http://www.w3.org/2006/time#inDateTime> _:Bb80d3792b5b6051073c68064d95cafc7 >> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#UncertainStatement> .
+<< <https://periodo.github.io/edtf-ontology/cases/level-1/qualification/year-precision/when2> <http://www.w3.org/2006/time#inDateTime> _:B1f65ab5d678d5c62dc78af8362b123c1 >> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#ApproximateStatement> .
+<< <https://periodo.github.io/edtf-ontology/cases/level-1/qualification/year-precision/when3> <http://www.w3.org/2006/time#inDateTime> _:B2575127f70e106aa6d7906758c2b2848 >> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#ApproximateStatement> .
+<< <https://periodo.github.io/edtf-ontology/cases/level-1/qualification/year-precision/when3> <http://www.w3.org/2006/time#inDateTime> _:B2575127f70e106aa6d7906758c2b2848 >> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#UncertainStatement> .
+<https://periodo.github.io/edtf-ontology/cases/level-1/qualification/year-precision/when1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-1/qualification/year-precision/when1> <http://www.w3.org/2006/time#inDateTime> _:Bb80d3792b5b6051073c68064d95cafc7 .
+<https://periodo.github.io/edtf-ontology/cases/level-1/qualification/year-precision/when2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-1/qualification/year-precision/when2> <http://www.w3.org/2006/time#inDateTime> _:B1f65ab5d678d5c62dc78af8362b123c1 .
+<https://periodo.github.io/edtf-ontology/cases/level-1/qualification/year-precision/when3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-1/qualification/year-precision/when3> <http://www.w3.org/2006/time#inDateTime> _:B2575127f70e106aa6d7906758c2b2848 .
+_:B1f65ab5d678d5c62dc78af8362b123c1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:B1f65ab5d678d5c62dc78af8362b123c1 <http://www.w3.org/2006/time#unitType> <http://www.w3.org/2006/time#unitYear> .
+_:B1f65ab5d678d5c62dc78af8362b123c1 <http://www.w3.org/2006/time#year> "1984"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:B2575127f70e106aa6d7906758c2b2848 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:B2575127f70e106aa6d7906758c2b2848 <http://www.w3.org/2006/time#unitType> <http://www.w3.org/2006/time#unitYear> .
+_:B2575127f70e106aa6d7906758c2b2848 <http://www.w3.org/2006/time#year> "1984"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:Bb80d3792b5b6051073c68064d95cafc7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:Bb80d3792b5b6051073c68064d95cafc7 <http://www.w3.org/2006/time#unitType> <http://www.w3.org/2006/time#unitYear> .
+_:Bb80d3792b5b6051073c68064d95cafc7 <http://www.w3.org/2006/time#year> "1984"^^<http://www.w3.org/2001/XMLSchema#gYear> .

@@ -1,0 +1,5 @@
+<https://periodo.github.io/edtf-ontology/cases/level-1/interval/mysterious/when1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Interval> .
+<https://periodo.github.io/edtf-ontology/cases/level-1/interval/mysterious/when2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#OpenBeginningInterval> .
+<https://periodo.github.io/edtf-ontology/cases/level-1/interval/mysterious/when2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#OpenEndInterval> .
+<https://periodo.github.io/edtf-ontology/cases/level-1/interval/mysterious/when3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#OpenEndInterval> .
+<https://periodo.github.io/edtf-ontology/cases/level-1/interval/mysterious/when4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#OpenBeginningInterval> .

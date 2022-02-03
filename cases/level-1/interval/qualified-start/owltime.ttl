@@ -5,107 +5,100 @@
 @prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rules: <rules/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:b0    a                time:Instant ;
-        time:inDateTime  _:b1 .
-
-_:b1    a              time:DateTimeDescription ;
-        time:day       "---02"^^xsd:gDay ;
-        time:hasTRS    iso8601:Gregorian ;
-        time:month     "--01"^^xsd:gMonth ;
-        time:unitType  time:unitDay ;
-        time:year      "1984"^^xsd:gYear .
-
-_:b2    a                time:Instant ;
-        time:inDateTime  _:b3 .
-
-_:b4    a                time:Instant ;
-        time:inDateTime  _:b5 .
-
-:when5  a                  time:Interval ;
-        time:hasBeginning  _:b2 ;
-        time:hasEnd        [ a                time:Instant ;
-                             time:inDateTime  [ a              time:DateTimeDescription ;
-                                                time:hasTRS    iso8601:Gregorian ;
-                                                time:month     "--06"^^xsd:gMonth ;
-                                                time:unitType  time:unitMonth ;
-                                                time:year      "2004"^^xsd:gYear
-                                              ]
-                           ] .
-
-<< _:b2 time:inDateTime _:b3 >>
-        a       edtfo:ApproximateStatement .
-
-_:b3    a              time:DateTimeDescription ;
-        time:hasTRS    iso8601:Gregorian ;
-        time:unitType  time:unitYear ;
-        time:year      "1984"^^xsd:gYear .
-
-:when4  a                  time:Interval ;
-        time:hasBeginning  _:b6 ;
-        time:hasEnd        [ a                time:Instant ;
-                             time:inDateTime  [ a              time:DateTimeDescription ;
-                                                time:hasTRS    iso8601:Gregorian ;
-                                                time:month     "--06"^^xsd:gMonth ;
-                                                time:unitType  time:unitMonth ;
-                                                time:year      "2004"^^xsd:gYear
-                                              ]
-                           ] .
-
-<< _:b7 time:inDateTime _:b8 >>
-        a       edtfo:ApproximateStatement .
-
-_:b6    a                time:Instant ;
-        time:inDateTime  _:b9 .
-
-<< _:b4 time:inDateTime _:b5 >>
-        a       edtfo:ApproximateStatement .
-
-:when3  a                  edtfo:OpenEndInterval , time:Interval ;
-        time:hasBeginning  _:b0 .
-
-_:b7    a                time:Instant ;
-        time:inDateTime  _:b8 .
-
-_:b9    a              time:DateTimeDescription ;
-        time:hasTRS    iso8601:Gregorian ;
+_:b0    a              time:DateTimeDescription ;
         time:month     "--01"^^xsd:gMonth ;
         time:unitType  time:unitMonth ;
         time:year      "1984"^^xsd:gYear .
 
-:when2  a                  time:Interval ;
-        time:hasBeginning  _:b7 .
+_:b1    a              time:DateTimeDescription ;
+        time:unitType  time:unitYear ;
+        time:year      "1984"^^xsd:gYear .
 
-<< _:b0 time:inDateTime _:b1 >>
+_:b2    a              time:DateTimeDescription ;
+        time:day       "---02"^^xsd:gDay ;
+        time:month     "--01"^^xsd:gMonth ;
+        time:unitType  time:unitDay ;
+        time:year      "1984"^^xsd:gYear .
+
+<< _:b3 time:inDateTime _:b4 >>
         a       edtfo:ApproximateStatement .
 
-<< _:b6 time:inDateTime _:b9 >>
+:when5  a                  time:Interval ;
+        time:hasBeginning  _:b5 ;
+        time:hasEnd        [ a                time:Instant ;
+                             time:inDateTime  [ a              time:DateTimeDescription ;
+                                                time:month     "--06"^^xsd:gMonth ;
+                                                time:unitType  time:unitMonth ;
+                                                time:year      "2004"^^xsd:gYear
+                                              ]
+                           ] .
+
+<< _:b6 time:inDateTime _:b7 >>
+        a       edtfo:ApproximateStatement .
+
+_:b3    a                time:Instant ;
+        time:inDateTime  _:b4 .
+
+_:b6    a                time:Instant ;
+        time:inDateTime  _:b7 .
+
+:when4  a                  time:Interval ;
+        time:hasBeginning  _:b8 ;
+        time:hasEnd        [ a                time:Instant ;
+                             time:inDateTime  [ a              time:DateTimeDescription ;
+                                                time:month     "--06"^^xsd:gMonth ;
+                                                time:unitType  time:unitMonth ;
+                                                time:year      "2004"^^xsd:gYear
+                                              ]
+                           ] .
+
+_:b9    a                time:Instant ;
+        time:inDateTime  _:b2 .
+
+:when3  a                  edtfo:OpenEndInterval , time:Interval ;
+        time:hasBeginning  _:b6 .
+
+_:b7    a              time:DateTimeDescription ;
+        time:day       "---02"^^xsd:gDay ;
+        time:month     "--01"^^xsd:gMonth ;
+        time:unitType  time:unitDay ;
+        time:year      "1984"^^xsd:gYear .
+
+_:b8    a                time:Instant ;
+        time:inDateTime  _:b0 .
+
+:when2  a                  time:Interval ;
+        time:hasBeginning  _:b9 .
+
+<< _:b5 time:inDateTime _:b1 >>
+        a       edtfo:ApproximateStatement .
+
+_:b5    a                time:Instant ;
+        time:inDateTime  _:b1 .
+
+<< _:b8 time:inDateTime _:b0 >>
         a       edtfo:ApproximateStatement .
 
 :when1  a                  time:Interval ;
-        time:hasBeginning  _:b4 ;
+        time:hasBeginning  _:b3 ;
         time:hasEnd        [ a                time:Instant ;
                              time:inDateTime  [ a              time:DateTimeDescription ;
                                                 time:day       "---04"^^xsd:gDay ;
-                                                time:hasTRS    iso8601:Gregorian ;
                                                 time:month     "--06"^^xsd:gMonth ;
                                                 time:unitType  time:unitDay ;
                                                 time:year      "2004"^^xsd:gYear
                                               ]
                            ] .
 
-_:b8    a              time:DateTimeDescription ;
+_:b4    a              time:DateTimeDescription ;
         time:day       "---02"^^xsd:gDay ;
-        time:hasTRS    iso8601:Gregorian ;
         time:month     "--01"^^xsd:gMonth ;
         time:unitType  time:unitDay ;
         time:year      "1984"^^xsd:gYear .
 
-_:b5    a              time:DateTimeDescription ;
-        time:day       "---02"^^xsd:gDay ;
-        time:hasTRS    iso8601:Gregorian ;
-        time:month     "--01"^^xsd:gMonth ;
-        time:unitType  time:unitDay ;
-        time:year      "1984"^^xsd:gYear .
+<< _:b9 time:inDateTime _:b2 >>
+        a       edtfo:ApproximateStatement .

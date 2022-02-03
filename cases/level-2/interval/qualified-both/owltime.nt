@@ -1,0 +1,21 @@
+<< _:B063c91705d6a937563918ab73a69b50f <http://www.w3.org/2006/time#day> "---01"^^<http://www.w3.org/2001/XMLSchema#gDay> >> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#ApproximateStatement> .
+<< _:B91e2b016217b0cc2e212d6ec274cf88e <http://www.w3.org/2006/time#day> "---20"^^<http://www.w3.org/2001/XMLSchema#gDay> >> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#ApproximateStatement> .
+<< _:B91e2b016217b0cc2e212d6ec274cf88e <http://www.w3.org/2006/time#day> "---20"^^<http://www.w3.org/2001/XMLSchema#gDay> >> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#UncertainStatement> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/interval/qualified-both/when> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Interval> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/interval/qualified-both/when> <http://www.w3.org/2000/01/rdf-schema#label> "interval in June 2004 beginning approximately the first and ending possibly but not certainly approximately the 20th" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/interval/qualified-both/when> <http://www.w3.org/2006/time#hasBeginning> _:B09918d389529a4515d3084a3fb36ff20 .
+<https://periodo.github.io/edtf-ontology/cases/level-2/interval/qualified-both/when> <http://www.w3.org/2006/time#hasEnd> _:B3b8168ac9342f3a722123de122c00466 .
+_:B063c91705d6a937563918ab73a69b50f <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:B063c91705d6a937563918ab73a69b50f <http://www.w3.org/2006/time#day> "---01"^^<http://www.w3.org/2001/XMLSchema#gDay> .
+_:B063c91705d6a937563918ab73a69b50f <http://www.w3.org/2006/time#month> "--06"^^<http://www.w3.org/2001/XMLSchema#gMonth> .
+_:B063c91705d6a937563918ab73a69b50f <http://www.w3.org/2006/time#unitType> <http://www.w3.org/2006/time#unitDay> .
+_:B063c91705d6a937563918ab73a69b50f <http://www.w3.org/2006/time#year> "2004"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:B09918d389529a4515d3084a3fb36ff20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+_:B09918d389529a4515d3084a3fb36ff20 <http://www.w3.org/2006/time#inDateTime> _:B063c91705d6a937563918ab73a69b50f .
+_:B3b8168ac9342f3a722123de122c00466 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+_:B3b8168ac9342f3a722123de122c00466 <http://www.w3.org/2006/time#inDateTime> _:B91e2b016217b0cc2e212d6ec274cf88e .
+_:B91e2b016217b0cc2e212d6ec274cf88e <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:B91e2b016217b0cc2e212d6ec274cf88e <http://www.w3.org/2006/time#day> "---20"^^<http://www.w3.org/2001/XMLSchema#gDay> .
+_:B91e2b016217b0cc2e212d6ec274cf88e <http://www.w3.org/2006/time#month> "--06"^^<http://www.w3.org/2001/XMLSchema#gMonth> .
+_:B91e2b016217b0cc2e212d6ec274cf88e <http://www.w3.org/2006/time#unitType> <http://www.w3.org/2006/time#unitDay> .
+_:B91e2b016217b0cc2e212d6ec274cf88e <http://www.w3.org/2006/time#year> "2004"^^<http://www.w3.org/2001/XMLSchema#gYear> .

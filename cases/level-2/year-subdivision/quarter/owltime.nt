@@ -1,0 +1,32 @@
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/quarter/when1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/quarter/when1> <http://www.w3.org/2000/01/rdf-schema#label> "first quarter of 2001" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/quarter/when1> <http://www.w3.org/2006/time#inDateTime> _:B1de6ee503572be3ca25f2e1f4599c775 .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/quarter/when2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/quarter/when2> <http://www.w3.org/2000/01/rdf-schema#label> "second quarter of 2001" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/quarter/when2> <http://www.w3.org/2006/time#inDateTime> _:Bbdbd80baaaa7bf88533f67321ad51e8f .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/quarter/when3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/quarter/when3> <http://www.w3.org/2000/01/rdf-schema#label> "third quarter of 2001" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/quarter/when3> <http://www.w3.org/2006/time#inDateTime> _:B7e8dfa8eca15837ecb61ef4e7173d0c0 .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/quarter/when4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/quarter/when4> <http://www.w3.org/2000/01/rdf-schema#label> "fourth quarter of 2001" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/quarter/when4> <http://www.w3.org/2006/time#inDateTime> _:B29c6192e5431e0e3851cd5f5501fd619 .
+_:B1de6ee503572be3ca25f2e1f4599c775 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:B1de6ee503572be3ca25f2e1f4599c775 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#SubYearDateTimeDescription> .
+_:B1de6ee503572be3ca25f2e1f4599c775 <http://www.w3.org/2006/time#unitType> <https://periodo.github.io/edtf-ontology/edtfo.ttl#unitQuarter> .
+_:B1de6ee503572be3ca25f2e1f4599c775 <http://www.w3.org/2006/time#year> "2001"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:B1de6ee503572be3ca25f2e1f4599c775 <https://periodo.github.io/edtf-ontology/edtfo.ttl#yearSubdivision> <https://periodo.github.io/edtf-ontology/edtfo.ttl#Quarter1> .
+_:B29c6192e5431e0e3851cd5f5501fd619 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:B29c6192e5431e0e3851cd5f5501fd619 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#SubYearDateTimeDescription> .
+_:B29c6192e5431e0e3851cd5f5501fd619 <http://www.w3.org/2006/time#unitType> <https://periodo.github.io/edtf-ontology/edtfo.ttl#unitQuarter> .
+_:B29c6192e5431e0e3851cd5f5501fd619 <http://www.w3.org/2006/time#year> "2001"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:B29c6192e5431e0e3851cd5f5501fd619 <https://periodo.github.io/edtf-ontology/edtfo.ttl#yearSubdivision> <https://periodo.github.io/edtf-ontology/edtfo.ttl#Quarter4> .
+_:B7e8dfa8eca15837ecb61ef4e7173d0c0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:B7e8dfa8eca15837ecb61ef4e7173d0c0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#SubYearDateTimeDescription> .
+_:B7e8dfa8eca15837ecb61ef4e7173d0c0 <http://www.w3.org/2006/time#unitType> <https://periodo.github.io/edtf-ontology/edtfo.ttl#unitQuarter> .
+_:B7e8dfa8eca15837ecb61ef4e7173d0c0 <http://www.w3.org/2006/time#year> "2001"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:B7e8dfa8eca15837ecb61ef4e7173d0c0 <https://periodo.github.io/edtf-ontology/edtfo.ttl#yearSubdivision> <https://periodo.github.io/edtf-ontology/edtfo.ttl#Quarter3> .
+_:Bbdbd80baaaa7bf88533f67321ad51e8f <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:Bbdbd80baaaa7bf88533f67321ad51e8f <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#SubYearDateTimeDescription> .
+_:Bbdbd80baaaa7bf88533f67321ad51e8f <http://www.w3.org/2006/time#unitType> <https://periodo.github.io/edtf-ontology/edtfo.ttl#unitQuarter> .
+_:Bbdbd80baaaa7bf88533f67321ad51e8f <http://www.w3.org/2006/time#year> "2001"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:Bbdbd80baaaa7bf88533f67321ad51e8f <https://periodo.github.io/edtf-ontology/edtfo.ttl#yearSubdivision> <https://periodo.github.io/edtf-ontology/edtfo.ttl#Quarter2> .

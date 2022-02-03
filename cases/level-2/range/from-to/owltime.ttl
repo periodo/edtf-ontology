@@ -1,0 +1,315 @@
+PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-2/range/from-to/>
+PREFIX iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:when1
+  a [
+      a owl:Class ;
+      owl:equivalentClass [
+          owl:intersectionOf (
+              time:Instant
+              [
+                a owl:Restriction ;
+                owl:allValuesFrom [
+                    owl:unionOf (
+                        [
+                          owl:intersectionOf (
+                              time:DateTimeDescription
+                              [
+                                a owl:Restriction ;
+                                owl:onProperty time:year ;
+                                owl:someValuesFrom [
+                                    a rdfs:Datatype ;
+                                    owl:onDatatype xsd:integer ;
+                                    owl:withRestrictions (
+                                        [
+                                          xsd:minInclusive 1984
+                                        ]
+                                        [
+                                          xsd:maxInclusive 1987
+                                        ]
+                                      )
+                                  ]
+                              ]
+                            )
+                        ]
+                        [
+                          owl:intersectionOf (
+                              time:GeneralDateTimeDescription
+                              [
+                                owl:complementOf [
+                                    a owl:Restriction ;
+                                    owl:hasValue iso8601:Gregorian ;
+                                    owl:onProperty time:hasTRS
+                                  ]
+                              ]
+                            )
+                        ]
+                      )
+                  ] ;
+                owl:onProperty time:inDateTime
+              ]
+            )
+        ]
+    ] ;
+  rdfs:label "A year no earlier than 1984 and no later than 1987" ;
+.
+
+:when2
+  a [
+      a owl:Class ;
+      owl:equivalentClass [
+          owl:intersectionOf (
+              time:Instant
+              [
+                a owl:Restriction ;
+                owl:allValuesFrom [
+                    owl:unionOf (
+                        [
+                          owl:intersectionOf (
+                              time:DateTimeDescription
+                              [
+                                a owl:Restriction ;
+                                owl:onProperty time:year ;
+                                owl:someValuesFrom [
+                                    a rdfs:Datatype ;
+                                    owl:onDatatype xsd:integer ;
+                                    owl:withRestrictions (
+                                        [
+                                          xsd:minExclusive 1984
+                                        ]
+                                        [
+                                          xsd:maxExclusive 1986
+                                        ]
+                                      )
+                                  ]
+                              ]
+                            )
+                        ]
+                        [
+                          owl:intersectionOf (
+                              time:DateTimeDescription
+                              [
+                                a owl:Restriction ;
+                                owl:hasValue 1984 ;
+                                owl:onProperty time:year
+                              ]
+                              [
+                                a owl:Restriction ;
+                                owl:onProperty time:month ;
+                                owl:someValuesFrom [
+                                    a rdfs:Datatype ;
+                                    owl:onDatatype xsd:integer ;
+                                    owl:withRestrictions (
+                                        [
+                                          xsd:minInclusive 10
+                                        ]
+                                      )
+                                  ]
+                              ]
+                            )
+                        ]
+                        [
+                          owl:intersectionOf (
+                              time:DateTimeDescription
+                              [
+                                a owl:Restriction ;
+                                owl:hasValue 1986 ;
+                                owl:onProperty time:year
+                              ]
+                              [
+                                a owl:Restriction ;
+                                owl:onProperty time:month ;
+                                owl:someValuesFrom [
+                                    a rdfs:Datatype ;
+                                    owl:onDatatype xsd:integer ;
+                                    owl:withRestrictions (
+                                        [
+                                          xsd:maxInclusive 3
+                                        ]
+                                      )
+                                  ]
+                              ]
+                            )
+                        ]
+                        [
+                          owl:intersectionOf (
+                              time:GeneralDateTimeDescription
+                              [
+                                owl:complementOf [
+                                    a owl:Restriction ;
+                                    owl:hasValue iso8601:Gregorian ;
+                                    owl:onProperty time:hasTRS
+                                  ]
+                              ]
+                            )
+                        ]
+                      )
+                  ] ;
+                owl:onProperty time:inDateTime
+              ]
+            )
+        ]
+    ] ;
+  rdfs:label "A month no earlier than October 1984 and no later than March 1986" ;
+.
+
+:when3
+  a [
+      a owl:Class ;
+      owl:equivalentClass [
+          owl:intersectionOf (
+              time:Instant
+              [
+                a owl:Restriction ;
+                owl:allValuesFrom [
+                    owl:unionOf (
+                        [
+                          owl:intersectionOf (
+                              time:DateTimeDescription
+                              [
+                                a owl:Restriction ;
+                                owl:onProperty time:year ;
+                                owl:someValuesFrom [
+                                    a rdfs:Datatype ;
+                                    owl:onDatatype xsd:integer ;
+                                    owl:withRestrictions (
+                                        [
+                                          xsd:minExclusive 1760
+                                        ]
+                                        [
+                                          xsd:maxExclusive 1767
+                                        ]
+                                      )
+                                  ]
+                              ]
+                            )
+                        ]
+                        [
+                          owl:intersectionOf (
+                              time:DateTimeDescription
+                              [
+                                a owl:Restriction ;
+                                owl:hasValue 1760 ;
+                                owl:onProperty time:year
+                              ]
+                              [
+                                a owl:Restriction ;
+                                owl:onProperty time:month ;
+                                owl:someValuesFrom [
+                                    a rdfs:Datatype ;
+                                    owl:onDatatype xsd:integer ;
+                                    owl:withRestrictions (
+                                        [
+                                          xsd:minExclusive 2
+                                        ]
+                                      )
+                                  ]
+                              ]
+                            )
+                        ]
+                        [
+                          owl:intersectionOf (
+                              time:DateTimeDescription
+                              [
+                                a owl:Restriction ;
+                                owl:hasValue 1760 ;
+                                owl:onProperty time:year
+                              ]
+                              [
+                                a owl:Restriction ;
+                                owl:hasValue 2 ;
+                                owl:onProperty time:month
+                              ]
+                              [
+                                a owl:Restriction ;
+                                owl:onProperty time:day ;
+                                owl:someValuesFrom [
+                                    a rdfs:Datatype ;
+                                    owl:onDatatype xsd:integer ;
+                                    owl:withRestrictions (
+                                        [
+                                          xsd:minInclusive 22
+                                        ]
+                                      )
+                                  ]
+                              ]
+                            )
+                        ]
+                        [
+                          owl:intersectionOf (
+                              time:DateTimeDescription
+                              [
+                                a owl:Restriction ;
+                                owl:hasValue 1767 ;
+                                owl:onProperty time:year
+                              ]
+                              [
+                                a owl:Restriction ;
+                                owl:onProperty time:month ;
+                                owl:someValuesFrom [
+                                    a rdfs:Datatype ;
+                                    owl:onDatatype xsd:integer ;
+                                    owl:withRestrictions (
+                                        [
+                                          xsd:maxExclusive 3
+                                        ]
+                                      )
+                                  ]
+                              ]
+                            )
+                        ]
+                        [
+                          owl:intersectionOf (
+                              time:DateTimeDescription
+                              [
+                                a owl:Restriction ;
+                                owl:hasValue 1767 ;
+                                owl:onProperty time:year
+                              ]
+                              [
+                                a owl:Restriction ;
+                                owl:hasValue 3 ;
+                                owl:onProperty time:month
+                              ]
+                              [
+                                a owl:Restriction ;
+                                owl:onProperty time:day ;
+                                owl:someValuesFrom [
+                                    a rdfs:Datatype ;
+                                    owl:onDatatype xsd:integer ;
+                                    owl:withRestrictions (
+                                        [
+                                          xsd:maxInclusive 8
+                                        ]
+                                      )
+                                  ]
+                              ]
+                            )
+                        ]
+                        [
+                          owl:intersectionOf (
+                              time:GeneralDateTimeDescription
+                              [
+                                owl:complementOf [
+                                    a owl:Restriction ;
+                                    owl:hasValue iso8601:Gregorian ;
+                                    owl:onProperty time:hasTRS
+                                  ]
+                              ]
+                            )
+                        ]
+                      )
+                  ] ;
+                owl:onProperty time:inDateTime
+              ]
+            )
+        ]
+    ] ;
+  rdfs:label "A day no earlier than February 22, 1760 and no later than March 8, 1767" ;
+.
+

@@ -5,44 +5,42 @@
 @prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rules: <rules/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 :when1  a                time:Instant ;
         time:inDateTime  _:b0 .
 
+_:b0    a              time:DateTimeDescription ;
+        time:day       "---11"^^xsd:gDay ;
+        time:month     "--06"^^xsd:gMonth ;
+        time:unitType  time:unitDay ;
+        time:year      "2004"^^xsd:gYear .
+
 _:b1    a              time:DateTimeDescription ;
         time:day       "---11"^^xsd:gDay ;
-        time:hasTRS    iso8601:Gregorian ;
         time:month     "--06"^^xsd:gMonth ;
         time:unitType  time:unitDay ;
         time:year      "2004"^^xsd:gYear .
 
 _:b2    a              time:DateTimeDescription ;
         time:day       "---11"^^xsd:gDay ;
-        time:hasTRS    iso8601:Gregorian ;
         time:month     "--06"^^xsd:gMonth ;
         time:unitType  time:unitDay ;
         time:year      "2004"^^xsd:gYear .
 
 :when2  a                time:Instant ;
-        time:inDateTime  _:b2 .
+        time:inDateTime  _:b1 .
 
-<< :when3 time:inDateTime _:b1 >>
+<< :when3 time:inDateTime _:b2 >>
         a       edtfo:ApproximateStatement , edtfo:UncertainStatement .
-
-_:b0    a              time:DateTimeDescription ;
-        time:day       "---11"^^xsd:gDay ;
-        time:hasTRS    iso8601:Gregorian ;
-        time:month     "--06"^^xsd:gMonth ;
-        time:unitType  time:unitDay ;
-        time:year      "2004"^^xsd:gYear .
 
 << :when1 time:inDateTime _:b0 >>
         a       edtfo:UncertainStatement .
 
-<< :when2 time:inDateTime _:b2 >>
+<< :when2 time:inDateTime _:b1 >>
         a       edtfo:ApproximateStatement .
 
 :when3  a                time:Instant ;
-        time:inDateTime  _:b1 .
+        time:inDateTime  _:b2 .

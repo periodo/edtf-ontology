@@ -1,0 +1,26 @@
+<https://periodo.github.io/edtf-ontology/cases/level-2/unspecified/year-precision/when1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/unspecified/year-precision/when1> <http://www.w3.org/2000/01/rdf-schema#label> "some year between 2010 and 2019 (inclusive)" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/unspecified/year-precision/when1> <http://www.w3.org/2006/time#inDateTime> _:Bc25ccd388ee7183983478840bbdd1c4a .
+<https://periodo.github.io/edtf-ontology/cases/level-2/unspecified/year-precision/when2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/unspecified/year-precision/when2> <http://www.w3.org/2000/01/rdf-schema#label> "some year between the -0599 and -0500 (inclusive)" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/unspecified/year-precision/when2> <http://www.w3.org/2006/time#inDateTime> _:B436b1210938dc6467af731c7fdb48d1c .
+<https://periodo.github.io/edtf-ontology/cases/level-2/unspecified/year-precision/when3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/unspecified/year-precision/when3> <http://www.w3.org/2000/01/rdf-schema#label> "some year between the 1000 and 1999 (inclusive)" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/unspecified/year-precision/when3> <http://www.w3.org/2006/time#inDateTime> _:Bc1ca4bea5c6d8a36096a3804db508c62 .
+<https://periodo.github.io/edtf-ontology/cases/level-2/unspecified/year-precision/when4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/unspecified/year-precision/when4> <http://www.w3.org/2000/01/rdf-schema#label> "some year" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/unspecified/year-precision/when4> <http://www.w3.org/2006/time#inDateTime> _:Bb590fd20c8b6e2f0c548e24d62c578e7 .
+_:B436b1210938dc6467af731c7fdb48d1c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:B436b1210938dc6467af731c7fdb48d1c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#CenturyDescription> .
+_:B436b1210938dc6467af731c7fdb48d1c <http://www.w3.org/2006/time#unitType> <http://www.w3.org/2006/time#unitYear> .
+_:B436b1210938dc6467af731c7fdb48d1c <https://periodo.github.io/edtf-ontology/edtfo.ttl#century> "-5"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:Bb590fd20c8b6e2f0c548e24d62c578e7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:Bb590fd20c8b6e2f0c548e24d62c578e7 <http://www.w3.org/2006/time#unitType> <http://www.w3.org/2006/time#unitYear> .
+_:Bc1ca4bea5c6d8a36096a3804db508c62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:Bc1ca4bea5c6d8a36096a3804db508c62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#MillenniumDescription> .
+_:Bc1ca4bea5c6d8a36096a3804db508c62 <http://www.w3.org/2006/time#unitType> <http://www.w3.org/2006/time#unitYear> .
+_:Bc1ca4bea5c6d8a36096a3804db508c62 <https://periodo.github.io/edtf-ontology/edtfo.ttl#millennium> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:Bc25ccd388ee7183983478840bbdd1c4a <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:Bc25ccd388ee7183983478840bbdd1c4a <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#DecadeDescription> .
+_:Bc25ccd388ee7183983478840bbdd1c4a <http://www.w3.org/2006/time#unitType> <http://www.w3.org/2006/time#unitYear> .
+_:Bc25ccd388ee7183983478840bbdd1c4a <https://periodo.github.io/edtf-ontology/edtfo.ttl#decade> "201"^^<http://www.w3.org/2001/XMLSchema#integer> .

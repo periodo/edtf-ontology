@@ -1,0 +1,64 @@
+PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-2/unspecified/month-precision/>
+PREFIX edtfo: <https://periodo.github.io/edtf-ontology/edtfo.ttl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:when1
+  a time:Instant ;
+  rdfs:label "some month in some year between 2000 and 2009 (inclusive)" ;
+  time:inDateTime [
+      a
+        time:DateTimeDescription ,
+        edtfo:DecadeDescription ;
+      time:unitType time:unitMonth ;
+      edtfo:decade 200
+    ] ;
+.
+
+:when2
+  a time:Instant ;
+  rdfs:label "some month in some year between 2000 and 2099 (inclusive)" ;
+  time:inDateTime [
+      a
+        time:DateTimeDescription ,
+        edtfo:CenturyDescription ;
+      time:unitType time:unitMonth ;
+      edtfo:century 20
+    ] ;
+.
+
+:when3
+  a time:Instant ;
+  rdfs:label "some month in some year between 2000 and 2999 (inclusive)" ;
+  time:inDateTime [
+      a
+        time:DateTimeDescription ,
+        edtfo:MillenniumDescription ;
+      time:unitType time:unitMonth ;
+      edtfo:millennium 2
+    ] ;
+.
+
+:when4
+  a time:Instant ;
+  rdfs:label "some month in some year" ;
+  time:inDateTime [
+      a time:DateTimeDescription ;
+      time:unitType time:unitMonth
+    ] ;
+.
+
+:when5
+  a time:Instant ;
+  rdfs:label "some December in some year between 2000 and 2099 (inclusive)" ;
+  time:inDateTime [
+      a
+        time:DateTimeDescription ,
+        edtfo:CenturyDescription ;
+      time:month "--12"^^xsd:gMonth ;
+      time:unitType time:unitMonth ;
+      edtfo:century 20
+    ] ;
+.
+

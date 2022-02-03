@@ -1,0 +1,16 @@
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/semestral/when1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/semestral/when1> <http://www.w3.org/2000/01/rdf-schema#label> "first semestral of 2001" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/semestral/when1> <http://www.w3.org/2006/time#inDateTime> _:B63f6d2497892c663e64564ee2177e330 .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/semestral/when2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/semestral/when2> <http://www.w3.org/2000/01/rdf-schema#label> "second semestral of 2001" .
+<https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/semestral/when2> <http://www.w3.org/2006/time#inDateTime> _:Be0a050c76352e6d1bbc3af5b6df88afa .
+_:B63f6d2497892c663e64564ee2177e330 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:B63f6d2497892c663e64564ee2177e330 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#SubYearDateTimeDescription> .
+_:B63f6d2497892c663e64564ee2177e330 <http://www.w3.org/2006/time#unitType> <https://periodo.github.io/edtf-ontology/edtfo.ttl#unitSemestral> .
+_:B63f6d2497892c663e64564ee2177e330 <http://www.w3.org/2006/time#year> "2001"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:B63f6d2497892c663e64564ee2177e330 <https://periodo.github.io/edtf-ontology/edtfo.ttl#yearSubdivision> <https://periodo.github.io/edtf-ontology/edtfo.ttl#Semestral1> .
+_:Be0a050c76352e6d1bbc3af5b6df88afa <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:Be0a050c76352e6d1bbc3af5b6df88afa <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#SubYearDateTimeDescription> .
+_:Be0a050c76352e6d1bbc3af5b6df88afa <http://www.w3.org/2006/time#unitType> <https://periodo.github.io/edtf-ontology/edtfo.ttl#unitSemestral> .
+_:Be0a050c76352e6d1bbc3af5b6df88afa <http://www.w3.org/2006/time#year> "2001"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:Be0a050c76352e6d1bbc3af5b6df88afa <https://periodo.github.io/edtf-ontology/edtfo.ttl#yearSubdivision> <https://periodo.github.io/edtf-ontology/edtfo.ttl#Semestral2> .

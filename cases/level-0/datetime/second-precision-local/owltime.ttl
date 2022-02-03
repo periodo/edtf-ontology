@@ -1,33 +1,32 @@
-@base <https://periodo.github.io/edtf-ontology/> .
-@prefix : <cases/level-0/datetime/second-precision-local/> .
-@prefix bipm: <http://www.opengis.net/def/trs/BIPM/0/> .
-@prefix edtfo: <edtfo.ttl#> .
-@prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-0/datetime/second-precision-local/>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-:when2  a                time:Instant ;
-        time:inDateTime  [ a              time:DateTimeDescription ;
-                           time:day       "---12"^^xsd:gDay ;
-                           time:hasTRS    iso8601:Gregorian ;
-                           time:hour      "23"^^xsd:nonNegativeInteger ;
-                           time:minute    "02"^^xsd:nonNegativeInteger ;
-                           time:month     "--04"^^xsd:gMonth ;
-                           time:second    30.8 ;
-                           time:unitType  time:unitSecond ;
-                           time:year      "1985"^^xsd:gYear
-                         ] .
+:when1
+  a time:Instant ;
+  time:inDateTime [
+      a time:DateTimeDescription ;
+      time:day "---12"^^xsd:gDay ;
+      time:hour "23"^^xsd:nonNegativeInteger ;
+      time:minute "2"^^xsd:nonNegativeInteger ;
+      time:month "--04"^^xsd:gMonth ;
+      time:second 30.0 ;
+      time:unitType time:unitSecond ;
+      time:year "1985"^^xsd:gYear
+    ] ;
+.
 
-:when1  a                time:Instant ;
-        time:inDateTime  [ a              time:DateTimeDescription ;
-                           time:day       "---12"^^xsd:gDay ;
-                           time:hasTRS    iso8601:Gregorian ;
-                           time:hour      "23"^^xsd:nonNegativeInteger ;
-                           time:minute    "02"^^xsd:nonNegativeInteger ;
-                           time:month     "--04"^^xsd:gMonth ;
-                           time:second    "30"^^xsd:decimal ;
-                           time:unitType  time:unitSecond ;
-                           time:year      "1985"^^xsd:gYear
-                         ] .
+:when2
+  a time:Instant ;
+  time:inDateTime [
+      a time:DateTimeDescription ;
+      time:day "---12"^^xsd:gDay ;
+      time:hour "23"^^xsd:nonNegativeInteger ;
+      time:minute "2"^^xsd:nonNegativeInteger ;
+      time:month "--04"^^xsd:gMonth ;
+      time:second 30.8 ;
+      time:unitType time:unitSecond ;
+      time:year "1985"^^xsd:gYear
+    ] ;
+.
+

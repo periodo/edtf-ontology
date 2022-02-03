@@ -1,0 +1,75 @@
+<< _:B16b8d0bf6e1bcdc4c4301be53cd19b6a <http://www.w3.org/2006/time#inDateTime> _:B1f3fb24ac3d56c8c7a8beb81ebe3cd55 >> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#ApproximateStatement> .
+<< _:B16b8d0bf6e1bcdc4c4301be53cd19b6a <http://www.w3.org/2006/time#inDateTime> _:B1f3fb24ac3d56c8c7a8beb81ebe3cd55 >> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#UncertainStatement> .
+<< _:B18ba2d9854b6d025f75554aefcd5ebc2 <http://www.w3.org/2006/time#inDateTime> _:B73f3cf283108842b0251c110315cbf6c >> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#ApproximateStatement> .
+<< _:B18ba2d9854b6d025f75554aefcd5ebc2 <http://www.w3.org/2006/time#inDateTime> _:B73f3cf283108842b0251c110315cbf6c >> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#UncertainStatement> .
+<< _:B2331529bb16568ee741f61385434bfb2 <http://www.w3.org/2006/time#inDateTime> _:B8557b25c7012d0233ca71e3a3fd61dbf >> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#ApproximateStatement> .
+<< _:B2331529bb16568ee741f61385434bfb2 <http://www.w3.org/2006/time#inDateTime> _:B8557b25c7012d0233ca71e3a3fd61dbf >> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#UncertainStatement> .
+<< _:B72af1f2690c8d4701f5631f4b5f7f671 <http://www.w3.org/2006/time#inDateTime> _:Bc5c16be7c6dcd913da451438b23f6244 >> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#ApproximateStatement> .
+<< _:B72af1f2690c8d4701f5631f4b5f7f671 <http://www.w3.org/2006/time#inDateTime> _:Bc5c16be7c6dcd913da451438b23f6244 >> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#UncertainStatement> .
+<< _:Bb152652101e5061c8681df7e35402c4a <http://www.w3.org/2006/time#inDateTime> _:Bd9ab474c13fd51f778260b33addca8c7 >> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#ApproximateStatement> .
+<< _:Bb152652101e5061c8681df7e35402c4a <http://www.w3.org/2006/time#inDateTime> _:Bd9ab474c13fd51f778260b33addca8c7 >> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#UncertainStatement> .
+<https://periodo.github.io/edtf-ontology/cases/level-1/interval/qualified-end/when1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Interval> .
+<https://periodo.github.io/edtf-ontology/cases/level-1/interval/qualified-end/when1> <http://www.w3.org/2006/time#hasBeginning> _:B0cf479d6c156489d2cf7d5ad533c4398 .
+<https://periodo.github.io/edtf-ontology/cases/level-1/interval/qualified-end/when1> <http://www.w3.org/2006/time#hasEnd> _:Bb152652101e5061c8681df7e35402c4a .
+<https://periodo.github.io/edtf-ontology/cases/level-1/interval/qualified-end/when2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Interval> .
+<https://periodo.github.io/edtf-ontology/cases/level-1/interval/qualified-end/when2> <http://www.w3.org/2006/time#hasEnd> _:B72af1f2690c8d4701f5631f4b5f7f671 .
+<https://periodo.github.io/edtf-ontology/cases/level-1/interval/qualified-end/when3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Interval> .
+<https://periodo.github.io/edtf-ontology/cases/level-1/interval/qualified-end/when3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://periodo.github.io/edtf-ontology/edtfo.ttl#OpenBeginningInterval> .
+<https://periodo.github.io/edtf-ontology/cases/level-1/interval/qualified-end/when3> <http://www.w3.org/2006/time#hasEnd> _:B16b8d0bf6e1bcdc4c4301be53cd19b6a .
+<https://periodo.github.io/edtf-ontology/cases/level-1/interval/qualified-end/when4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Interval> .
+<https://periodo.github.io/edtf-ontology/cases/level-1/interval/qualified-end/when4> <http://www.w3.org/2006/time#hasBeginning> _:B80c8390116cc0aa6f307c4087dd23b5e .
+<https://periodo.github.io/edtf-ontology/cases/level-1/interval/qualified-end/when4> <http://www.w3.org/2006/time#hasEnd> _:B18ba2d9854b6d025f75554aefcd5ebc2 .
+<https://periodo.github.io/edtf-ontology/cases/level-1/interval/qualified-end/when5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Interval> .
+<https://periodo.github.io/edtf-ontology/cases/level-1/interval/qualified-end/when5> <http://www.w3.org/2006/time#hasBeginning> _:Bcb6fbd8d8d0cb7818d89d96888511ef0 .
+<https://periodo.github.io/edtf-ontology/cases/level-1/interval/qualified-end/when5> <http://www.w3.org/2006/time#hasEnd> _:B2331529bb16568ee741f61385434bfb2 .
+_:B060f9442694d2470e106b09d2bca8ae3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:B060f9442694d2470e106b09d2bca8ae3 <http://www.w3.org/2006/time#month> "--02"^^<http://www.w3.org/2001/XMLSchema#gMonth> .
+_:B060f9442694d2470e106b09d2bca8ae3 <http://www.w3.org/2006/time#unitType> <http://www.w3.org/2006/time#unitMonth> .
+_:B060f9442694d2470e106b09d2bca8ae3 <http://www.w3.org/2006/time#year> "2004"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:B0cf479d6c156489d2cf7d5ad533c4398 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+_:B0cf479d6c156489d2cf7d5ad533c4398 <http://www.w3.org/2006/time#inDateTime> _:B1022ac503136fc38ea3d4d797e18ac07 .
+_:B1022ac503136fc38ea3d4d797e18ac07 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:B1022ac503136fc38ea3d4d797e18ac07 <http://www.w3.org/2006/time#day> "---01"^^<http://www.w3.org/2001/XMLSchema#gDay> .
+_:B1022ac503136fc38ea3d4d797e18ac07 <http://www.w3.org/2006/time#month> "--02"^^<http://www.w3.org/2001/XMLSchema#gMonth> .
+_:B1022ac503136fc38ea3d4d797e18ac07 <http://www.w3.org/2006/time#unitType> <http://www.w3.org/2006/time#unitDay> .
+_:B1022ac503136fc38ea3d4d797e18ac07 <http://www.w3.org/2006/time#year> "2004"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:B16b8d0bf6e1bcdc4c4301be53cd19b6a <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+_:B16b8d0bf6e1bcdc4c4301be53cd19b6a <http://www.w3.org/2006/time#inDateTime> _:B1f3fb24ac3d56c8c7a8beb81ebe3cd55 .
+_:B18ba2d9854b6d025f75554aefcd5ebc2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+_:B18ba2d9854b6d025f75554aefcd5ebc2 <http://www.w3.org/2006/time#inDateTime> _:B73f3cf283108842b0251c110315cbf6c .
+_:B1f3fb24ac3d56c8c7a8beb81ebe3cd55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:B1f3fb24ac3d56c8c7a8beb81ebe3cd55 <http://www.w3.org/2006/time#day> "---08"^^<http://www.w3.org/2001/XMLSchema#gDay> .
+_:B1f3fb24ac3d56c8c7a8beb81ebe3cd55 <http://www.w3.org/2006/time#month> "--02"^^<http://www.w3.org/2001/XMLSchema#gMonth> .
+_:B1f3fb24ac3d56c8c7a8beb81ebe3cd55 <http://www.w3.org/2006/time#unitType> <http://www.w3.org/2006/time#unitDay> .
+_:B1f3fb24ac3d56c8c7a8beb81ebe3cd55 <http://www.w3.org/2006/time#year> "2005"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:B2331529bb16568ee741f61385434bfb2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+_:B2331529bb16568ee741f61385434bfb2 <http://www.w3.org/2006/time#inDateTime> _:B8557b25c7012d0233ca71e3a3fd61dbf .
+_:B4993d30880b7e761ef3dce2a79278e4c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:B4993d30880b7e761ef3dce2a79278e4c <http://www.w3.org/2006/time#month> "--02"^^<http://www.w3.org/2001/XMLSchema#gMonth> .
+_:B4993d30880b7e761ef3dce2a79278e4c <http://www.w3.org/2006/time#unitType> <http://www.w3.org/2006/time#unitMonth> .
+_:B4993d30880b7e761ef3dce2a79278e4c <http://www.w3.org/2006/time#year> "2004"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:B72af1f2690c8d4701f5631f4b5f7f671 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+_:B72af1f2690c8d4701f5631f4b5f7f671 <http://www.w3.org/2006/time#inDateTime> _:Bc5c16be7c6dcd913da451438b23f6244 .
+_:B73f3cf283108842b0251c110315cbf6c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:B73f3cf283108842b0251c110315cbf6c <http://www.w3.org/2006/time#month> "--02"^^<http://www.w3.org/2001/XMLSchema#gMonth> .
+_:B73f3cf283108842b0251c110315cbf6c <http://www.w3.org/2006/time#unitType> <http://www.w3.org/2006/time#unitMonth> .
+_:B73f3cf283108842b0251c110315cbf6c <http://www.w3.org/2006/time#year> "2005"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:B80c8390116cc0aa6f307c4087dd23b5e <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+_:B80c8390116cc0aa6f307c4087dd23b5e <http://www.w3.org/2006/time#inDateTime> _:B060f9442694d2470e106b09d2bca8ae3 .
+_:B8557b25c7012d0233ca71e3a3fd61dbf <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:B8557b25c7012d0233ca71e3a3fd61dbf <http://www.w3.org/2006/time#unitType> <http://www.w3.org/2006/time#unitYear> .
+_:B8557b25c7012d0233ca71e3a3fd61dbf <http://www.w3.org/2006/time#year> "2005"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:Bb152652101e5061c8681df7e35402c4a <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+_:Bb152652101e5061c8681df7e35402c4a <http://www.w3.org/2006/time#inDateTime> _:Bd9ab474c13fd51f778260b33addca8c7 .
+_:Bc5c16be7c6dcd913da451438b23f6244 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:Bc5c16be7c6dcd913da451438b23f6244 <http://www.w3.org/2006/time#day> "---08"^^<http://www.w3.org/2001/XMLSchema#gDay> .
+_:Bc5c16be7c6dcd913da451438b23f6244 <http://www.w3.org/2006/time#month> "--02"^^<http://www.w3.org/2001/XMLSchema#gMonth> .
+_:Bc5c16be7c6dcd913da451438b23f6244 <http://www.w3.org/2006/time#unitType> <http://www.w3.org/2006/time#unitDay> .
+_:Bc5c16be7c6dcd913da451438b23f6244 <http://www.w3.org/2006/time#year> "2005"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:Bcb6fbd8d8d0cb7818d89d96888511ef0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
+_:Bcb6fbd8d8d0cb7818d89d96888511ef0 <http://www.w3.org/2006/time#inDateTime> _:B4993d30880b7e761ef3dce2a79278e4c .
+_:Bd9ab474c13fd51f778260b33addca8c7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
+_:Bd9ab474c13fd51f778260b33addca8c7 <http://www.w3.org/2006/time#day> "---08"^^<http://www.w3.org/2001/XMLSchema#gDay> .
+_:Bd9ab474c13fd51f778260b33addca8c7 <http://www.w3.org/2006/time#month> "--02"^^<http://www.w3.org/2001/XMLSchema#gMonth> .
+_:Bd9ab474c13fd51f778260b33addca8c7 <http://www.w3.org/2006/time#unitType> <http://www.w3.org/2006/time#unitDay> .
+_:Bd9ab474c13fd51f778260b33addca8c7 <http://www.w3.org/2006/time#year> "2005"^^<http://www.w3.org/2001/XMLSchema#gYear> .
