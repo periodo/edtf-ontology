@@ -1,27 +1,28 @@
 @base <https://periodo.github.io/edtf-ontology/> .
 @prefix : <cases/level-2/year-subdivision/season/> .
 @prefix edtfo: <edtfo.ttl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-# Spring 2001 in the northern hemisphere.
-:when1 edtfo:inEDTFDateTime "2001-25" .
+:when1 edtfo:inEDTFDateTime "2001-25" ;
+  rdfs:label "spring 2001 in the northern hemisphere" .
 
-# Summer 2001 in the northern hemisphere.
-:when2 edtfo:inEDTFDateTime "2001-26" .
+:when2 edtfo:inEDTFDateTime "2001-26" ;
+  rdfs:label "summer 2001 in the northern hemisphere" .
 
-# Autumn 2001 in the northern hemisphere.
-:when3 edtfo:inEDTFDateTime "2001-27" .
+:when3 edtfo:inEDTFDateTime "2001-27" ;
+  rdfs:label "autumn 2001 in the northern hemisphere" .
 
-# Winter 2001 in the northern hemisphere.
-:when4 edtfo:inEDTFDateTime "2001-28" .
+:when4 edtfo:inEDTFDateTime "2001-28" ;
+  rdfs:label "winter 2001 in the northern hemisphere" .
 
-# Spring 2001 in the southern hemisphere.
-:when5 edtfo:inEDTFDateTime "2001-29" .
+:when5 edtfo:inEDTFDateTime "2001-29" ;
+  rdfs:label "spring 2001 in the southern hemisphere" .
 
-# Summer 2001 in the southern hemisphere.
-:when6 edtfo:inEDTFDateTime "2001-30" .
+:when6 edtfo:inEDTFDateTime "2001-30" ;
+  rdfs:label "summer 2001 in the southern hemisphere" .
 
-# Autumn 2001 in the southern hemisphere.
-:when7 edtfo:inEDTFDateTime "2001-31" .
+:when7 edtfo:inEDTFDateTime "2001-31" ;
+  rdfs:label "autumn 2001 in the southern hemisphere" .
 
-# Winter 2001 in the southern hemisphere.
-:when8 edtfo:inEDTFDateTime "2001-32" .
+:when8 edtfo:inEDTFDateTime "2001-32" ;
+  rdfs:label "winter 2001 in the southern hemisphere" .

@@ -548,6 +548,28 @@ uncertain, approximate, or unspecified. Level 2 also describes dates
 that are part of a set."""@en
   .
 
+:gMonth-0X
+  owl:equivalentClass [
+    a rdfs:Datatype ;
+    owl:oneOf (
+      "--01"^^xsd:gMonth
+      "--02"^^xsd:gMonth
+      "--03"^^xsd:gMonth
+      "--04"^^xsd:gMonth
+      "--05"^^xsd:gMonth
+      "--06"^^xsd:gMonth
+      "--07"^^xsd:gMonth
+      "--08"^^xsd:gMonth
+      "--09"^^xsd:gMonth
+    )
+  ] ;
+  rdfs:label "Ohe of the first nine months of the year"@en ;
+  skos:definition """One of the first nine whole (Gregorian) months
+  within an arbitrary year, i.e. January through September. Used to
+  support the partial specification of a month where the first digit
+  is 0 but the second digit is unknown."""@en
+  .
+
 :unitSeason
   a time:TemporalUnit , owl:NamedIndividual ;
   rdfs:label "Season (unit of temporal duration)"@en ;

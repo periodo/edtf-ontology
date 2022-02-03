@@ -1,15 +1,16 @@
 @base <https://periodo.github.io/edtf-ontology/> .
 @prefix : <cases/level-2/year-subdivision/quarter/> .
 @prefix edtfo: <edtfo.ttl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-# First quarter of 2001.
-:when1 edtfo:inEDTFDateTime "2001-33" .
+:when1 edtfo:inEDTFDateTime "2001-33" ;
+  rdfs:label "first quarter of 2001" .
 
-# Second quarter of 2001.
-:when2 edtfo:inEDTFDateTime "2001-34" .
+:when2 edtfo:inEDTFDateTime "2001-34" ;
+  rdfs:label "second quarter of 2001" .
 
-# Third quarter of 2001.
-:when3 edtfo:inEDTFDateTime "2001-35" .
+:when3 edtfo:inEDTFDateTime "2001-35" ;
+  rdfs:label "third quarter of 2001" .
 
-# Fourth quarter of 2001.
-:when4 edtfo:inEDTFDateTime "2001-36" .
+:when4 edtfo:inEDTFDateTime "2001-36" ;
+  rdfs:label "fourth quarter of 2001" .

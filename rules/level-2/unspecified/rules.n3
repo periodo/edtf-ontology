@@ -1,0 +1,122 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix bipm: <http://www.opengis.net/def/trs/BIPM/0/> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix re: <rules/regexes/> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+edtfo:DecadeDescription rdfs:subClassOf time:DateTimeDescription .
+edtfo:CenturyDescription rdfs:subClassOf time:DateTimeDescription .
+edtfo:MillenniumDescription rdfs:subClassOf time:DateTimeDescription .
+
+{
+    re:PARTIALLY_SPECIFIED_DATE = ?date
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ("^" ?date "$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?w time:inDateTime ?dtd
+} .
+
+{
+    re:PARTIAL_YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd time:unitType time:unitYear
+} .
+
+{
+    re:PARTIAL_YEAR = ?y . re:PARTIAL_MONTH = ?m
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-" ?m "$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd time:unitType time:unitMonth
+} .
+
+{
+    re:PARTIAL_YEAR = ?y . re:PARTIAL_MONTH = ?m . re:PARTIAL_DAY = ?d
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-" ?m "-" ?d "$") string:concatenation ?re
+    . ?e string:matches ?re
+} => {
+    ?dtd time:unitType time:unitDay
+} .
+
+{
+    re:PARTIAL_YEAR = ?y . re:PARTIAL_MONTH = ?m . re:DAY = ?d
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-" ?m "-(" ?d ")") string:concatenation ?re
+    . (?e ?re) string:scrape ?d_string
+    . ("---" ?d_string) string:concatenation ?d_value
+    . (?d_value xsd:gDay) log:dtlit ?gday
+} => {
+    ?dtd time:day ?gday
+} .
+
+{
+    re:PARTIAL_YEAR = ?y . re:MONTH = ?m
+
+    . ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ("^" ?y "-(" ?m ")") string:concatenation ?re
+    . (?e ?re) string:scrape ?m_string
+    . ("--" ?m_string) string:concatenation ?m_value
+    . (?m_value xsd:gMonth) log:dtlit ?gmonth
+} => {
+    ?dtd time:month ?gmonth
+} .
+
+{
+    ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . (?e "^(-?[0-9]{3})X") string:scrape ?d
+    . (?d xsd:integer) log:dtlit ?decade
+} => {
+    ?dtd a edtfo:DecadeDescription ;
+    edtfo:decade ?decade
+} .
+
+{
+    ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . (?e "^(-?[0-9]{2})XX") string:scrape ?c
+    . (?c xsd:integer) log:dtlit ?century
+} => {
+    ?dtd a edtfo:CenturyDescription ;
+    edtfo:century ?century
+} .
+
+{
+    ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . (?e "^(-?[0-9])XXX") string:scrape ?c
+    . (?c xsd:integer) log:dtlit ?millennium
+} => {
+    ?dtd a edtfo:MillenniumDescription ;
+    edtfo:millennium ?millennium
+} .
+
+{
+    ?w edtfo:inEDTFDateTime ?e
+    . ?w time:inDateTime ?dtd
+    . ?e string:matches "^XXXX"
+} => {
+    ?dtd a time:DateTimeDescription
+} .

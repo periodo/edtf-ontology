@@ -1,0 +1,700 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix bipm: <http://www.opengis.net/def/trs/BIPM/0/> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix re: <rules/regexes/> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?edtf
+    . ("^\\.\\.(" ?y ")$") string:concatenation ?scraper
+    . (?edtf ?scraper) string:scrape ?y_string
+    . (?y_string xsd:integer) log:dtlit ?year
+} => {
+    ?w a
+    [ a owl:Class ;
+      owl:equivalentClass [
+        owl:intersectionOf (
+          time:Instant
+          [ a owl:Restriction ;
+            owl:onProperty time:inDateTime ;
+            owl:allValuesFrom [
+              owl:unionOf (
+                [ owl:intersectionOf (
+                    time:DateTimeDescription
+                    [ a owl:Restriction ;
+                      owl:onProperty time:year ;
+                      owl:someValuesFrom [
+                        a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions ([ xsd:maxInclusive ?year ])
+                      ]
+                    ]
+                  )
+                ]
+                [ owl:intersectionOf  (
+                    time:GeneralDateTimeDescription
+                    [ owl:complementOf
+                      [ a owl:Restriction ;
+                        owl:hasValue iso8601:Gregorian ;
+                        owl:onProperty time:hasTRS
+                      ]
+                    ]
+                  )
+                ]
+              )
+            ]
+          ]
+        )
+      ]
+    ]
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?edtf
+    . ("^(" ?y ")\\.\\.$") string:concatenation ?scraper
+    . (?edtf ?scraper) string:scrape ?y_string
+    . (?y_string xsd:integer) log:dtlit ?year
+} => {
+    ?w a
+    [ a owl:Class ;
+      owl:equivalentClass [
+        owl:intersectionOf (
+          time:Instant
+          [ a owl:Restriction ;
+            owl:onProperty time:inDateTime ;
+            owl:allValuesFrom [
+              owl:unionOf (
+                [ owl:intersectionOf (
+                    time:DateTimeDescription
+                    [ a owl:Restriction ;
+                      owl:onProperty time:year ;
+                      owl:someValuesFrom [
+                        a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions ([ xsd:minInclusive ?year ])
+                      ]
+                    ]
+                  )
+                ]
+                [ owl:intersectionOf  (
+                    time:GeneralDateTimeDescription
+                    [ owl:complementOf
+                      [ a owl:Restriction ;
+                        owl:hasValue iso8601:Gregorian ;
+                        owl:onProperty time:hasTRS
+                      ]
+                    ]
+                  )
+                ]
+              )
+            ]
+          ]
+        )
+      ]
+    ]
+} .
+
+{
+    re:YEAR = ?y
+
+    . ?w edtfo:inEDTFDateTime ?edtf
+    . ("^(" ?y ")\\.\\." ?y "$") string:concatenation ?miny_scraper
+    . (?edtf ?miny_scraper) string:scrape ?miny_string
+    . (?miny_string xsd:integer) log:dtlit ?minyear
+    . ("^" ?y "\\.\\.(" ?y ")$") string:concatenation ?maxy_scraper
+    . (?edtf ?maxy_scraper) string:scrape ?maxy_string
+    . (?maxy_string xsd:integer) log:dtlit ?maxyear
+} => {
+    ?w a
+    [ a owl:Class ;
+      owl:equivalentClass [
+        owl:intersectionOf (
+          time:Instant
+          [ a owl:Restriction ;
+            owl:onProperty time:inDateTime ;
+            owl:allValuesFrom [
+              owl:unionOf (
+                [ owl:intersectionOf (
+                    time:DateTimeDescription
+                    [ a owl:Restriction ;
+                      owl:onProperty time:year ;
+                      owl:someValuesFrom [
+                        a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions (
+                          [ xsd:minInclusive ?minyear ]
+                          [ xsd:maxInclusive ?maxyear ]
+                        )
+                      ]
+                    ]
+                  )
+                ]
+                [ owl:intersectionOf  (
+                    time:GeneralDateTimeDescription
+                    [ owl:complementOf
+                      [ a owl:Restriction ;
+                        owl:hasValue iso8601:Gregorian ;
+                        owl:onProperty time:hasTRS
+                      ]
+                    ]
+                  )
+                ]
+              )
+            ]
+          ]
+        )
+      ]
+    ]
+} .
+
+{
+    re:YEAR = ?y . re:MONTH = ?m
+
+    . ?w edtfo:inEDTFDateTime ?edtf
+    . ("^\\.\\.(" ?y ")-" ?m "$") string:concatenation ?y_scraper
+    . (?edtf ?y_scraper) string:scrape ?y_string
+    . (?y_string xsd:integer) log:dtlit ?year
+    . ("^\\.\\." ?y "-(" ?m ")$") string:concatenation ?m_scraper
+    . (?edtf ?m_scraper) string:scrape ?m_string
+    . (?m_string xsd:integer) log:dtlit ?month
+} => {
+    ?w a
+    [ a owl:Class ;
+      owl:equivalentClass [
+        owl:intersectionOf (
+          time:Instant
+          [ a owl:Restriction ;
+            owl:onProperty time:inDateTime ;
+            owl:allValuesFrom [
+              owl:unionOf (
+                [ owl:intersectionOf (
+                    time:DateTimeDescription
+                    [ a owl:Restriction ;
+                      owl:onProperty time:year ;
+                      owl:someValuesFrom [
+                      a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions ([ xsd:maxExclusive ?year ])
+                      ]
+                    ]
+                  )
+                ]
+                [ owl:intersectionOf (
+                    time:DateTimeDescription
+                    [ a owl:Restriction ;
+                      owl:onProperty time:year ;
+                      owl:hasValue ?year
+                    ]
+                    [ a owl:Restriction ;
+                      owl:onProperty time:month ;
+                      owl:someValuesFrom [
+                        a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions ([ xsd:maxInclusive ?month ])
+                      ]
+                    ]
+                  )
+                ]
+                [ owl:intersectionOf  (
+                    time:GeneralDateTimeDescription
+                    [ owl:complementOf
+                      [ a owl:Restriction ;
+                        owl:hasValue iso8601:Gregorian ;
+                        owl:onProperty time:hasTRS
+                      ]
+                    ]
+                  )
+                ]
+              )
+            ]
+          ]
+        )
+      ]
+    ]
+} .
+
+{
+    re:YEAR = ?y . re:MONTH = ?m
+
+    . ?w edtfo:inEDTFDateTime ?edtf
+    . ("^(" ?y ")-" ?m "\\.\\.$") string:concatenation ?y_scraper
+    . (?edtf ?y_scraper) string:scrape ?y_string
+    . (?y_string xsd:integer) log:dtlit ?year
+    . ("^" ?y "-(" ?m ")\\.\\.$") string:concatenation ?m_scraper
+    . (?edtf ?m_scraper) string:scrape ?m_string
+    . (?m_string xsd:integer) log:dtlit ?month
+} => {
+    ?w a
+    [ a owl:Class ;
+      owl:equivalentClass [
+        owl:intersectionOf (
+          time:Instant
+          [ a owl:Restriction ;
+            owl:onProperty time:inDateTime ;
+            owl:allValuesFrom [
+              owl:unionOf (
+                [ owl:intersectionOf (
+                    time:DateTimeDescription
+                    [ a owl:Restriction ;
+                      owl:onProperty time:year ;
+                      owl:someValuesFrom [
+                      a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions ([ xsd:minExclusive ?year ])
+                      ]
+                    ]
+                  )
+                ]
+                [ owl:intersectionOf (
+                    time:DateTimeDescription
+                    [ a owl:Restriction ;
+                      owl:onProperty time:year ;
+                      owl:hasValue ?year
+                    ]
+                    [ a owl:Restriction ;
+                      owl:onProperty time:month ;
+                      owl:someValuesFrom [
+                        a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions ([ xsd:minInclusive ?month ])
+                      ]
+                    ]
+                  )
+                ]
+                [ owl:intersectionOf  (
+                    time:GeneralDateTimeDescription
+                    [ owl:complementOf
+                      [ a owl:Restriction ;
+                        owl:hasValue iso8601:Gregorian ;
+                        owl:onProperty time:hasTRS
+                      ]
+                    ]
+                  )
+                ]
+              )
+            ]
+          ]
+        )
+      ]
+    ]
+} .
+
+{
+    re:YEAR = ?y . re:MONTH = ?m
+
+    . ?w edtfo:inEDTFDateTime ?edtf
+
+    . ("^(" ?y ")-" ?m "\\.\\." ?y "-" ?m "$") string:concatenation ?miny_scraper
+    . (?edtf ?miny_scraper) string:scrape ?miny_string
+    . (?miny_string xsd:integer) log:dtlit ?minyear
+    . ("^" ?y "-(" ?m ")\\.\\." ?y "-" ?m "$") string:concatenation ?minm_scraper
+    . (?edtf ?minm_scraper) string:scrape ?minm_string
+    . (?minm_string xsd:integer) log:dtlit ?minmonth
+
+    . ("^" ?y "-" ?m "\\.\\.(" ?y ")-" ?m "$") string:concatenation ?maxy_scraper
+    . (?edtf ?maxy_scraper) string:scrape ?maxy_string
+    . (?maxy_string xsd:integer) log:dtlit ?maxyear
+    . ("^" ?y "-" ?m "\\.\\." ?y "-(" ?m ")$") string:concatenation ?maxm_scraper
+    . (?edtf ?maxm_scraper) string:scrape ?maxm_string
+    . (?maxm_string xsd:integer) log:dtlit ?maxmonth
+} => {
+    ?w a
+    [ a owl:Class ;
+      owl:equivalentClass [
+        owl:intersectionOf (
+          time:Instant
+          [ a owl:Restriction ;
+            owl:onProperty time:inDateTime ;
+            owl:allValuesFrom [
+              owl:unionOf (
+                [ owl:intersectionOf (
+                    time:DateTimeDescription
+                    [ a owl:Restriction ;
+                      owl:onProperty time:year ;
+                      owl:someValuesFrom [
+                      a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions (
+                          [ xsd:minExclusive ?minyear ]
+                          [ xsd:maxExclusive ?maxyear ]
+                        )
+                      ]
+                    ]
+                  )
+                ]
+                [ owl:intersectionOf (
+                    time:DateTimeDescription
+                    [ a owl:Restriction ;
+                      owl:onProperty time:year ;
+                      owl:hasValue ?minyear
+                    ]
+                    [ a owl:Restriction ;
+                      owl:onProperty time:month ;
+                      owl:someValuesFrom [
+                        a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions ([ xsd:minInclusive ?minmonth ])
+                      ]
+                    ]
+                  )
+                ]
+                [ owl:intersectionOf (
+                    time:DateTimeDescription
+                    [ a owl:Restriction ;
+                      owl:onProperty time:year ;
+                      owl:hasValue ?maxyear
+                    ]
+                    [ a owl:Restriction ;
+                      owl:onProperty time:month ;
+                      owl:someValuesFrom [
+                        a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions ([ xsd:maxInclusive ?maxmonth ])
+                      ]
+                    ]
+                  )
+                ]
+                [ owl:intersectionOf  (
+                    time:GeneralDateTimeDescription
+                    [ owl:complementOf
+                      [ a owl:Restriction ;
+                        owl:hasValue iso8601:Gregorian ;
+                        owl:onProperty time:hasTRS
+                      ]
+                    ]
+                  )
+                ]
+              )
+            ]
+          ]
+        )
+      ]
+    ]
+} .
+
+{
+    re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d
+
+    . ?w edtfo:inEDTFDateTime ?edtf
+    . ("^\\.\\.(" ?y ")-" ?m "-" ?d "$") string:concatenation ?y_scraper
+    . (?edtf ?y_scraper) string:scrape ?y_string
+    . (?y_string xsd:integer) log:dtlit ?year
+    . ("^\\.\\." ?y "-(" ?m ")-" ?d "$") string:concatenation ?m_scraper
+    . (?edtf ?m_scraper) string:scrape ?m_string
+    . (?m_string xsd:integer) log:dtlit ?month
+    . ("^\\.\\." ?y "-" ?m "-(" ?d ")$") string:concatenation ?d_scraper
+    . (?edtf ?d_scraper) string:scrape ?d_string
+    . (?d_string xsd:integer) log:dtlit ?day
+} => {
+    ?w a
+    [ a owl:Class ;
+      owl:equivalentClass [
+        owl:intersectionOf (
+          time:Instant
+          [ a owl:Restriction ;
+            owl:onProperty time:inDateTime ;
+            owl:allValuesFrom [
+              owl:unionOf (
+                [ owl:intersectionOf (
+                    time:DateTimeDescription
+                    [ a owl:Restriction ;
+                      owl:onProperty time:year ;
+                      owl:someValuesFrom [
+                        a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions ([ xsd:maxExclusive ?year ])
+                      ]
+                    ]
+                  )
+                ]
+                [ owl:intersectionOf (
+                    time:DateTimeDescription
+                    [ a owl:Restriction ;
+                      owl:onProperty time:year ;
+                      owl:hasValue ?year
+                    ]
+                    [ a owl:Restriction ;
+                      owl:onProperty time:month ;
+                      owl:someValuesFrom [
+                        a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions ([ xsd:maxExclusive ?month ])
+                      ]
+                    ]
+                  )
+                ]
+                [ owl:intersectionOf (
+                    time:DateTimeDescription
+                    [ a owl:Restriction ;
+                      owl:onProperty time:year ;
+                      owl:hasValue ?year
+                    ]
+                    [ a owl:Restriction ;
+                      owl:onProperty time:month ;
+                      owl:hasValue ?month
+                    ]
+                    [ a owl:Restriction ;
+                      owl:onProperty time:day ;
+                      owl:someValuesFrom [
+                        a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions ([ xsd:maxInclusive ?day ])
+                      ]
+                    ]
+                  )
+                ]
+                [ owl:intersectionOf  (
+                    time:GeneralDateTimeDescription
+                    [ owl:complementOf
+                      [ a owl:Restriction ;
+                        owl:hasValue iso8601:Gregorian ;
+                        owl:onProperty time:hasTRS
+                      ]
+                    ]
+                  )
+                ]
+              )
+            ]
+          ]
+        )
+      ]
+    ]
+} .
+
+{
+    re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d
+
+    . ?w edtfo:inEDTFDateTime ?edtf
+    . ("^(" ?y ")-" ?m "-" ?d "\\.\\.$") string:concatenation ?y_scraper
+    . (?edtf ?y_scraper) string:scrape ?y_string
+    . (?y_string xsd:integer) log:dtlit ?year
+    . ("^" ?y "-(" ?m ")-" ?d "\\.\\.$") string:concatenation ?m_scraper
+    . (?edtf ?m_scraper) string:scrape ?m_string
+    . (?m_string xsd:integer) log:dtlit ?month
+    . ("^" ?y "-" ?m "-(" ?d ")\\.\\.$") string:concatenation ?d_scraper
+    . (?edtf ?d_scraper) string:scrape ?d_string
+    . (?d_string xsd:integer) log:dtlit ?day
+} => {
+    ?w a
+    [ a owl:Class ;
+      owl:equivalentClass [
+        owl:intersectionOf (
+          time:Instant
+          [ a owl:Restriction ;
+            owl:onProperty time:inDateTime ;
+            owl:allValuesFrom [
+              owl:unionOf (
+                [ owl:intersectionOf (
+                    time:DateTimeDescription
+                    [ a owl:Restriction ;
+                      owl:onProperty time:year ;
+                      owl:someValuesFrom [
+                        a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions ([ xsd:minExclusive ?year ])
+                      ]
+                    ]
+                  )
+                ]
+                [ owl:intersectionOf (
+                    time:DateTimeDescription
+                    [ a owl:Restriction ;
+                      owl:onProperty time:year ;
+                      owl:hasValue ?year
+                    ]
+                    [ a owl:Restriction ;
+                      owl:onProperty time:month ;
+                      owl:someValuesFrom [
+                        a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions ([ xsd:minExclusive ?month ])
+                      ]
+                    ]
+                  )
+                ]
+                [ owl:intersectionOf (
+                    time:DateTimeDescription
+                    [ a owl:Restriction ;
+                      owl:onProperty time:year ;
+                      owl:hasValue ?year
+                    ]
+                    [ a owl:Restriction ;
+                      owl:onProperty time:month ;
+                      owl:hasValue ?month
+                    ]
+                    [ a owl:Restriction ;
+                      owl:onProperty time:day ;
+                      owl:someValuesFrom [
+                        a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions ([ xsd:minInclusive ?day ])
+                      ]
+                    ]
+                  )
+                ]
+                [ owl:intersectionOf  (
+                    time:GeneralDateTimeDescription
+                    [ owl:complementOf
+                      [ a owl:Restriction ;
+                        owl:hasValue iso8601:Gregorian ;
+                        owl:onProperty time:hasTRS
+                      ]
+                    ]
+                  )
+                ]
+              )
+            ]
+          ]
+        )
+      ]
+    ]
+} .
+
+{
+    re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d . re:DATE = ?date
+
+    . ?w edtfo:inEDTFDateTime ?edtf
+
+    . ("^(" ?y ")-" ?m "-" ?d "\\.\\." ?date "$") string:concatenation ?miny_scraper
+    . (?edtf ?miny_scraper) string:scrape ?miny_string
+    . (?miny_string xsd:integer) log:dtlit ?minyear
+    . ("^" ?y "-(" ?m ")-" ?d "\\.\\." ?date "$") string:concatenation ?minm_scraper
+    . (?edtf ?minm_scraper) string:scrape ?minm_string
+    . (?minm_string xsd:integer) log:dtlit ?minmonth
+    . ("^" ?y "-" ?m "-(" ?d ")\\.\\." ?date "$") string:concatenation ?mind_scraper
+    . (?edtf ?mind_scraper) string:scrape ?mind_string
+    . (?mind_string xsd:integer) log:dtlit ?minday
+
+    . ("^" ?date "\\.\\.(" ?y ")-" ?m "-" ?d "$") string:concatenation ?maxy_scraper
+    . (?edtf ?maxy_scraper) string:scrape ?maxy_string
+    . (?maxy_string xsd:integer) log:dtlit ?maxyear
+    . ("^" ?date "\\.\\." ?y "-(" ?m ")-" ?d "$") string:concatenation ?maxm_scraper
+    . (?edtf ?maxm_scraper) string:scrape ?maxm_string
+    . (?maxm_string xsd:integer) log:dtlit ?maxmonth
+    . ("^" ?date "\\.\\." ?y "-" ?m "-(" ?d ")$") string:concatenation ?maxd_scraper
+    . (?edtf ?maxd_scraper) string:scrape ?maxd_string
+    . (?maxd_string xsd:integer) log:dtlit ?maxday
+} => {
+    ?w a
+    [ a owl:Class ;
+      owl:equivalentClass [
+        owl:intersectionOf (
+          time:Instant
+          [ a owl:Restriction ;
+            owl:onProperty time:inDateTime ;
+            owl:allValuesFrom [
+              owl:unionOf (
+                [ owl:intersectionOf (
+                    time:DateTimeDescription
+                    [ a owl:Restriction ;
+                      owl:onProperty time:year ;
+                      owl:someValuesFrom [
+                        a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions (
+                          [ xsd:minExclusive ?minyear ]
+                          [ xsd:maxExclusive ?maxyear ]
+                        )
+                      ]
+                    ]
+                  )
+                ]
+                [ owl:intersectionOf (
+                    time:DateTimeDescription
+                    [ a owl:Restriction ;
+                      owl:onProperty time:year ;
+                      owl:hasValue ?minyear
+                    ]
+                    [ a owl:Restriction ;
+                      owl:onProperty time:month ;
+                      owl:someValuesFrom [
+                        a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions ([ xsd:minExclusive ?minmonth ])
+                      ]
+                    ]
+                  )
+                ]
+                [ owl:intersectionOf (
+                    time:DateTimeDescription
+                    [ a owl:Restriction ;
+                      owl:onProperty time:year ;
+                      owl:hasValue ?minyear
+                    ]
+                    [ a owl:Restriction ;
+                      owl:onProperty time:month ;
+                      owl:hasValue ?minmonth
+                    ]
+                    [ a owl:Restriction ;
+                      owl:onProperty time:day ;
+                      owl:someValuesFrom [
+                        a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions ([ xsd:minInclusive ?minday ])
+                      ]
+                    ]
+                  )
+                ]
+                [ owl:intersectionOf (
+                    time:DateTimeDescription
+                    [ a owl:Restriction ;
+                      owl:onProperty time:year ;
+                      owl:hasValue ?maxyear
+                    ]
+                    [ a owl:Restriction ;
+                      owl:onProperty time:month ;
+                      owl:someValuesFrom [
+                        a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions ([ xsd:maxExclusive ?maxmonth ])
+                      ]
+                    ]
+                  )
+                ]
+                [ owl:intersectionOf (
+                    time:DateTimeDescription
+                    [ a owl:Restriction ;
+                      owl:onProperty time:year ;
+                      owl:hasValue ?maxyear
+                    ]
+                    [ a owl:Restriction ;
+                      owl:onProperty time:month ;
+                      owl:hasValue ?maxmonth
+                    ]
+                    [ a owl:Restriction ;
+                      owl:onProperty time:day ;
+                      owl:someValuesFrom [
+                        a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions ([ xsd:maxInclusive ?maxday ])
+                      ]
+                    ]
+                  )
+                ]
+                [ owl:intersectionOf  (
+                    time:GeneralDateTimeDescription
+                    [ owl:complementOf
+                      [ a owl:Restriction ;
+                        owl:hasValue iso8601:Gregorian ;
+                        owl:onProperty time:hasTRS
+                      ]
+                    ]
+                  )
+                ]
+              )
+            ]
+          ]
+        )
+      ]
+    ]
+} .

@@ -1,0 +1,34 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix : <cases/level-2/unspecified/year-precision/> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# A year with one rightmost unspecified digit
+# in a year-only expression (year precision).
+:when1 edtfo:inEDTFDateTime "201X" ;
+  rdfs:label "some year between 2010 and 2019 (inclusive)" .
+
+# A year with two rightmost unspecified digits
+# in a year-only expression (year precision).
+:when2 edtfo:inEDTFDateTime "-05XX" ;
+  rdfs:label "some year between the -0599 and -0500 (inclusive)" .
+
+# A year with three rightmost unspecified digits
+# in a year-only expression (year precision).
+:when3 edtfo:inEDTFDateTime "1XXX" ;
+  rdfs:label "some year between the 1000 and 1999 (inclusive)" .
+
+# Year completely unspecified
+# in a year-only expression (year precision).
+:when4 edtfo:inEDTFDateTime "XXXX" ;
+  rdfs:label "some year" .
+
+# Unclear whether the following is actually allowed in EDTF Level 2
+# (though it does seem to be allowed in ISO 8601 Part 2). Skipping for
+# now as this would be a headache to support (e.g. "XXX1" would be a
+# disjoint union of the 1000 years ending in 1, 0001 to 9991).
+
+# Second-from-right digit unspecified
+# in a year-only expression (year precision).
+# :when5 edtfo:inEDTFDateTime "19X5" ;
+#   rdfs:label "some year ending in 5 between 1905 and 1995 (inclusive)" .

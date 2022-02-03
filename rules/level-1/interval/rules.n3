@@ -9,6 +9,9 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+# depends on:
+# rules/level-1/qualification
+
 time:hasBeginning rdfs:domain time:Interval .
 time:hasBeginning rdfs:range time:Instant .
 time:hasEnd rdfs:domain time:Interval .

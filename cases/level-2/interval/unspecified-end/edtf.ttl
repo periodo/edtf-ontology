@@ -1,0 +1,7 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix : <cases/level-2/interval/unspecified-end/> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+:when edtfo:hasEDTFDateTimeDescription "2004-06-04/2004-XX-03" ;
+  rdfs:label "interval in 2004 beginning on June 4 ending on the third day of an unspecified month (which must be July or later)" .

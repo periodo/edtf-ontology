@@ -6,46 +6,46 @@ time intervals given at https://www.loc.gov/standards/datetime/.
 Level 2 requires support for [Level 1](../level-1#readme) as well as
 the following features:
 
-## [Exponential year](exponential-year)
+## Extended year (see [rules](../../rules/level-2/extended-year/rules.n3))
 
-## Significant digits
+* [exponential year](extended-year/exponential/)
+* [year with significant digits](extended-year/significant-digits/)
 
-* [four-digit year with significant digits](year-significant-digits.ttl)
-* [letter-prefixed year with significant digits](letter-prefixed-year-significant-digits.ttl)
-* [exponential year with significant digits](exponential-year-significant-digits.ttl)
+## Year subdivision (see [rules](../../rules/level-2/year-subdivision/rules.n3))
 
-## [Sub-year groupings](quarter.ttl)
+* [season](year-subdivision/season/)
+* [quarter](year-subdivision/quarter/)
+* [quadrimester](year-subdivision/quadrimester/)
+* [semestral](year-subdivision/semestral/)
  
-## Set representation
+## Qualification of date (see [rules](../../level-2/qualification/rules.n3))
 
-* [one of a partially enumerated range of years](one-of-set-1.ttl)
-* [one of an open range of dates](one-of-set-2.ttl)
-* [one of an open range of months](one-of-set-3.ttl)
-* [one of a partially enumerated and open range of months](one-of-set-4.ttl)
-* [one of a fully enumerated set of times](one-of-set-5.ttl)
-* [one of an open range of years](one-of-set-6.ttl)
-* [all of a partially enumerated range of years](all-of-set-1.ttl)
-* [all of a fully enumerated set of times](all-of-set-2.ttl)
-* [all of an open range of years](all-of-set-3.ttl)
+* [qualified date component(s)](qualification/individual/)
+* [qualified date component group(s)](qualification/group/)
  
-## Qualification
+## Unspecified digit(s) (see [rules](../../level-2/unspecified/rules.n3))
 
-* [year, month, and day uncertain and approximate](group-qualification-1.ttl)
-* [year and month approximate](group-qualification-2.ttl)
-* [year uncertain](group-qualification-3.ttl)
-* [year uncertain; month known; day approximate](individual-qualification-1.ttl)
-* [month uncertain and approximate; year and day known](individual-qualification-2.ttl)
+* [date with unspecified digits](unspecified/)
+
+## Time interval (see [rules](../../level-2/interval/rules.n3))
+
+* [with unspecified digits in start](interval/unspecified-start/)
+* [with unspecified digits in end](interval/unspecified-end/)
+* [with unspecified digits in start and end](interval/unspecified-both/)
+* [with qualified start](interval/qualified-start/)
+* [with qualified end](interval/qualified-end/)
+* [with qualified start and end](interval/qualified-both/)
+* [with start on or before date](interval/on-or-before/)
+* [with end on or after date](interval/on-or-after/)
+
+## Set of dates (see [rules](../../level-2/set/rules.n3))
  
-## Unspecified Digit
+* [one of fully enumerated set](set/one-of-full/)
+* [one of partially enumerated set](set/one-of-partial/)
+* [one of open set](set/one-of-open/)
+* [one of partially enumerated and open set](set/one-of-partial-and-open/)
+* [all of fully enumerated set](set/all-of-full/)
+* [all of partially enumerated set](set/all-of-partial/)
+* [all of open set](set/all-of-open/)
+* [all of partially enumerated and open set](set/all-of-partial-and-open/)
 
-* [one rightmost unspecified year digit, month specified, day specified](unspecified-digit-1.ttl)
-* [two rightmost unspecified year digits, month specified, day specified](unspecified-digit-2.ttl)
-* [year unspecified, month specified, day unspecified](unspecified-digit-3.ttl)
-* [three rightmost unspecified year digits, month unspecified](unspecified-digit-4.ttl)
-* [three rightmost unspecified year digits, month specified](unspecified-digit-5.ttl)
-* [year specified, one rightmost unspecified month digit](unspecified-digit-6.ttl)
-
-## Interval
-
-* [approximate start and end days interval](qualified-interval-1.ttl)
-* [unspecified start day interval](qualified-interval-2.ttl)

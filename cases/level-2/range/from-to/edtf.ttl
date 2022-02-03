@@ -1,0 +1,13 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix : <cases/level-2/range/from-to/> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+:when1 edtfo:inEDTFDateTime "1984..1987" ;
+  rdfs:label "A year no earlier than 1984 and no later than 1987" .
+
+:when2 edtfo:inEDTFDateTime "1984-10..1986-03" ;
+  rdfs:label "A month no earlier than October 1984 and no later than March 1986" .
+
+:when3 edtfo:inEDTFDateTime "1760-02-22..1767-03-08" ;
+  rdfs:label "A day no earlier than February 22, 1760 and no later than March 8, 1767" .

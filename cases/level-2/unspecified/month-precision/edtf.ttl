@@ -1,0 +1,82 @@
+@base <https://periodo.github.io/edtf-ontology/> .
+@prefix : <cases/level-2/unspecified/month-precision/> .
+@prefix edtfo: <edtfo.ttl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Year digit, month unspecified
+# in a year-month expression (month precision).
+:when1 edtfo:inEDTFDateTime "200X-XX" ;
+  rdfs:label "some month in some year between 2000 and 2009 (inclusive)" .
+
+# Year digits, month unspecified
+# in a year-month expression (month precision).
+:when2 edtfo:inEDTFDateTime "20XX-XX" ;
+  rdfs:label "some month in some year between 2000 and 2099 (inclusive)" .
+
+# Year digits, month unspecified
+# in a year-month expression (month precision).
+:when3 edtfo:inEDTFDateTime "2XXX-XX" ;
+  rdfs:label "some month in some year between 2000 and 2999 (inclusive)" .
+
+# Year and month unspecified
+# in a year-month expression (month precision).
+:when4 edtfo:inEDTFDateTime "XXXX-XX" ;
+  rdfs:label "some month in some year" .
+
+# Year digits unspecified
+# in a year-month expression (month precision).
+:when5 edtfo:inEDTFDateTime "20XX-12" ;
+  rdfs:label "some December in some year between 2000 and 2099 (inclusive)" .
+
+# TODO Punting on the following for now.
+# They should look something like this:
+
+# :when a time:Instant ;
+#   # October, November, or December 1984.
+#   a [
+#     a owl:Class ;
+#     rdfs:subClassOf time:Instant ;
+#     owl:equivalentClass [
+#       a owl:Restriction ;
+#       owl:onProperty time:inDateTime ;
+#       owl:someValuesFrom [
+#         a owl:Class ;
+#         owl:intersectionOf (
+#           time:DateTimeDescription
+#           [ a owl:Restriction ;
+#             owl:onProperty time:unitType ;
+#             owl:hasValue time:unitMonth
+#           ]
+#           [ a owl:Restriction ;
+#             owl:onProperty time:year ;
+#             owl:hasValue 1984
+#           ]
+#           [ a owl:Restriction ;
+#             owl:onProperty time:month ;
+#             owl:someValuesFrom edtfo:gMonth-0X
+#           ]
+#         )
+#       ]
+#     ]
+#   ]
+# .
+
+# Year and month digits unspecified
+# in a year-month expression (month precision).
+# :when6 edtfo:inEDTFDateTime "2011-0X" ;
+#   rdfs:label "some month in 2011 before October" .
+
+# # Year and month digits unspecified
+# # in a year-month expression (month precision).
+# :when7 edtfo:inEDTFDateTime "20XX-1X" ;
+#   rdfs:label "some October, November, or December in the 21st century" .
+
+# # Year and month digits unspecified
+# # in a year-month expression (month precision).
+# :when8 edtfo:inEDTFDateTime "20XX-X1" ;
+#   rdfs:label "some January or November in the 21st century" .
+
+# # Month digit unspecified
+# # in a year-month expression (month precision).
+# :when9 edtfo:inEDTFDateTime "2021-X1" ;
+#   rdfs:label "either January or November 2021" .

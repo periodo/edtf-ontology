@@ -26,6 +26,9 @@ re:SEASON_HEMISPHERE = "(?:2[5-9]|3[0-2])" .
 re:QUARTER = "3[3-6]" .
 re:QUADRIMESTER = "3[7-9]" .
 re:SEMESTRAL = "4[0-1]" .
+re:MILLENNIUM = "-?[0-9]XXX" .
+re:CENTURY = "-?[0-9]{2}XX" .
+re:DECADE = "-?[0-9]{3}X" .
 
 {
     re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d
@@ -53,4 +56,48 @@ re:SEMESTRAL = "4[0-1]" .
     . (?d "T" ?t) string:concatenation ?r
 } => {
     re:DATETIME = ?r
+} .
+
+{
+    re:MILLENNIUM = ?m . re:CENTURY = ?c . re:DECADE = ?d . re:YEAR = ?y
+    . ("(?:XXXX|" ?m "|" ?c "|" ?d "|" ?y ")") string:concatenation ?r
+} => {
+    re:PARTIAL_YEAR = ?r
+} .
+
+{
+    re:MONTH = ?m
+    . ("(?:XX|[0-1]X|X1|" ?m ")") string:concatenation ?r
+} => {
+    re:PARTIAL_MONTH = ?r
+} .
+
+{
+    re:DAY = ?d
+    . ("(?:XX|" ?d ")") string:concatenation ?r
+} => {
+    re:PARTIAL_DAY = ?r
+} .
+
+{
+    re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d . re:QUALIFIER = ?q
+    . (?q "?" ?y "(?:-" ?q "?" ?m "(?:-" ?q "?" ?d ")?" ")?") string:concatenation ?r
+} => {
+    re:PARTIALLY_QUALIFIED_DATE = ?r
+} .
+
+{
+    re:PARTIAL_YEAR = ?y . re:PARTIAL_MONTH = ?m . re:PARTIAL_DAY = ?d
+    . (?y "(?:-" ?m "(?:-" ?d ")?)?") string:concatenation ?r
+} => {
+    re:PARTIALLY_SPECIFIED_DATE = ?r
+} .
+
+{
+    re:REDUCED_PRECISION_DATE = ?rpd
+    . re:PARTIALLY_QUALIFIED_DATE = ?pqd
+    . re:PARTIALLY_SPECIFIED_DATE = ?psd
+    . ("(?:" ?rpd "|" ?pqd "|" ?psd ")") string:concatenation ?r
+} => {
+    re:ANY_EDTF_DATE = ?r
 } .

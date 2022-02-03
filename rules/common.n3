@@ -6,17 +6,21 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix re: <rules/regexes/> .
+@prefix rules: <rules/> .
 @prefix string: <http://www.w3.org/2000/10/swap/string#> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 time:inDateTime rdfs:domain time:Instant .
 
-time:DateTimeDescription rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:onProperty time:hasTRS ;
-    owl:hasValue iso8601:Gregorian
-    ] .
+# time:DateTimeDescription
+#   rdfs:subClassOf [
+#     a owl:Restriction ;
+#     owl:onProperty time:hasTRS ;
+#     owl:hasValue iso8601:Gregorian ;
+#     rules:includeInInferenceResults false
+#   ] ;
+#   rules:includeInInferenceResults false .
 
 {
     re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d . re:TIME = ?t

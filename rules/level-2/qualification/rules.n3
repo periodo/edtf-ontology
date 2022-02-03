@@ -13,10 +13,10 @@
 # individual qualification
 
 {
-    re:YEAR = ?y . re:MONTH = ?m . re:DAY = ?d . re:QUALIFIER = ?q
+    re:PARTIALLY_QUALIFIED_DATE = ?date
 
     . ?w edtfo:inEDTFDateTime ?e
-    . ("^" ?q "?" ?y "(-" ?q "?" ?m "(-" ?q "?" ?d ")?" ")?" "$") string:concatenation ?re
+    . ("^" ?date "$") string:concatenation ?re
     . ?e string:matches ?re
 } => {
     ?w time:inDateTime [

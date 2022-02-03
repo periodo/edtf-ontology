@@ -4,8 +4,19 @@ shopt -s globstar
 shopt -s extglob
 
 for f in cases/level-?/**/!(*-raw).ttl ; do
+    # skip invalid output (should be empty)
+    if [[ $f == *invalid/owltime.ttl ]]
+    then
+        continue
+    fi
     a=$(dirname "$f")
+    # riot formatting
     b=$(grep '@prefix :' "$f" | cut -c 12- | rev | cut -c 5- | rev)
+    if [ -z "$b" ]
+    then
+        # rdflib formatting
+        b=$(grep 'PREFIX :' "$f" | cut -c 51- | rev | cut -c 3- | rev)
+    fi
     [ "$a" == "$b" ] || {
         echo "$f has an incorrect : prefix"
         exit 1
