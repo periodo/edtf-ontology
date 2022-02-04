@@ -14,19 +14,19 @@ the following features:
 
 * [season](season/)
  
-## Qualification of date (see [rules](../../level-1/qualification/rules.n3))
+## Qualification of date (see [rules](../../rules/level-1/qualification/rules.n3))
 
 * [qualified calendar date](qualification/day-precision/)
 * [qualified reduced precision date (year and month only)](qualification/month-precision/)
 * [qualified reduced precision date (year only)](qualification/year-precision/)
  
-## Unspecified digit(s) (see [rules](../../level-1/unspecified/rules.n3))
+## Unspecified digit(s) (see [rules](../../rules/level-1/unspecified/rules.n3))
 
 * [calendar date with unspecified digits](unspecified/day-precision)
 * [reduced precision date (year and month only) with unspecified digits](unspecified/month-precision/)
 * [reduced precision date (year only) with unspecified digits](unspecified/year-precision/)
 
-## Time interval (see [rules](../../level-1/interval/rules.n3))
+## Time interval (see [rules](../../rules/level-1/interval/rules.n3))
 
 * [with unknown start](interval/unknown-start/)
 * [with unknown end](interval/unknown-end/)
@@ -34,7 +34,7 @@ the following features:
 * [with open end](interval/open-end/)
 * [mysterious time interval](interval/mysterious/)
 
-The following intervals also use the [qualification rules](../../level-1/qualification/rules.n3):
+The following intervals also use the [qualification rules](../../rules/level-1/qualification/rules.n3):
 
 * [with qualified start](interval/qualified-start/)
 * [with qualified end](interval/qualified-end/)

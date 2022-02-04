@@ -18,32 +18,32 @@ the following features:
 * [quadrimester](year-subdivision/quadrimester/)
 * [semestral](year-subdivision/semestral/)
  
-## Qualification of date (see [rules](../../level-2/qualification/rules.n3))
+## Qualification of date (see [rules](../../rules/level-2/qualification/rules.n3))
 
 * [qualified date component(s)](qualification/individual/)
 * [qualified date component group(s)](qualification/group/)
  
-## Unspecified digit(s) (see [rules](../../level-2/unspecified/rules.n3))
+## Unspecified digit(s) (see [rules](../../rules/level-2/unspecified/rules.n3))
 
 * [calendar date with unspecified digits](unspecified/day-precision)
 * [reduced precision date (year and month only) with unspecified digits](unspecified/month-precision/)
 * [reduced precision date (year only) with unspecified digits](unspecified/year-precision/)
 
-## Range of possible dates (see [rules](../../level-2/range/rules.n3))
+## Range of possible dates (see [rules](../../rules/level-2/range/rules.n3))
 
 * [on or before date](range/on-or-before/)
 * [on or after date](range/on-or-after/)
 * [no earlier than date A and no later than date B](range/from-to/)
 
-## Time interval (see [rules](../../level-2/interval/rules.n3))
+## Time interval (see [rules](../../rules/level-2/interval/rules.n3))
 
-The following intervals also use the [unspecified digit rules](../../level-1/unspecified/rules.n3):
+The following intervals also use the [unspecified digit rules](../../rules/level-2/unspecified/rules.n3):
 
 * [with unspecified digits in start](interval/unspecified-start/)
 * [with unspecified digits in end](interval/unspecified-end/)
 * [with unspecified digits in start and end](interval/unspecified-both/)
 
-The following intervals also use the [qualification rules](../../level-2/qualification/rules.n3):
+The following intervals also use the [qualification rules](../../rules/level-2/qualification/rules.n3):
 
 * [with qualified start](interval/qualified-start/)
 * [with qualified end](interval/qualified-end/)
@@ -54,6 +54,6 @@ The following intervals also use the [qualification rules](../../level-2/qualifi
 * with start on or before date
 * with end on or after date
 
-## Set of dates (see [rules](../../level-2/set/rules.n3))
+## Set of dates (see [rules](../../rules/level-2/set/rules.n3))
 
 *Under construction*
