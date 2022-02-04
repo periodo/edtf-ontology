@@ -1,0 +1,32 @@
+PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-0/datetime/second-precision-local/>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:when1
+  a time:Instant ;
+  time:inDateTime [
+      a time:DateTimeDescription ;
+      time:day "---12"^^xsd:gDay ;
+      time:hour "23"^^xsd:nonNegativeInteger ;
+      time:minute "2"^^xsd:nonNegativeInteger ;
+      time:month "--04"^^xsd:gMonth ;
+      time:second 30.0 ;
+      time:unitType time:unitSecond ;
+      time:year "1985"^^xsd:gYear
+    ] ;
+.
+
+:when2
+  a time:Instant ;
+  time:inDateTime [
+      a time:DateTimeDescription ;
+      time:day "---12"^^xsd:gDay ;
+      time:hour "23"^^xsd:nonNegativeInteger ;
+      time:minute "2"^^xsd:nonNegativeInteger ;
+      time:month "--04"^^xsd:gMonth ;
+      time:second 30.8 ;
+      time:unitType time:unitSecond ;
+      time:year "1985"^^xsd:gYear
+    ] ;
+.
+

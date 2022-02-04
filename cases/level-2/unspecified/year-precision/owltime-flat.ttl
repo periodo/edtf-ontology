@@ -1,0 +1,31 @@
+@prefix : <https://periodo.github.io/edtf-ontology/cases/level-2/unspecified/year-precision/> .
+@prefix edtfo: <https://periodo.github.io/edtf-ontology/edtfo.ttl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+:when1 a time:Instant .
+:when1 rdfs:label "some year between 2010 and 2019 (inclusive)" .
+:when1 time:inDateTime _:b0 .
+:when2 a time:Instant .
+:when2 rdfs:label "some year between the -0599 and -0500 (inclusive)" .
+:when2 time:inDateTime _:b2 .
+:when3 a time:Instant .
+:when3 rdfs:label "some year between the 1000 and 1999 (inclusive)" .
+:when3 time:inDateTime _:b3 .
+:when4 a time:Instant .
+:when4 rdfs:label "some year" .
+:when4 time:inDateTime _:b1 .
+_:b0 a edtfo:DecadeDescription .
+_:b0 a time:DateTimeDescription .
+_:b0 edtfo:decade 201 .
+_:b0 time:unitType time:unitYear .
+_:b1 a time:DateTimeDescription .
+_:b1 time:unitType time:unitYear .
+_:b2 a edtfo:CenturyDescription .
+_:b2 a time:DateTimeDescription .
+_:b2 edtfo:century -5 .
+_:b2 time:unitType time:unitYear .
+_:b3 a edtfo:MillenniumDescription .
+_:b3 a time:DateTimeDescription .
+_:b3 edtfo:millennium 1 .
+_:b3 time:unitType time:unitYear .

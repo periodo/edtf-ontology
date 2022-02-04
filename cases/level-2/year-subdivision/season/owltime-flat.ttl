@@ -1,0 +1,69 @@
+@prefix : <https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/season/> .
+@prefix edtfo: <https://periodo.github.io/edtf-ontology/edtfo.ttl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+:when1 a time:Instant .
+:when1 rdfs:label "spring 2001 in the northern hemisphere" .
+:when1 time:inDateTime _:b7 .
+:when2 a time:Instant .
+:when2 rdfs:label "summer 2001 in the northern hemisphere" .
+:when2 time:inDateTime _:b0 .
+:when3 a time:Instant .
+:when3 rdfs:label "autumn 2001 in the northern hemisphere" .
+:when3 time:inDateTime _:b5 .
+:when4 a time:Instant .
+:when4 rdfs:label "winter 2001 in the northern hemisphere" .
+:when4 time:inDateTime _:b1 .
+:when5 a time:Instant .
+:when5 rdfs:label "spring 2001 in the southern hemisphere" .
+:when5 time:inDateTime _:b4 .
+:when6 a time:Instant .
+:when6 rdfs:label "summer 2001 in the southern hemisphere" .
+:when6 time:inDateTime _:b6 .
+:when7 a time:Instant .
+:when7 rdfs:label "autumn 2001 in the southern hemisphere" .
+:when7 time:inDateTime _:b3 .
+:when8 a time:Instant .
+:when8 rdfs:label "winter 2001 in the southern hemisphere" .
+:when8 time:inDateTime _:b2 .
+_:b0 a edtfo:SubYearDateTimeDescription .
+_:b0 a time:DateTimeDescription .
+_:b0 edtfo:yearSubdivision edtfo:SummerNorthernHemisphere .
+_:b0 time:unitType edtfo:unitSeason .
+_:b0 time:year "2001"^^xsd:gYear .
+_:b1 a edtfo:SubYearDateTimeDescription .
+_:b1 a time:DateTimeDescription .
+_:b1 edtfo:yearSubdivision edtfo:WinterNorthernHemisphere .
+_:b1 time:unitType edtfo:unitSeason .
+_:b1 time:year "2001"^^xsd:gYear .
+_:b2 a edtfo:SubYearDateTimeDescription .
+_:b2 a time:DateTimeDescription .
+_:b2 edtfo:yearSubdivision edtfo:WinterSouthernHemisphere .
+_:b2 time:unitType edtfo:unitSeason .
+_:b2 time:year "2001"^^xsd:gYear .
+_:b3 a edtfo:SubYearDateTimeDescription .
+_:b3 a time:DateTimeDescription .
+_:b3 edtfo:yearSubdivision edtfo:AutumnSouthernHemisphere .
+_:b3 time:unitType edtfo:unitSeason .
+_:b3 time:year "2001"^^xsd:gYear .
+_:b4 a edtfo:SubYearDateTimeDescription .
+_:b4 a time:DateTimeDescription .
+_:b4 edtfo:yearSubdivision edtfo:SpringSouthernHemisphere .
+_:b4 time:unitType edtfo:unitSeason .
+_:b4 time:year "2001"^^xsd:gYear .
+_:b5 a edtfo:SubYearDateTimeDescription .
+_:b5 a time:DateTimeDescription .
+_:b5 edtfo:yearSubdivision edtfo:AutumnNorthernHemisphere .
+_:b5 time:unitType edtfo:unitSeason .
+_:b5 time:year "2001"^^xsd:gYear .
+_:b6 a edtfo:SubYearDateTimeDescription .
+_:b6 a time:DateTimeDescription .
+_:b6 edtfo:yearSubdivision edtfo:SummerSouthernHemisphere .
+_:b6 time:unitType edtfo:unitSeason .
+_:b6 time:year "2001"^^xsd:gYear .
+_:b7 a edtfo:SubYearDateTimeDescription .
+_:b7 a time:DateTimeDescription .
+_:b7 edtfo:yearSubdivision edtfo:SpringNorthernHemisphere .
+_:b7 time:unitType edtfo:unitSeason .
+_:b7 time:year "2001"^^xsd:gYear .

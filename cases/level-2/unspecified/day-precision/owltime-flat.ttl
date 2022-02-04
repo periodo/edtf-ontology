@@ -1,0 +1,20 @@
+@prefix : <https://periodo.github.io/edtf-ontology/cases/level-2/unspecified/day-precision/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+:when1 a time:Instant .
+:when1 rdfs:label "some day in April 1985" .
+:when1 time:inDateTime _:b0 .
+:when2 a time:Instant .
+:when2 rdfs:label "some day in some month in 1985" .
+:when2 time:inDateTime _:b1 .
+:when3 a time:Instant .
+:when3 rdfs:label "some day in some month in some year" .
+:when3 time:inDateTime _:b2 .
+_:b0 time:month "--04"^^xsd:gMonth .
+_:b0 time:unitType time:unitDay .
+_:b0 time:year "1985"^^xsd:gYear .
+_:b1 time:unitType time:unitDay .
+_:b1 time:year "1985"^^xsd:gYear .
+_:b2 a time:DateTimeDescription .
+_:b2 time:unitType time:unitDay .

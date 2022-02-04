@@ -1,0 +1,23 @@
+PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-1/unspecified/day-precision/>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:when1
+  a time:Instant ;
+  time:inDateTime [
+      a time:DateTimeDescription ;
+      time:month "--04"^^xsd:gMonth ;
+      time:unitType time:unitDay ;
+      time:year "1985"^^xsd:gYear
+    ] ;
+.
+
+:when2
+  a time:Instant ;
+  time:inDateTime [
+      a time:DateTimeDescription ;
+      time:unitType time:unitDay ;
+      time:year "1985"^^xsd:gYear
+    ] ;
+.
+

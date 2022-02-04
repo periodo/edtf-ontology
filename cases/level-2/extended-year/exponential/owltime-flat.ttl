@@ -1,0 +1,22 @@
+@prefix : <https://periodo.github.io/edtf-ontology/cases/level-2/extended-year/exponential/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+:when1 a time:Instant .
+:when1 rdfs:label "the year -170000000" .
+:when1 time:inDateTime _:b2 .
+:when2 a time:Instant .
+:when2 rdfs:label "the year 17000" .
+:when2 time:inDateTime _:b0 .
+:when3 a time:Instant .
+:when3 rdfs:label "the year 8" .
+:when3 time:inDateTime _:b1 .
+_:b0 a time:DateTimeDescription .
+_:b0 time:unitType time:unitYear .
+_:b0 time:year "1700"^^xsd:gYear .
+_:b1 a time:DateTimeDescription .
+_:b1 time:unitType time:unitYear .
+_:b1 time:year "0008"^^xsd:gYear .
+_:b2 a time:DateTimeDescription .
+_:b2 time:unitType time:unitYear .
+_:b2 time:year "-170000000"^^xsd:gYear .

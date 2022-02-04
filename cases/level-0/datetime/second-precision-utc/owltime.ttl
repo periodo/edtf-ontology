@@ -1,0 +1,20 @@
+PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-0/datetime/second-precision-utc/>
+PREFIX bipm: <http://www.opengis.net/def/trs/BIPM/0/>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:when
+  a time:Instant ;
+  time:inDateTime [
+      a time:DateTimeDescription ;
+      time:day "---12"^^xsd:gDay ;
+      time:hour "23"^^xsd:nonNegativeInteger ;
+      time:minute "20"^^xsd:nonNegativeInteger ;
+      time:month "--04"^^xsd:gMonth ;
+      time:second 30.0 ;
+      time:timeZone bipm:UTC ;
+      time:unitType time:unitSecond ;
+      time:year "1985"^^xsd:gYear
+    ] ;
+.
+

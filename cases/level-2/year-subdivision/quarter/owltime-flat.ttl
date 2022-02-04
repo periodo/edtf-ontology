@@ -1,0 +1,37 @@
+@prefix : <https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/quarter/> .
+@prefix edtfo: <https://periodo.github.io/edtf-ontology/edtfo.ttl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+:when1 a time:Instant .
+:when1 rdfs:label "first quarter of 2001" .
+:when1 time:inDateTime _:b1 .
+:when2 a time:Instant .
+:when2 rdfs:label "second quarter of 2001" .
+:when2 time:inDateTime _:b3 .
+:when3 a time:Instant .
+:when3 rdfs:label "third quarter of 2001" .
+:when3 time:inDateTime _:b0 .
+:when4 a time:Instant .
+:when4 rdfs:label "fourth quarter of 2001" .
+:when4 time:inDateTime _:b2 .
+_:b0 a edtfo:SubYearDateTimeDescription .
+_:b0 a time:DateTimeDescription .
+_:b0 edtfo:yearSubdivision edtfo:Quarter3 .
+_:b0 time:unitType edtfo:unitQuarter .
+_:b0 time:year "2001"^^xsd:gYear .
+_:b1 a edtfo:SubYearDateTimeDescription .
+_:b1 a time:DateTimeDescription .
+_:b1 edtfo:yearSubdivision edtfo:Quarter1 .
+_:b1 time:unitType edtfo:unitQuarter .
+_:b1 time:year "2001"^^xsd:gYear .
+_:b2 a edtfo:SubYearDateTimeDescription .
+_:b2 a time:DateTimeDescription .
+_:b2 edtfo:yearSubdivision edtfo:Quarter4 .
+_:b2 time:unitType edtfo:unitQuarter .
+_:b2 time:year "2001"^^xsd:gYear .
+_:b3 a edtfo:SubYearDateTimeDescription .
+_:b3 a time:DateTimeDescription .
+_:b3 edtfo:yearSubdivision edtfo:Quarter2 .
+_:b3 time:unitType edtfo:unitQuarter .
+_:b3 time:year "2001"^^xsd:gYear .

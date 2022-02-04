@@ -1,0 +1,58 @@
+PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-2/year-subdivision/quarter/>
+PREFIX edtfo: <https://periodo.github.io/edtf-ontology/edtfo.ttl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:when1
+  a time:Instant ;
+  rdfs:label "first quarter of 2001" ;
+  time:inDateTime [
+      a
+        time:DateTimeDescription ,
+        edtfo:SubYearDateTimeDescription ;
+      time:unitType edtfo:unitQuarter ;
+      time:year "2001"^^xsd:gYear ;
+      edtfo:yearSubdivision edtfo:Quarter1
+    ] ;
+.
+
+:when2
+  a time:Instant ;
+  rdfs:label "second quarter of 2001" ;
+  time:inDateTime [
+      a
+        time:DateTimeDescription ,
+        edtfo:SubYearDateTimeDescription ;
+      time:unitType edtfo:unitQuarter ;
+      time:year "2001"^^xsd:gYear ;
+      edtfo:yearSubdivision edtfo:Quarter2
+    ] ;
+.
+
+:when3
+  a time:Instant ;
+  rdfs:label "third quarter of 2001" ;
+  time:inDateTime [
+      a
+        time:DateTimeDescription ,
+        edtfo:SubYearDateTimeDescription ;
+      time:unitType edtfo:unitQuarter ;
+      time:year "2001"^^xsd:gYear ;
+      edtfo:yearSubdivision edtfo:Quarter3
+    ] ;
+.
+
+:when4
+  a time:Instant ;
+  rdfs:label "fourth quarter of 2001" ;
+  time:inDateTime [
+      a
+        time:DateTimeDescription ,
+        edtfo:SubYearDateTimeDescription ;
+      time:unitType edtfo:unitQuarter ;
+      time:year "2001"^^xsd:gYear ;
+      edtfo:yearSubdivision edtfo:Quarter4
+    ] ;
+.
+

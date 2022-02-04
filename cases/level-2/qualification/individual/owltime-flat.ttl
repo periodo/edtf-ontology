@@ -1,0 +1,115 @@
+@prefix : <https://periodo.github.io/edtf-ontology/cases/level-2/qualification/individual/> .
+@prefix bipm: <http://www.opengis.net/def/trs/BIPM/0/> .
+@prefix edtfo: <https://periodo.github.io/edtf-ontology/edtfo.ttl#> .
+@prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rules: <https://periodo.github.io/edtf-ontology/rules/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+:when1 a time:Instant .
+:when1 rdfs:label "June 2004, possibly but not certainly the 11th" .
+:when1 time:inDateTime _:b5 .
+:when10 a time:Instant .
+:when10 rdfs:label "possibly but not certainly approximately 2004, approximately June" .
+:when10 time:inDateTime _:b6 .
+:when11 a time:Instant .
+:when11 rdfs:label "possibly but not certainly 2004" .
+:when11 time:inDateTime _:b2 .
+:when2 a time:Instant .
+:when2 rdfs:label "2004, approximately June, on the 11th day of the month" .
+:when2 time:inDateTime _:b9 .
+:when3 a time:Instant .
+:when3 rdfs:label "possibly but not certainly approximately 2004, on the 11th day of June" .
+:when3 time:inDateTime _:b10 .
+:when4 a time:Instant .
+:when4 rdfs:label "2004, possibly but not certainly June, approximately the 11th day of the month" .
+:when4 time:inDateTime _:b4 .
+:when5 a time:Instant .
+:when5 rdfs:label "possibly but not certainly 2004, possibly but not certainly approximately June, on the 11th day of the month" .
+:when5 time:inDateTime _:b0 .
+:when6 a time:Instant .
+:when6 rdfs:label "approximately 2004, in June, possibly but not certainly approximately the 11th" .
+:when6 time:inDateTime _:b7 .
+:when7 a time:Instant .
+:when7 rdfs:label "possibly but not certainly 2004, possibly but not certainly approximately June, possibly but not certainly approximately the 11th day of the month" .
+:when7 time:inDateTime _:b3 .
+:when8 a time:Instant .
+:when8 rdfs:label "2004, possibly but not certainly June" .
+:when8 time:inDateTime _:b8 .
+:when9 a time:Instant .
+:when9 rdfs:label "approximately 2004, in June" .
+:when9 time:inDateTime _:b1 .
+<< _:b0 time:month "--06"^^xsd:gMonth >> a edtfo:ApproximateStatement .
+<< _:b0 time:month "--06"^^xsd:gMonth >> a edtfo:UncertainStatement .
+<< _:b0 time:year "2004"^^xsd:gYear >> a edtfo:UncertainStatement .
+<< _:b1 time:year "2004"^^xsd:gYear >> a edtfo:ApproximateStatement .
+<< _:b10 time:year "2004"^^xsd:gYear >> a edtfo:ApproximateStatement .
+<< _:b10 time:year "2004"^^xsd:gYear >> a edtfo:UncertainStatement .
+<< _:b2 time:year "2004"^^xsd:gYear >> a edtfo:UncertainStatement .
+<< _:b3 time:day "---11"^^xsd:gDay >> a edtfo:ApproximateStatement .
+<< _:b3 time:day "---11"^^xsd:gDay >> a edtfo:UncertainStatement .
+<< _:b3 time:month "--06"^^xsd:gMonth >> a edtfo:ApproximateStatement .
+<< _:b3 time:month "--06"^^xsd:gMonth >> a edtfo:UncertainStatement .
+<< _:b3 time:year "2004"^^xsd:gYear >> a edtfo:UncertainStatement .
+<< _:b4 time:day "---11"^^xsd:gDay >> a edtfo:ApproximateStatement .
+<< _:b4 time:month "--06"^^xsd:gMonth >> a edtfo:UncertainStatement .
+<< _:b5 time:day "---11"^^xsd:gDay >> a edtfo:UncertainStatement .
+<< _:b6 time:month "--06"^^xsd:gMonth >> a edtfo:ApproximateStatement .
+<< _:b6 time:year "2004"^^xsd:gYear >> a edtfo:ApproximateStatement .
+<< _:b6 time:year "2004"^^xsd:gYear >> a edtfo:UncertainStatement .
+<< _:b7 time:day "---11"^^xsd:gDay >> a edtfo:ApproximateStatement .
+<< _:b7 time:day "---11"^^xsd:gDay >> a edtfo:UncertainStatement .
+<< _:b7 time:year "2004"^^xsd:gYear >> a edtfo:ApproximateStatement .
+<< _:b8 time:month "--06"^^xsd:gMonth >> a edtfo:UncertainStatement .
+<< _:b9 time:month "--06"^^xsd:gMonth >> a edtfo:ApproximateStatement .
+_:b0 a time:DateTimeDescription .
+_:b0 time:day "---11"^^xsd:gDay .
+_:b0 time:month "--06"^^xsd:gMonth .
+_:b0 time:unitType time:unitDay .
+_:b0 time:year "2004"^^xsd:gYear .
+_:b1 a time:DateTimeDescription .
+_:b1 time:month "--06"^^xsd:gMonth .
+_:b1 time:unitType time:unitMonth .
+_:b1 time:year "2004"^^xsd:gYear .
+_:b10 a time:DateTimeDescription .
+_:b10 time:day "---11"^^xsd:gDay .
+_:b10 time:month "--06"^^xsd:gMonth .
+_:b10 time:unitType time:unitDay .
+_:b10 time:year "2004"^^xsd:gYear .
+_:b2 a time:DateTimeDescription .
+_:b2 time:unitType time:unitYear .
+_:b2 time:year "2004"^^xsd:gYear .
+_:b3 a time:DateTimeDescription .
+_:b3 time:day "---11"^^xsd:gDay .
+_:b3 time:month "--06"^^xsd:gMonth .
+_:b3 time:unitType time:unitDay .
+_:b3 time:year "2004"^^xsd:gYear .
+_:b4 a time:DateTimeDescription .
+_:b4 time:day "---11"^^xsd:gDay .
+_:b4 time:month "--06"^^xsd:gMonth .
+_:b4 time:unitType time:unitDay .
+_:b4 time:year "2004"^^xsd:gYear .
+_:b5 a time:DateTimeDescription .
+_:b5 time:day "---11"^^xsd:gDay .
+_:b5 time:month "--06"^^xsd:gMonth .
+_:b5 time:unitType time:unitDay .
+_:b5 time:year "2004"^^xsd:gYear .
+_:b6 a time:DateTimeDescription .
+_:b6 time:month "--06"^^xsd:gMonth .
+_:b6 time:unitType time:unitMonth .
+_:b6 time:year "2004"^^xsd:gYear .
+_:b7 a time:DateTimeDescription .
+_:b7 time:day "---11"^^xsd:gDay .
+_:b7 time:month "--06"^^xsd:gMonth .
+_:b7 time:unitType time:unitDay .
+_:b7 time:year "2004"^^xsd:gYear .
+_:b8 a time:DateTimeDescription .
+_:b8 time:month "--06"^^xsd:gMonth .
+_:b8 time:unitType time:unitMonth .
+_:b8 time:year "2004"^^xsd:gYear .
+_:b9 a time:DateTimeDescription .
+_:b9 time:day "---11"^^xsd:gDay .
+_:b9 time:month "--06"^^xsd:gMonth .
+_:b9 time:unitType time:unitDay .
+_:b9 time:year "2004"^^xsd:gYear .

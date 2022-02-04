@@ -1,0 +1,76 @@
+@prefix : <https://periodo.github.io/edtf-ontology/cases/level-1/interval/qualified-both/> .
+@prefix bipm: <http://www.opengis.net/def/trs/BIPM/0/> .
+@prefix edtfo: <https://periodo.github.io/edtf-ontology/edtfo.ttl#> .
+@prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rules: <https://periodo.github.io/edtf-ontology/rules/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+:when1 a time:Interval .
+:when1 time:hasBeginning _:b14 .
+:when1 time:hasEnd _:b11 .
+:when2 a time:Interval .
+:when2 time:hasBeginning _:b1 .
+:when2 time:hasEnd _:b3 .
+:when3 a time:Interval .
+:when3 time:hasBeginning _:b10 .
+:when3 time:hasEnd _:b7 .
+:when4 a time:Interval .
+:when4 time:hasBeginning _:b6 .
+:when4 time:hasEnd _:b5 .
+<< _:b1 time:inDateTime _:b2 >> a edtfo:UncertainStatement .
+<< _:b10 time:inDateTime _:b0 >> a edtfo:ApproximateStatement .
+<< _:b11 time:inDateTime _:b9 >> a edtfo:ApproximateStatement .
+<< _:b14 time:inDateTime _:b15 >> a edtfo:UncertainStatement .
+<< _:b3 time:inDateTime _:b4 >> a edtfo:ApproximateStatement .
+<< _:b5 time:inDateTime _:b12 >> a edtfo:UncertainStatement .
+<< _:b6 time:inDateTime _:b13 >> a edtfo:ApproximateStatement .
+<< _:b7 time:inDateTime _:b8 >> a edtfo:UncertainStatement .
+_:b0 a time:DateTimeDescription .
+_:b0 time:unitType time:unitYear .
+_:b0 time:year "2004"^^xsd:gYear .
+_:b1 a time:Instant .
+_:b1 time:inDateTime _:b2 .
+_:b10 a time:Instant .
+_:b10 time:inDateTime _:b0 .
+_:b11 a time:Instant .
+_:b11 time:inDateTime _:b9 .
+_:b12 a time:DateTimeDescription .
+_:b12 time:month "--02"^^xsd:gMonth .
+_:b12 time:unitType time:unitMonth .
+_:b12 time:year "2005"^^xsd:gYear .
+_:b13 a time:DateTimeDescription .
+_:b13 time:unitType time:unitYear .
+_:b13 time:year "2004"^^xsd:gYear .
+_:b14 a time:Instant .
+_:b14 time:inDateTime _:b15 .
+_:b15 a time:DateTimeDescription .
+_:b15 time:day "---01"^^xsd:gDay .
+_:b15 time:month "--02"^^xsd:gMonth .
+_:b15 time:unitType time:unitDay .
+_:b15 time:year "2004"^^xsd:gYear .
+_:b2 a time:DateTimeDescription .
+_:b2 time:month "--02"^^xsd:gMonth .
+_:b2 time:unitType time:unitMonth .
+_:b2 time:year "2004"^^xsd:gYear .
+_:b3 a time:Instant .
+_:b3 time:inDateTime _:b4 .
+_:b4 a time:DateTimeDescription .
+_:b4 time:month "--02"^^xsd:gMonth .
+_:b4 time:unitType time:unitMonth .
+_:b4 time:year "2005"^^xsd:gYear .
+_:b5 a time:Instant .
+_:b5 time:inDateTime _:b12 .
+_:b6 a time:Instant .
+_:b6 time:inDateTime _:b13 .
+_:b7 a time:Instant .
+_:b7 time:inDateTime _:b8 .
+_:b8 a time:DateTimeDescription .
+_:b8 time:unitType time:unitYear .
+_:b8 time:year "2005"^^xsd:gYear .
+_:b9 a time:DateTimeDescription .
+_:b9 time:day "---08"^^xsd:gDay .
+_:b9 time:month "--02"^^xsd:gMonth .
+_:b9 time:unitType time:unitDay .
+_:b9 time:year "2005"^^xsd:gYear .
