@@ -7,9 +7,6 @@ ROBOT := $(ROBOT_DIR)/bin/robot
 HERMIT_HOST := http://www.hermit-reasoner.com/download/1.3.8
 HERMIT_DIR := tools/hermit
 HERMIT := $(HERMIT_DIR)/bin/hermit
-FLATTTL_HOST := https://raw.githubusercontent.com/rybesh/flatttl/main/dist
-FLATTTL_DIR := tools/flatttl
-FLATTTL := $(FLATTTL_DIR)/flatttl
 VENV_DIR := tools/venv
 PYTHON := $(VENV_DIR)/bin/python
 PYLODE := $(VENV_DIR)/bin/pylode
@@ -55,9 +52,6 @@ $(HERMIT):
 	echo "DIR=\$$(dirname \$$0)" >> $@
 	echo "exec java -jar \"\$$DIR/HermiT.jar\" \"\$$@\"" >> $@
 	chmod +x $@
-
-$(FLATTTL):
-	curl -L $(FLATTTL_HOST)/flatttl.tgz | tar -C tools -xzf -
 
 # Ontology docs ################################################################
 
@@ -215,13 +209,10 @@ tools/cleanup-inferences.rq \
 	> $@
 	./tools/check-triple-count $@
 
-cases/%/owltime-flat.ttl: cases/%/owltime.ttl | $(FLATTTL)
-	$(FLATTTL) $< > $@
-
-cases_owltime := $(foreach case,$(CASES),$(case)owltime-flat.ttl)
-level0_owltime := $(foreach case,$(LEVEL_0),$(case)owltime-flat.ttl)
-level1_owltime := $(foreach case,$(LEVEL_1),$(case)owltime-flat.ttl)
-level2_owltime := $(foreach case,$(LEVEL_2),$(case)owltime-flat.ttl)
+cases_owltime := $(foreach case,$(CASES),$(case)owltime.ttl)
+level0_owltime := $(foreach case,$(LEVEL_0),$(case)owltime.ttl)
+level1_owltime := $(foreach case,$(LEVEL_1),$(case)owltime.ttl)
+level2_owltime := $(foreach case,$(LEVEL_2),$(case)owltime.ttl)
 
 # Phony targets ################################################################
 
@@ -258,12 +249,10 @@ publish: all
 
 clean_cases:
 	rm -f $(cases_owltime)
-	rm -f $(subst owltime-flat.ttl,owltime.nt,$(cases_owltime))
-	rm -f $(subst owltime-flat.ttl,owltime.ttl,$(cases_owltime))
-	rm -f $(subst owltime-flat.ttl,owltime-raw.ttl,$(cases_owltime))
+	rm -f $(subst owltime.ttl,owltime-raw.ttl,$(cases_owltime))
 
 clean: clean_cases
-	rm -rf $(VENV_DIR) $(ROBOT_DIR) $(HERMIT_DIR) $(FLATTTL_DIR) \
+	rm -rf $(VENV_DIR) $(ROBOT_DIR) $(HERMIT_DIR) \
 	rm -rf rules/derived cache \
 	doc/html/index.html doc/html/report.html doc/html/validation.txt \
 
