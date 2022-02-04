@@ -1,5 +1,0 @@
-<https://periodo.github.io/edtf-ontology/cases/level-1/unspecified/month-precision/when1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
-<https://periodo.github.io/edtf-ontology/cases/level-1/unspecified/month-precision/when1> <http://www.w3.org/2006/time#inDateTime> _:B60eda92cf18681e9dd9b6c1ff56dd10d .
-_:B60eda92cf18681e9dd9b6c1ff56dd10d <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
-_:B60eda92cf18681e9dd9b6c1ff56dd10d <http://www.w3.org/2006/time#unitType> <http://www.w3.org/2006/time#unitMonth> .
-_:B60eda92cf18681e9dd9b6c1ff56dd10d <http://www.w3.org/2006/time#year> "2004"^^<http://www.w3.org/2001/XMLSchema#gYear> .

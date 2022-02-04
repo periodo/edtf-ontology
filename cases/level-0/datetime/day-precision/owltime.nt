@@ -1,7 +1,0 @@
-<https://periodo.github.io/edtf-ontology/cases/level-0/datetime/day-precision/when> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#Instant> .
-<https://periodo.github.io/edtf-ontology/cases/level-0/datetime/day-precision/when> <http://www.w3.org/2006/time#inDateTime> _:B80761fc7ec5690c55a8a085cb5b65b4c .
-_:B80761fc7ec5690c55a8a085cb5b65b4c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/time#DateTimeDescription> .
-_:B80761fc7ec5690c55a8a085cb5b65b4c <http://www.w3.org/2006/time#day> "---12"^^<http://www.w3.org/2001/XMLSchema#gDay> .
-_:B80761fc7ec5690c55a8a085cb5b65b4c <http://www.w3.org/2006/time#month> "--04"^^<http://www.w3.org/2001/XMLSchema#gMonth> .
-_:B80761fc7ec5690c55a8a085cb5b65b4c <http://www.w3.org/2006/time#unitType> <http://www.w3.org/2006/time#unitDay> .
-_:B80761fc7ec5690c55a8a085cb5b65b4c <http://www.w3.org/2006/time#year> "1985"^^<http://www.w3.org/2001/XMLSchema#gYear> .
