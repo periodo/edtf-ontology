@@ -6,6 +6,6 @@ merged.ttl
 pylode.log
 rules/derived
 site
-tools/flatttl
+tools/unstar
 tools/robot
 tools/venv

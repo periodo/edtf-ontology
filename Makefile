@@ -7,6 +7,9 @@ ROBOT := $(ROBOT_DIR)/bin/robot
 HERMIT_HOST := http://www.hermit-reasoner.com/download/1.3.8
 HERMIT_DIR := tools/hermit
 HERMIT := $(HERMIT_DIR)/bin/hermit
+UNSTAR_HOST := https://raw.githubusercontent.com/rybesh/unstar/main/dist
+UNSTAR_DIR := tools/unstar
+UNSTAR := $(UNSTAR_DIR)/unstar
 VENV_DIR := tools/venv
 PYTHON := $(VENV_DIR)/bin/python
 PYLODE := $(VENV_DIR)/bin/pylode
@@ -52,6 +55,9 @@ $(HERMIT):
 	echo "DIR=\$$(dirname \$$0)" >> $@
 	echo "exec java -jar \"\$$DIR/HermiT.jar\" \"\$$@\"" >> $@
 	chmod +x $@
+
+$(UNSTAR):
+	curl $(UNSTAR_HOST)/unstar.tgz | tar -C tools -xzf -
 
 # Ontology docs ################################################################
 
@@ -159,51 +165,12 @@ cases/%/edtf.ttl \
 	--pass \
 	> $@
 
-# RDFlib can't handle Turtle-star yet
-cases/level-1/qualification/%/owltime.ttl: \
-cases/level-1/qualification/%/owltime-raw.ttl \
-tools/cleanup-inferences.rq
-	arq --data=$< --query=$(word 2,$^) \
-	| riot --syntax=ttl --formatted=ttl --base=$(EDTFO)/ - \
-	| ./tools/cleanup-prefixes $(EDTFO) \
-	> $@
-	./tools/check-triple-count $@
-
-# RDFlib can't handle Turtle-star yet
-cases/level-1/interval/qualified-%/owltime.ttl: \
-cases/level-1/interval/qualified-%/owltime-raw.ttl \
-tools/cleanup-inferences.rq
-	arq --data=$< --query=$(word 2,$^) \
-	| riot --syntax=ttl --formatted=ttl --base=$(EDTFO)/ - \
-	| ./tools/cleanup-prefixes $(EDTFO) \
-	> $@
-	./tools/check-triple-count $@
-
-# RDFlib can't handle Turtle-star yet
-cases/level-2/qualification/%/owltime.ttl: \
-cases/level-2/qualification/%/owltime-raw.ttl \
-tools/cleanup-inferences.rq
-	arq --data=$< --query=$(word 2,$^) \
-	| riot --syntax=ttl --formatted=ttl --base=$(EDTFO)/ - \
-	| ./tools/cleanup-prefixes $(EDTFO) \
-	> $@
-	./tools/check-triple-count $@
-
-# RDFlib can't handle Turtle-star yet
-cases/level-2/interval/qualified-%/owltime.ttl: \
-cases/level-2/interval/qualified-%/owltime-raw.ttl \
-tools/cleanup-inferences.rq
-	arq --data=$< --query=$(word 2,$^) \
-	| riot --syntax=ttl --formatted=ttl --base=$(EDTFO)/ - \
-	| ./tools/cleanup-prefixes $(EDTFO) \
-	> $@
-	./tools/check-triple-count $@
-
 cases/%/owltime.ttl: \
 cases/%/owltime-raw.ttl \
 tools/cleanup-inferences.rq \
-| $(RDFPIPE)
+| $(UNSTAR) $(RDFPIPE)
 	arq --data=$< --query=$(word 2,$^) \
+	| $(UNSTAR) - \
 	| $(RDFPIPE) -i turtle -o longturtle - \
 	| sed -E "s|[[:space:]]{4}|  |g" \
 	> $@

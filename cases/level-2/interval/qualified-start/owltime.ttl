@@ -1,33 +1,41 @@
-@base <https://periodo.github.io/edtf-ontology/> .
-@prefix : <cases/level-2/interval/qualified-start/> .
-@prefix bipm: <http://www.opengis.net/def/trs/BIPM/0/> .
-@prefix edtfo: <edtfo.ttl#> .
-@prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix rules: <rules/> .
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-2/interval/qualified-start/>
+PREFIX edtfo: <https://periodo.github.io/edtf-ontology/edtfo.ttl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-:when   a                  time:Interval ;
-        rdfs:label         "interval in June 2004 beginning approximately the first and ending the 20th" ;
-        time:hasBeginning  [ a                time:Instant ;
-                             time:inDateTime  _:b0
-                           ] ;
-        time:hasEnd        [ a                time:Instant ;
-                             time:inDateTime  [ a              time:DateTimeDescription ;
-                                                time:day       "---20"^^xsd:gDay ;
-                                                time:month     "--06"^^xsd:gMonth ;
-                                                time:unitType  time:unitDay ;
-                                                time:year      "2004"^^xsd:gYear
-                                              ]
-                           ] .
+:when
+  a time:Interval ;
+  rdfs:label "interval in June 2004 beginning approximately the first and ending the 20th" ;
+  time:hasBeginning [
+      a time:Instant ;
+      time:inDateTime _:nf0575def06ee4efb82291505a97ba2eab2
+    ] ;
+  time:hasEnd [
+      a time:Instant ;
+      time:inDateTime [
+          a time:DateTimeDescription ;
+          time:day "---20"^^xsd:gDay ;
+          time:month "--06"^^xsd:gMonth ;
+          time:unitType time:unitDay ;
+          time:year "2004"^^xsd:gYear
+        ]
+    ] ;
+.
 
-<< _:b0 time:day "---01"^^xsd:gDay >>
-        a       edtfo:ApproximateStatement .
+<urn:triple:0536cb76301e326dfbbea371286a2c49>
+  a edtfo:ApproximateStatement ;
+  rdf:object "---01"^^xsd:gDay ;
+  rdf:predicate time:day ;
+  rdf:subject _:nf0575def06ee4efb82291505a97ba2eab2 ;
+.
 
-_:b0    a              time:DateTimeDescription ;
-        time:day       "---01"^^xsd:gDay ;
-        time:month     "--06"^^xsd:gMonth ;
-        time:unitType  time:unitDay ;
-        time:year      "2004"^^xsd:gYear .
+_:nf0575def06ee4efb82291505a97ba2eab2
+  a time:DateTimeDescription ;
+  time:day "---01"^^xsd:gDay ;
+  time:month "--06"^^xsd:gMonth ;
+  time:unitType time:unitDay ;
+  time:year "2004"^^xsd:gYear ;
+.
+

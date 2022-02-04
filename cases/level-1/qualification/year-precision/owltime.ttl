@@ -1,40 +1,62 @@
-@base <https://periodo.github.io/edtf-ontology/> .
-@prefix : <cases/level-1/qualification/year-precision/> .
-@prefix bipm: <http://www.opengis.net/def/trs/BIPM/0/> .
-@prefix edtfo: <edtfo.ttl#> .
-@prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix rules: <rules/> .
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-1/qualification/year-precision/>
+PREFIX edtfo: <https://periodo.github.io/edtf-ontology/edtfo.ttl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-:when3  a                time:Instant ;
-        time:inDateTime  _:b0 .
+<urn:triple:6a2121a299e7c1c06c0a55db669d05fb>
+  a
+    edtfo:ApproximateStatement ,
+    edtfo:UncertainStatement ;
+  rdf:object _:n89c741439c7f4a0fb0df647bd179b64fb2 ;
+  rdf:predicate time:inDateTime ;
+  rdf:subject :when3 ;
+.
 
-_:b0    a              time:DateTimeDescription ;
-        time:unitType  time:unitYear ;
-        time:year      "1984"^^xsd:gYear .
+<urn:triple:8352dbbe82cad90e53e1b76a0e7d27ab>
+  a edtfo:ApproximateStatement ;
+  rdf:object _:n89c741439c7f4a0fb0df647bd179b64fb1 ;
+  rdf:predicate time:inDateTime ;
+  rdf:subject :when2 ;
+.
 
-<< :when1 time:inDateTime _:b1 >>
-        a       edtfo:UncertainStatement .
+<urn:triple:9c830e7d957985377598f85619c509d2>
+  a edtfo:UncertainStatement ;
+  rdf:object _:n89c741439c7f4a0fb0df647bd179b64fb3 ;
+  rdf:predicate time:inDateTime ;
+  rdf:subject :when1 ;
+.
 
-:when1  a                time:Instant ;
-        time:inDateTime  _:b1 .
+:when1
+  a time:Instant ;
+  time:inDateTime _:n89c741439c7f4a0fb0df647bd179b64fb3 ;
+.
 
-:when2  a                time:Instant ;
-        time:inDateTime  _:b2 .
+:when2
+  a time:Instant ;
+  time:inDateTime _:n89c741439c7f4a0fb0df647bd179b64fb1 ;
+.
 
-_:b1    a              time:DateTimeDescription ;
-        time:unitType  time:unitYear ;
-        time:year      "1984"^^xsd:gYear .
+:when3
+  a time:Instant ;
+  time:inDateTime _:n89c741439c7f4a0fb0df647bd179b64fb2 ;
+.
 
-_:b2    a              time:DateTimeDescription ;
-        time:unitType  time:unitYear ;
-        time:year      "1984"^^xsd:gYear .
+_:n89c741439c7f4a0fb0df647bd179b64fb1
+  a time:DateTimeDescription ;
+  time:unitType time:unitYear ;
+  time:year "1984"^^xsd:gYear ;
+.
 
-<< :when3 time:inDateTime _:b0 >>
-        a       edtfo:ApproximateStatement , edtfo:UncertainStatement .
+_:n89c741439c7f4a0fb0df647bd179b64fb2
+  a time:DateTimeDescription ;
+  time:unitType time:unitYear ;
+  time:year "1984"^^xsd:gYear ;
+.
 
-<< :when2 time:inDateTime _:b2 >>
-        a       edtfo:ApproximateStatement .
+_:n89c741439c7f4a0fb0df647bd179b64fb3
+  a time:DateTimeDescription ;
+  time:unitType time:unitYear ;
+  time:year "1984"^^xsd:gYear ;
+.
+

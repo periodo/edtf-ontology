@@ -1,166 +1,287 @@
-@base <https://periodo.github.io/edtf-ontology/> .
-@prefix : <cases/level-2/qualification/individual/> .
-@prefix bipm: <http://www.opengis.net/def/trs/BIPM/0/> .
-@prefix edtfo: <edtfo.ttl#> .
-@prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix rules: <rules/> .
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-2/qualification/individual/>
+PREFIX edtfo: <https://periodo.github.io/edtf-ontology/edtfo.ttl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-<< _:b0 time:month "--06"^^xsd:gMonth >>
-        a       edtfo:UncertainStatement .
+:when1
+  a time:Instant ;
+  rdfs:label "June 2004, possibly but not certainly the 11th" ;
+  time:inDateTime _:n7b94c432113942b8aaff34bc636a5da8b5 ;
+.
 
-:when7  a                time:Instant ;
-        rdfs:label       "possibly but not certainly 2004, possibly but not certainly approximately June, possibly but not certainly approximately the 11th day of the month" ;
-        time:inDateTime  _:b1 .
+:when10
+  a time:Instant ;
+  rdfs:label "possibly but not certainly approximately 2004, approximately June" ;
+  time:inDateTime _:n7b94c432113942b8aaff34bc636a5da8b10 ;
+.
 
-:when1  a                time:Instant ;
-        rdfs:label       "June 2004, possibly but not certainly the 11th" ;
-        time:inDateTime  _:b2 .
+:when11
+  a time:Instant ;
+  rdfs:label "possibly but not certainly 2004" ;
+  time:inDateTime _:n7b94c432113942b8aaff34bc636a5da8b7 ;
+.
 
-<< _:b3 time:year "2004"^^xsd:gYear >>
-        a       edtfo:ApproximateStatement , edtfo:UncertainStatement .
+:when2
+  a time:Instant ;
+  rdfs:label "2004, approximately June, on the 11th day of the month" ;
+  time:inDateTime _:n7b94c432113942b8aaff34bc636a5da8b11 ;
+.
 
-:when11  a               time:Instant ;
-        rdfs:label       "possibly but not certainly 2004" ;
-        time:inDateTime  _:b4 .
+:when3
+  a time:Instant ;
+  rdfs:label "possibly but not certainly approximately 2004, on the 11th day of June" ;
+  time:inDateTime _:n7b94c432113942b8aaff34bc636a5da8b3 ;
+.
 
-:when6  a                time:Instant ;
-        rdfs:label       "approximately 2004, in June, possibly but not certainly approximately the 11th" ;
-        time:inDateTime  _:b5 .
+:when4
+  a time:Instant ;
+  rdfs:label "2004, possibly but not certainly June, approximately the 11th day of the month" ;
+  time:inDateTime _:n7b94c432113942b8aaff34bc636a5da8b4 ;
+.
 
-_:b6    a              time:DateTimeDescription ;
-        time:day       "---11"^^xsd:gDay ;
-        time:month     "--06"^^xsd:gMonth ;
-        time:unitType  time:unitDay ;
-        time:year      "2004"^^xsd:gYear .
+:when5
+  a time:Instant ;
+  rdfs:label "possibly but not certainly 2004, possibly but not certainly approximately June, on the 11th day of the month" ;
+  time:inDateTime _:n7b94c432113942b8aaff34bc636a5da8b2 ;
+.
 
-<< _:b4 time:year "2004"^^xsd:gYear >>
-        a       edtfo:UncertainStatement .
+:when6
+  a time:Instant ;
+  rdfs:label "approximately 2004, in June, possibly but not certainly approximately the 11th" ;
+  time:inDateTime _:n7b94c432113942b8aaff34bc636a5da8b6 ;
+.
 
-<< _:b1 time:day "---11"^^xsd:gDay >>
-        a       edtfo:ApproximateStatement , edtfo:UncertainStatement .
+:when7
+  a time:Instant ;
+  rdfs:label "possibly but not certainly 2004, possibly but not certainly approximately June, possibly but not certainly approximately the 11th day of the month" ;
+  time:inDateTime _:n7b94c432113942b8aaff34bc636a5da8b1 ;
+.
 
-_:b7    a              time:DateTimeDescription ;
-        time:month     "--06"^^xsd:gMonth ;
-        time:unitType  time:unitMonth ;
-        time:year      "2004"^^xsd:gYear .
+:when8
+  a time:Instant ;
+  rdfs:label "2004, possibly but not certainly June" ;
+  time:inDateTime _:n7b94c432113942b8aaff34bc636a5da8b9 ;
+.
 
-<< _:b8 time:year "2004"^^xsd:gYear >>
-        a       edtfo:ApproximateStatement , edtfo:UncertainStatement .
+:when9
+  a time:Instant ;
+  rdfs:label "approximately 2004, in June" ;
+  time:inDateTime _:n7b94c432113942b8aaff34bc636a5da8b8 ;
+.
 
-:when10  a               time:Instant ;
-        rdfs:label       "possibly but not certainly approximately 2004, approximately June" ;
-        time:inDateTime  _:b3 .
+<urn:triple:07f64bf2bab52d449e142f768f289685>
+  a
+    edtfo:ApproximateStatement ,
+    edtfo:UncertainStatement ;
+  rdf:object "--06"^^xsd:gMonth ;
+  rdf:predicate time:month ;
+  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b1 ;
+.
 
-<< _:b5 time:day "---11"^^xsd:gDay >>
-        a       edtfo:ApproximateStatement , edtfo:UncertainStatement .
+<urn:triple:1060f8eba37f15f6c3deef1ca11a4499>
+  a
+    edtfo:ApproximateStatement ,
+    edtfo:UncertainStatement ;
+  rdf:object "---11"^^xsd:gDay ;
+  rdf:predicate time:day ;
+  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b1 ;
+.
 
-<< _:b3 time:month "--06"^^xsd:gMonth >>
-        a       edtfo:ApproximateStatement .
+<urn:triple:23108972b5d323a9d6574c92c3697d15>
+  a edtfo:ApproximateStatement ;
+  rdf:object "--06"^^xsd:gMonth ;
+  rdf:predicate time:month ;
+  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b10 ;
+.
 
-:when5  a                time:Instant ;
-        rdfs:label       "possibly but not certainly 2004, possibly but not certainly approximately June, on the 11th day of the month" ;
-        time:inDateTime  _:b6 .
+<urn:triple:2d652ec5053219184a6ed21f79e6e6e4>
+  a edtfo:ApproximateStatement ;
+  rdf:object "2004"^^xsd:gYear ;
+  rdf:predicate time:year ;
+  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b8 ;
+.
 
-<< _:b2 time:day "---11"^^xsd:gDay >>
-        a       edtfo:UncertainStatement .
+<urn:triple:38d51d966fefd8d240977f4cfdc33f23>
+  a edtfo:ApproximateStatement ;
+  rdf:object "2004"^^xsd:gYear ;
+  rdf:predicate time:year ;
+  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b6 ;
+.
 
-<< _:b1 time:year "2004"^^xsd:gYear >>
-        a       edtfo:UncertainStatement .
+<urn:triple:65072b46d6ff40573387015c03ec78bd>
+  a edtfo:UncertainStatement ;
+  rdf:object "---11"^^xsd:gDay ;
+  rdf:predicate time:day ;
+  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b5 ;
+.
 
-<< _:b9 time:month "--06"^^xsd:gMonth >>
-        a       edtfo:ApproximateStatement .
+<urn:triple:660493eb30320f6b82f0cabce9684d1c>
+  a edtfo:UncertainStatement ;
+  rdf:object "--06"^^xsd:gMonth ;
+  rdf:predicate time:month ;
+  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b9 ;
+.
 
-_:b4    a              time:DateTimeDescription ;
-        time:unitType  time:unitYear ;
-        time:year      "2004"^^xsd:gYear .
+<urn:triple:77ee36765c58631e98559ab290344b27>
+  a edtfo:ApproximateStatement ;
+  rdf:object "--06"^^xsd:gMonth ;
+  rdf:predicate time:month ;
+  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b11 ;
+.
 
-<< _:b6 time:month "--06"^^xsd:gMonth >>
-        a       edtfo:ApproximateStatement , edtfo:UncertainStatement .
+<urn:triple:7a79a2348a4ecbc5f0eaf9b28ba4780f>
+  a edtfo:UncertainStatement ;
+  rdf:object "--06"^^xsd:gMonth ;
+  rdf:predicate time:month ;
+  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b4 ;
+.
 
-<< _:b7 time:year "2004"^^xsd:gYear >>
-        a       edtfo:ApproximateStatement .
+<urn:triple:c06a6ff1e6914c4096c58920d83438b5>
+  a edtfo:ApproximateStatement ;
+  rdf:object "---11"^^xsd:gDay ;
+  rdf:predicate time:day ;
+  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b4 ;
+.
 
-<< _:b5 time:year "2004"^^xsd:gYear >>
-        a       edtfo:ApproximateStatement .
+<urn:triple:ce3461c8a52d0bdc337f5458e250f052>
+  a edtfo:UncertainStatement ;
+  rdf:object "2004"^^xsd:gYear ;
+  rdf:predicate time:year ;
+  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b1 ;
+.
 
-_:b0    a              time:DateTimeDescription ;
-        time:day       "---11"^^xsd:gDay ;
-        time:month     "--06"^^xsd:gMonth ;
-        time:unitType  time:unitDay ;
-        time:year      "2004"^^xsd:gYear .
+<urn:triple:d073c16c532c9d21dc1c468733465ba9>
+  a
+    edtfo:ApproximateStatement ,
+    edtfo:UncertainStatement ;
+  rdf:object "2004"^^xsd:gYear ;
+  rdf:predicate time:year ;
+  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b10 ;
+.
 
-:when4  a                time:Instant ;
-        rdfs:label       "2004, possibly but not certainly June, approximately the 11th day of the month" ;
-        time:inDateTime  _:b0 .
+<urn:triple:d2182256bc27e82bac4923eff71e24fe>
+  a
+    edtfo:ApproximateStatement ,
+    edtfo:UncertainStatement ;
+  rdf:object "---11"^^xsd:gDay ;
+  rdf:predicate time:day ;
+  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b6 ;
+.
 
-_:b10   a              time:DateTimeDescription ;
-        time:month     "--06"^^xsd:gMonth ;
-        time:unitType  time:unitMonth ;
-        time:year      "2004"^^xsd:gYear .
+<urn:triple:da1edb56d10c9306e00b9f9591c287fc>
+  a
+    edtfo:ApproximateStatement ,
+    edtfo:UncertainStatement ;
+  rdf:object "2004"^^xsd:gYear ;
+  rdf:predicate time:year ;
+  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b3 ;
+.
 
-_:b8    a              time:DateTimeDescription ;
-        time:day       "---11"^^xsd:gDay ;
-        time:month     "--06"^^xsd:gMonth ;
-        time:unitType  time:unitDay ;
-        time:year      "2004"^^xsd:gYear .
+<urn:triple:e065d3fa2bfb57a23fe4bf1b88a22919>
+  a edtfo:UncertainStatement ;
+  rdf:object "2004"^^xsd:gYear ;
+  rdf:predicate time:year ;
+  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b2 ;
+.
 
-_:b1    a              time:DateTimeDescription ;
-        time:day       "---11"^^xsd:gDay ;
-        time:month     "--06"^^xsd:gMonth ;
-        time:unitType  time:unitDay ;
-        time:year      "2004"^^xsd:gYear .
+<urn:triple:e2ded7092e90e255fea72c12cec87ce3>
+  a
+    edtfo:ApproximateStatement ,
+    edtfo:UncertainStatement ;
+  rdf:object "--06"^^xsd:gMonth ;
+  rdf:predicate time:month ;
+  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b2 ;
+.
 
-_:b5    a              time:DateTimeDescription ;
-        time:day       "---11"^^xsd:gDay ;
-        time:month     "--06"^^xsd:gMonth ;
-        time:unitType  time:unitDay ;
-        time:year      "2004"^^xsd:gYear .
+<urn:triple:f5fb50a8e69d1564176da82d9713567a>
+  a edtfo:UncertainStatement ;
+  rdf:object "2004"^^xsd:gYear ;
+  rdf:predicate time:year ;
+  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b7 ;
+.
 
-:when9  a                time:Instant ;
-        rdfs:label       "approximately 2004, in June" ;
-        time:inDateTime  _:b7 .
+_:n7b94c432113942b8aaff34bc636a5da8b11
+  a time:DateTimeDescription ;
+  time:day "---11"^^xsd:gDay ;
+  time:month "--06"^^xsd:gMonth ;
+  time:unitType time:unitDay ;
+  time:year "2004"^^xsd:gYear ;
+.
 
-<< _:b6 time:year "2004"^^xsd:gYear >>
-        a       edtfo:UncertainStatement .
+_:n7b94c432113942b8aaff34bc636a5da8b3
+  a time:DateTimeDescription ;
+  time:day "---11"^^xsd:gDay ;
+  time:month "--06"^^xsd:gMonth ;
+  time:unitType time:unitDay ;
+  time:year "2004"^^xsd:gYear ;
+.
 
-:when3  a                time:Instant ;
-        rdfs:label       "possibly but not certainly approximately 2004, on the 11th day of June" ;
-        time:inDateTime  _:b8 .
+_:n7b94c432113942b8aaff34bc636a5da8b5
+  a time:DateTimeDescription ;
+  time:day "---11"^^xsd:gDay ;
+  time:month "--06"^^xsd:gMonth ;
+  time:unitType time:unitDay ;
+  time:year "2004"^^xsd:gYear ;
+.
 
-<< _:b0 time:day "---11"^^xsd:gDay >>
-        a       edtfo:ApproximateStatement .
+_:n7b94c432113942b8aaff34bc636a5da8b7
+  a time:DateTimeDescription ;
+  time:unitType time:unitYear ;
+  time:year "2004"^^xsd:gYear ;
+.
 
-_:b3    a              time:DateTimeDescription ;
-        time:month     "--06"^^xsd:gMonth ;
-        time:unitType  time:unitMonth ;
-        time:year      "2004"^^xsd:gYear .
+_:n7b94c432113942b8aaff34bc636a5da8b8
+  a time:DateTimeDescription ;
+  time:month "--06"^^xsd:gMonth ;
+  time:unitType time:unitMonth ;
+  time:year "2004"^^xsd:gYear ;
+.
 
-<< _:b1 time:month "--06"^^xsd:gMonth >>
-        a       edtfo:ApproximateStatement , edtfo:UncertainStatement .
+_:n7b94c432113942b8aaff34bc636a5da8b9
+  a time:DateTimeDescription ;
+  time:month "--06"^^xsd:gMonth ;
+  time:unitType time:unitMonth ;
+  time:year "2004"^^xsd:gYear ;
+.
 
-:when8  a                time:Instant ;
-        rdfs:label       "2004, possibly but not certainly June" ;
-        time:inDateTime  _:b10 .
+_:n7b94c432113942b8aaff34bc636a5da8b10
+  a time:DateTimeDescription ;
+  time:month "--06"^^xsd:gMonth ;
+  time:unitType time:unitMonth ;
+  time:year "2004"^^xsd:gYear ;
+.
 
-_:b2    a              time:DateTimeDescription ;
-        time:day       "---11"^^xsd:gDay ;
-        time:month     "--06"^^xsd:gMonth ;
-        time:unitType  time:unitDay ;
-        time:year      "2004"^^xsd:gYear .
+_:n7b94c432113942b8aaff34bc636a5da8b2
+  a time:DateTimeDescription ;
+  time:day "---11"^^xsd:gDay ;
+  time:month "--06"^^xsd:gMonth ;
+  time:unitType time:unitDay ;
+  time:year "2004"^^xsd:gYear ;
+.
 
-:when2  a                time:Instant ;
-        rdfs:label       "2004, approximately June, on the 11th day of the month" ;
-        time:inDateTime  _:b9 .
+_:n7b94c432113942b8aaff34bc636a5da8b4
+  a time:DateTimeDescription ;
+  time:day "---11"^^xsd:gDay ;
+  time:month "--06"^^xsd:gMonth ;
+  time:unitType time:unitDay ;
+  time:year "2004"^^xsd:gYear ;
+.
 
-_:b9    a              time:DateTimeDescription ;
-        time:day       "---11"^^xsd:gDay ;
-        time:month     "--06"^^xsd:gMonth ;
-        time:unitType  time:unitDay ;
-        time:year      "2004"^^xsd:gYear .
+_:n7b94c432113942b8aaff34bc636a5da8b6
+  a time:DateTimeDescription ;
+  time:day "---11"^^xsd:gDay ;
+  time:month "--06"^^xsd:gMonth ;
+  time:unitType time:unitDay ;
+  time:year "2004"^^xsd:gYear ;
+.
 
-<< _:b10 time:month "--06"^^xsd:gMonth >>
-        a       edtfo:UncertainStatement .
+_:n7b94c432113942b8aaff34bc636a5da8b1
+  a time:DateTimeDescription ;
+  time:day "---11"^^xsd:gDay ;
+  time:month "--06"^^xsd:gMonth ;
+  time:unitType time:unitDay ;
+  time:year "2004"^^xsd:gYear ;
+.
+

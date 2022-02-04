@@ -1,46 +1,68 @@
-@base <https://periodo.github.io/edtf-ontology/> .
-@prefix : <cases/level-1/qualification/day-precision/> .
-@prefix bipm: <http://www.opengis.net/def/trs/BIPM/0/> .
-@prefix edtfo: <edtfo.ttl#> .
-@prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix rules: <rules/> .
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-1/qualification/day-precision/>
+PREFIX edtfo: <https://periodo.github.io/edtf-ontology/edtfo.ttl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-:when1  a                time:Instant ;
-        time:inDateTime  _:b0 .
+<urn:triple:11f86f9c07a0f58949300b7c265a5365>
+  a
+    edtfo:ApproximateStatement ,
+    edtfo:UncertainStatement ;
+  rdf:object _:nb2220b77aaae4d3b922f7532d4e0f747b3 ;
+  rdf:predicate time:inDateTime ;
+  rdf:subject :when3 ;
+.
 
-<< :when3 time:inDateTime _:b1 >>
-        a       edtfo:ApproximateStatement , edtfo:UncertainStatement .
+<urn:triple:bf4203fa73cb17921269edb7f08b4df4>
+  a edtfo:ApproximateStatement ;
+  rdf:object _:nb2220b77aaae4d3b922f7532d4e0f747b1 ;
+  rdf:predicate time:inDateTime ;
+  rdf:subject :when2 ;
+.
 
-_:b0    a              time:DateTimeDescription ;
-        time:day       "---11"^^xsd:gDay ;
-        time:month     "--06"^^xsd:gMonth ;
-        time:unitType  time:unitDay ;
-        time:year      "2004"^^xsd:gYear .
+<urn:triple:c043b7ff002f17aec0ddae63b9a6522c>
+  a edtfo:UncertainStatement ;
+  rdf:object _:nb2220b77aaae4d3b922f7532d4e0f747b2 ;
+  rdf:predicate time:inDateTime ;
+  rdf:subject :when1 ;
+.
 
-<< :when1 time:inDateTime _:b0 >>
-        a       edtfo:UncertainStatement .
+:when1
+  a time:Instant ;
+  time:inDateTime _:nb2220b77aaae4d3b922f7532d4e0f747b2 ;
+.
 
-<< :when2 time:inDateTime _:b2 >>
-        a       edtfo:ApproximateStatement .
+:when2
+  a time:Instant ;
+  time:inDateTime _:nb2220b77aaae4d3b922f7532d4e0f747b1 ;
+.
 
-_:b1    a              time:DateTimeDescription ;
-        time:day       "---11"^^xsd:gDay ;
-        time:month     "--06"^^xsd:gMonth ;
-        time:unitType  time:unitDay ;
-        time:year      "2004"^^xsd:gYear .
+:when3
+  a time:Instant ;
+  time:inDateTime _:nb2220b77aaae4d3b922f7532d4e0f747b3 ;
+.
 
-:when2  a                time:Instant ;
-        time:inDateTime  _:b2 .
+_:nb2220b77aaae4d3b922f7532d4e0f747b1
+  a time:DateTimeDescription ;
+  time:day "---11"^^xsd:gDay ;
+  time:month "--06"^^xsd:gMonth ;
+  time:unitType time:unitDay ;
+  time:year "2004"^^xsd:gYear ;
+.
 
-_:b2    a              time:DateTimeDescription ;
-        time:day       "---11"^^xsd:gDay ;
-        time:month     "--06"^^xsd:gMonth ;
-        time:unitType  time:unitDay ;
-        time:year      "2004"^^xsd:gYear .
+_:nb2220b77aaae4d3b922f7532d4e0f747b2
+  a time:DateTimeDescription ;
+  time:day "---11"^^xsd:gDay ;
+  time:month "--06"^^xsd:gMonth ;
+  time:unitType time:unitDay ;
+  time:year "2004"^^xsd:gYear ;
+.
 
-:when3  a                time:Instant ;
-        time:inDateTime  _:b1 .
+_:nb2220b77aaae4d3b922f7532d4e0f747b3
+  a time:DateTimeDescription ;
+  time:day "---11"^^xsd:gDay ;
+  time:month "--06"^^xsd:gMonth ;
+  time:unitType time:unitDay ;
+  time:year "2004"^^xsd:gYear ;
+.
+

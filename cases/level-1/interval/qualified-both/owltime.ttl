@@ -1,113 +1,181 @@
-@base <https://periodo.github.io/edtf-ontology/> .
-@prefix : <cases/level-1/interval/qualified-both/> .
-@prefix bipm: <http://www.opengis.net/def/trs/BIPM/0/> .
-@prefix edtfo: <edtfo.ttl#> .
-@prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix rules: <rules/> .
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-1/interval/qualified-both/>
+PREFIX edtfo: <https://periodo.github.io/edtf-ontology/edtfo.ttl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-_:b0    a              time:DateTimeDescription ;
-        time:unitType  time:unitYear ;
-        time:year      "2004"^^xsd:gYear .
+:when1
+  a time:Interval ;
+  time:hasBeginning _:nef08951d135e4136a831066f8f4bf883b16 ;
+  time:hasEnd _:nef08951d135e4136a831066f8f4bf883b6 ;
+.
 
-_:b1    a                time:Instant ;
-        time:inDateTime  _:b2 .
+:when2
+  a time:Interval ;
+  time:hasBeginning _:nef08951d135e4136a831066f8f4bf883b1 ;
+  time:hasEnd _:nef08951d135e4136a831066f8f4bf883b10 ;
+.
 
-<< _:b3 time:inDateTime _:b4 >>
-        a       edtfo:UncertainStatement .
+:when3
+  a time:Interval ;
+  time:hasBeginning _:nef08951d135e4136a831066f8f4bf883b11 ;
+  time:hasEnd _:nef08951d135e4136a831066f8f4bf883b12 ;
+.
 
-<< _:b5 time:inDateTime _:b6 >>
-        a       edtfo:UncertainStatement .
+:when4
+  a time:Interval ;
+  time:hasBeginning _:nef08951d135e4136a831066f8f4bf883b3 ;
+  time:hasEnd _:nef08951d135e4136a831066f8f4bf883b8 ;
+.
 
-:when4  a                  time:Interval ;
-        time:hasBeginning  _:b7 ;
-        time:hasEnd        _:b8 .
+<urn:triple:047fbb7a21859793bc33de325feb59a6>
+  a edtfo:ApproximateStatement ;
+  rdf:object _:nef08951d135e4136a831066f8f4bf883b4 ;
+  rdf:predicate time:inDateTime ;
+  rdf:subject _:nef08951d135e4136a831066f8f4bf883b3 ;
+.
 
-<< _:b9 time:inDateTime _:b10 >>
-        a       edtfo:UncertainStatement .
+<urn:triple:256ce1ff96479454fc059228c00fe33d>
+  a edtfo:UncertainStatement ;
+  rdf:object _:nef08951d135e4136a831066f8f4bf883b13 ;
+  rdf:predicate time:inDateTime ;
+  rdf:subject _:nef08951d135e4136a831066f8f4bf883b8 ;
+.
 
-_:b7    a                time:Instant ;
-        time:inDateTime  _:b0 .
+<urn:triple:59f4b5e43d3ec7b5bea3d1d2199e4cbc>
+  a edtfo:UncertainStatement ;
+  rdf:object _:nef08951d135e4136a831066f8f4bf883b2 ;
+  rdf:predicate time:inDateTime ;
+  rdf:subject _:nef08951d135e4136a831066f8f4bf883b1 ;
+.
 
-_:b2    a              time:DateTimeDescription ;
-        time:unitType  time:unitYear ;
-        time:year      "2004"^^xsd:gYear .
+<urn:triple:654bb4e698f11e1ebbc63a41ca13b464>
+  a edtfo:ApproximateStatement ;
+  rdf:object _:nef08951d135e4136a831066f8f4bf883b9 ;
+  rdf:predicate time:inDateTime ;
+  rdf:subject _:nef08951d135e4136a831066f8f4bf883b10 ;
+.
 
-_:b11   a                time:Instant ;
-        time:inDateTime  _:b12 .
+<urn:triple:75d97453352249648981aacb955f4fff>
+  a edtfo:ApproximateStatement ;
+  rdf:object _:nef08951d135e4136a831066f8f4bf883b5 ;
+  rdf:predicate time:inDateTime ;
+  rdf:subject _:nef08951d135e4136a831066f8f4bf883b6 ;
+.
 
-:when3  a                  time:Interval ;
-        time:hasBeginning  _:b1 ;
-        time:hasEnd        _:b5 .
+<urn:triple:78a2456b8fb430a8964b4c0014558009>
+  a edtfo:ApproximateStatement ;
+  rdf:object _:nef08951d135e4136a831066f8f4bf883b7 ;
+  rdf:predicate time:inDateTime ;
+  rdf:subject _:nef08951d135e4136a831066f8f4bf883b11 ;
+.
 
-_:b13   a                time:Instant ;
-        time:inDateTime  _:b14 .
+<urn:triple:904a4f5def05fae47d60e2bf72403520>
+  a edtfo:UncertainStatement ;
+  rdf:object _:nef08951d135e4136a831066f8f4bf883b15 ;
+  rdf:predicate time:inDateTime ;
+  rdf:subject _:nef08951d135e4136a831066f8f4bf883b16 ;
+.
 
-<< _:b8 time:inDateTime _:b15 >>
-        a       edtfo:UncertainStatement .
+<urn:triple:e64eb3bcfe76ce7574e3aa7e1013213a>
+  a edtfo:UncertainStatement ;
+  rdf:object _:nef08951d135e4136a831066f8f4bf883b14 ;
+  rdf:predicate time:inDateTime ;
+  rdf:subject _:nef08951d135e4136a831066f8f4bf883b12 ;
+.
 
-_:b5    a                time:Instant ;
-        time:inDateTime  _:b6 .
+_:nef08951d135e4136a831066f8f4bf883b1
+  a time:Instant ;
+  time:inDateTime _:nef08951d135e4136a831066f8f4bf883b2 ;
+.
 
-_:b4    a              time:DateTimeDescription ;
-        time:month     "--02"^^xsd:gMonth ;
-        time:unitType  time:unitMonth ;
-        time:year      "2004"^^xsd:gYear .
+_:nef08951d135e4136a831066f8f4bf883b10
+  a time:Instant ;
+  time:inDateTime _:nef08951d135e4136a831066f8f4bf883b9 ;
+.
 
-_:b10   a              time:DateTimeDescription ;
-        time:day       "---01"^^xsd:gDay ;
-        time:month     "--02"^^xsd:gMonth ;
-        time:unitType  time:unitDay ;
-        time:year      "2004"^^xsd:gYear .
+_:nef08951d135e4136a831066f8f4bf883b11
+  a time:Instant ;
+  time:inDateTime _:nef08951d135e4136a831066f8f4bf883b7 ;
+.
 
-<< _:b1 time:inDateTime _:b2 >>
-        a       edtfo:ApproximateStatement .
+_:nef08951d135e4136a831066f8f4bf883b12
+  a time:Instant ;
+  time:inDateTime _:nef08951d135e4136a831066f8f4bf883b14 ;
+.
 
-:when2  a                  time:Interval ;
-        time:hasBeginning  _:b3 ;
-        time:hasEnd        _:b13 .
+_:nef08951d135e4136a831066f8f4bf883b13
+  a time:DateTimeDescription ;
+  time:month "--02"^^xsd:gMonth ;
+  time:unitType time:unitMonth ;
+  time:year "2005"^^xsd:gYear ;
+.
 
-_:b8    a                time:Instant ;
-        time:inDateTime  _:b15 .
+_:nef08951d135e4136a831066f8f4bf883b14
+  a time:DateTimeDescription ;
+  time:unitType time:unitYear ;
+  time:year "2005"^^xsd:gYear ;
+.
 
-_:b3    a                time:Instant ;
-        time:inDateTime  _:b4 .
+_:nef08951d135e4136a831066f8f4bf883b15
+  a time:DateTimeDescription ;
+  time:day "---01"^^xsd:gDay ;
+  time:month "--02"^^xsd:gMonth ;
+  time:unitType time:unitDay ;
+  time:year "2004"^^xsd:gYear ;
+.
 
-<< _:b7 time:inDateTime _:b0 >>
-        a       edtfo:ApproximateStatement .
+_:nef08951d135e4136a831066f8f4bf883b16
+  a time:Instant ;
+  time:inDateTime _:nef08951d135e4136a831066f8f4bf883b15 ;
+.
 
-:when1  a                  time:Interval ;
-        time:hasBeginning  _:b9 ;
-        time:hasEnd        _:b11 .
+_:nef08951d135e4136a831066f8f4bf883b2
+  a time:DateTimeDescription ;
+  time:month "--02"^^xsd:gMonth ;
+  time:unitType time:unitMonth ;
+  time:year "2004"^^xsd:gYear ;
+.
 
-_:b12   a              time:DateTimeDescription ;
-        time:day       "---08"^^xsd:gDay ;
-        time:month     "--02"^^xsd:gMonth ;
-        time:unitType  time:unitDay ;
-        time:year      "2005"^^xsd:gYear .
+_:nef08951d135e4136a831066f8f4bf883b3
+  a time:Instant ;
+  time:inDateTime _:nef08951d135e4136a831066f8f4bf883b4 ;
+.
 
-_:b15   a              time:DateTimeDescription ;
-        time:month     "--02"^^xsd:gMonth ;
-        time:unitType  time:unitMonth ;
-        time:year      "2005"^^xsd:gYear .
+_:nef08951d135e4136a831066f8f4bf883b4
+  a time:DateTimeDescription ;
+  time:unitType time:unitYear ;
+  time:year "2004"^^xsd:gYear ;
+.
 
-_:b14   a              time:DateTimeDescription ;
-        time:month     "--02"^^xsd:gMonth ;
-        time:unitType  time:unitMonth ;
-        time:year      "2005"^^xsd:gYear .
+_:nef08951d135e4136a831066f8f4bf883b5
+  a time:DateTimeDescription ;
+  time:day "---08"^^xsd:gDay ;
+  time:month "--02"^^xsd:gMonth ;
+  time:unitType time:unitDay ;
+  time:year "2005"^^xsd:gYear ;
+.
 
-_:b9    a                time:Instant ;
-        time:inDateTime  _:b10 .
+_:nef08951d135e4136a831066f8f4bf883b6
+  a time:Instant ;
+  time:inDateTime _:nef08951d135e4136a831066f8f4bf883b5 ;
+.
 
-<< _:b13 time:inDateTime _:b14 >>
-        a       edtfo:ApproximateStatement .
+_:nef08951d135e4136a831066f8f4bf883b7
+  a time:DateTimeDescription ;
+  time:unitType time:unitYear ;
+  time:year "2004"^^xsd:gYear ;
+.
 
-<< _:b11 time:inDateTime _:b12 >>
-        a       edtfo:ApproximateStatement .
+_:nef08951d135e4136a831066f8f4bf883b8
+  a time:Instant ;
+  time:inDateTime _:nef08951d135e4136a831066f8f4bf883b13 ;
+.
 
-_:b6    a              time:DateTimeDescription ;
-        time:unitType  time:unitYear ;
-        time:year      "2005"^^xsd:gYear .
+_:nef08951d135e4136a831066f8f4bf883b9
+  a time:DateTimeDescription ;
+  time:month "--02"^^xsd:gMonth ;
+  time:unitType time:unitMonth ;
+  time:year "2005"^^xsd:gYear ;
+.
+
