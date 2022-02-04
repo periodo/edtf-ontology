@@ -1,15 +1,19 @@
 .DEFAULT_GOAL := all
 SHELL := /usr/bin/env bash
 .SHELLFLAGS := -o pipefail -O globstar -c
-VENV_DIR := tools/venv
 ROBOT_REPO := https://github.com/ontodev/robot
 ROBOT_DIR := tools/robot
+ROBOT := $(ROBOT_DIR)/bin/robot
+HERMIT_HOST := http://www.hermit-reasoner.com/download/1.3.8
 HERMIT_DIR := tools/hermit
+HERMIT := $(HERMIT_DIR)/bin/hermit
+FLATTTL_HOST := https://raw.githubusercontent.com/rybesh/flatttl/main/dist
+FLATTTL_DIR := tools/flatttl
+FLATTTL := $(FLATTTL_DIR)/flatttl
+VENV_DIR := tools/venv
 PYTHON := $(VENV_DIR)/bin/python
 PYLODE := $(VENV_DIR)/bin/pylode
 RDFPIPE := $(VENV_DIR)/bin/rdfpipe
-ROBOT := $(ROBOT_DIR)/bin/robot
-HERMIT := $(HERMIT_DIR)/bin/hermit
 EDTFO := https://periodo.github.io/edtf-ontology
 RPO := http://josd.github.io/eye/reasoning/rpo
 CASES := $(dir $(shell find cases/level-? -name edtf.ttl))
@@ -43,7 +47,7 @@ $(ROBOT):
 
 $(HERMIT):
 	mkdir -p $(HERMIT_DIR)/bin
-	curl -L http://www.hermit-reasoner.com/download/1.3.8/HermiT.zip \
+	curl -L $(HERMIT_HOST)/HermiT.zip \
 	> $(HERMIT_DIR)/hermit.zip
 	unzip $(HERMIT_DIR)/hermit.zip -d $(HERMIT_DIR)/bin
 	rm $(HERMIT_DIR)/hermit.zip
@@ -51,6 +55,9 @@ $(HERMIT):
 	echo "DIR=\$$(dirname \$$0)" >> $@
 	echo "exec java -jar \"\$$DIR/HermiT.jar\" \"\$$@\"" >> $@
 	chmod +x $@
+
+$(FLATTTL):
+	curl -L $(FLATTTL_HOST)/flatttl.tgz | tar -C tools -xzf -
 
 # Ontology docs ################################################################
 
@@ -208,13 +215,13 @@ tools/cleanup-inferences.rq \
 	> $@
 	./tools/check-triple-count $@
 
-cases/%/owltime.nt: cases/%/owltime.ttl
-	riot --syntax=ttl --output=ntriples $< | sort > $@
+cases/%/owltime-flat.ttl: cases/%/owltime.ttl | $(FLATTTL)
+	$(FLATTTL) $< > $@
 
-cases_owltime := $(foreach case,$(CASES),$(case)owltime.nt)
-level0_owltime := $(foreach case,$(LEVEL_0),$(case)owltime.nt)
-level1_owltime := $(foreach case,$(LEVEL_1),$(case)owltime.nt)
-level2_owltime := $(foreach case,$(LEVEL_2),$(case)owltime.nt)
+cases_owltime := $(foreach case,$(CASES),$(case)owltime-flat.ttl)
+level0_owltime := $(foreach case,$(LEVEL_0),$(case)owltime-flat.ttl)
+level1_owltime := $(foreach case,$(LEVEL_1),$(case)owltime-flat.ttl)
+level2_owltime := $(foreach case,$(LEVEL_2),$(case)owltime-flat.ttl)
 
 # Phony targets ################################################################
 
@@ -251,11 +258,13 @@ publish: all
 
 clean_cases:
 	rm -f $(cases_owltime)
-	rm -f $(cases_owltime:.nt=.ttl)
-	rm -f $(subst owltime.nt,owltime-raw.ttl,$(cases_owltime))
+	rm -f $(subst owltime-flat.ttl,owltime.nt,$(cases_owltime))
+	rm -f $(subst owltime-flat.ttl,owltime.ttl,$(cases_owltime))
+	rm -f $(subst owltime-flat.ttl,owltime-raw.ttl,$(cases_owltime))
 
 clean: clean_cases
-	rm -rf $(VENV_DIR) $(ROBOT_DIR) $(HERMIT_DIR) rules/derived cache \
+	rm -rf $(VENV_DIR) $(ROBOT_DIR) $(HERMIT_DIR) $(FLATTTL_DIR) \
+	rm -rf rules/derived cache \
 	doc/html/index.html doc/html/report.html doc/html/validation.txt \
 
 .PRECIOUS: \
