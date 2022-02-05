@@ -1,17 +1,11 @@
 PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-0/shift/hours-minutes/>
 PREFIX bipm: <http://www.opengis.net/def/trs/BIPM/0/>
+PREFIX skolem: <https://periodo.github.io/edtf-ontology/.well-known/genid/level-0/shift/hours-minutes#>
 PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-:when1
-  a time:Instant ;
-.
-
-:when2
-  a time:Instant ;
-.
-
-[]  a time:ProperInterval ;
+skolem:t_0
+  a time:ProperInterval ;
   time:hasBeginning :when1 ;
   time:hasDurationDescription [
       a time:DurationDescription ;
@@ -34,7 +28,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ] ;
 .
 
-[]  a time:ProperInterval ;
+skolem:t_1
+  a time:ProperInterval ;
   time:hasBeginning [
       a time:Instant ;
       time:inDateTime [
@@ -55,5 +50,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       time:minutes "30"^^xsd:nonNegativeInteger
     ] ;
   time:hasEnd :when2 ;
+.
+
+:when1
+  a time:Instant ;
+.
+
+:when2
+  a time:Instant ;
 .
 

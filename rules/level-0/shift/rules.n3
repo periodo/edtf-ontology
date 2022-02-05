@@ -1,5 +1,6 @@
 @base <https://periodo.github.io/edtf-ontology/> .
 @prefix bipm: <http://www.opengis.net/def/trs/BIPM/0/> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
 @prefix edtfo: <edtfo.ttl#> .
 @prefix iso8601: <http://www.opengis.net/def/uom/ISO-8601/0/> .
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
@@ -29,6 +30,8 @@ time:hasDurationDescription rdfs:range time:DurationDescription .
     . ("^" ?dt "\\+(" ?s_h ")") string:concatenation ?s_h_scraper
     . (?e ?s_h_scraper) string:scrape ?s_h_string
     . (?s_h_string xsd:nonNegativeInteger) log:dtlit ?shift_hours
+
+    . (?e) e:skolem ?i
 } => {
     ?i a time:ProperInterval ;
       time:hasDurationDescription [
@@ -74,6 +77,8 @@ time:hasDurationDescription rdfs:range time:DurationDescription .
     . ("^" ?dt "-(" ?s_h ")") string:concatenation ?s_h_scraper
     . (?e ?s_h_scraper) string:scrape ?s_h_string
     . (?s_h_string xsd:nonNegativeInteger) log:dtlit ?shift_hours
+
+    . (?e) e:skolem ?i
 } => {
     ?i a time:ProperInterval ;
       time:hasDurationDescription [

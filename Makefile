@@ -159,6 +159,7 @@ cases/%/edtf.ttl \
 	eye \
 	--quiet \
 	--nope \
+	--skolem-genid "$*" \
 	--wcache $(RPO) cache \
 	$(ruleset_urls) \
 	$^ \
@@ -172,8 +173,9 @@ tools/cleanup-inferences.rq \
 	arq --data=$< --query=$(word 2,$^) \
 	| $(UNSTAR) - \
 	| $(RDFPIPE) -i turtle -o longturtle - \
-	| sed -E "s|[[:space:]]{4}|  |g" \
 	| ./tools/unuuid/unuuid.py \
+	| sed -E "s|http://josd.github.io|https://periodo.github.io/edtf-ontology|" \
+	| sed -E "s|[[:space:]]{4}|  |g" \
 	> $@
 	./tools/check-triple-count $@
 
