@@ -10,7 +10,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   rdfs:label "interval in June 2004 beginning approximately the first and ending the 20th" ;
   time:hasBeginning [
       a time:Instant ;
-      time:inDateTime _:nf0575def06ee4efb82291505a97ba2eab2
+      time:inDateTime _:n1
     ] ;
   time:hasEnd [
       a time:Instant ;
@@ -24,14 +24,14 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ] ;
 .
 
-<urn:triple:0536cb76301e326dfbbea371286a2c49>
+<urn:triple:1>
   a edtfo:ApproximateStatement ;
   rdf:object "---01"^^xsd:gDay ;
   rdf:predicate time:day ;
-  rdf:subject _:nf0575def06ee4efb82291505a97ba2eab2 ;
+  rdf:subject _:n1 ;
 .
 
-_:nf0575def06ee4efb82291505a97ba2eab2
+_:n1
   a time:DateTimeDescription ;
   time:day "---01"^^xsd:gDay ;
   time:month "--06"^^xsd:gMonth ;

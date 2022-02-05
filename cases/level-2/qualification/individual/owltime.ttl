@@ -8,201 +8,215 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :when1
   a time:Instant ;
   rdfs:label "June 2004, possibly but not certainly the 11th" ;
-  time:inDateTime _:n7b94c432113942b8aaff34bc636a5da8b5 ;
+  time:inDateTime _:n1 ;
 .
 
 :when10
   a time:Instant ;
   rdfs:label "possibly but not certainly approximately 2004, approximately June" ;
-  time:inDateTime _:n7b94c432113942b8aaff34bc636a5da8b10 ;
+  time:inDateTime _:n2 ;
 .
 
 :when11
   a time:Instant ;
   rdfs:label "possibly but not certainly 2004" ;
-  time:inDateTime _:n7b94c432113942b8aaff34bc636a5da8b7 ;
+  time:inDateTime _:n3 ;
 .
 
 :when2
   a time:Instant ;
   rdfs:label "2004, approximately June, on the 11th day of the month" ;
-  time:inDateTime _:n7b94c432113942b8aaff34bc636a5da8b11 ;
+  time:inDateTime _:n4 ;
 .
 
 :when3
   a time:Instant ;
   rdfs:label "possibly but not certainly approximately 2004, on the 11th day of June" ;
-  time:inDateTime _:n7b94c432113942b8aaff34bc636a5da8b3 ;
+  time:inDateTime _:n5 ;
 .
 
 :when4
   a time:Instant ;
   rdfs:label "2004, possibly but not certainly June, approximately the 11th day of the month" ;
-  time:inDateTime _:n7b94c432113942b8aaff34bc636a5da8b4 ;
+  time:inDateTime _:n6 ;
 .
 
 :when5
   a time:Instant ;
   rdfs:label "possibly but not certainly 2004, possibly but not certainly approximately June, on the 11th day of the month" ;
-  time:inDateTime _:n7b94c432113942b8aaff34bc636a5da8b2 ;
+  time:inDateTime _:n7 ;
 .
 
 :when6
   a time:Instant ;
   rdfs:label "approximately 2004, in June, possibly but not certainly approximately the 11th" ;
-  time:inDateTime _:n7b94c432113942b8aaff34bc636a5da8b6 ;
+  time:inDateTime _:n8 ;
 .
 
 :when7
   a time:Instant ;
   rdfs:label "possibly but not certainly 2004, possibly but not certainly approximately June, possibly but not certainly approximately the 11th day of the month" ;
-  time:inDateTime _:n7b94c432113942b8aaff34bc636a5da8b1 ;
+  time:inDateTime _:n9 ;
 .
 
 :when8
   a time:Instant ;
   rdfs:label "2004, possibly but not certainly June" ;
-  time:inDateTime _:n7b94c432113942b8aaff34bc636a5da8b9 ;
+  time:inDateTime _:n10 ;
 .
 
 :when9
   a time:Instant ;
   rdfs:label "approximately 2004, in June" ;
-  time:inDateTime _:n7b94c432113942b8aaff34bc636a5da8b8 ;
+  time:inDateTime _:n11 ;
 .
 
-<urn:triple:07f64bf2bab52d449e142f768f289685>
+<urn:triple:1>
+  a edtfo:UncertainStatement ;
+  rdf:object "---11"^^xsd:gDay ;
+  rdf:predicate time:day ;
+  rdf:subject _:n1 ;
+.
+
+<urn:triple:2>
+  a edtfo:ApproximateStatement ;
+  rdf:object "---11"^^xsd:gDay ;
+  rdf:predicate time:day ;
+  rdf:subject _:n6 ;
+.
+
+<urn:triple:3>
+  a edtfo:ApproximateStatement ;
+  rdf:object "--06"^^xsd:gMonth ;
+  rdf:predicate time:month ;
+  rdf:subject _:n2 ;
+.
+
+<urn:triple:4>
   a
     edtfo:ApproximateStatement ,
     edtfo:UncertainStatement ;
   rdf:object "--06"^^xsd:gMonth ;
   rdf:predicate time:month ;
-  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b1 ;
+  rdf:subject _:n9 ;
 .
 
-<urn:triple:1060f8eba37f15f6c3deef1ca11a4499>
+<urn:triple:5>
   a
     edtfo:ApproximateStatement ,
     edtfo:UncertainStatement ;
   rdf:object "---11"^^xsd:gDay ;
   rdf:predicate time:day ;
-  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b1 ;
+  rdf:subject _:n9 ;
 .
 
-<urn:triple:23108972b5d323a9d6574c92c3697d15>
-  a edtfo:ApproximateStatement ;
-  rdf:object "--06"^^xsd:gMonth ;
-  rdf:predicate time:month ;
-  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b10 ;
-.
-
-<urn:triple:2d652ec5053219184a6ed21f79e6e6e4>
-  a edtfo:ApproximateStatement ;
-  rdf:object "2004"^^xsd:gYear ;
-  rdf:predicate time:year ;
-  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b8 ;
-.
-
-<urn:triple:38d51d966fefd8d240977f4cfdc33f23>
-  a edtfo:ApproximateStatement ;
-  rdf:object "2004"^^xsd:gYear ;
-  rdf:predicate time:year ;
-  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b6 ;
-.
-
-<urn:triple:65072b46d6ff40573387015c03ec78bd>
-  a edtfo:UncertainStatement ;
-  rdf:object "---11"^^xsd:gDay ;
-  rdf:predicate time:day ;
-  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b5 ;
-.
-
-<urn:triple:660493eb30320f6b82f0cabce9684d1c>
+<urn:triple:6>
   a edtfo:UncertainStatement ;
   rdf:object "--06"^^xsd:gMonth ;
   rdf:predicate time:month ;
-  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b9 ;
+  rdf:subject _:n10 ;
 .
 
-<urn:triple:77ee36765c58631e98559ab290344b27>
-  a edtfo:ApproximateStatement ;
-  rdf:object "--06"^^xsd:gMonth ;
-  rdf:predicate time:month ;
-  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b11 ;
-.
-
-<urn:triple:7a79a2348a4ecbc5f0eaf9b28ba4780f>
-  a edtfo:UncertainStatement ;
-  rdf:object "--06"^^xsd:gMonth ;
-  rdf:predicate time:month ;
-  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b4 ;
-.
-
-<urn:triple:c06a6ff1e6914c4096c58920d83438b5>
-  a edtfo:ApproximateStatement ;
-  rdf:object "---11"^^xsd:gDay ;
-  rdf:predicate time:day ;
-  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b4 ;
-.
-
-<urn:triple:ce3461c8a52d0bdc337f5458e250f052>
+<urn:triple:7>
   a edtfo:UncertainStatement ;
   rdf:object "2004"^^xsd:gYear ;
   rdf:predicate time:year ;
-  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b1 ;
+  rdf:subject _:n7 ;
 .
 
-<urn:triple:d073c16c532c9d21dc1c468733465ba9>
+<urn:triple:8>
+  a edtfo:UncertainStatement ;
+  rdf:object "--06"^^xsd:gMonth ;
+  rdf:predicate time:month ;
+  rdf:subject _:n6 ;
+.
+
+<urn:triple:9>
   a
     edtfo:ApproximateStatement ,
     edtfo:UncertainStatement ;
   rdf:object "2004"^^xsd:gYear ;
   rdf:predicate time:year ;
-  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b10 ;
+  rdf:subject _:n5 ;
 .
 
-<urn:triple:d2182256bc27e82bac4923eff71e24fe>
+<urn:triple:10>
+  a
+    edtfo:ApproximateStatement ,
+    edtfo:UncertainStatement ;
+  rdf:object "--06"^^xsd:gMonth ;
+  rdf:predicate time:month ;
+  rdf:subject _:n7 ;
+.
+
+<urn:triple:11>
+  a edtfo:UncertainStatement ;
+  rdf:object "2004"^^xsd:gYear ;
+  rdf:predicate time:year ;
+  rdf:subject _:n9 ;
+.
+
+<urn:triple:12>
+  a edtfo:ApproximateStatement ;
+  rdf:object "--06"^^xsd:gMonth ;
+  rdf:predicate time:month ;
+  rdf:subject _:n4 ;
+.
+
+<urn:triple:13>
+  a edtfo:ApproximateStatement ;
+  rdf:object "2004"^^xsd:gYear ;
+  rdf:predicate time:year ;
+  rdf:subject _:n11 ;
+.
+
+<urn:triple:14>
+  a
+    edtfo:ApproximateStatement ,
+    edtfo:UncertainStatement ;
+  rdf:object "2004"^^xsd:gYear ;
+  rdf:predicate time:year ;
+  rdf:subject _:n2 ;
+.
+
+<urn:triple:15>
   a
     edtfo:ApproximateStatement ,
     edtfo:UncertainStatement ;
   rdf:object "---11"^^xsd:gDay ;
   rdf:predicate time:day ;
-  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b6 ;
+  rdf:subject _:n8 ;
 .
 
-<urn:triple:da1edb56d10c9306e00b9f9591c287fc>
-  a
-    edtfo:ApproximateStatement ,
-    edtfo:UncertainStatement ;
-  rdf:object "2004"^^xsd:gYear ;
-  rdf:predicate time:year ;
-  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b3 ;
-.
-
-<urn:triple:e065d3fa2bfb57a23fe4bf1b88a22919>
+<urn:triple:16>
   a edtfo:UncertainStatement ;
   rdf:object "2004"^^xsd:gYear ;
   rdf:predicate time:year ;
-  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b2 ;
+  rdf:subject _:n3 ;
 .
 
-<urn:triple:e2ded7092e90e255fea72c12cec87ce3>
-  a
-    edtfo:ApproximateStatement ,
-    edtfo:UncertainStatement ;
-  rdf:object "--06"^^xsd:gMonth ;
-  rdf:predicate time:month ;
-  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b2 ;
-.
-
-<urn:triple:f5fb50a8e69d1564176da82d9713567a>
-  a edtfo:UncertainStatement ;
+<urn:triple:17>
+  a edtfo:ApproximateStatement ;
   rdf:object "2004"^^xsd:gYear ;
   rdf:predicate time:year ;
-  rdf:subject _:n7b94c432113942b8aaff34bc636a5da8b7 ;
+  rdf:subject _:n8 ;
 .
 
-_:n7b94c432113942b8aaff34bc636a5da8b11
+_:n11
+  a time:DateTimeDescription ;
+  time:month "--06"^^xsd:gMonth ;
+  time:unitType time:unitMonth ;
+  time:year "2004"^^xsd:gYear ;
+.
+
+_:n10
+  a time:DateTimeDescription ;
+  time:month "--06"^^xsd:gMonth ;
+  time:unitType time:unitMonth ;
+  time:year "2004"^^xsd:gYear ;
+.
+
+_:n5
   a time:DateTimeDescription ;
   time:day "---11"^^xsd:gDay ;
   time:month "--06"^^xsd:gMonth ;
@@ -210,7 +224,7 @@ _:n7b94c432113942b8aaff34bc636a5da8b11
   time:year "2004"^^xsd:gYear ;
 .
 
-_:n7b94c432113942b8aaff34bc636a5da8b3
+_:n1
   a time:DateTimeDescription ;
   time:day "---11"^^xsd:gDay ;
   time:month "--06"^^xsd:gMonth ;
@@ -218,42 +232,13 @@ _:n7b94c432113942b8aaff34bc636a5da8b3
   time:year "2004"^^xsd:gYear ;
 .
 
-_:n7b94c432113942b8aaff34bc636a5da8b5
-  a time:DateTimeDescription ;
-  time:day "---11"^^xsd:gDay ;
-  time:month "--06"^^xsd:gMonth ;
-  time:unitType time:unitDay ;
-  time:year "2004"^^xsd:gYear ;
-.
-
-_:n7b94c432113942b8aaff34bc636a5da8b7
+_:n3
   a time:DateTimeDescription ;
   time:unitType time:unitYear ;
   time:year "2004"^^xsd:gYear ;
 .
 
-_:n7b94c432113942b8aaff34bc636a5da8b8
-  a time:DateTimeDescription ;
-  time:month "--06"^^xsd:gMonth ;
-  time:unitType time:unitMonth ;
-  time:year "2004"^^xsd:gYear ;
-.
-
-_:n7b94c432113942b8aaff34bc636a5da8b9
-  a time:DateTimeDescription ;
-  time:month "--06"^^xsd:gMonth ;
-  time:unitType time:unitMonth ;
-  time:year "2004"^^xsd:gYear ;
-.
-
-_:n7b94c432113942b8aaff34bc636a5da8b10
-  a time:DateTimeDescription ;
-  time:month "--06"^^xsd:gMonth ;
-  time:unitType time:unitMonth ;
-  time:year "2004"^^xsd:gYear ;
-.
-
-_:n7b94c432113942b8aaff34bc636a5da8b2
+_:n4
   a time:DateTimeDescription ;
   time:day "---11"^^xsd:gDay ;
   time:month "--06"^^xsd:gMonth ;
@@ -261,7 +246,7 @@ _:n7b94c432113942b8aaff34bc636a5da8b2
   time:year "2004"^^xsd:gYear ;
 .
 
-_:n7b94c432113942b8aaff34bc636a5da8b4
+_:n8
   a time:DateTimeDescription ;
   time:day "---11"^^xsd:gDay ;
   time:month "--06"^^xsd:gMonth ;
@@ -269,7 +254,14 @@ _:n7b94c432113942b8aaff34bc636a5da8b4
   time:year "2004"^^xsd:gYear ;
 .
 
-_:n7b94c432113942b8aaff34bc636a5da8b6
+_:n2
+  a time:DateTimeDescription ;
+  time:month "--06"^^xsd:gMonth ;
+  time:unitType time:unitMonth ;
+  time:year "2004"^^xsd:gYear ;
+.
+
+_:n7
   a time:DateTimeDescription ;
   time:day "---11"^^xsd:gDay ;
   time:month "--06"^^xsd:gMonth ;
@@ -277,7 +269,15 @@ _:n7b94c432113942b8aaff34bc636a5da8b6
   time:year "2004"^^xsd:gYear ;
 .
 
-_:n7b94c432113942b8aaff34bc636a5da8b1
+_:n6
+  a time:DateTimeDescription ;
+  time:day "---11"^^xsd:gDay ;
+  time:month "--06"^^xsd:gMonth ;
+  time:unitType time:unitDay ;
+  time:year "2004"^^xsd:gYear ;
+.
+
+_:n9
   a time:DateTimeDescription ;
   time:day "---11"^^xsd:gDay ;
   time:month "--06"^^xsd:gMonth ;

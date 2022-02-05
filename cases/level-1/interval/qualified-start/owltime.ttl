@@ -6,7 +6,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when1
   a time:Interval ;
-  time:hasBeginning _:n40a5cb497a7e4b4aa99bbe7f2879f3e7b4 ;
+  time:hasBeginning _:n1 ;
   time:hasEnd [
       a time:Instant ;
       time:inDateTime [
@@ -21,19 +21,19 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when2
   a time:Interval ;
-  time:hasBeginning _:n40a5cb497a7e4b4aa99bbe7f2879f3e7b12 ;
+  time:hasBeginning _:n2 ;
 .
 
 :when3
   a
     time:Interval ,
     edtfo:OpenEndInterval ;
-  time:hasBeginning _:n40a5cb497a7e4b4aa99bbe7f2879f3e7b9 ;
+  time:hasBeginning _:n3 ;
 .
 
 :when4
   a time:Interval ;
-  time:hasBeginning _:n40a5cb497a7e4b4aa99bbe7f2879f3e7b6 ;
+  time:hasBeginning _:n4 ;
   time:hasEnd [
       a time:Instant ;
       time:inDateTime [
@@ -47,7 +47,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when5
   a time:Interval ;
-  time:hasBeginning _:n40a5cb497a7e4b4aa99bbe7f2879f3e7b1 ;
+  time:hasBeginning _:n5 ;
   time:hasEnd [
       a time:Instant ;
       time:inDateTime [
@@ -59,47 +59,47 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ] ;
 .
 
-<urn:triple:0436471ab2588e1420cff7d03f3ec31d>
+<urn:triple:1>
   a edtfo:ApproximateStatement ;
-  rdf:object _:n40a5cb497a7e4b4aa99bbe7f2879f3e7b2 ;
+  rdf:object _:n6 ;
   rdf:predicate time:inDateTime ;
-  rdf:subject _:n40a5cb497a7e4b4aa99bbe7f2879f3e7b1 ;
+  rdf:subject _:n1 ;
 .
 
-<urn:triple:6189e4a937aa3b739ea091c0cfe55e4d>
+<urn:triple:2>
   a edtfo:ApproximateStatement ;
-  rdf:object _:n40a5cb497a7e4b4aa99bbe7f2879f3e7b10 ;
+  rdf:object _:n7 ;
   rdf:predicate time:inDateTime ;
-  rdf:subject _:n40a5cb497a7e4b4aa99bbe7f2879f3e7b9 ;
+  rdf:subject _:n3 ;
 .
 
-<urn:triple:719fbdde84cd16ad2c6b092ffd7f30f5>
+<urn:triple:3>
   a edtfo:ApproximateStatement ;
-  rdf:object _:n40a5cb497a7e4b4aa99bbe7f2879f3e7b5 ;
+  rdf:object _:n8 ;
   rdf:predicate time:inDateTime ;
-  rdf:subject _:n40a5cb497a7e4b4aa99bbe7f2879f3e7b6 ;
+  rdf:subject _:n4 ;
 .
 
-<urn:triple:890cddaf96c57cceff0e09109950234c>
+<urn:triple:4>
   a edtfo:ApproximateStatement ;
-  rdf:object _:n40a5cb497a7e4b4aa99bbe7f2879f3e7b11 ;
+  rdf:object _:n9 ;
   rdf:predicate time:inDateTime ;
-  rdf:subject _:n40a5cb497a7e4b4aa99bbe7f2879f3e7b12 ;
+  rdf:subject _:n5 ;
 .
 
-<urn:triple:eab61fd0e756b23a2169f41f02af38d3>
+<urn:triple:5>
   a edtfo:ApproximateStatement ;
-  rdf:object _:n40a5cb497a7e4b4aa99bbe7f2879f3e7b3 ;
+  rdf:object _:n10 ;
   rdf:predicate time:inDateTime ;
-  rdf:subject _:n40a5cb497a7e4b4aa99bbe7f2879f3e7b4 ;
+  rdf:subject _:n2 ;
 .
 
-_:n40a5cb497a7e4b4aa99bbe7f2879f3e7b1
+_:n4
   a time:Instant ;
-  time:inDateTime _:n40a5cb497a7e4b4aa99bbe7f2879f3e7b2 ;
+  time:inDateTime _:n8 ;
 .
 
-_:n40a5cb497a7e4b4aa99bbe7f2879f3e7b10
+_:n10
   a time:DateTimeDescription ;
   time:day "---02"^^xsd:gDay ;
   time:month "--01"^^xsd:gMonth ;
@@ -107,7 +107,12 @@ _:n40a5cb497a7e4b4aa99bbe7f2879f3e7b10
   time:year "1984"^^xsd:gYear ;
 .
 
-_:n40a5cb497a7e4b4aa99bbe7f2879f3e7b11
+_:n1
+  a time:Instant ;
+  time:inDateTime _:n6 ;
+.
+
+_:n6
   a time:DateTimeDescription ;
   time:day "---02"^^xsd:gDay ;
   time:month "--01"^^xsd:gMonth ;
@@ -115,18 +120,12 @@ _:n40a5cb497a7e4b4aa99bbe7f2879f3e7b11
   time:year "1984"^^xsd:gYear ;
 .
 
-_:n40a5cb497a7e4b4aa99bbe7f2879f3e7b12
+_:n3
   a time:Instant ;
-  time:inDateTime _:n40a5cb497a7e4b4aa99bbe7f2879f3e7b11 ;
+  time:inDateTime _:n7 ;
 .
 
-_:n40a5cb497a7e4b4aa99bbe7f2879f3e7b2
-  a time:DateTimeDescription ;
-  time:unitType time:unitYear ;
-  time:year "1984"^^xsd:gYear ;
-.
-
-_:n40a5cb497a7e4b4aa99bbe7f2879f3e7b3
+_:n7
   a time:DateTimeDescription ;
   time:day "---02"^^xsd:gDay ;
   time:month "--01"^^xsd:gMonth ;
@@ -134,25 +133,26 @@ _:n40a5cb497a7e4b4aa99bbe7f2879f3e7b3
   time:year "1984"^^xsd:gYear ;
 .
 
-_:n40a5cb497a7e4b4aa99bbe7f2879f3e7b4
-  a time:Instant ;
-  time:inDateTime _:n40a5cb497a7e4b4aa99bbe7f2879f3e7b3 ;
-.
-
-_:n40a5cb497a7e4b4aa99bbe7f2879f3e7b5
+_:n8
   a time:DateTimeDescription ;
   time:month "--01"^^xsd:gMonth ;
   time:unitType time:unitMonth ;
   time:year "1984"^^xsd:gYear ;
 .
 
-_:n40a5cb497a7e4b4aa99bbe7f2879f3e7b6
+_:n5
   a time:Instant ;
-  time:inDateTime _:n40a5cb497a7e4b4aa99bbe7f2879f3e7b5 ;
+  time:inDateTime _:n9 ;
 .
 
-_:n40a5cb497a7e4b4aa99bbe7f2879f3e7b9
+_:n9
+  a time:DateTimeDescription ;
+  time:unitType time:unitYear ;
+  time:year "1984"^^xsd:gYear ;
+.
+
+_:n2
   a time:Instant ;
-  time:inDateTime _:n40a5cb497a7e4b4aa99bbe7f2879f3e7b10 ;
+  time:inDateTime _:n10 ;
 .
 

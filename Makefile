@@ -173,6 +173,7 @@ tools/cleanup-inferences.rq \
 	| $(UNSTAR) - \
 	| $(RDFPIPE) -i turtle -o longturtle - \
 	| sed -E "s|[[:space:]]{4}|  |g" \
+	| ./tools/unuuid/unuuid.py \
 	> $@
 	./tools/check-triple-count $@
 

@@ -4,45 +4,45 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-<urn:triple:11f86f9c07a0f58949300b7c265a5365>
-  a
-    edtfo:ApproximateStatement ,
-    edtfo:UncertainStatement ;
-  rdf:object _:nb2220b77aaae4d3b922f7532d4e0f747b3 ;
-  rdf:predicate time:inDateTime ;
-  rdf:subject :when3 ;
-.
-
-<urn:triple:bf4203fa73cb17921269edb7f08b4df4>
-  a edtfo:ApproximateStatement ;
-  rdf:object _:nb2220b77aaae4d3b922f7532d4e0f747b1 ;
-  rdf:predicate time:inDateTime ;
-  rdf:subject :when2 ;
-.
-
-<urn:triple:c043b7ff002f17aec0ddae63b9a6522c>
+<urn:triple:1>
   a edtfo:UncertainStatement ;
-  rdf:object _:nb2220b77aaae4d3b922f7532d4e0f747b2 ;
+  rdf:object _:n1 ;
   rdf:predicate time:inDateTime ;
   rdf:subject :when1 ;
 .
 
+<urn:triple:2>
+  a edtfo:ApproximateStatement ;
+  rdf:object _:n2 ;
+  rdf:predicate time:inDateTime ;
+  rdf:subject :when2 ;
+.
+
+<urn:triple:3>
+  a
+    edtfo:ApproximateStatement ,
+    edtfo:UncertainStatement ;
+  rdf:object _:n3 ;
+  rdf:predicate time:inDateTime ;
+  rdf:subject :when3 ;
+.
+
 :when1
   a time:Instant ;
-  time:inDateTime _:nb2220b77aaae4d3b922f7532d4e0f747b2 ;
+  time:inDateTime _:n1 ;
 .
 
 :when2
   a time:Instant ;
-  time:inDateTime _:nb2220b77aaae4d3b922f7532d4e0f747b1 ;
+  time:inDateTime _:n2 ;
 .
 
 :when3
   a time:Instant ;
-  time:inDateTime _:nb2220b77aaae4d3b922f7532d4e0f747b3 ;
+  time:inDateTime _:n3 ;
 .
 
-_:nb2220b77aaae4d3b922f7532d4e0f747b1
+_:n1
   a time:DateTimeDescription ;
   time:day "---11"^^xsd:gDay ;
   time:month "--06"^^xsd:gMonth ;
@@ -50,7 +50,7 @@ _:nb2220b77aaae4d3b922f7532d4e0f747b1
   time:year "2004"^^xsd:gYear ;
 .
 
-_:nb2220b77aaae4d3b922f7532d4e0f747b2
+_:n2
   a time:DateTimeDescription ;
   time:day "---11"^^xsd:gDay ;
   time:month "--06"^^xsd:gMonth ;
@@ -58,7 +58,7 @@ _:nb2220b77aaae4d3b922f7532d4e0f747b2
   time:year "2004"^^xsd:gYear ;
 .
 
-_:nb2220b77aaae4d3b922f7532d4e0f747b3
+_:n3
   a time:DateTimeDescription ;
   time:day "---11"^^xsd:gDay ;
   time:month "--06"^^xsd:gMonth ;

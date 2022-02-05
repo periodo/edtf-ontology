@@ -4,57 +4,57 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-<urn:triple:6a2121a299e7c1c06c0a55db669d05fb>
-  a
-    edtfo:ApproximateStatement ,
-    edtfo:UncertainStatement ;
-  rdf:object _:n89c741439c7f4a0fb0df647bd179b64fb2 ;
-  rdf:predicate time:inDateTime ;
-  rdf:subject :when3 ;
-.
-
-<urn:triple:8352dbbe82cad90e53e1b76a0e7d27ab>
+<urn:triple:1>
   a edtfo:ApproximateStatement ;
-  rdf:object _:n89c741439c7f4a0fb0df647bd179b64fb1 ;
+  rdf:object _:n1 ;
   rdf:predicate time:inDateTime ;
   rdf:subject :when2 ;
 .
 
-<urn:triple:9c830e7d957985377598f85619c509d2>
+<urn:triple:2>
+  a
+    edtfo:ApproximateStatement ,
+    edtfo:UncertainStatement ;
+  rdf:object _:n2 ;
+  rdf:predicate time:inDateTime ;
+  rdf:subject :when3 ;
+.
+
+<urn:triple:3>
   a edtfo:UncertainStatement ;
-  rdf:object _:n89c741439c7f4a0fb0df647bd179b64fb3 ;
+  rdf:object _:n3 ;
   rdf:predicate time:inDateTime ;
   rdf:subject :when1 ;
 .
 
 :when1
   a time:Instant ;
-  time:inDateTime _:n89c741439c7f4a0fb0df647bd179b64fb3 ;
+  time:inDateTime _:n3 ;
 .
 
 :when2
   a time:Instant ;
-  time:inDateTime _:n89c741439c7f4a0fb0df647bd179b64fb1 ;
+  time:inDateTime _:n1 ;
 .
 
 :when3
   a time:Instant ;
-  time:inDateTime _:n89c741439c7f4a0fb0df647bd179b64fb2 ;
+  time:inDateTime _:n2 ;
 .
 
-_:n89c741439c7f4a0fb0df647bd179b64fb1
+_:n3
   a time:DateTimeDescription ;
   time:unitType time:unitYear ;
   time:year "1984"^^xsd:gYear ;
 .
 
-_:n89c741439c7f4a0fb0df647bd179b64fb2
+_:n2
   a time:DateTimeDescription ;
   time:unitType time:unitYear ;
   time:year "1984"^^xsd:gYear ;
 .
 
-_:n89c741439c7f4a0fb0df647bd179b64fb3
+_:n1
   a time:DateTimeDescription ;
   time:unitType time:unitYear ;
   time:year "1984"^^xsd:gYear ;
