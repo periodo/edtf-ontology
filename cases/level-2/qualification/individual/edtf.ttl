@@ -40,9 +40,9 @@
   rdfs:label "approximately 2004, in June" .
 
 # Year uncertain and approximate, month approximate.
-:when10 edtfo:inEDTFDateTime "%2004-~06" ;
+:whenA edtfo:inEDTFDateTime "%2004-~06" ;
   rdfs:label "possibly but not certainly approximately 2004, approximately June" .
 
 # Year uncertain.
-:when11 edtfo:inEDTFDateTime "?2004" ;
+:whenB edtfo:inEDTFDateTime "?2004" ;
   rdfs:label "possibly but not certainly 2004" .
