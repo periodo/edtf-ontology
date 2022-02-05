@@ -1,6 +1,7 @@
 @base <https://periodo.github.io/edtf-ontology/> .
 @prefix : <cases/level-0/datetime/month-precision/> .
 @prefix edtfo: <edtfo.ttl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-# The calendar month 1985 April with month precision.
-:when edtfo:inEDTFDateTime "1985-04" .
+:when edtfo:inEDTFDateTime "1985-04" ;
+  rdfs:label "calendar month 1985 April with month precision" .

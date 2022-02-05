@@ -1,7 +1,7 @@
 @base <https://periodo.github.io/edtf-ontology/> .
 @prefix : <cases/level-0/interval/year-precision/> .
 @prefix edtfo: <edtfo.ttl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-# A time interval beginning sometime in 1964
-# and ending sometime in 2008.
-:when edtfo:hasEDTFDateTimeDescription "1964/2008" .
+:when edtfo:hasEDTFDateTimeDescription "1964/2008" ;
+  rdfs:label "interval beginning in 1964 and ending in 2008" .

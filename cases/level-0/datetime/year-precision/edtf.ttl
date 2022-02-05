@@ -1,18 +1,19 @@
 @base <https://periodo.github.io/edtf-ontology/> .
 @prefix : <cases/level-0/datetime/year-precision/> .
 @prefix edtfo: <edtfo.ttl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-# The Gregorian calendar year 1985.
-:when1 edtfo:inEDTFDateTime "1985" .
+:when1 edtfo:inEDTFDateTime "1985" ;
+  rdfs:label "Gregorian calendar year 1985" .
 
-# The proleptic Gregorian calendar year 85 CE.
-:when2 edtfo:inEDTFDateTime "0085" .
+:when2 edtfo:inEDTFDateTime "0085" ;
+  rdfs:label "proleptic Gregorian calendar year 85 CE" .
 
-# The proleptic Gregorian calendar year 1 BCE.
-:when3 edtfo:inEDTFDateTime "0000" .
+:when3 edtfo:inEDTFDateTime "0000" ;
+  rdfs:label "proleptic Gregorian calendar year 1 BCE" .
 
-# The proleptic Gregorian calendar year 2 BCE.
-:when4 edtfo:inEDTFDateTime "-0001" .
+:when4 edtfo:inEDTFDateTime "-0001" ;
+  rdfs:label "proleptic Gregorian calendar year 2 BCE" .
 
-# The proleptic Gregorian calendar year 10000 BCE.
-:when5 edtfo:inEDTFDateTime "-9999" .
+:when5 edtfo:inEDTFDateTime "-9999" ;
+  rdfs:label "proleptic Gregorian calendar year 10000 BCE" .

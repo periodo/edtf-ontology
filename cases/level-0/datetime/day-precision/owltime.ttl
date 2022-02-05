@@ -1,9 +1,11 @@
 PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-0/datetime/day-precision/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when
   a time:Instant ;
+  rdfs:label "calendar date 1985 April 12th with day precision" ;
   time:inDateTime [
       a time:DateTimeDescription ;
       time:day "---12"^^xsd:gDay ;

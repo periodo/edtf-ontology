@@ -1,9 +1,11 @@
 PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-0/datetime/second-precision-local/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when1
   a time:Instant ;
+  rdfs:label "1985 April 12th at 23:02:30 local time" ;
   time:inDateTime [
       a time:DateTimeDescription ;
       time:day "---12"^^xsd:gDay ;
@@ -18,6 +20,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when2
   a time:Instant ;
+  rdfs:label "1985 April 12th at 23:02:30.8 local time" ;
   time:inDateTime [
       a time:DateTimeDescription ;
       time:day "---12"^^xsd:gDay ;

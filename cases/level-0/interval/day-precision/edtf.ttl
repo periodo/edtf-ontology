@@ -1,7 +1,7 @@
 @base <https://periodo.github.io/edtf-ontology/> .
 @prefix : <cases/level-0/interval/day-precision/> .
 @prefix edtfo: <edtfo.ttl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-# A time interval beginning sometime on February 1, 2004
-# and ending sometime on February 8, 2005.
-:when edtfo:hasEDTFDateTimeDescription "2004-02-01/2005-02-08" .
+:when edtfo:hasEDTFDateTimeDescription "2004-02-01/2005-02-08" ;
+  rdfs:label "interval beginning February 1, 2004 and ending February 8, 2005" .

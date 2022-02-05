@@ -1,6 +1,7 @@
 @base <https://periodo.github.io/edtf-ontology/> .
 @prefix : <cases/level-0/datetime/second-precision-utc/> .
 @prefix edtfo: <edtfo.ttl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-# The date 1985 April 12th at 23:20:30 UTC time.
-:when edtfo:inEDTFDateTime "1985-04-12T23:20:30Z" .
+:when edtfo:inEDTFDateTime "1985-04-12T23:20:30Z" ;
+  rdfs:label "1985 April 12th at 23:20:30 UTC time" .

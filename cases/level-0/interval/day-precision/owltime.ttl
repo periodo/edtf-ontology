@@ -1,9 +1,11 @@
 PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-0/interval/day-precision/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when
   a time:Interval ;
+  rdfs:label "interval beginning February 1, 2004 and ending February 8, 2005" ;
   time:hasBeginning [
       a time:Instant ;
       time:inDateTime [
