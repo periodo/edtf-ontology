@@ -55,11 +55,11 @@ skolem:t_1
 
 :when1
   a time:Instant ;
-  rdfs:label "1985 April 12th 23:20:30 with time shift of 4 hours 30 minutes ahead of UTC" ;
+  rdfs:label "April 12th, 1985 at 23:20:30 with a time shift of 4 hours 30 minutes ahead of UTC" ;
 .
 
 :when2
   a time:Instant ;
-  rdfs:label "1985 April 12th 23:20:30 with time shift of 4 hours 30 minutes behind UTC" ;
+  rdfs:label "April 12th, 1985 at 23:20:30 with a time shift of 4 hours 30 minutes behind UTC" ;
 .
 

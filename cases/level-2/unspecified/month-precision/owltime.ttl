@@ -42,7 +42,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when4
   a time:Instant ;
-  rdfs:label "some month in some year" ;
+  rdfs:label "some unknown month" ;
   time:inDateTime [
       a time:DateTimeDescription ;
       time:unitType time:unitMonth

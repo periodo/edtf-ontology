@@ -3,31 +3,27 @@
 @prefix edtfo: <edtfo.ttl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-# 338,800 with millennium precision (first 3 digits are significant), i.e.:
-# some year between 338,000 and 338,999 (inclusive), estimated to be 338,800.
+# 338,800 with millennium precision (first 3 digits are significant)
 :when1 edtfo:inEDTFDateTime "Y3388E2S3" ;
-  rdfs:label "some year between 338,000 and 338,999 (inclusive), estimated to be 338,800" .
+  rdfs:label "some Gregorian calendar year between 338,000 and 338,999 (inclusive), estimated to be 338,800" .
 
-# 171,010,000 with million-year precision (first 3 digits are significant), i.e.:
-# some year between 171,000,000 and 171,999,999 (inclusive), estimated to be 171,010,000.
+# 171,010,000 with million-year precision (first 3 digits are significant)
 :when2 edtfo:inEDTFDateTime "Y171010000S3" ;
-  rdfs:label "some year between 171,000,000 and 171,999,999 (inclusive), estimated to be 171,010,000" .
+  rdfs:label "some Gregorian calendar year between 171,000,000 and 171,999,999 (inclusive), estimated to be 171,010,000" .
 
-# 1950 with century precision (first 2 digits are significant), i.e.:
-# some year between 1900 and 1999 (inclusive), estimated to be 1950.
+# 1950 with century precision (first 2 digits are significant)
 :when3 edtfo:inEDTFDateTime "1950S2" ;
-  rdfs:label "some year between 1900 and 1999 (inclusive), estimated to be 1950" .
+  rdfs:label "some Gregorian calendar year between 1900 and 1999 (inclusive), estimated to be 1950" .
 
-# -11,000 with 10,000-year precision (first 1 digit is significant), i.e.:
-# some year between -19,999 and -10,000 (inclusive), estimated to be -11,000.
+# -11,000 with 10,000-year precision (first 1 digit is significant)
 :when4 edtfo:inEDTFDateTime "Y-11000S1" ;
-  rdfs:label "some year between -19,999 and -10,000 (inclusive), estimated to be -11,000" .
+  rdfs:label "some proleptic Gregorian calendar year between 20,000 and 10,001 BCE (inclusive), estimated to be 11,001 BCE" .
 
 # 2,147,483,647 with year precision (first 10 digits are significant).
 :when5 edtfo:inEDTFDateTime "Y2147483647S10" ;
-  rdfs:label "2,147,483,647 with year precision" .
+  rdfs:label "Gregorian calendar year 2,147,483,647" .
 
 # 1950 with year precision (first 5 digits are significant, but there
 # are only 4 digits, so S5 is equivalent to S4 in this case).
 :when6 edtfo:inEDTFDateTime "1950S5" ;
-  rdfs:label "1950 with year precision" .
+  rdfs:label "Gregorian calendar year 1950" .

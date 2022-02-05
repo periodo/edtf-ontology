@@ -3,17 +3,11 @@
 @prefix edtfo: <edtfo.ttl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-# Year and month specified, day unspecified
-# in a year-month-day expression (day precision).
 :when1 edtfo:inEDTFDateTime "1985-04-XX" ;
   rdfs:label "some day in April 1985" .
 
-# Year specified, month and day unspecified
-# in a year-month-day expression  (day precision).
 :when2 edtfo:inEDTFDateTime "1985-XX-XX" ;
-  rdfs:label "some day in some month in 1985" .
+  rdfs:label "some day in 1985" .
 
-# Year, month, and day unspecified
-# in a year-month-day expression  (day precision).
 :when3 edtfo:inEDTFDateTime "XXXX-XX-XX" ;
-  rdfs:label "some day in some month in some year" .
+  rdfs:label "some unknown day" .

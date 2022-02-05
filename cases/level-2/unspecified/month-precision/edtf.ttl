@@ -3,28 +3,18 @@
 @prefix edtfo: <edtfo.ttl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-# Year digit, month unspecified
-# in a year-month expression (month precision).
 :when1 edtfo:inEDTFDateTime "200X-XX" ;
   rdfs:label "some month in some year between 2000 and 2009 (inclusive)" .
 
-# Year digits, month unspecified
-# in a year-month expression (month precision).
 :when2 edtfo:inEDTFDateTime "20XX-XX" ;
   rdfs:label "some month in some year between 2000 and 2099 (inclusive)" .
 
-# Year digits, month unspecified
-# in a year-month expression (month precision).
 :when3 edtfo:inEDTFDateTime "2XXX-XX" ;
   rdfs:label "some month in some year between 2000 and 2999 (inclusive)" .
 
-# Year and month unspecified
-# in a year-month expression (month precision).
 :when4 edtfo:inEDTFDateTime "XXXX-XX" ;
-  rdfs:label "some month in some year" .
+  rdfs:label "some unknown month" .
 
-# Year digits unspecified
-# in a year-month expression (month precision).
 :when5 edtfo:inEDTFDateTime "20XX-12" ;
   rdfs:label "some December in some year between 2000 and 2099 (inclusive)" .
 

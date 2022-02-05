@@ -4,7 +4,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 :when1 edtfo:inEDTFDateTime "1985-04-12T23:20:30+04:30" ;
-  rdfs:label "1985 April 12th 23:20:30 with time shift of 4 hours 30 minutes ahead of UTC" .
+  rdfs:label "April 12th, 1985 at 23:20:30 with a time shift of 4 hours 30 minutes ahead of UTC" .
 
 :when2 edtfo:inEDTFDateTime "1985-04-12T23:20:30-04:30" ;
-  rdfs:label "1985 April 12th 23:20:30 with time shift of 4 hours 30 minutes behind UTC" .
+  rdfs:label "April 12th, 1985 at 23:20:30 with a time shift of 4 hours 30 minutes behind UTC" .

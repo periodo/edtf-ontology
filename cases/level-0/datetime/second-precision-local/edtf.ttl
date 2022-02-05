@@ -4,7 +4,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 :when1 edtfo:inEDTFDateTime "1985-04-12T23:02:30" ;
-  rdfs:label "1985 April 12th at 23:02:30 local time" .
+  rdfs:label "April 12th, 1985 at 23:02:30 local time" .
 
 :when2 edtfo:inEDTFDateTime "1985-04-12T23:02:30.8" ;
-  rdfs:label "1985 April 12th at 23:02:30.8 local time" .
+  rdfs:label "April 12th, 1985 at 23:02:30.8 local time" .

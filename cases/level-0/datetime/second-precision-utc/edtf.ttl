@@ -4,4 +4,4 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 :when edtfo:inEDTFDateTime "1985-04-12T23:20:30Z" ;
-  rdfs:label "1985 April 12th at 23:20:30 UTC time" .
+  rdfs:label "April 12th, 1985 at 23:20:30 UTC time" .

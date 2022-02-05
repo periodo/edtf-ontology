@@ -15,7 +15,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when2
   a time:Instant ;
-  rdfs:label "some day in some month in 1985" ;
+  rdfs:label "some day in 1985" ;
   time:inDateTime [
       time:unitType time:unitDay ;
       time:year "1985"^^xsd:gYear
@@ -24,7 +24,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when3
   a time:Instant ;
-  rdfs:label "some day in some month in some year" ;
+  rdfs:label "some unknown day" ;
   time:inDateTime [
       a time:DateTimeDescription ;
       time:unitType time:unitDay

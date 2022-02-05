@@ -4,4 +4,4 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 :when edtfo:inEDTFDateTime "1985-04-12" ;
-  rdfs:label "calendar date 1985 April 12th with day precision" .
+  rdfs:label "April 12th, 1985" .

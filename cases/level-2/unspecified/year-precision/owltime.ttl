@@ -18,7 +18,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when2
   a time:Instant ;
-  rdfs:label "some year between the -0599 and -0500 (inclusive)" ;
+  rdfs:label "some year in the 6th century BCE (inclusive)" ;
   time:inDateTime [
       a
         time:DateTimeDescription ,
@@ -30,7 +30,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when3
   a time:Instant ;
-  rdfs:label "some year between the 1000 and 1999 (inclusive)" ;
+  rdfs:label "some year between 1000 and 1999 (inclusive)" ;
   time:inDateTime [
       a
         time:DateTimeDescription ,
@@ -42,7 +42,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when4
   a time:Instant ;
-  rdfs:label "some year" ;
+  rdfs:label "some unknown year" ;
   time:inDateTime [
       a time:DateTimeDescription ;
       time:unitType time:unitYear

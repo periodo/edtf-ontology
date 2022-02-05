@@ -5,7 +5,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when1
   a time:Instant ;
-  rdfs:label "the year -170000000" ;
+  rdfs:label "proleptic Gregorian calendar year 170,000,001 BCE" ;
   time:inDateTime [
       a time:DateTimeDescription ;
       time:unitType time:unitYear ;
@@ -15,7 +15,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when2
   a time:Instant ;
-  rdfs:label "the year 17000" ;
+  rdfs:label "Gregorian calendar year 17,000" ;
   time:inDateTime [
       a time:DateTimeDescription ;
       time:unitType time:unitYear ;
@@ -25,7 +25,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when3
   a time:Instant ;
-  rdfs:label "the year 8" ;
+  rdfs:label "proleptic Gregorian calendar year 8" ;
   time:inDateTime [
       a time:DateTimeDescription ;
       time:unitType time:unitYear ;

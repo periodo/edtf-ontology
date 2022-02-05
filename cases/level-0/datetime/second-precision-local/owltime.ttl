@@ -5,7 +5,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when1
   a time:Instant ;
-  rdfs:label "1985 April 12th at 23:02:30 local time" ;
+  rdfs:label "April 12th, 1985 at 23:02:30 local time" ;
   time:inDateTime [
       a time:DateTimeDescription ;
       time:day "---12"^^xsd:gDay ;
@@ -20,7 +20,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when2
   a time:Instant ;
-  rdfs:label "1985 April 12th at 23:02:30.8 local time" ;
+  rdfs:label "April 12th, 1985 at 23:02:30.8 local time" ;
   time:inDateTime [
       a time:DateTimeDescription ;
       time:day "---12"^^xsd:gDay ;

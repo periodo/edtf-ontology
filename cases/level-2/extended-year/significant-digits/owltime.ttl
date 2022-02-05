@@ -5,7 +5,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when1
   a time:Instant ;
-  rdfs:label "some year between 338,000 and 338,999 (inclusive), estimated to be 338,800" ;
+  rdfs:label "some Gregorian calendar year between 338,000 and 338,999 (inclusive), estimated to be 338,800" ;
   time:inDateTime [
       a time:DateTimeDescription ;
       time:unitType time:unitMillenium ;
@@ -15,7 +15,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when2
   a time:Instant ;
-  rdfs:label "some year between 171,000,000 and 171,999,999 (inclusive), estimated to be 171,010,000" ;
+  rdfs:label "some Gregorian calendar year between 171,000,000 and 171,999,999 (inclusive), estimated to be 171,010,000" ;
   time:inDateTime [
       a time:DateTimeDescription ;
       time:unitType [
@@ -28,7 +28,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when3
   a time:Instant ;
-  rdfs:label "some year between 1900 and 1999 (inclusive), estimated to be 1950" ;
+  rdfs:label "some Gregorian calendar year between 1900 and 1999 (inclusive), estimated to be 1950" ;
   time:inDateTime [
       a time:DateTimeDescription ;
       time:unitType time:unitCentury ;
@@ -38,7 +38,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when4
   a time:Instant ;
-  rdfs:label "some year between -19,999 and -10,000 (inclusive), estimated to be -11,000" ;
+  rdfs:label "some proleptic Gregorian calendar year between 20,000 and 10,001 BCE (inclusive), estimated to be 11,001 BCE" ;
   time:inDateTime [
       a time:DateTimeDescription ;
       time:unitType [
@@ -51,7 +51,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when5
   a time:Instant ;
-  rdfs:label "2,147,483,647 with year precision" ;
+  rdfs:label "Gregorian calendar year 2,147,483,647" ;
   time:inDateTime [
       a time:DateTimeDescription ;
       time:unitType time:unitYear ;
@@ -61,7 +61,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when6
   a time:Instant ;
-  rdfs:label "1950 with year precision" ;
+  rdfs:label "Gregorian calendar year 1950" ;
   time:inDateTime [
       a time:DateTimeDescription ;
       time:unitType time:unitYear ;

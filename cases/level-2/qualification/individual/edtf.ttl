@@ -3,46 +3,35 @@
 @prefix edtfo: <edtfo.ttl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-# Year and month known, day uncertain.
 :when1 edtfo:inEDTFDateTime "2004-06-?11" ;
   rdfs:label "June 2004, possibly but not certainly the 11th" .
 
-# Year known, month approximate, day known.
 :when2 edtfo:inEDTFDateTime "2004-~06-11" ;
   rdfs:label "2004, approximately June, on the 11th day of the month" .
 
-# Year uncertain and approximate, month and day known.
 :when3 edtfo:inEDTFDateTime "%2004-06-11" ;
   rdfs:label "possibly but not certainly approximately 2004, on the 11th day of June" .
 
-# Year known, month uncertain, day approximate.
 :when4 edtfo:inEDTFDateTime "2004-?06-~11" ;
   rdfs:label "2004, possibly but not certainly June, approximately the 11th day of the month" .
 
-# Year uncertain, month uncertain and approximate, day known.
 :when5 edtfo:inEDTFDateTime "?2004-%06-11" ;
   rdfs:label "possibly but not certainly 2004, possibly but not certainly approximately June, on the 11th day of the month" .
 
-# Year approximate, month known, day uncertain and approximate.
 :when6 edtfo:inEDTFDateTime "~2004-06-%11" ;
   rdfs:label "approximately 2004, in June, possibly but not certainly approximately the 11th" .
 
-# Year uncertain, month and day uncertain and approximate.
 :when7 edtfo:inEDTFDateTime "?2004-%06-%11" ;
   rdfs:label "possibly but not certainly 2004, possibly but not certainly approximately June, possibly but not certainly approximately the 11th day of the month" .
 
-# Year known, month uncertain.
 :when8 edtfo:inEDTFDateTime "2004-?06" ;
   rdfs:label "2004, possibly but not certainly June" .
 
-# Year approximate, month known.
 :when9 edtfo:inEDTFDateTime "~2004-06" ;
   rdfs:label "approximately 2004, in June" .
 
-# Year uncertain and approximate, month approximate.
 :whenA edtfo:inEDTFDateTime "%2004-~06" ;
   rdfs:label "possibly but not certainly approximately 2004, approximately June" .
 
-# Year uncertain.
 :whenB edtfo:inEDTFDateTime "?2004" ;
   rdfs:label "possibly but not certainly 2004" .

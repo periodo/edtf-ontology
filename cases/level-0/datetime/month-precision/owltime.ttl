@@ -5,7 +5,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when
   a time:Instant ;
-  rdfs:label "calendar month 1985 April with month precision" ;
+  rdfs:label "April 1985" ;
   time:inDateTime [
       a time:DateTimeDescription ;
       time:month "--04"^^xsd:gMonth ;
