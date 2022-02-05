@@ -1,28 +1,19 @@
 @base <https://periodo.github.io/edtf-ontology/> .
 @prefix : <cases/level-1/interval/qualified-start/> .
 @prefix edtfo: <edtfo.ttl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-# A time interval with day precision,
-# beginning approximately January 2, 1984
-# and ending on June 4, 2004.
-:when1 edtfo:hasEDTFDateTimeDescription "1984-01-02~/2004-06-04" .
+:when1 edtfo:hasEDTFDateTimeDescription "1984-01-02~/2004-06-04" ;
+  rdfs:label "interval beginning approximately January 2, 1984 and ending on June 4, 2004" .
 
-# A time interval with day precision,
-# beginning approximately January 2, 1984
-# and end date is unknown.
-:when2 edtfo:hasEDTFDateTimeDescription "1984-01-02~/" .
+:when2 edtfo:hasEDTFDateTimeDescription "1984-01-02~/" ;
+  rdfs:label "interval beginning approximately January 2, 1984 and end date is unknown" .
 
-# A time interval with day precision,
-# beginning approximately January 2, 1984
-# and has no end date.
-:when3 edtfo:hasEDTFDateTimeDescription "1984-01-02~/.." .
+:when3 edtfo:hasEDTFDateTimeDescription "1984-01-02~/.." ;
+  rdfs:label "interval beginning approximately January 2, 1984 and having no end date" .
 
-# A time interval with month precision
-# beginning approximately January 1984
-# and ending June 2004.
-:when4 edtfo:hasEDTFDateTimeDescription "1984-01~/2004-06" .
+:when4 edtfo:hasEDTFDateTimeDescription "1984-01~/2004-06" ;
+  rdfs:label "interval with month precision beginning approximately January 1984 and ending June 2004" .
 
-# A time interval
-# beginning approximately 1984 with year precision
-# and ending June 2004 with month precision.
-:when5 edtfo:hasEDTFDateTimeDescription "1984~/2004-06" .
+:when5 edtfo:hasEDTFDateTimeDescription "1984~/2004-06" ;
+  rdfs:label "interval beginning approximately 1984 and ending June 2004" .

@@ -16,4 +16,4 @@
   rdfs:label "proleptic Gregorian calendar year 2 BCE" .
 
 :when5 edtfo:inEDTFDateTime "-9999" ;
-  rdfs:label "proleptic Gregorian calendar year 10000 BCE" .
+  rdfs:label "proleptic Gregorian calendar year 10,000 BCE" .

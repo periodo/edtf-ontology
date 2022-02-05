@@ -1,7 +1,7 @@
 @base <https://periodo.github.io/edtf-ontology/> .
 @prefix : <cases/level-1/unspecified/month-precision/> .
 @prefix edtfo: <edtfo.ttl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-# Year specified, month unspecified
-# in a year-month expression (month precision).
-:when1 edtfo:inEDTFDateTime "2004-XX" .
+:when1 edtfo:inEDTFDateTime "2004-XX" ;
+  rdfs:label "some month in 2004" .

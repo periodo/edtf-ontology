@@ -1,11 +1,14 @@
 @base <https://periodo.github.io/edtf-ontology/> .
 @prefix : <cases/level-1/unspecified/year-precision/> .
 @prefix edtfo: <edtfo.ttl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 # A year with one rightmost unspecified digit
 # in a year-only expression (year precision).
-:when1 edtfo:inEDTFDateTime "201X" .
+:when1 edtfo:inEDTFDateTime "201X" ;
+  rdfs:label "some year in the 2010s" .
 
 # A year with two rightmost unspecified digits
 # in a year-only expression (year precision).
-:when2 edtfo:inEDTFDateTime "-05XX" .
+:when2 edtfo:inEDTFDateTime "-05XX" ;
+  rdfs:label "some year in the 6th century BCE" .

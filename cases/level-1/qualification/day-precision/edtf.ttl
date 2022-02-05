@@ -1,16 +1,13 @@
 @base <https://periodo.github.io/edtf-ontology/> .
 @prefix : <cases/level-1/qualification/day-precision/> .
 @prefix edtfo: <edtfo.ttl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
+:when1 edtfo:inEDTFDateTime "2004-06-11?" ;
+  rdfs:label "possibly but not certainly June 11, 2004" .
 
-# Year-month-day uncertain
-# (possibly June 11, 2004, but not definitely).
-:when1 edtfo:inEDTFDateTime "2004-06-11?" .
+:when2 edtfo:inEDTFDateTime "2004-06-11~" ;
+  rdfs:label "approximately June 11, 2004" .
 
-# Year-month-day approximate
-# (approximately June 11, 2004).
-:when2 edtfo:inEDTFDateTime "2004-06-11~" .
-
-# Year-month-day uncertain and approximate
-# (possibly approximately June 11, 2004, but not definitely).
-:when3 edtfo:inEDTFDateTime "2004-06-11%" .
+:when3 edtfo:inEDTFDateTime "2004-06-11%" ;
+  rdfs:label "possibly but not certainly approximately June 11, 2004" .

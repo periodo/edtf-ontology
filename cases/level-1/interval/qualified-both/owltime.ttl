@@ -1,29 +1,34 @@
 PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-1/interval/qualified-both/>
 PREFIX edtfo: <https://periodo.github.io/edtf-ontology/edtfo.ttl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when1
   a time:Interval ;
+  rdfs:label "interval possibly but not certainly beginning February 1, 2004 and ending approximately February 8, 2005" ;
   time:hasBeginning _:n1 ;
   time:hasEnd _:n2 ;
 .
 
 :when2
   a time:Interval ;
+  rdfs:label "interval possibly but not certainly beginning February 2004 and ending approximately February 2005" ;
   time:hasBeginning _:n3 ;
   time:hasEnd _:n4 ;
 .
 
 :when3
   a time:Interval ;
+  rdfs:label "interval beginning approximately 2004 and possibly but not certainly ending 2005" ;
   time:hasBeginning _:n5 ;
   time:hasEnd _:n6 ;
 .
 
 :when4
   a time:Interval ;
+  rdfs:label "interval beginning approximately 2004 and possibly but not certainly ending February 2005" ;
   time:hasBeginning _:n7 ;
   time:hasEnd _:n8 ;
 .

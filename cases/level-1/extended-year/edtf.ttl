@@ -1,9 +1,10 @@
 @base <https://periodo.github.io/edtf-ontology/> .
 @prefix : <cases/level-1/extended-year/> .
 @prefix edtfo: <edtfo.ttl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-# The year 170000002.
-:when1 edtfo:inEDTFDateTime "Y170000002" .
+:when1 edtfo:inEDTFDateTime "Y170000002" ;
+  rdfs:label "Gregorian calendar year 170,000,002" .
 
-# The year -170000002.
-:when edtfo:inEDTFDateTime "Y-170000002" .
+:when2 edtfo:inEDTFDateTime "Y-170000002" ;
+  rdfs:label "proleptic Gregorian calendar year 170,000,003 BCE" .

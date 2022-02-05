@@ -1,9 +1,11 @@
 PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-1/unspecified/day-precision/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when1
   a time:Instant ;
+  rdfs:label "some day in April 1985" ;
   time:inDateTime [
       a time:DateTimeDescription ;
       time:month "--04"^^xsd:gMonth ;
@@ -14,6 +16,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when2
   a time:Instant ;
+  rdfs:label "some day in 1985" ;
   time:inDateTime [
       a time:DateTimeDescription ;
       time:unitType time:unitDay ;

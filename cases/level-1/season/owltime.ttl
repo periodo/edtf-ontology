@@ -1,10 +1,12 @@
 PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-1/season/>
 PREFIX edtfo: <https://periodo.github.io/edtf-ontology/edtfo.ttl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when1
   a time:Instant ;
+  rdfs:label "Spring 2001" ;
   time:inDateTime [
       a
         time:DateTimeDescription ,
@@ -17,6 +19,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when2
   a time:Instant ;
+  rdfs:label "Summer 2001" ;
   time:inDateTime [
       a
         time:DateTimeDescription ,
@@ -29,6 +32,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when3
   a time:Instant ;
+  rdfs:label "Autumn 2001" ;
   time:inDateTime [
       a
         time:DateTimeDescription ,
@@ -41,6 +45,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when4
   a time:Instant ;
+  rdfs:label "Winter 2001" ;
   time:inDateTime [
       a
         time:DateTimeDescription ,

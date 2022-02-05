@@ -1,11 +1,13 @@
 PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-1/interval/qualified-start/>
 PREFIX edtfo: <https://periodo.github.io/edtf-ontology/edtfo.ttl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when1
   a time:Interval ;
+  rdfs:label "interval beginning approximately January 2, 1984 and ending on June 4, 2004" ;
   time:hasBeginning _:n1 ;
   time:hasEnd [
       a time:Instant ;
@@ -21,6 +23,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when2
   a time:Interval ;
+  rdfs:label "interval beginning approximately January 2, 1984 and end date is unknown" ;
   time:hasBeginning _:n2 ;
 .
 
@@ -28,11 +31,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   a
     time:Interval ,
     edtfo:OpenEndInterval ;
+  rdfs:label "interval beginning approximately January 2, 1984 and having no end date" ;
   time:hasBeginning _:n3 ;
 .
 
 :when4
   a time:Interval ;
+  rdfs:label "interval with month precision beginning approximately January 1984 and ending June 2004" ;
   time:hasBeginning _:n4 ;
   time:hasEnd [
       a time:Instant ;
@@ -47,6 +52,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when5
   a time:Interval ;
+  rdfs:label "interval beginning approximately 1984 and ending June 2004" ;
   time:hasBeginning _:n5 ;
   time:hasEnd [
       a time:Instant ;

@@ -1,15 +1,13 @@
 @base <https://periodo.github.io/edtf-ontology/> .
 @prefix : <cases/level-1/qualification/year-precision/> .
 @prefix edtfo: <edtfo.ttl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-# Year uncertain
-# (possibly the year 1984, but not definitely).
-:when1 edtfo:inEDTFDateTime "1984?" .
+:when1 edtfo:inEDTFDateTime "1984?" ;
+  rdfs:label "possibly but not certainly 2004" .
 
-# Year approximate
-# (approximately 1984).
-:when2 edtfo:inEDTFDateTime "1984~" .
+:when2 edtfo:inEDTFDateTime "1984~" ;
+  rdfs:label "approximately 2004" .
 
-# Year uncertain and approximate
-# (possibly approximately 1984, but not definitely).
-:when3 edtfo:inEDTFDateTime "1984%" .
+:when3 edtfo:inEDTFDateTime "1984%" ;
+  rdfs:label "possibly but not certainly approximately 2004" .

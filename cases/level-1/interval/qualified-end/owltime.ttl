@@ -1,11 +1,13 @@
 PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-1/interval/qualified-end/>
 PREFIX edtfo: <https://periodo.github.io/edtf-ontology/edtfo.ttl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when1
   a time:Interval ;
+  rdfs:label "interval beginning on February 1, 2004 and possibly but not certainly ending approximately February 8, 2005" ;
   time:hasBeginning [
       a time:Instant ;
       time:inDateTime [
@@ -21,6 +23,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when2
   a time:Interval ;
+  rdfs:label "interval with an unknown beginning and possibly but not certainly ending approximately February 8, 2005" ;
   time:hasEnd _:n2 ;
 .
 
@@ -28,11 +31,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   a
     time:Interval ,
     edtfo:OpenBeginningInterval ;
+  rdfs:label "interval with no beginning and possibly but not certainly ending approximately February 8, 2005" ;
   time:hasEnd _:n3 ;
 .
 
 :when4
   a time:Interval ;
+  rdfs:label "interval beginning February 2004 and possibly but not certainly ending approximately February 2005" ;
   time:hasBeginning [
       a time:Instant ;
       time:inDateTime [
@@ -47,6 +52,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when5
   a time:Interval ;
+  rdfs:label "interval beginning February 2004 and possibly but not certainly ending approximately 2005" ;
   time:hasBeginning [
       a time:Instant ;
       time:inDateTime [

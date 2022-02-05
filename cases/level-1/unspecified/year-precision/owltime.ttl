@@ -1,10 +1,12 @@
 PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-1/unspecified/year-precision/>
 PREFIX edtfo: <https://periodo.github.io/edtf-ontology/edtfo.ttl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when1
   a time:Instant ;
+  rdfs:label "some year in the 2010s" ;
   time:inDateTime [
       a
         time:DateTimeDescription ,
@@ -16,6 +18,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when2
   a time:Instant ;
+  rdfs:label "some year in the 6th century BCE" ;
   time:inDateTime [
       a
         time:DateTimeDescription ,

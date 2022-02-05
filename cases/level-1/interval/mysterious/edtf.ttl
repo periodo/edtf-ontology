@@ -1,17 +1,18 @@
 @base <https://periodo.github.io/edtf-ontology/> .
 @prefix : <cases/level-1/interval/mysterious/> .
 @prefix edtfo: <edtfo.ttl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 # The following are allowed but should be used only with caution:
 
-# start and end both unknown
-:when1 edtfo:hasEDTFDateTimeDescription "/" .
+:when1 edtfo:hasEDTFDateTimeDescription "/" ;
+  rdfs:label "interval with unknown start and unknown end" .
 
-# start and end both open
-:when2 edtfo:hasEDTFDateTimeDescription "../.." .
+:when2 edtfo:hasEDTFDateTimeDescription "../.." ;
+  rdfs:label "interval with open start and open end" .
 
-# start unknown, end open
-:when3 edtfo:hasEDTFDateTimeDescription "/.." .
+:when3 edtfo:hasEDTFDateTimeDescription "/.." ;
+  rdfs:label "interval with unknown start and open end" .
 
-# start open, end unknown
-:when4 edtfo:hasEDTFDateTimeDescription "../" .
+:when4 edtfo:hasEDTFDateTimeDescription "../" ;
+  rdfs:label "interval with open start and unknown end" .

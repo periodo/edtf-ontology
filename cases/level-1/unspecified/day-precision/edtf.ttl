@@ -1,11 +1,10 @@
 @base <https://periodo.github.io/edtf-ontology/> .
 @prefix : <cases/level-1/unspecified/day-precision/> .
 @prefix edtfo: <edtfo.ttl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-# Year and month specified, day unspecified
-# in a year-month-day expression (day precision).
-:when1 edtfo:inEDTFDateTime "1985-04-XX" .
+:when1 edtfo:inEDTFDateTime "1985-04-XX" ;
+  rdfs:label "some day in April 1985" .
 
-# Year specified, month and day unspecified
-# in a year-month-day expression  (day precision).
-:when2 edtfo:inEDTFDateTime "1985-XX-XX" .
+:when2 edtfo:inEDTFDateTime "1985-XX-XX" ;
+  rdfs:label "some day in 1985" .

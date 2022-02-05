@@ -1,5 +1,6 @@
 PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-1/interval/open-start/>
 PREFIX edtfo: <https://periodo.github.io/edtf-ontology/edtfo.ttl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
@@ -7,6 +8,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   a
     time:Interval ,
     edtfo:OpenBeginningInterval ;
+  rdfs:label "interval with open start; ending April 12th, 1985" ;
   time:hasEnd [
       a time:Instant ;
       time:inDateTime [
@@ -23,6 +25,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   a
     time:Interval ,
     edtfo:OpenBeginningInterval ;
+  rdfs:label "interval with open start; ending in April 1985" ;
   time:hasEnd [
       a time:Instant ;
       time:inDateTime [
@@ -38,6 +41,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   a
     time:Interval ,
     edtfo:OpenBeginningInterval ;
+  rdfs:label "interval with open start; ending in 1985" ;
   time:hasEnd [
       a time:Instant ;
       time:inDateTime [

@@ -1,9 +1,11 @@
 PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-1/interval/unknown-end/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when1
   a time:Interval ;
+  rdfs:label "interval starting April 12th, 1985; end unknown" ;
   time:hasBeginning [
       a time:Instant ;
       time:inDateTime [
@@ -18,6 +20,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when2
   a time:Interval ;
+  rdfs:label "interval starting in April 1985; end unknown" ;
   time:hasBeginning [
       a time:Instant ;
       time:inDateTime [
@@ -31,6 +34,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when3
   a time:Interval ;
+  rdfs:label "interval starting in 1985; end unknown" ;
   time:hasBeginning [
       a time:Instant ;
       time:inDateTime [

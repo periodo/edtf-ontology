@@ -1,6 +1,7 @@
 PREFIX : <https://periodo.github.io/edtf-ontology/cases/level-1/qualification/year-precision/>
 PREFIX edtfo: <https://periodo.github.io/edtf-ontology/edtfo.ttl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
@@ -29,17 +30,20 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :when1
   a time:Instant ;
+  rdfs:label "possibly but not certainly 2004" ;
   time:inDateTime _:n3 ;
 .
 
 :when2
   a time:Instant ;
   time:inDateTime _:n1 ;
+  rdfs:label "approximately 2004" ;
 .
 
 :when3
   a time:Instant ;
   time:inDateTime _:n2 ;
+  rdfs:label "possibly but not certainly approximately 2004" ;
 .
 
 _:n3

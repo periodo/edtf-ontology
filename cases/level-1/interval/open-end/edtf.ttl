@@ -1,12 +1,13 @@
 @base <https://periodo.github.io/edtf-ontology/> .
 @prefix : <cases/level-1/interval/open-end/> .
 @prefix edtfo: <edtfo.ttl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-# Interval starting at 1985 April 12th with day precision; end open.
-:when1 edtfo:hasEDTFDateTimeDescription "1985-04-12/.." .
+:when1 edtfo:hasEDTFDateTimeDescription "1985-04-12/.." ;
+  rdfs:label "interval starting April 12th, 1985; end open" .
 
-# Interval starting at 1985 April with month precision; end open.
-:when2 edtfo:hasEDTFDateTimeDescription "1985-04/.." .
+:when2 edtfo:hasEDTFDateTimeDescription "1985-04/.." ;
+  rdfs:label "interval starting in April 1985; end open" .
 
-# Interval starting at 1985 with year precision; end open.
-:when3 edtfo:hasEDTFDateTimeDescription "1985/.." .
+:when3 edtfo:hasEDTFDateTimeDescription "1985/.." ;
+  rdfs:label "interval starting in 1985; end open" .
