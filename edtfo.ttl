@@ -398,7 +398,7 @@ whose value is a member of the class `edtfo:YearSubdivision`"""@en ;
   skos:example"""# June 2004 to August 2006
 
 :when a time:ProperInterval ;
-  edtfo:hasEDTFDateTimeDescription "2004-06/2006-08"
+  edtfo:hasEDTFDateTimeDescription "2004-06/2006-08"^^edtf:EDTF
   ."""
   .
 
@@ -416,7 +416,7 @@ This property is intended for use with EDTF level 2 “all members of set”
   skos:example """# all of the years 1667, 1668, 1670, 1671, 1672
 
 :When a owl:Class ;
-  edtfo:hasEDTFDateTimeSetDescription "{1667,1668,1670..1672}"
+  edtfo:hasEDTFDateTimeSetDescription "{1667,1668,1670..1672}"^^edtf:EDTF-level2
   ."""
   .
 
@@ -429,7 +429,7 @@ This property is intended for use with EDTF level 2 “all members of set”
   skos:example """# the calendar year 1985
 
 :when a time:Instant ;
-  edtfo:inEDTFDateTime "1985"
+  edtfo:inEDTFDateTime "1985"^^edtf:EDTF
   ."""
   .
 
